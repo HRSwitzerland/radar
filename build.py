@@ -15,6 +15,7 @@ from datetime import date, datetime
 from email.utils import format_datetime
 
 import tools
+import newsletter as nl
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = json.load(open(os.path.join(ROOT, "data", "articles.json"), encoding="utf-8"))
@@ -57,6 +58,7 @@ ICONS = {
 }
 BULB = _I + '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>'
 LINK = _I + '<path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1 1"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1-1"/></svg>'
+BOOK = _I + '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7M8 11h7"/></svg>'
 SEARCH = _I + '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
 LOGO = '<svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--sun)"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="3 3.2"/><path d="M20 20 L31 11" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="var(--accent)"/><circle cx="28" cy="25" r="2.4" fill="var(--accent)"/></svg>'
 MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
@@ -134,14 +136,14 @@ def tag(k, up):
     return f'<a class="tag" href="{up}rubrik/{k}.html" style="{cat_style(k)}">{e(CATS[k][1])}</a>'
 
 
-def layout(title, body, depth=0, desc="", active="", article=False):
+def layout(title, body, depth=0, desc="", active="", article=False, noindex=False):
     up = "../" * depth
     def nav(href, label, key, cls=""):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{up}{href}"{cur}{c}>{label}</a>'
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News für HR-Profis in der Schweiz"
-    cats_nav = "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{" aria-current=page" if active == "rubrik-" + k else ""}>{ICONS[k]}{e(CATS[k][1])}</a>' for k in ORDER)
+    cats_nav = f'<a href="{up}hintergrund.html" class="bg-chip"{" aria-current=page" if active == "hintergrund" else ""}>{BOOK}Hintergrund</a>' + "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{" aria-current=page" if active == "rubrik-" + k else ""}>{ICONS[k]}{e(CATS[k][1])}</a>' for k in ORDER)
     return f"""<!DOCTYPE html>
 <html lang="de-CH">
 <head>
@@ -149,6 +151,7 @@ def layout(title, body, depth=0, desc="", active="", article=False):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(desc or 'Täglich das Wichtigste für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn, Arbeitsmarkt, Gesundheit und HR-Tech. Verständlich zusammengefasst, immer mit Quellen.')}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="alternate" type="application/rss+xml" title="{e(SITE_NAME)}" href="{up}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,6 +169,7 @@ def layout(title, body, depth=0, desc="", active="", article=False):
       {nav("woche/index.html", "Wochenrückblick", "woche")}
       {nav("rechner/index.html", "Rechner", "rechner")}
       {nav("archiv.html", "Archiv", "archiv")}
+      {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
   </div>
@@ -230,7 +234,9 @@ def meta(a, up, long=False, rt=True):
     eff = f'<span class="eff">gilt ab {d_short(a["effective"])}</span>' if a.get("effective") else ""
     when = d_long(a["published"]) if long else d_short(a["published"])
     rts = f'<span class="dot-sep">{reading_time(a)} Min. Lesezeit</span>' if rt else ""
-    return f'<div class="meta">{tag(a["category"], up)}<time datetime="{a["published"]}">{when}</time>{eff}{rts}</div>'
+    bg = '<span class="bg-badge">Hintergrund</span>' if a.get("type") == "hintergrund" else ""
+    alert = '<span class="alert-badge">Eilmeldung</span>' if a.get("alert") else ""
+    return f'<div class="meta">{alert}{bg}{tag(a["category"], up)}<time datetime="{a["published"]}">{when}</time>{eff}{rts}</div>'
 
 
 def card(a, up, size=""):
@@ -329,6 +335,7 @@ def build_home():
   <div class="two">{kennzahlen_panel()}{termine_panel(6)}</div>
 </div></section>
 {WAVE_FLIP}
+{home_background()}
 <section class="block"><div class="wrap">
   <div class="block-head"><div><span class="hand">Nach Themen stöbern</span><h2>Die Rubriken</h2></div></div>
   {sections}
@@ -337,7 +344,7 @@ def build_home():
     write("index.html", layout(SITE_NAME, body, 0, active="home"))
 
 
-def build_article(a):
+def build_article(a, draft=False):
     up = "../"
     k = a["category"]
     secs = "".join(f"<h2>{e(s['h'])}</h2><p>{e(s['p'])}</p>" for s in a.get("sections", []))
@@ -351,7 +358,8 @@ def build_article(a):
         related += [x for x in articles() if x["id"] != a["id"] and x not in related][:3 - len(related)]
     event = f'<p class="event">Ereignis vom {d_long(a["date"])}</p>' if a.get("date") and a["date"] != a["published"] else ""
     refs_block = f'<p class="refs-label">Rechtsgrundlagen und Stichworte</p><div class="refs">{refs}</div>' if refs else ""
-    body = f"""<article class="post" style="{cat_style(k)}">
+    banner = '<div class="draft-banner"><b>Entwurf, nicht veröffentlicht.</b> Diese Vorschau ist nur über den direkten Link erreichbar und erscheint nirgends auf der Seite.</div>' if draft else ""
+    body = f"""{banner}<article class="post" style="{cat_style(k)}">
   <div class="post-hero"><div class="narrow">
     <div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="{up}rubrik/{k}.html">{e(CATS[k][0])}</a></div>
     {meta(a, up, True)}
@@ -370,7 +378,10 @@ def build_article(a):
 </article>
 <section class="block band-soft"><div class="wrap"><div class="block-head"><div><span class="hand">Weiterlesen</span><h2>Das könnte Sie auch interessieren</h2></div></div>
 <div class="grid three">{"".join(card(x, up) for x in related)}</div></div></section>"""
-    write(f"artikel/{a['id']}.html", layout(a["title"], body, 1, desc=a["teaser"][:160], article=True))
+    if draft:
+        write(f"vorschau/{a['id']}.html", layout("Entwurf: " + a["title"], body, 1, desc=a["teaser"][:160], article=True, noindex=True))
+    else:
+        write(f"artikel/{a['id']}.html", layout(a["title"], body, 1, desc=a["teaser"][:160], article=True))
 
 
 def build_category(k):
@@ -570,30 +581,87 @@ def build_search():
     write("suche.html", layout("Suche", body, 0, active="suche"))
 
 
+def background_articles():
+    return [a for a in articles() if a.get("type") == "hintergrund"]
+
+
+def home_background():
+    items = background_articles()[:3]
+    if not items:
+        return ""
+    return f"""<section class="block"><div class="wrap"><div class="bg-box">
+<div class="block-head"><div><span class="hand">Tiefer eintauchen</span><h2>Hintergrund &amp; Analyse</h2></div><a class="see-all" href="hintergrund.html">Alle Hintergrundartikel</a></div>
+<div class="grid three">{"".join(card(a, "") for a in items)}</div></div></div></section>"""
+
+
+def build_background_page():
+    items = background_articles()
+    body = f"""<section class="cat-hero bg-hero"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{BOOK}</span>
+  <div><span class="hand">Tiefer eintauchen</span><h1>Hintergrund &amp; Analyse</h1><p class="lead">Ausführliche Beiträge zu den grossen HR-Themen: Zusammenhänge, Rechtslage, Praxisbeispiele und Checklisten. Jeder Hintergrundartikel wird vor der Veröffentlichung redaktionell geprüft.</p><p class="count">{len(items)} Beiträge</p></div>
+</div></section>
+<section class="block"><div class="wrap"><div class="grid">{"".join(card(a, "") for a in items) or '<p class="empty">Der erste Hintergrundartikel erscheint in Kürze.</p>'}</div></div></section>"""
+    write("hintergrund.html", layout("Hintergrund & Analyse", body, 0, desc="Ausführliche Hintergrundartikel zu HR-Themen in der Schweiz.", active="hintergrund"))
+
+
+def build_drafts():
+    ddir = os.path.join(ROOT, "data", "drafts")
+    n = 0
+    if os.path.isdir(ddir):
+        for name in sorted(os.listdir(ddir)):
+            if name.endswith(".json"):
+                a = json.load(open(os.path.join(ddir, name), encoding="utf-8"))
+                build_article(a, draft=True)
+                n += 1
+    return n
+
+
+def upcoming_list():
+    today = date.today().isoformat()
+    items = [(a["effective"], a["title"]) for a in articles() if a.get("effective") and a["effective"] >= today]
+    items += [(t["date"], t["label"]) for t in DATA.get("termine", []) if t["date"] >= today]
+    return sorted(items)
+
+
+def build_newsletter_archive():
+    up = "../../"
+    issues = sorted(DATA.get("newsletters", []), key=lambda i: i["date"], reverse=True)
+    rows = ""
+    for i in issues:
+        html_web = nl.build_issue_html(i, articles(), CATS, PALETTE, ORDER, SITE_NAME, SITE_URL, upcoming_list(), personalized=False)
+        html_web = html_web.replace('<a href="{{ unsubscribe }}" style="color:#6b6580;">Newsletter abbestellen</a>', f'<a href="{SITE_URL}newsletter.html" style="color:#6b6580;">Newsletter abonnieren</a>')
+        write(f"newsletter/archiv/{i['id']}.html", html_web)
+        rows += f'<a class="list-row" href="newsletter/archiv/{i["id"]}.html"><div class="meta"><span class="pill-s">{e(i["label"])}</span><span>{d_long(i["date"])}</span></div><h3>{e(i.get("title") or "Newsletter")}</h3><p>{e(i.get("intro", ""))}</p></a>'
+    return rows
+
+
 def build_newsletter():
+    archive_rows = build_newsletter_archive()
     interests = "".join(
-        f'<label class="interest" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div><input type="checkbox" name="interessen" value="{k}" checked></label>'
+        f'<label class="interest" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div><input type="checkbox" name="{nl.ATTR[k]}" value="true" checked></label>'
         for k, v in CATS.items())
     if NL_ACTION:
         action, notice, disabled = f'action="{e(NL_ACTION)}" method="post"', "", ""
     else:
         action = 'action="#" onsubmit="return false"'
-        notice = '<p class="notice">Der Newsletter startet in Kürze. Bis dahin können Sie die Rubriken über die RSS-Feeds unten abonnieren.</p>'
+        notice = '<p class="notice">Der Newsletter startet in Kürze. Bis dahin finden Sie alle Beiträge hier auf der Seite und im <a href="feed.xml">RSS-Feed</a>.</p>'
         disabled = " disabled"
-    feeds = "".join(f'<li><a href="feeds/{k}.xml">{e(v[0])}</a></li>' for k, v in CATS.items())
+    archive = f'<h2>Bisherige Ausgaben</h2>{archive_rows}' if archive_rows else ""
     body = f"""<div class="narrow page">
-<span class="eyebrow"><span class="pill">Newsletter</span></span>
+<span class="eyebrow"><span class="pill">Newsletter</span>alle zwei Wochen</span>
 <h1>Ihr persönlicher HR Radar</h1>
-<p class="lead">Wählen Sie die Themen, die Sie wirklich brauchen. Sie erhalten eine kompakte Übersicht mit genau diesen Beiträgen.</p>
+<p class="lead">Alle zwei Wochen die wichtigsten HR-News, nur aus den Rubriken, die Sie wählen. Und wenn etwas wirklich Wichtiges passiert, auf Wunsch sofort eine Eilmeldung.</p>
+<div class="nl-points"><div><b>Alle 2 Wochen</b><span>Montagmorgen, kompakt, mit Link zu jedem Beitrag</span></div><div><b>Nur Ihre Themen</b><span>Sie wählen die Rubriken, der Rest bleibt draussen</span></div><div><b>Eilmeldungen</b><span>nur bei Entscheiden mit grosser Tragweite für HR</span></div></div>
 {notice}
 <form class="nl" {action}>
-  <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
-  <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="vorname" autocomplete="given-name"></div>
+  <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
+  <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="VORNAME" autocomplete="given-name"></div>
   <fieldset><legend>Welche Rubriken interessieren Sie?</legend><div class="interest-grid">{interests}</div></fieldset>
-  <label class="consent"><input type="checkbox" id="nl-consent" name="einwilligung" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse und meine Themenwahl dafür gespeichert werden. Abmelden ist jederzeit möglich.</span></label>
+  <label class="interest alert-opt"><span class="mini-ico" aria-hidden="true">{ICONS['gesetze']}</span><div><b>Eilmeldungen</b><span>Sofort informiert bei sehr wichtigen Entscheiden, etwa einem wegweisenden Urteil oder einer kurzfristigen Gesetzesänderung. Höchstens wenige Male pro Jahr.</span></div><input type="checkbox" name="{nl.ALERT_ATTR}" value="true" checked></label>
+  <label class="consent"><input type="checkbox" id="nl-consent" name="OPT_IN" value="1" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse, mein Vorname und meine Themenwahl dafür gespeichert und vom Versanddienst Brevo verarbeitet werden. Abmelden ist jederzeit über den Link in jeder E-Mail möglich.</span></label>
   <div><button class="btn red" type="submit"{disabled}>Newsletter abonnieren</button></div>
 </form>
-<h2>RSS-Feeds</h2><p>Alle Beiträge: <a href="feed.xml">feed.xml</a></p><ul class="feeds">{feeds}</ul>
+{archive}
 </div>"""
     write("newsletter.html", layout("Newsletter", body, 0, active="newsletter"))
 
@@ -652,7 +720,7 @@ def check():
 
 def main():
     check()
-    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben", "woche", "rechner"):
+    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben", "woche", "rechner", "vorschau", os.path.join("newsletter", "archiv")):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     build_home()
     for a in DATA["articles"]:
@@ -664,10 +732,13 @@ def main():
     build_calculators()
     build_archive()
     build_search()
+    build_background_page()
+    drafts = build_drafts()
     build_newsletter()
+    nl.write_outbox(ROOT, DATA, articles(), CATS, PALETTE, ORDER, SITE_NAME, SITE_URL, upcoming_list())
     build_about()
     build_feeds()
-    print(f"OK: {len(DATA['articles'])} Artikel in {len(CATS)} Rubriken")
+    print(f"OK: {len(DATA['articles'])} Artikel in {len(CATS)} Rubriken, {drafts} Entwürfe")
 
 
 if __name__ == "__main__":

@@ -38,3 +38,17 @@ Optional ergänzt die Freitags-Ausgabe eine redaktionelle Einordnung in `weeks`:
 ```json
 "weeks": [{"id": "2026-48", "title": "Kurzer Titel der Woche", "intro": "3-5 Sätze Einordnung"}]
 ```
+
+## Hintergrundartikel (mit Freigabe)
+- Entwürfe liegen als einzelne Datei in `data/drafts/<id>.json` (gleiches Format wie ein Artikel, dazu `"type": "hintergrund"`).
+- `build.py` erzeugt dafür eine Vorschau unter `vorschau/<id>.html` (noindex, nirgends verlinkt, mit Entwurfs-Banner).
+- Freigabe: Datei aus `data/drafts/` löschen, Artikel mit `published` = Freigabedatum OBEN in `articles` einfügen, `python3 build.py`, pushen.
+- Veröffentlichte Hintergrundartikel erscheinen auf der Startseite («Hintergrund & Analyse») und unter `hintergrund.html`.
+
+## Newsletter (alle zwei Wochen) und Eilmeldungen
+- Ausgaben stehen in `newsletters`: `{"id": "JJJJ-WW", "label": "KW WW/JJJJ", "date": "JJJJ-MM-TT", "title": "...", "intro": "..."}`. Eine Ausgabe enthält alle Beiträge der letzten 14 Tage, pro Rubrik höchstens 4.
+- Eilmeldung: im Artikel `"alert": true` setzen (nur bei sehr grosser Tragweite).
+- `build.py` legt Versandaufträge in `newsletter/outbox/` ab (nur wenn nicht schon in `newsletter/sent/` und höchstens 3 Tage alt). Webversionen: `newsletter/archiv/<id>.html`.
+- Versand: GitHub Action `.github/workflows/newsletter.yml` ruft `send_newsletter.py` auf (Brevo-API). Benötigt Secret `BREVO_API_KEY` und Variablen `BREVO_LIST_ID`, `BREVO_ALERT_SEGMENT_ID`, `SENDER_EMAIL`, `SENDER_NAME`. Ohne Key passiert nichts.
+- Themenwahl: Brevo-Kontaktattribute `THEMA_ARBEITSRECHT`, `THEMA_GESETZE`, `THEMA_LOHN`, `THEMA_ARBEITSMARKT`, `THEMA_GESUNDHEIT`, `THEMA_DIGITAL`, `THEMA_PRAXIS`, `EILMELDUNG` (Typ Boolean), `VORNAME` (Text).
+- Anmeldeformular: Formular-URL von Brevo in `site.newsletter_form_action` eintragen.
