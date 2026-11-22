@@ -1,46 +1,67 @@
 #!/usr/bin/env python3
-"""Erzeugt die statische Webseite «HR-Recht Radar» aus data/news.json.
+"""Erzeugt die statische Newsplattform «HR Radar» aus data/articles.json.
 
 Aufruf:  python3 build.py
-Erzeugt: index.html, ausgaben/, meldungen/, newsletter.html, ueber.html, feed.xml, feeds/*.xml
+Erzeugt: index.html, artikel/, rubrik/, archiv.html, suche.html, newsletter.html, ueber.html,
+         search.json, feed.xml, feeds/<rubrik>.xml
 """
+import hashlib
 import html
 import json
 import os
-import re
+import random
 import shutil
 from datetime import date, datetime
 from email.utils import format_datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DATA = json.load(open(os.path.join(ROOT, "data", "news.json"), encoding="utf-8"))
+DATA = json.load(open(os.path.join(ROOT, "data", "articles.json"), encoding="utf-8"))
 SITE = DATA.get("site", {})
-SITE_NAME = SITE.get("name", "HR-Recht Radar")
+SITE_NAME = SITE.get("name", "HR Radar")
 SITE_URL = SITE.get("url", "https://hrswitzerland.github.io/radar/").rstrip("/") + "/"
 NL_ACTION = SITE.get("newsletter_form_action", "")
 PUBLISHER = SITE.get("publisher", "[Name, Adresse und E-Mail ergänzen]")
+e = html.escape
 
+# Rubriken: key -> (Name, Kurzname, Beschreibung)
 CATS = {
-    "rechtsprechung": ("Rechtsprechung", "Neue Urteile des Bundesgerichts und des EGMR mit Bezug zum Arbeitsverhältnis."),
-    "gesetzgebung": ("Gesetzgebung", "Gesetzes- und Verordnungsänderungen, Vernehmlassungen und Inkraftsetzungen."),
-    "sozialversicherung": ("Sozialversicherungen & Lohn", "AHV, BVG, UVG, ALV, Kurzarbeit, Familienzulagen und Mindestlöhne."),
-    "praxis": ("HR-Praxis & Behörden", "Stellenmeldepflicht, Kontingente, Hinweise von SECO, EDÖB und Kantonen."),
+    "arbeitsrecht": ("Arbeitsrecht & Urteile", "Arbeitsrecht", "Neue Urteile des Bundesgerichts und des EGMR, eingeordnet für die HR-Praxis."),
+    "gesetze": ("Gesetze & Politik", "Gesetze", "Gesetzesänderungen, Vernehmlassungen, Parlamentsentscheide und EU-Recht mit Wirkung auf die Schweiz."),
+    "lohn": ("Lohn & Vorsorge", "Lohn", "Lohnrunden, AHV, BVG, Mindestlöhne, Familienzulagen und alles rund um die Lohnabrechnung."),
+    "arbeitsmarkt": ("Arbeitsmarkt & Recruiting", "Arbeitsmarkt", "Arbeitslosigkeit, Fachkräftemangel, Stellenmarkt und Trends in der Personalgewinnung."),
+    "gesundheit": ("Gesundheit & Führung", "Gesundheit", "Absenzen, psychische Gesundheit, BGM, Führung und Unternehmenskultur."),
+    "digital": ("HR-Tech & KI", "HR-Tech", "Künstliche Intelligenz, HR-Software, Daten und die digitale Personalarbeit."),
+    "praxis": ("HR-Praxis & Behörden", "Praxis", "Stellenmeldepflicht, Bewilligungen, Kontingente und Hinweise von SECO, EDÖB und Kantonen."),
 }
 ORDER = list(CATS)
-ICONS = {
-    "rechtsprechung": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M7 7h10M7 7l-3 7a3 3 0 0 0 6 0L7 7zM17 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg>',
-    "gesetzgebung": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
-    "sozialversicherung": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10V5l7-2 7 2v6c0 5.6-7 10-7 10z"/><path d="M9 12l2 2 4-4"/></svg>',
-    "praxis": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg>',
+PALETTE = {
+    "arbeitsrecht": ("#5a46d6", "#efebff"),
+    "gesetze": ("#d9452f", "#ffece6"),
+    "lohn": ("#1f8a62", "#e3f6ec"),
+    "arbeitsmarkt": ("#2b7bbd", "#e4f1fb"),
+    "gesundheit": ("#c2417a", "#fde8f1"),
+    "digital": ("#0f8b8d", "#dff5f4"),
+    "praxis": ("#b9780a", "#fff3d6"),
 }
-BULB = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>'
+_I = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+ICONS = {
+    "arbeitsrecht": _I + '<path d="M12 3v18M5 21h14M7 7h10M7 7l-3 7a3 3 0 0 0 6 0L7 7zM17 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg>',
+    "gesetze": _I + '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+    "lohn": _I + '<circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.8 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg>',
+    "arbeitsmarkt": _I + '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/><path d="M16 8h4v4"/></svg>',
+    "gesundheit": _I + '<path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>',
+    "digital": _I + '<rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>',
+    "praxis": _I + '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg>',
+}
+BULB = _I + '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>'
+LINK = _I + '<path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1 1"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1-1"/></svg>'
+SEARCH = _I + '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
 LOGO = '<svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--sun)"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="3 3.2"/><path d="M20 20 L31 11" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="var(--accent)"/><circle cx="28" cy="25" r="2.4" fill="var(--accent)"/></svg>'
-SHORT_MONTHS = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
-WAVE = '<svg class="wave" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 V20 C 150 0 300 40 450 22 S 750 0 900 20 S 1100 40 1200 18 V46 Z" fill="currentColor"/></svg>'
-
 MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
-
-e = html.escape
+SHORT_MONTHS = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+WEEKDAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"]
+WAVE = '<svg class="wave" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 V20 C 150 0 300 40 450 22 S 750 0 900 20 S 1100 40 1200 18 V46 Z" fill="currentColor"/></svg>'
+WAVE_FLIP = WAVE.replace('class="wave"', 'class="wave flip"')
 
 
 def d_short(iso):
@@ -53,18 +74,24 @@ def d_long(iso):
     return f"{d}. {MONTHS[m - 1]} {y}"
 
 
-def reading_time(item):
-    text = " ".join([item.get("summary", ""), item.get("todo", "")] + [s.get("p", "") for s in item.get("details", [])])
+def d_day(iso):
+    dt = datetime.strptime(iso, "%Y-%m-%d")
+    return f"{WEEKDAYS[dt.weekday()]}, {d_long(iso)}"
+
+
+def reading_time(a):
+    text = " ".join([a.get("teaser", ""), a.get("summary", "")] + [s.get("p", "") for s in a.get("sections", [])] + a.get("takeaways", []))
     return max(1, round(len(text.split()) / 200))
 
 
-def editions():
-    return sorted(DATA["editions"], key=lambda x: x["date"], reverse=True)
+def articles():
+    # Neueste zuerst; am selben Tag zählt die Reihenfolge in articles.json (oben = neuer).
+    idx = {a["id"]: i for i, a in enumerate(DATA["articles"])}
+    return sorted(DATA["articles"], key=lambda a: (a["published"], a.get("featured", False), -idx[a["id"]]), reverse=True)
 
 
-def items_of(ed_id):
-    its = [i for i in DATA["items"] if i["edition"] == ed_id]
-    return sorted(its, key=lambda i: (ORDER.index(i["category"]) if i["category"] in ORDER else 9, -int(i["date"].replace("-", ""))))
+def by_cat(k):
+    return [a for a in articles() if a["category"] == k]
 
 
 def write(path, content):
@@ -74,20 +101,52 @@ def write(path, content):
         f.write(content)
 
 
-def layout(title, body, depth=0, desc="", active=""):
+def cover(a, cls="cover"):
+    """Deterministische, verspielte Titelgrafik pro Artikel (SVG, keine Fremdbilder)."""
+    fg, bg = PALETTE.get(a["category"], ("#2b2540", "#efebff"))
+    rnd = random.Random(int(hashlib.md5(a["id"].encode()).hexdigest(), 16))
+    accents = ["#ffd76e", "#ff6f59", "#bfe8d6", "#ddd3ff", "#ffffff"]
+    shapes = []
+    for _ in range(3):
+        cx, cy, r = rnd.randint(40, 560), rnd.randint(20, 300), rnd.randint(50, 130)
+        col = rnd.choice(accents + [fg])
+        op = 0.9 if col != fg else 0.18
+        shapes.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{col}" opacity="{op}"/>')
+    x0 = rnd.randint(-40, 120)
+    pts = " ".join(f"{x0 + i * 60},{rnd.randint(120, 260) + (25 if i % 2 else -25)}" for i in range(12))
+    shapes.append(f'<polyline points="{pts}" fill="none" stroke="{fg}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>')
+    dots = "".join(f'<circle cx="{rnd.randint(380, 590)}" cy="{rnd.randint(20, 120)}" r="5" fill="{fg}" opacity=".5"/>' for _ in range(7))
+    rx, ry = rnd.randint(30, 420), rnd.randint(30, 200)
+    rect = f'<rect x="{rx}" y="{ry}" width="{rnd.randint(70, 140)}" height="{rnd.randint(70, 140)}" rx="26" fill="{rnd.choice(accents)}" transform="rotate({rnd.randint(-25, 25)} {rx + 50} {ry + 50})"/>'
+    icon = ICONS[a["category"]].replace('viewBox="0 0 24 24"', 'x="248" y="108" width="104" height="104" viewBox="0 0 24 24"').replace('stroke="currentColor"', f'stroke="{fg}"').replace('stroke-width="2"', 'stroke-width="1.6"')
+    badge = '<circle cx="300" cy="160" r="82" fill="#ffffff"/>'
+    return f'<svg class="{cls}" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration zur Rubrik {e(CATS[a["category"]][0])}"><rect width="600" height="320" fill="{bg}"/>{"".join(shapes)}{rect}{dots}{badge}{icon}</svg>'
+
+
+def cat_style(k):
+    fg, bg = PALETTE[k]
+    return f"--catc:{fg};--catb:{bg};"
+
+
+def tag(k, up):
+    return f'<a class="tag" href="{up}rubrik/{k}.html" style="{cat_style(k)}">{e(CATS[k][1])}</a>'
+
+
+def layout(title, body, depth=0, desc="", active="", article=False):
     up = "../" * depth
     def nav(href, label, key, cls=""):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{up}{href}"{cur}{c}>{label}</a>'
-    full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} Schweiz"
+    full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News für HR-Profis in der Schweiz"
+    cats_nav = "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{" aria-current=page" if active == "rubrik-" + k else ""}>{ICONS[k]}{e(CATS[k][1])}</a>' for k in ORDER)
     return f"""<!DOCTYPE html>
 <html lang="de-CH">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
-<meta name="description" content="{e(desc or 'Wöchentliche News zu Arbeitsrecht, Bundesgerichtsurteilen, Gesetzgebung und Sozialversicherungen für HR in der Schweiz.')}">
+<meta name="description" content="{e(desc or 'Täglich das Wichtigste für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn, Arbeitsmarkt, Gesundheit und HR-Tech. Verständlich zusammengefasst, immer mit Quellen.')}">
 <link rel="alternate" type="application/rss+xml" title="{e(SITE_NAME)}" href="{up}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,17 +154,18 @@ def layout(title, body, depth=0, desc="", active=""):
 <link rel="stylesheet" href="{up}assets/style.css">
 </head>
 <body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+{'<div class="progress" id="progress" aria-hidden="true"></div>' if article else ''}
 <header class="site-head">
-  <div class="wrap">
-    <a class="logo" href="{up}index.html">{LOGO}<span class="logo-text">{e(SITE_NAME)}<small>HR-Recht, jede Woche frisch</small></span></a>
+  <div class="wrap head-row">
+    <a class="logo" href="{up}index.html">{LOGO}<span class="logo-text">{e(SITE_NAME)}<small>Was HR heute wissen muss</small></span></a>
     <nav class="main" aria-label="Hauptnavigation">
       {nav("index.html", "Aktuell", "home")}
-      {nav("ausgaben/index.html", "Ausgaben", "ausgaben")}
+      {nav("archiv.html", "Archiv", "archiv")}
       {nav("ueber.html", "Über", "ueber")}
-      {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
+      <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
   </div>
+  <div class="wrap"><nav class="cats" aria-label="Rubriken">{cats_nav}</nav></div>
 </header>
 <main>
 {body}
@@ -114,8 +174,8 @@ def layout(title, body, depth=0, desc="", active=""):
   <div class="wrap">
     <div>
       <h2>{e(SITE_NAME)}</h2>
-      <p>Wöchentliche News zu Arbeitsrecht, Rechtsprechung, Gesetzgebung und Sozialversicherungen für HR in der Schweiz. Erscheint jeden Montag.</p>
-      <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}newsletter.html">Newsletter</a></p>
+      <p>Täglich das Wichtigste für HR-Profis in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
+      <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}archiv.html">Archiv</a></p>
     </div>
     <div>
       <h2>Gut zu wissen</h2>
@@ -140,13 +200,19 @@ document.querySelectorAll('[data-filter]').forEach(function (group) {{
   }});
 }});
 var bar = document.getElementById('progress');
-if (bar && document.querySelector('article.post')) {{
+if (bar) {{
   var onScroll = function () {{
-    var h = document.documentElement;
-    var max = h.scrollHeight - h.clientHeight;
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
     bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
   }};
   window.addEventListener('scroll', onScroll, {{ passive: true }}); onScroll();
+}}
+var copy = document.getElementById('copy-link');
+if (copy) {{
+  copy.addEventListener('click', function () {{
+    var done = function () {{ copy.querySelector('span').textContent = 'Link kopiert'; }};
+    try {{ navigator.clipboard.writeText(location.href).then(done, function () {{}}); }} catch (err) {{}}
+  }});
 }}
 </script>
 </body>
@@ -154,38 +220,27 @@ if (bar && document.querySelector('article.post')) {{
 """
 
 
-def tag(cat):
-    return f'<span class="tag">{e(CATS.get(cat, (cat,))[0])}</span>'
+def meta(a, up, long=False, rt=True):
+    eff = f'<span class="eff">gilt ab {d_short(a["effective"])}</span>' if a.get("effective") else ""
+    when = d_long(a["published"]) if long else d_short(a["published"])
+    rts = f'<span class="dot-sep">{reading_time(a)} Min. Lesezeit</span>' if rt else ""
+    return f'<div class="meta">{tag(a["category"], up)}<time datetime="{a["published"]}">{when}</time>{eff}{rts}</div>'
 
 
-def mini(cat):
-    return f'<span class="mini" aria-hidden="true">{ICONS.get(cat, "")}</span>'
+def card(a, up, size=""):
+    href = f'{up}artikel/{a["id"]}.html'
+    teaser = a["teaser"]
+    if len(teaser) > 170:
+        teaser = teaser[:170].rsplit(" ", 1)[0] + " …"
+    return f"""<article class="card {size}" data-cat="{a['category']}" style="{cat_style(a['category'])}">
+  <a class="card-link" href="{href}" tabindex="-1" aria-hidden="true"></a>
+  <div class="card-cover">{cover(a)}</div>
+  <div class="card-body">{meta(a, up, rt=False)}<h3><a href="{href}">{e(a['title'])}</a></h3><p>{e(teaser)}</p><span class="more">Weiterlesen</span></div>
+</article>"""
 
 
-def card(it, up, feature=False, sticker=""):
-    eff = f'<span class="eff">gilt ab {d_short(it["effective"])}</span>' if it.get("effective") else ""
-    meta = f'<div class="meta">{tag(it["category"])}<time datetime="{it["date"]}">{d_short(it["date"])}</time>{eff}<span class="dot-sep">{reading_time(it)} Min.</span></div>'
-    href = f'{up}meldungen/{it["id"]}.html'
-    stk = f'<span class="sticker">{e(sticker)}</span>' if sticker else ""
-    if feature:
-        return f"""<a class="card feature cat-{it['category']}" href="{href}" data-cat="{it['category']}">{stk}
-  <div>{meta}<h3>{e(it['title'])}</h3><p>{e(it['summary'])}</p><span class="more">Ganzen Beitrag lesen</span></div>
-  <div class="feature-side"><b>Für die Praxis</b>{e(it['todo'])}</div>
-</a>"""
-    summary = it["summary"]
-    if len(summary) > 200:
-        summary = summary[:200].rsplit(" ", 1)[0] + " …"
-    return f"""<a class="card cat-{it['category']}" href="{href}" data-cat="{it['category']}">
-  <span class="icon" aria-hidden="true">{ICONS.get(it['category'], '')}</span>{meta}<h3>{e(it['title'])}</h3><p>{e(summary)}</p><span class="more">Weiterlesen</span>
-</a>"""
-
-
-def chips(present, target):
-    btns = ['<button type="button" class="chip" data-cat="alle" aria-pressed="true">Alle</button>']
-    for k in ORDER:
-        if k in present:
-            btns.append(f'<button type="button" class="chip cat-{k}" data-cat="{k}" aria-pressed="false">{ICONS[k]}{e(CATS[k][0])}</button>')
-    return f'<div class="chips" role="group" aria-label="Nach Thema filtern" data-filter="{target}">{"".join(btns)}</div>'
+def mini_row(a, up):
+    return f'<a class="mini-row" href="{up}artikel/{a["id"]}.html" style="{cat_style(a["category"])}"><span class="mini-ico" aria-hidden="true">{ICONS[a["category"]]}</span><span><span class="mini-cat">{e(CATS[a["category"]][1])}</span><b>{e(a["title"])}</b></span></a>'
 
 
 def kennzahlen_panel():
@@ -205,191 +260,227 @@ def cal(iso):
     return f'<span class="cal" aria-hidden="true"><span class="m">{SHORT_MONTHS[int(m) - 1]}</span><span class="d">{int(d)}</span><span class="y">{y}</span></span>'
 
 
-def termine_panel():
+def termine_panel(limit=None):
     today = date.today().isoformat()
     ts = sorted([t for t in DATA.get("termine", []) if t["date"] >= today], key=lambda t: t["date"])
+    if limit:
+        ts = ts[:limit]
     if not ts:
         return ""
-    lis = "".join(f'<li>{cal(t["date"])}<span><span class="sr-date">{d_short(t["date"])}: </span>{e(t["label"])}</span></li>' for t in ts)
+    lis = "".join(f'<li>{cal(t["date"])}<span><span class="sr-only">{d_short(t["date"])}: </span>{e(t["label"])}</span></li>' for t in ts)
     return f'<div class="panel"><h3>Termine und Fristen</h3><ul class="dates">{lis}</ul></div>'
 
 
-def nl_band(up):
-    return f"""<section class="nl-band"><div class="wrap"><div class="nl-box">
-<div><span class="hand">Ihr Montag, sortiert</span><h2>Nur die Themen, die Sie wirklich brauchen</h2><p>Themen auswählen, und jeden Montag kommt eine kurze Mail mit genau diesen Meldungen. Kein Rauschen.</p></div>
-<div><a class="btn" href="{up}newsletter.html">Newsletter einrichten</a></div>
-</div></div></section>"""
+def chips(target, present):
+    btns = ['<button type="button" class="chip" data-cat="alle" aria-pressed="true">Alle</button>']
+    for k in ORDER:
+        if k in present:
+            btns.append(f'<button type="button" class="chip" data-cat="{k}" aria-pressed="false" style="{cat_style(k)}">{ICONS[k]}{e(CATS[k][1])}</button>')
+    return f'<div class="chips" role="group" aria-label="Nach Rubrik filtern" data-filter="{target}">{"".join(btns)}</div>'
 
 
 # ---------- Seiten ----------
 
 def build_home():
-    eds = editions()
-    cur = eds[0]
-    its = items_of(cur["id"])
-    feature = next((i for i in its if i["category"] == "rechtsprechung"), its[0] if its else None)
-    rest = [i for i in its if i is not feature]
-    older = [i for ed in eds[1:3] for i in items_of(ed["id"])]
-    hl = "".join(f"<li>{e(h)}</li>" for h in cur.get("highlights", []))
-    cards = (card(feature, "", True, "Top-Thema") if feature else "") + "".join(card(i, "") for i in rest)
-    older_html = ""
-    if older:
-        older_html = f"""<section class="block"><div class="wrap"><div class="block-head"><div><span class="hand">Falls Sie es verpasst haben</span><h2>Aus den letzten Ausgaben</h2></div><a href="ausgaben/index.html">Alle Ausgaben</a></div>
-<div class="grid">{"".join(card(i, "") for i in older[:6])}</div></div></section>"""
-    body = f"""<section class="hero"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><div class="wrap">
-<div>
-  <span class="eyebrow"><span class="pill">Ausgabe {e(cur['label'])}</span>{d_long(cur['date'])}</span>
-  <h1>Was diese Woche im <span class="squiggle">HR-Recht</span> zählt</h1>
-  <p class="lead">Neue Urteile, Gesetzesänderungen und Zahlen aus den Sozialversicherungen. Verständlich erklärt, mit einem konkreten Tipp, was Sie im HR jetzt tun können.</p>
-  <div class="btn-row"><a class="btn" href="ausgaben/{cur['id']}.html">Ganze Ausgabe lesen</a><a class="btn ghost" href="newsletter.html">Newsletter</a></div>
-</div>
-<div class="note-card"><h2>Kurz &amp; knapp</h2><ol>{hl}</ol></div>
+    arts = articles()
+    lead = next((a for a in arts if a.get("featured")), arts[0])
+    rest = [a for a in arts if a is not lead]
+    side = rest[:4]
+    latest = rest[4:16]
+    newest_day = arts[0]["published"]
+    today_count = sum(1 for a in arts if a["published"] == newest_day)
+    sections = ""
+    for k in ORDER:
+        items = [a for a in by_cat(k) if a is not lead][:3]
+        if len(items) < 2:
+            continue
+        sections += f"""<section class="cat-section" style="{cat_style(k)}"><div class="block-head"><span class="cat-kicker">{ICONS[k]}{e(CATS[k][0])}</span><a class="see-all" href="rubrik/{k}.html">Alle {len(by_cat(k))} Beiträge</a></div>
+<div class="grid three">{"".join(card(a, "") for a in items)}</div></section>"""
+    tags = {}
+    for a in arts:
+        for t in a.get("tags", []):
+            tags[t] = tags.get(t, 0) + 1
+    tag_html = "".join(f'<a class="topic" href="suche.html#{e(t)}">{e(t)}<span>{n}</span></a>' for t, n in sorted(tags.items(), key=lambda x: (-x[1], x[0]))[:18])
+    body = f"""<section class="hero"><span class="blob b1"></span><span class="blob b2"></span><div class="wrap">
+  <div class="today"><span class="hand">Heute auf dem Radar</span><span class="today-date">{d_day(newest_day)} · {today_count} {"neuer Beitrag" if today_count == 1 else "neue Beiträge"}</span></div>
+  <div class="hero-grid">
+    <article class="lead-story" style="{cat_style(lead['category'])}">
+      <a class="card-link" href="artikel/{lead['id']}.html" tabindex="-1" aria-hidden="true"></a>
+      <div class="lead-cover">{cover(lead)}<span class="sticker">Top-Thema</span></div>
+      <div class="lead-body">{meta(lead, '')}<h1><a href="artikel/{lead['id']}.html">{e(lead['title'])}</a></h1><p>{e(lead['teaser'])}</p><span class="btn">Ganzen Beitrag lesen</span></div>
+    </article>
+    <aside class="side-stories" aria-label="Weitere Top-Beiträge"><h2 class="hand">Ebenfalls wichtig</h2>{"".join(mini_row(a, "") for a in side)}</aside>
+  </div>
 </div></section>
 <section class="block"><div class="wrap">
-<div class="block-head"><div><span class="hand">Frisch eingetroffen</span><h2>Neueste Beiträge</h2></div>{chips({i['category'] for i in its}, '#latest .card')}</div>
-<div class="grid" id="latest">{cards}</div>
+  <div class="block-head"><div><span class="hand">Frisch eingetroffen</span><h2>Neueste Beiträge</h2></div>{chips('#latest .card', {a['category'] for a in latest})}</div>
+  <div class="grid" id="latest">{"".join(card(a, "") for a in latest)}</div>
 </div></section>
-{nl_band('')}
 {WAVE}
-<section class="block band"><div class="wrap"><div class="block-head"><div><span class="hand">Zum Nachschlagen</span><h2>Auf einen Blick</h2></div></div>
-<div class="two">{kennzahlen_panel()}{termine_panel()}</div></div></section>
-<svg class="wave flip" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 V20 C 150 0 300 40 450 22 S 750 0 900 20 S 1100 40 1200 18 V46 Z" fill="currentColor"/></svg>
-{older_html}"""
+<section class="block band"><div class="wrap">
+  <div class="block-head"><div><span class="hand">Zum Nachschlagen</span><h2>Auf einen Blick</h2></div></div>
+  <div class="two">{kennzahlen_panel()}{termine_panel(6)}</div>
+</div></section>
+{WAVE_FLIP}
+<section class="block"><div class="wrap">
+  <div class="block-head"><div><span class="hand">Nach Themen stöbern</span><h2>Die Rubriken</h2></div></div>
+  {sections}
+  <div class="topics-box"><h3>Beliebte Stichworte</h3><div class="topics">{tag_html}</div></div>
+</div></section>"""
     write("index.html", layout(SITE_NAME, body, 0, active="home"))
 
 
-def build_item(it):
+def build_article(a):
     up = "../"
-    ed = next((x for x in DATA["editions"] if x["id"] == it["edition"]), None)
-    eff = f'<span class="eff">gilt ab {d_short(it["effective"])}</span>' if it.get("effective") else ""
-    details = it.get("details")
-    if details:
-        body_html = f'<div class="tldr"><span class="hand">In 30 Sekunden</span><p>{e(it["summary"])}</p></div><div class="body">' + "".join(f"<h2>{e(s['h'])}</h2><p>{e(s['p'])}</p>" for s in details) + "</div>"
-        lead = ""
-    else:
-        body_html = ""
-        lead = f'<p class="lead">{e(it["summary"])}</p>'
-    refs = "".join(f'<span class="ref">{e(r)}</span>' for r in it.get("refs", []))
-    src = it.get("source")
-    src_html = f'<a href="{e(src["url"])}" rel="noopener">{e(src["label"])}</a>' if src else "–"
-    related = [i for i in items_of(it["edition"]) if i["id"] != it["id"]][:5]
-    rel_html = ""
-    if related:
-        lis = "".join(f'<li><a class="cat-{i["category"]}" href="{i["id"]}.html">{mini(i["category"])}{e(i["title"])}</a></li>' for i in related)
-        rel_html = f'<div class="related"><h2>Lesen Sie auch</h2><ul>{lis}</ul></div>'
-    crumb_ed = f' › <a href="{up}ausgaben/{ed["id"]}.html">Ausgabe {e(ed["label"])}</a>' if ed else ""
-    body = f"""<div class="narrow cat-{it['category']}">
-<div class="crumbs"><a href="{up}index.html">Aktuell</a>{crumb_ed}</div>
-<article class="post">
-  <div class="meta">{tag(it['category'])}<time datetime="{it['date']}">{d_long(it['date'])}</time>{eff}<span class="dot-sep">{reading_time(it)} Min. Lesezeit</span></div>
-  <h1>{e(it['title'])}</h1>
-  {lead}{body_html}
-  <div class="practice"><span class="icon">{BULB}</span><h2>Für die Praxis</h2><p>{e(it['todo'])}</p></div>
-  <dl class="facts">
-    <div><dt>Rechtsgrundlagen und Fundstellen</dt><dd class="refs">{refs}</dd></div>
-    <div><dt>Quelle</dt><dd>{src_html}</dd></div>
-  </dl>
+    k = a["category"]
+    secs = "".join(f"<h2>{e(s['h'])}</h2><p>{e(s['p'])}</p>" for s in a.get("sections", []))
+    tldr = f'<div class="tldr"><span class="hand">In 30 Sekunden</span><p>{e(a["summary"])}</p></div>' if a.get("sections") else f'<div class="body"><p>{e(a["summary"])}</p></div>'
+    takeaways = "".join(f"<li>{e(t)}</li>" for t in a.get("takeaways", []))
+    refs = "".join(f'<span class="ref">{e(r)}</span>' for r in a.get("refs", []))
+    srcs = "".join(f'<li><a href="{e(s["url"])}" rel="noopener">{e(s["label"])}</a></li>' for s in a.get("sources", []))
+    tags_html = "".join(f'<a class="topic" href="{up}suche.html#{e(t)}">{e(t)}</a>' for t in a.get("tags", []))
+    related = [x for x in by_cat(k) if x["id"] != a["id"]][:3]
+    if len(related) < 3:
+        related += [x for x in articles() if x["id"] != a["id"] and x not in related][:3 - len(related)]
+    event = f'<p class="event">Ereignis vom {d_long(a["date"])}</p>' if a.get("date") and a["date"] != a["published"] else ""
+    refs_block = f'<p class="refs-label">Rechtsgrundlagen und Stichworte</p><div class="refs">{refs}</div>' if refs else ""
+    body = f"""<article class="post" style="{cat_style(k)}">
+  <div class="post-hero"><div class="narrow">
+    <div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="{up}rubrik/{k}.html">{e(CATS[k][0])}</a></div>
+    {meta(a, up, True)}
+    <h1>{e(a['title'])}</h1>
+    <p class="lead">{e(a['teaser'])}</p>
+    {event}
+  </div></div>
+  <div class="narrow">
+    <div class="post-cover">{cover(a)}</div>
+    {tldr}
+    <div class="body">{secs}</div>
+    <div class="practice"><span class="icon">{BULB}</span><h2>Das heisst für HR</h2><ul>{takeaways}</ul></div>
+    <section class="sources" aria-labelledby="q-h"><h2 id="q-h">Quellen</h2><ol>{srcs}</ol>{refs_block}</section>
+    <div class="post-foot"><div class="topics">{tags_html}</div><button class="btn ghost" id="copy-link" type="button">{LINK}<span>Link kopieren</span></button></div>
+  </div>
 </article>
-{rel_html}
-</div>
-{nl_band(up)}"""
-    write(f"meldungen/{it['id']}.html", layout(it["title"], body, 1, desc=it["summary"][:160]))
+<section class="block band-soft"><div class="wrap"><div class="block-head"><div><span class="hand">Weiterlesen</span><h2>Das könnte Sie auch interessieren</h2></div></div>
+<div class="grid three">{"".join(card(x, up) for x in related)}</div></div></section>"""
+    write(f"artikel/{a['id']}.html", layout(a["title"], body, 1, desc=a["teaser"][:160], article=True))
 
 
-def build_edition(ed):
+def build_category(k):
     up = "../"
-    its = items_of(ed["id"])
-    hl = "".join(f"<li>{e(h)}</li>" for h in ed.get("highlights", []))
-    groups = ""
-    for k in ORDER:
-        g = [i for i in its if i["category"] == k]
-        if not g:
-            continue
-        rows = "".join(
-            f'<a class="list-row cat-{k}" href="{up}meldungen/{i["id"]}.html"><div class="meta"><time datetime="{i["date"]}">{d_short(i["date"])}</time>'
-            + (f'<span class="eff">gilt ab {d_short(i["effective"])}</span>' if i.get("effective") else "")
-            + f'<span class="dot-sep">{reading_time(i)} Min.</span></div><h3>{e(i["title"])}</h3><p>{e(i["summary"])}</p></a>'
-            for i in g)
-        groups += f'<div class="edition-group cat-{k}"><h2>{mini(k)}{e(CATS[k][0])}</h2>{rows}</div>'
-    body = f"""<div class="narrow">
-<div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Ausgaben</a></div>
-<article class="post">
-  <span class="eyebrow"><span class="pill">{len(its)} Beiträge</span>{d_long(ed['date'])}</span>
-  <h1>Ausgabe {e(ed['label'])}</h1>
-  <div class="note-card edition-hl"><h2>Kurz &amp; knapp</h2><ol>{hl}</ol></div>
-  {groups}
-</article>
-</div>
-{nl_band(up)}"""
-    write(f"ausgaben/{ed['id']}.html", layout(f"Ausgabe {ed['label']}", body, 1, active="ausgaben"))
+    items = by_cat(k)
+    body = f"""<section class="cat-hero" style="{cat_style(k)}"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS[k]}</span>
+  <div><span class="hand">Rubrik</span><h1>{e(CATS[k][0])}</h1><p class="lead">{e(CATS[k][2])}</p><p class="count">{len(items)} Beiträge</p></div>
+</div></section>
+<section class="block"><div class="wrap"><div class="grid">{"".join(card(a, up) for a in items) or '<p class="empty">Noch keine Beiträge in dieser Rubrik. Schauen Sie bald wieder vorbei.</p>'}</div></div></section>"""
+    write(f"rubrik/{k}.html", layout(CATS[k][0], body, 1, desc=CATS[k][2], active="rubrik-" + k))
 
 
 def build_archive():
-    up = "../"
-    rows = ""
-    for ed in editions():
-        its = items_of(ed["id"])
-        first = ed.get("highlights", [""])[0]
-        rows += f'<a class="list-row" href="{ed["id"]}.html"><div class="meta"><time datetime="{ed["date"]}">{d_long(ed["date"])}</time><span>{len(its)} Beiträge</span></div><h3>Ausgabe {e(ed["label"])}</h3><p>{e(first)}</p></a>'
-    body = f"""<div class="narrow archive">
-<div class="crumbs"><a href="{up}index.html">Aktuell</a></div>
-<article class="post"><span class="eyebrow"><span class="pill">Archiv</span></span><h1>Alle Ausgaben</h1>
-<p class="lead">Jeden Montag erscheint eine neue Ausgabe. Hier finden Sie alle bisherigen Ausgaben.</p>{rows}</article>
+    days = {}
+    for a in articles():
+        days.setdefault(a["published"], []).append(a)
+    blocks = ""
+    for day in sorted(days, reverse=True):
+        rows = "".join(mini_row(a, "") for a in days[day])
+        blocks += f'<section class="day"><h2 class="hand">{d_day(day)}</h2><div class="day-list">{rows}</div></section>'
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Archiv</span>{len(DATA['articles'])} Beiträge</span>
+<h1>Alle Beiträge nach Datum</h1>
+<p class="lead">Jeden Tag kommt mindestens ein neuer Beitrag dazu. Hier finden Sie alles, was bisher erschienen ist.</p>
+{blocks}
 </div>"""
-    write("ausgaben/index.html", layout("Alle Ausgaben", body, 1, active="ausgaben"))
+    write("archiv.html", layout("Archiv", body, 0, active="archiv"))
+
+
+def build_search():
+    index = [{"id": a["id"], "t": a["title"], "x": a["teaser"], "c": a["category"], "cn": CATS[a["category"]][1],
+              "g": a.get("tags", []), "r": a.get("refs", []), "d": a["published"]} for a in articles()]
+    write("search.json", json.dumps(index, ensure_ascii=False))
+    colors = json.dumps({k: PALETTE[k] for k in PALETTE})
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Suche</span></span>
+<h1>Was suchen Sie?</h1>
+<div class="search-box">{SEARCH}<input type="search" id="q" placeholder="z.B. Kündigung, BVG, KI, Art. 336 OR" aria-label="Beiträge durchsuchen" autocomplete="off"></div>
+<p class="search-status" id="status" aria-live="polite"></p>
+<div id="results" class="day-list"></div>
+</div>
+<script>
+(function () {{
+  var COLORS = {colors};
+  var input = document.getElementById('q'), out = document.getElementById('results'), status = document.getElementById('status');
+  var data = [];
+  function render() {{
+    var q = input.value.trim().toLowerCase();
+    out.textContent = '';
+    if (!q) {{ status.textContent = data.length + ' Beiträge durchsuchbar.'; return; }}
+    var hits = data.filter(function (a) {{
+      return [a.t, a.x, a.cn, a.g.join(' '), a.r.join(' ')].join(' ').toLowerCase().indexOf(q) !== -1;
+    }});
+    status.textContent = hits.length ? hits.length + ' Treffer' : 'Keine Treffer. Versuchen Sie einen anderen Begriff.';
+    hits.forEach(function (a) {{
+      var link = document.createElement('a');
+      link.className = 'mini-row'; link.href = 'artikel/' + a.id + '.html';
+      link.style.setProperty('--catc', COLORS[a.c][0]); link.style.setProperty('--catb', COLORS[a.c][1]);
+      var wrap = document.createElement('span');
+      var cat = document.createElement('span'); cat.className = 'mini-cat'; cat.textContent = a.cn;
+      var b = document.createElement('b'); b.textContent = a.t;
+      var p = document.createElement('span'); p.className = 'mini-teaser'; p.textContent = a.x;
+      wrap.appendChild(cat); wrap.appendChild(b); wrap.appendChild(p); link.appendChild(wrap); out.appendChild(link);
+    }});
+  }}
+  input.addEventListener('input', render);
+  fetch('search.json').then(function (r) {{ return r.json(); }}).then(function (d) {{
+    data = d;
+    if (location.hash) {{ input.value = decodeURIComponent(location.hash.slice(1)); }}
+    render();
+  }}).catch(function () {{ status.textContent = 'Die Suche konnte nicht geladen werden. Bitte laden Sie die Seite neu.'; }});
+}})();
+</script>"""
+    write("suche.html", layout("Suche", body, 0, active="suche"))
 
 
 def build_newsletter():
     interests = "".join(
-        f'<label class="interest cat-{k}"><span class="mini" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[1])}</span></div><input type="checkbox" name="interessen" value="{k}" checked></label>'
+        f'<label class="interest" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div><input type="checkbox" name="interessen" value="{k}" checked></label>'
         for k, v in CATS.items())
-    feeds = "".join(f'<li><a href="feeds/{k}.xml">{e(v[0])}</a> <code>feeds/{k}.xml</code></li>' for k, v in CATS.items())
     if NL_ACTION:
-        action = f'action="{e(NL_ACTION)}" method="post"'
-        notice = ""
-        disabled = ""
+        action, notice, disabled = f'action="{e(NL_ACTION)}" method="post"', "", ""
     else:
         action = 'action="#" onsubmit="return false"'
-        notice = '<p class="notice">Die Anmeldung wird in Kürze freigeschaltet. Bis dahin können Sie die Themen über die RSS-Feeds unten abonnieren.</p>'
+        notice = '<p class="notice">Der Newsletter startet in Kürze. Bis dahin können Sie die Rubriken über die RSS-Feeds unten abonnieren.</p>'
         disabled = " disabled"
-    body = f"""<div class="narrow">
-<div class="crumbs"><a href="index.html">Aktuell</a></div>
-<article class="post">
-  <span class="eyebrow"><span class="pill">Newsletter</span></span>
-  <h1>Ihr persönlicher HR-Recht Radar</h1>
-  <p class="lead">Wählen Sie die Themen, die für Sie relevant sind. Jeden Montag erhalten Sie eine E-Mail mit genau diesen Meldungen, kurz zusammengefasst und mit Link zum ausführlichen Beitrag.</p>
-  {notice}
-  <form class="nl" {action}>
-    <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
-    <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="vorname" autocomplete="given-name"></div>
-    <fieldset><legend>Welche Themen interessieren Sie?</legend><div class="interest-grid">{interests}</div></fieldset>
-    <label class="consent"><input type="checkbox" id="nl-consent" name="einwilligung" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse und meine Themenwahl dafür gespeichert werden. Ich kann mich jederzeit über den Link in jeder E-Mail abmelden.</span></label>
-    <div><button class="btn red" type="submit"{disabled}>Newsletter abonnieren</button></div>
-  </form>
-  <h2>RSS-Feeds pro Thema</h2>
-  <p>Für Feed-Reader oder Tools wie Outlook und Teams gibt es jedes Thema auch als eigenen Feed. Alle Meldungen: <a href="feed.xml">feed.xml</a></p>
-  <ul class="feeds">{feeds}</ul>
-</article>
+    feeds = "".join(f'<li><a href="feeds/{k}.xml">{e(v[0])}</a></li>' for k, v in CATS.items())
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Newsletter</span></span>
+<h1>Ihr persönlicher HR Radar</h1>
+<p class="lead">Wählen Sie die Themen, die Sie wirklich brauchen. Sie erhalten eine kompakte Übersicht mit genau diesen Beiträgen.</p>
+{notice}
+<form class="nl" {action}>
+  <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
+  <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="vorname" autocomplete="given-name"></div>
+  <fieldset><legend>Welche Rubriken interessieren Sie?</legend><div class="interest-grid">{interests}</div></fieldset>
+  <label class="consent"><input type="checkbox" id="nl-consent" name="einwilligung" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse und meine Themenwahl dafür gespeichert werden. Abmelden ist jederzeit möglich.</span></label>
+  <div><button class="btn red" type="submit"{disabled}>Newsletter abonnieren</button></div>
+</form>
+<h2>RSS-Feeds</h2><p>Alle Beiträge: <a href="feed.xml">feed.xml</a></p><ul class="feeds">{feeds}</ul>
 </div>"""
     write("newsletter.html", layout("Newsletter", body, 0, active="newsletter"))
 
 
 def build_about():
-    cats = "".join(f"<li><b>{e(v[0])}:</b> {e(v[1])}</li>" for v in CATS.values())
-    body = f"""<div class="narrow">
-<div class="crumbs"><a href="index.html">Aktuell</a></div>
-<article class="post">
-  <span class="eyebrow"><span class="pill">Über</span></span>
-  <h1>Über den {e(SITE_NAME)}</h1>
-  <p class="lead">Der {e(SITE_NAME)} fasst jede Woche zusammen, was sich im Schweizer Arbeitsrecht und rund um HR bewegt. Er richtet sich an HR-Leiterinnen und HR-Leiter, HR-Fachleute und alle, die Arbeitsverhältnisse gestalten.</p>
-  <h2>Themen</h2><ul>{cats}</ul>
-  <h2>So entstehen die Beiträge</h2>
-  <p>Grundlage sind öffentlich zugängliche Quellen: Urteile des Bundesgerichts und des EGMR, Medienmitteilungen des Bundesrats und der Bundesämter sowie Fachpublikationen. Die Inhalte werden mit KI-Unterstützung recherchiert, zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag verlinkt seine Quelle.</p>
-  <h2>Keine Rechtsberatung</h2>
-  <p>Die Beiträge dienen der allgemeinen Information und ersetzen keine Beratung im Einzelfall. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen. Massgebend sind die Originalquellen.</p>
-  <h2>Impressum</h2>
-  <p>Herausgeber: {e(PUBLISHER)}</p>
-</article>
+    cats = "".join(f'<li style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div></li>' for k, v in CATS.items())
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Über</span></span>
+<h1>Was HR heute wissen muss</h1>
+<p class="lead">{e(SITE_NAME)} ist die Newsplattform für HR-Leiterinnen, HR-Leiter und HR-Fachleute in der Schweiz. Jeden Tag fassen wir zusammen, was sich bewegt: neue Urteile, Gesetze, Zahlen, Studien und Trends.</p>
+<h2>Sieben Rubriken</h2><ul class="cat-list">{cats}</ul>
+<h2>So entstehen die Beiträge</h2>
+<p>Grundlage sind öffentlich zugängliche Quellen: Urteile, Medienmitteilungen von Bund und Kantonen, Studien, Fachpublikationen und Medienberichte. Die Inhalte werden mit KI-Unterstützung recherchiert, in eigenen Worten zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag nennt seine Quellen, damit Sie das Original nachlesen können.</p>
+<h2>Keine Rechtsberatung</h2>
+<p>Die Beiträge dienen der allgemeinen Information und ersetzen keine Beratung im Einzelfall. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen.</p>
+<h2>Impressum</h2><p>Herausgeber: {e(PUBLISHER)}</p>
 </div>"""
     write("ueber.html", layout("Über", body, 0, active="ueber"))
 
@@ -398,45 +489,53 @@ def rss(path, title, items):
     def rfc(iso):
         return format_datetime(datetime.strptime(iso, "%Y-%m-%d").replace(hour=6))
     entries = ""
-    for it in items:
-        link = f"{SITE_URL}meldungen/{it['id']}.html"
-        desc = f"<p>{e(it['summary'])}</p><p><b>Für die Praxis:</b> {e(it['todo'])}</p>"
-        ed = next((x for x in DATA["editions"] if x["id"] == it["edition"]), {"date": it["date"]})
-        entries += f"""<item><title>{e(it['title'])}</title><link>{link}</link><guid isPermaLink="true">{link}</guid>
-<pubDate>{rfc(ed['date'])}</pubDate><category>{e(CATS.get(it['category'], (it['category'],))[0])}</category>
-<description>{e(desc)}</description></item>
+    for a in items:
+        link = f"{SITE_URL}artikel/{a['id']}.html"
+        desc = f"<p>{e(a['teaser'])}</p>"
+        entries += f"""<item><title>{e(a['title'])}</title><link>{link}</link><guid isPermaLink="true">{link}</guid>
+<pubDate>{rfc(a['published'])}</pubDate><category>{e(CATS[a['category']][0])}</category><description>{e(desc)}</description></item>
 """
-    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
-<title>{e(title)}</title><link>{SITE_URL}</link>
-<description>Wöchentliche News zu Arbeitsrecht und HR in der Schweiz</description>
-<language>de-ch</language><lastBuildDate>{rfc(DATA['updated'])}</lastBuildDate>
+    write(path, f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>{e(title)}</title><link>{SITE_URL}</link>
+<description>Täglich das Wichtigste für HR-Profis in der Schweiz</description><language>de-ch</language>
+<lastBuildDate>{rfc(DATA['updated'])}</lastBuildDate>
 {entries}</channel></rss>
-"""
-    write(path, xml)
+""")
 
 
 def build_feeds():
-    eds = {x["id"]: x["date"] for x in DATA["editions"]}
-    all_items = sorted(DATA["items"], key=lambda i: (eds.get(i["edition"], ""), i["date"]), reverse=True)[:60]
-    rss("feed.xml", SITE_NAME, all_items)
+    arts = articles()[:80]
+    rss("feed.xml", SITE_NAME, arts)
     for k, v in CATS.items():
-        rss(f"feeds/{k}.xml", f"{SITE_NAME}: {v[0]}", [i for i in all_items if i["category"] == k])
+        rss(f"feeds/{k}.xml", f"{SITE_NAME}: {v[0]}", [a for a in arts if a["category"] == k])
+
+
+def check():
+    ids = set()
+    for a in DATA["articles"]:
+        assert a["category"] in CATS, f"Unbekannte Rubrik: {a['category']} ({a['id']})"
+        assert a["id"] not in ids, f"Doppelte id: {a['id']}"
+        assert a.get("sources"), f"Keine Quellen: {a['id']}"
+        for f in ("title", "teaser", "summary", "published"):
+            assert a.get(f), f"Feld {f} fehlt: {a['id']}"
+        ids.add(a["id"])
 
 
 def main():
-    for d in ("meldungen", "ausgaben", "feeds"):
+    check()
+    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben"):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     build_home()
-    for ed in editions():
-        build_edition(ed)
+    for a in DATA["articles"]:
+        build_article(a)
+    for k in ORDER:
+        build_category(k)
     build_archive()
-    for it in DATA["items"]:
-        build_item(it)
+    build_search()
     build_newsletter()
     build_about()
     build_feeds()
-    print(f"OK: {len(DATA['editions'])} Ausgaben, {len(DATA['items'])} Meldungen")
+    print(f"OK: {len(DATA['articles'])} Artikel in {len(CATS)} Rubriken")
 
 
 if __name__ == "__main__":

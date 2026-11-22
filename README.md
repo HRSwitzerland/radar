@@ -1,16 +1,32 @@
-# HR-Recht Radar Schweiz
+# HR Radar
 
-Wöchentlicher Newsdienst im Blog-Format zu Arbeitsrecht, Bundesgerichtsurteilen, Gesetzgebung, Sozialversicherungen und HR-Praxis in der Schweiz.
+Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn und Vorsorge, Arbeitsmarkt, Gesundheit und Führung, HR-Tech und KI, HR-Praxis. Jeder Beitrag mit Quellen.
 
-## So funktioniert die Seite
-- `data/news.json` – die einzige Inhaltsquelle: Einstellungen (`site`), Ausgaben, Meldungen, Kennzahlen, Termine
-- `build.py` – erzeugt daraus alle Seiten: `python3 build.py`
-- `assets/style.css` – das Design
-- Erzeugt werden: `index.html` (Startseite), `ausgaben/` (eine Seite pro Ausgabe + Archiv), `meldungen/` (eine Detailseite pro Meldung), `newsletter.html`, `ueber.html`, `feed.xml` und `feeds/<thema>.xml`
+## Aufbau
+- `data/articles.json` – einzige Inhaltsquelle: Einstellungen (`site`), Artikel, Kennzahlen, Termine
+- `build.py` – erzeugt alle Seiten: `python3 build.py` (prüft Pflichtfelder und bricht bei Fehlern ab)
+- `assets/style.css` – Design
+- Erzeugt: `index.html`, `artikel/<id>.html`, `rubrik/<rubrik>.html`, `archiv.html`, `suche.html` + `search.json`, `newsletter.html`, `ueber.html`, `feed.xml`, `feeds/<rubrik>.xml`
 
-Jeden Montag ergänzt eine geplante Aufgabe `data/news.json`, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.
+## Artikelformat (in `articles`, neue Artikel OBEN einfügen)
+```json
+{
+  "id": "slug-a-z-0-9",
+  "published": "JJJJ-MM-TT",
+  "date": "JJJJ-MM-TT (Datum des Ereignisses, optional)",
+  "category": "arbeitsrecht | gesetze | lohn | arbeitsmarkt | gesundheit | digital | praxis",
+  "featured": true,
+  "tags": ["Stichwort"],
+  "title": "...",
+  "teaser": "1-2 Sätze für Karten und Einleitung",
+  "summary": "In 30 Sekunden: 2-4 Sätze",
+  "sections": [{"h": "Zwischentitel", "p": "Absatz"}],
+  "takeaways": ["Das heisst für HR: konkreter Hinweis"],
+  "refs": ["Art. 336 OR"],
+  "effective": "JJJJ-MM-TT (optional)",
+  "sources": [{"label": "Quelle, Datum", "url": "https://..."}]
+}
+```
+`featured: true` macht einen Artikel zum Top-Thema auf der Startseite (immer nur der jüngste zählt).
 
-## Einstellungen in `data/news.json` → `site`
-- `url` – öffentliche Adresse (nach dem Domainwechsel anpassen, wird für RSS-Links gebraucht)
-- `publisher` – Angaben fürs Impressum
-- `newsletter_form_action` – Formular-URL des Newsletter-Dienstes; leer = Anmeldung noch nicht aktiv
+Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.

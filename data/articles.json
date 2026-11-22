@@ -1,0 +1,1136 @@
+{
+  "site": {
+    "name": "HR Radar",
+    "url": "https://hrswitzerland.github.io/radar/",
+    "publisher": "[Name, Adresse und E-Mail ergänzen]",
+    "newsletter_form_action": ""
+  },
+  "updated": "2026-11-22",
+  "articles": [
+    {
+      "id": "lohnrunde-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-03",
+      "category": "lohn",
+      "featured": true,
+      "tags": [
+        "Lohnrunde",
+        "Vergütung",
+        "Sozialpartnerschaft"
+      ],
+      "title": "Lohnrunde 2027: Firmen planen rund 1 Prozent, Gewerkschaften fordern deutlich mehr",
+      "teaser": "Die grossen Umfragen sind da: Unternehmen budgetieren für 2027 im Schnitt Lohnerhöhungen um 1 Prozent. Die Gewerkschaften verlangen 2 bis 2,5 Prozent. Was das für Ihre Lohnrunde bedeutet.",
+      "summary": "Laut UBS-Lohnumfrage planen Schweizer Unternehmen für 2027 im Durchschnitt 1,0 Prozent mehr Lohn, nach effektiv 1,1 Prozent im Jahr 2026. Die KOF-Umfrage kommt auf erwartete 1,2 Prozent. Gewerkschaften fordern 2 bis 2,5 Prozent, der Arbeitgeberverband rechnet mit rund 1 Prozent und will vor allem Leistungsträger berücksichtigen.",
+      "sections": [
+        {
+          "h": "Was die Umfragen zeigen",
+          "p": "Die UBS hat Anfang November knapp 400 Unternehmen befragt. Im Schnitt sind für 2027 Lohnerhöhungen von 1,0 Prozent geplant, nach tatsächlich gewährten 1,1 Prozent im laufenden Jahr. Am oberen Ende liegen Energie- und Entsorgungsbetriebe mit 1,5 Prozent sowie Chemie/Pharma und die Metallbranche mit je 1,2 Prozent. Der Detailhandel plant 0,8 Prozent, die Uhrenbranche 0,7 Prozent. Nach Abzug der erwarteten Teuerung bleibt laut UBS ein reales Plus von rund 0,2 Prozent."
+        },
+        {
+          "h": "Die zweite Messlatte: KOF",
+          "p": "Die Konjunkturforschungsstelle KOF der ETH Zürich erhebt die Lohnerwartungen vierteljährlich. Für Juli 2027 rechnen die befragten Firmen mit einem durchschnittlichen Anstieg der Nominallöhne um 1,2 Prozent, etwas weniger als im Vorjahr (1,3 Prozent). Der Median liegt unverändert bei 1 Prozent, die Hälfte der Firmen erwartet zwischen 0,6 und 1,4 Prozent."
+        },
+        {
+          "h": "Die Positionen der Sozialpartner",
+          "p": "Der Schweizerische Gewerkschaftsbund fordert generelle Lohnerhöhungen von 2,5 Prozent und begründet dies mit der schwachen Lohnentwicklung der letzten Jahre und der besseren Konjunktur. Zusätzlich verlangt er für Personen mit Berufslehre einen Monatslohn von mindestens CHF 5'000. Travail.Suisse fordert 2 Prozent, der Verband Angestellte Schweiz 1,5 Prozent. Der Arbeitgeberverband geht von rund 1 Prozent aus und will Erhöhungen vor allem individuell und leistungsabhängig verteilen."
+        },
+        {
+          "h": "Trend: gezielt statt mit der Giesskanne",
+          "p": "Mehrere Erhebungen zeigen, dass Unternehmen das knappe Budget zunehmend gezielt einsetzen. Gemäss einer Analyse von Michael Page profitieren vor allem gefragte Spezialistinnen und Spezialisten. Die UBS stellt fest, dass KI-Kompetenzen bisher nur vereinzelt zu stärkeren Lohnerhöhungen führen."
+        }
+      ],
+      "takeaways": [
+        "Das eigene Lohnbudget mit den Branchenwerten der UBS-Umfrage vergleichen und die Abweichung begründen können.",
+        "Klar kommunizieren, wie sich generelle und individuelle Anteile zusammensetzen, das reduziert Diskussionen in den Teams.",
+        "Bei gezielten Erhöhungen für Schlüsselpersonen die Lohngleichheit im Blick behalten und Kriterien dokumentieren."
+      ],
+      "refs": [
+        "Lohnrunde 2027"
+      ],
+      "sources": [
+        {
+          "label": "UBS: Lohnumfrage 2027, 03.11.2026",
+          "url": "https://www.ubs.com/global/de/media/display-page-ndp/de-20261103-ubs-outlook-2027.html"
+        },
+        {
+          "label": "Bilanz: Reallohn-Plus von 0,2 Prozent",
+          "url": "https://www.bilanz.ch/konjunktur/neue-ubs-zahlen-lohnrunde-2027-faellt-besonders-mager-aus/6c997vp"
+        },
+        {
+          "label": "KMU-Portal des Bundes: KOF-Lohnerwartungen",
+          "url": "https://www.kmu.admin.ch/de/loehne-duerften-im-naechsten-jahr-nur-leicht-steigen"
+        },
+        {
+          "label": "SRF: SGB fordert 2,5 Prozent",
+          "url": "https://www.srf.ch/news/schweiz/generelle-lohnerhoehung-gewerkschaftsbund-fordert-2-5-prozent-mehr-lohn-ab-2027"
+        },
+        {
+          "label": "SRF: Lohnherbst, Position der Arbeitgeber",
+          "url": "https://www.srf.ch/news/wirtschaft/lohnherbst-gewerkschaften-fordern-zwei-prozent-mehr-lohn"
+        },
+        {
+          "label": "Südostschweiz: Forderungen im Überblick",
+          "url": "https://www.suedostschweiz.ch/panorama/mehr-lohn-fuer-schweizer-25-prozent-werden-fuer-2027-gefordert-so-viel-waere-das-2157510"
+        },
+        {
+          "label": "Cash: Travail.Suisse und Angestellte Schweiz",
+          "url": "https://www.cash.ch/news/gewerkschaftsbund-fordert-generelle-lohnerhohungen-von-25-prozent-967767"
+        },
+        {
+          "label": "Cash: Michael Page zu Lohnerhöhungen für Spezialisten",
+          "url": "https://www.cash.ch/news/lohnerhohungen-laut-studie-vor-allem-fur-spezialisten-983962"
+        },
+        {
+          "label": "Netzwoche: UBS zu KI-Kompetenzen und Lohn, 11.11.2026",
+          "url": "https://www.netzwoche.ch/news/2026-11-11/das-lohnwachstum-in-der-it-flacht-ab-ki-kompetenzen-werden-wichtiger"
+        }
+      ]
+    },
+    {
+      "id": "arbeitsmarkt-oktober-2026",
+      "published": "2026-11-22",
+      "date": "2026-11-05",
+      "category": "arbeitsmarkt",
+      "tags": [
+        "Arbeitslosigkeit",
+        "Fachkräftemangel",
+        "Recruiting"
+      ],
+      "title": "Arbeitsmarkt im Stillstand: Arbeitslosenquote seit Monaten bei 3 Prozent",
+      "teaser": "Die Arbeitslosigkeit bewegt sich kaum noch, der Fachkräftemangel hat sich entspannt, doch in einigen Berufen bleibt es eng. Die wichtigsten Zahlen für Ihre Personalplanung.",
+      "summary": "Ende Oktober 2026 waren 141'015 Personen arbeitslos gemeldet, die Quote blieb bei 3,0 Prozent. Laut SECO herrscht seit rund sechs Monaten praktisch Stillstand. Der Fachkräftemangel hat sich gemäss Adecco-Index deutlich entspannt, Gesundheitsberufe, baunahe Führung und technische Fachleute bleiben aber Engpassbereiche.",
+      "sections": [
+        {
+          "h": "Die Zahlen vom Oktober",
+          "p": "Die Zahl der Arbeitslosen stieg im Oktober gegenüber dem Vormonat um 535 auf 141'015, gegenüber dem Vorjahr um 4,3 Prozent. Die Quote blieb bei 3,0 Prozent. Die Jugendarbeitslosenquote sank auf 3,2 Prozent. Insgesamt waren 230'001 Stellensuchende registriert. Saisonbereinigt lag die Quote bei 3,1 Prozent."
+        },
+        {
+          "h": "Seit Mai kaum Bewegung",
+          "p": "Der Anstieg fiel für einen Oktober ungewöhnlich schwach aus. Jérôme Cosandey, Leiter der SECO-Direktion für Arbeit, sprach von einem praktischen Stillstand seit sechs Monaten, unabhängig von Alter, Geschlecht oder Region. Die Quote liegt aber weiterhin leicht über dem Niveau, das im Durchschnitt eines Konjunkturzyklus zu erwarten wäre."
+        },
+        {
+          "h": "Fachkräftemangel: entspannter, aber nicht vorbei",
+          "p": "Der Fachkräftemangel-Index von Adecco und der Universität Zürich ist um 22 Prozent gesunken und nähert sich dem Niveau vor der Pandemie. In Gesundheitsberufen, in der baunahen Führung und bei technischen Expertinnen und Experten bleibt es jedoch eng. Langfristig wirkt die Demografie als Treiber, etwa beim Bedarf in Pflege und Infrastruktur. Der Adecco Swiss Job Market Index zeigte im zweiten Quartal 2026 zudem 2,4 Prozent weniger offene Stellen als im Vorquartal."
+        }
+      ],
+      "takeaways": [
+        "Für Positionen ausserhalb der Engpassberufe ist der Bewerbermarkt derzeit günstiger: ein guter Moment, Anforderungsprofile zu schärfen.",
+        "In Engpassberufen trotzdem langfristig planen: Nachwuchs, interne Entwicklung und Bindung von Schlüsselpersonen.",
+        "Ab 2027 gilt eine erweiterte Liste meldepflichtiger Berufe: offene Stellen vor der Ausschreibung prüfen."
+      ],
+      "refs": [
+        "Stellenmeldepflicht",
+        "AVIG"
+      ],
+      "sources": [
+        {
+          "label": "SECO: Die Lage auf dem Arbeitsmarkt im Oktober 2026",
+          "url": "https://www.admin.ch/de/newnsb/UuA5YIwSJ2xh"
+        },
+        {
+          "label": "Cash: Arbeitslosigkeit stabilisiert sich im Oktober",
+          "url": "https://www.cash.ch/news/arbeitslosigkeit-in-der-schweiz-stabilisiert-sich-im-oktober-weiter-982788"
+        },
+        {
+          "label": "WEKA: Fachkräftemangel Schweiz, 07.03.2026",
+          "url": "https://www.weka.ch/themen/personal/personalplanung-und-rekrutierung/personalsuche/article/fachkraeftemangel-schweiz-weniger-druck-neue-berufe-ein-arbeitsmarkt-im-umbau-1/"
+        },
+        {
+          "label": "Adecco Group: Swiss Job Market Index Q2 2026",
+          "url": "https://www.adeccogroup.com/-/media/project/adecco-group/switzerland/job-index/job-index-q2-2026/job_index_q2_2026_studie.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ki-bewerbungen-recruiting",
+      "published": "2026-11-22",
+      "date": "2026-04-15",
+      "category": "digital",
+      "tags": [
+        "KI",
+        "Recruiting",
+        "Bewerbungen"
+      ],
+      "title": "KI-Bewerbungen: Zwei Drittel der Stellensuchenden nutzen KI, nur 13 Prozent der Firmen",
+      "teaser": "Bewerberinnen und Bewerber setzen KI längst ein, viele Unternehmen noch kaum. Eine Studie aus der Ostschweiz zeigt, wie sich das Recruiting dadurch verschiebt.",
+      "summary": "Laut einer Studie der Arbeitsmarktbeobachtung Ostschweiz, Aargau, Zug und Zürich (AMOSA) haben rund zwei Drittel der Stellensuchenden KI bereits für die Jobsuche genutzt, regelmässige Nutzer erhielten deutlich mehr Einladungen. Von den Unternehmen setzen erst 13 Prozent KI im Recruiting ein, nur 7 Prozent haben ihren Auswahlprozess angepasst.",
+      "sections": [
+        {
+          "h": "So nutzen Stellensuchende KI",
+          "p": "Befragt wurden rund 6'000 Stellensuchende und 700 Unternehmen. Etwa zwei Drittel der Stellensuchenden haben KI mindestens einmal genutzt, 34 Prozent regelmässig. Am häufigsten dient sie dem Erstellen und Optimieren von Bewerbungsunterlagen (61 Prozent), gefolgt von der Stellensuche (35 Prozent) und der Vorbereitung auf Gespräche (29 Prozent). Regelmässige Nutzer erhielten laut Studie rund 48 Prozent mehr Einladungen. Schneller zurück in den Job fanden sie gemäss den Daten aber nicht."
+        },
+        {
+          "h": "Die Sicht der Unternehmen",
+          "p": "Nur 13 Prozent der Unternehmen setzen KI im Recruiting ein, bei grossen Firmen ist es knapp ein Viertel. Am häufigsten geht es um das Schreiben von Stelleninseraten, die Vorselektion von Bewerbungen ist selten (3,6 Prozent). Die Firmen schätzen, dass rund 39 Prozent der eingehenden Bewerbungen zumindest teilweise mit KI erstellt sind. Über die Hälfte findet, Bewerbungen wirkten zunehmend gleichförmig und Authentizität sei schwerer zu beurteilen."
+        },
+        {
+          "h": "Unterschiedliche Zahlen, ein klarer Trend",
+          "p": "Andere Erhebungen kommen auf höhere Werte: Gemäss Zahlen von Manpower setzen rund 66 Prozent der Schweizer Unternehmen KI in irgendeinem HR-Prozess ein. Der Unterschied liegt vor allem in der Definition: Die AMOSA-Studie fragt gezielt nach dem Recruiting. Einig sind sich die Studien darin, dass Eignungstests, Referenzen und der persönliche Eindruck an Gewicht gewinnen, weil KI sie weniger beeinflusst."
+        }
+      ],
+      "takeaways": [
+        "Das Anschreiben verliert an Aussagekraft: strukturierte Interviews, Arbeitsproben oder Eignungstests stärker gewichten.",
+        "Wer KI im Recruiting einsetzt, sollte Datenschutz (DSG) und mögliche Diskriminierung prüfen und eine menschliche Letztentscheidung sicherstellen.",
+        "Bewerbende transparent informieren, ob und wofür KI im Auswahlverfahren genutzt wird."
+      ],
+      "refs": [
+        "Art. 328b OR",
+        "DSG"
+      ],
+      "sources": [
+        {
+          "label": "Netzwoche: KI öffnet Stellensuchenden mehr Türen, 16.04.2026",
+          "url": "https://www.netzwoche.ch/news/2026-04-16/ki-oeffnet-stellensuchenden-mehr-tueren-zu-bewerbungsgespraechen"
+        },
+        {
+          "label": "AMOSA: KI in Jobsuche und Recruiting 2026 (PDF)",
+          "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/wirtschaft-arbeit/wirtschaftszahlen/AMOSA_KI_Jobsuche_Recruiting_2026.pdf"
+        },
+        {
+          "label": "SRF: KI sortiert vor, so verändert sich die Jobsuche",
+          "url": "https://www.srf.ch/news/dialog/algorithmen-im-hr-ki-sortiert-vor-so-veraendert-sich-die-jobsuche"
+        }
+      ]
+    },
+    {
+      "id": "psychische-absenzen-kmu",
+      "published": "2026-11-22",
+      "date": "2026-08-20",
+      "category": "gesundheit",
+      "tags": [
+        "Absenzen",
+        "Psychische Gesundheit",
+        "BGM",
+        "Führung"
+      ],
+      "title": "Psychisch bedingte Ausfälle nehmen zu, doch KMU tun weniger dagegen",
+      "teaser": "Mehr als ein Drittel der KMU spürt Fehlzeiten wegen psychischer Belastung. Trotzdem gehen die Gegenmassnahmen zurück. Was die AXA-Studie zeigt und wo Führung den Unterschied macht.",
+      "summary": "Gemäss der KMU-Arbeitsmarktstudie 2026 der AXA sind 35 Prozent der KMU mittel oder stark von psychisch bedingten Fehlzeiten betroffen, 2023 waren es 25 Prozent. 42 Prozent melden gestiegene Kosten durch Krankheitsausfälle. Gleichzeitig bieten nur 14 Prozent gezielte Programme für psychische Gesundheit an.",
+      "sections": [
+        {
+          "h": "Die wichtigsten Zahlen",
+          "p": "Mehr als zwei von fünf KMU (42 Prozent) sagen, die Kosten krankheitsbedingter Ausfälle seien in den letzten fünf Jahren gestiegen. Mehr als ein Drittel ist mittel oder stark von Fehlzeiten wegen der psychischen Verfassung der Mitarbeitenden betroffen, deutlich mehr als 2023. Als Hauptursache nennen 46 Prozent private Belastungen, 36 Prozent die hohe Arbeitsbelastung. Weitere Gründe sind Konflikte im Team oder mit Vorgesetzten, fehlende Wertschätzung und Unsicherheit über den Arbeitsplatz."
+        },
+        {
+          "h": "Weniger Massnahmen statt mehr",
+          "p": "Trotz der Entwicklung gehen viele Gegenmassnahmen zurück. Ein angenehmes Arbeitsklima zu fördern nennen noch 36 Prozent (2023: 41 Prozent), eine offene Feedbackkultur 28 Prozent (35 Prozent). Die Schulung von Vorgesetzten stagniert bei 11 Prozent, ein Viertel der KMU ergreift gar keine Massnahmen. Einzig Mitarbeitendenbefragungen haben zugenommen."
+        },
+        {
+          "h": "Führung als Puffer",
+          "p": "Auffällig ist der Zusammenhang mit dem Führungsstil: KMU, die Freiheit und Eigenverantwortung als wichtiges Führungsprinzip nennen, berichten seltener von psychisch bedingten Fehlzeiten. Eine ZHAW-Studie bei Spitex-Organisationen mahnt aber zur Vorsicht bei der Interpretation tiefer Absenzen: Dort, wo Vorgesetzte schlechter bewertet wurden, waren die Krankheitstage tiefer. Die Forschenden sehen darin ein Zeichen für Präsentismus, also Arbeiten trotz Krankheit."
+        }
+      ],
+      "takeaways": [
+        "Absenzen nicht nur zählen, sondern Muster auswerten: Häufungen in Teams, Dauer, Rückkehrgespräche.",
+        "Führungskräfte gezielt schulen, Belastungssignale früh zu erkennen und Gespräche zu führen; das ist laut Studie die am stärksten vernachlässigte Massnahme.",
+        "Tiefe Absenzquoten nicht automatisch als gutes Zeichen werten, sondern mit Befragungen zu Klima und Belastung ergänzen.",
+        "Case Management der Krankentaggeldversicherung und Angebote der IV-Früherfassung frühzeitig einbeziehen."
+      ],
+      "refs": [
+        "Art. 328 OR",
+        "Art. 6 ArG"
+      ],
+      "sources": [
+        {
+          "label": "AXA: Medienmitteilung KMU-Arbeitsmarktstudie 2026, 20.08.2026",
+          "url": "https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2026/20260820-kmu-arbeitsmarktstudie-2026-personalausfaelle.html"
+        },
+        {
+          "label": "KMU-Portal des Bundes: Krankmeldungen kommen KMU teuer zu stehen",
+          "url": "https://www.kmu.admin.ch/de/krankmeldungen-kommen-kmu-teuer-zu-stehen"
+        },
+        {
+          "label": "AXA: Steigende Absenzen in KMU",
+          "url": "https://www.axa.ch/de/unternehmenskunden/blog/mitarbeiter-und-vorsorge/steigende-absenzen-kmu.html"
+        },
+        {
+          "label": "Blick: Wenige Fehltage als Warnsignal (ZHAW-Studie)",
+          "url": "https://www.blick.ch/wirtschaft/gesundheit-im-job-wenige-fehltage-warnsignal-fuer-toxisches-arbeitsklima-id22011422.html"
+        }
+      ]
+    },
+    {
+      "id": "eu-lohntransparenz-schweiz",
+      "published": "2026-11-22",
+      "date": "2026-06-07",
+      "category": "gesetze",
+      "tags": [
+        "Lohntransparenz",
+        "EU-Recht",
+        "Lohngleichheit",
+        "Internationale Unternehmen"
+      ],
+      "title": "EU-Lohntransparenzrichtlinie: Was Schweizer Arbeitgeber mit EU-Standorten jetzt wissen müssen",
+      "teaser": "Seit Juni 2026 läuft die EU-Richtlinie zur Lohntransparenz, die ersten Berichte sind 2027 fällig. Schweizer Unternehmen sind dort betroffen, wo sie in der EU Personal beschäftigen.",
+      "summary": "Die EU-Mitgliedstaaten mussten die Lohntransparenzrichtlinie bis 7. Juni 2026 umsetzen, viele haben die Frist verpasst. Ab 7. Juni 2027 müssen Unternehmen mit 150 und mehr Beschäftigten über das geschlechtsspezifische Lohngefälle berichten. Schweizer Arbeitgeber trifft das für ihre Mitarbeitenden in der EU, die Standards prägen aber zunehmend auch den Schweizer Markt.",
+      "sections": [
+        {
+          "h": "Worum es geht",
+          "p": "Die Richtlinie soll den Grundsatz «gleicher Lohn für gleiche oder gleichwertige Arbeit» durchsetzen. Arbeitgeber brauchen dafür Vergütungsstrukturen mit objektiven, geschlechtsneutralen Kriterien wie Kompetenzen, Belastungen, Verantwortung und Arbeitsbedingungen. Dazu kommen Informationspflichten gegenüber Bewerbenden und Mitarbeitenden sowie regelmässige Berichte."
+        },
+        {
+          "h": "Die Fristen",
+          "p": "Unternehmen mit 250 und mehr Beschäftigten berichten ab 7. Juni 2027 jährlich, solche mit 150 bis 249 Beschäftigten ab demselben Datum alle drei Jahre. Für 100 bis 149 Beschäftigte beginnt die Berichtspflicht 2031. Die Umsetzung verläuft uneinheitlich: Italien, die Slowakei, Litauen und Malta gehörten zu den ersten Staaten mit Umsetzungsgesetz, Deutschland hat die Frist verpasst und plant das Gesetz voraussichtlich erst Anfang 2027. Für öffentliche Arbeitgeber gilt die Richtlinie in Deutschland seit Juni 2026 direkt."
+        },
+        {
+          "h": "Bedeutung für die Schweiz",
+          "p": "Die Richtlinie gilt für Unternehmen, die in der EU tätig sind, unabhängig vom Hauptsitz. Schweizer Arbeitgeber sind deshalb in jenen Mitgliedstaaten betroffen, in denen sie Personal beschäftigen. Beratungsfirmen weisen zudem darauf hin, dass die EU-Standards auch die Erwartungen im Schweizer Arbeitsmarkt prägen, etwa bei Lohnangaben in Stelleninseraten."
+        }
+      ],
+      "takeaways": [
+        "Prüfen, in welchen EU-Staaten wie viele Mitarbeitende beschäftigt sind und welche Schwellenwerte gelten.",
+        "Eine nachvollziehbare Job-Architektur mit Funktionsbewertung aufbauen; sie hilft auch bei der Schweizer Lohngleichheitsanalyse.",
+        "Lohndaten so aufbereiten, dass sich Lohnunterschiede pro Geschlecht und Funktionsgruppe auswerten lassen."
+      ],
+      "refs": [
+        "Richtlinie (EU) 2023/970",
+        "Art. 13a GlG"
+      ],
+      "effective": "2026-06-07",
+      "sources": [
+        {
+          "label": "EY: EU Pay Transparency Directive, Swiss perspective",
+          "url": "https://www.ey.com/en_ch/insights/workforce/how-to-best-prepare-for-the-recently-adopted-eu-directive-on-pay-transparency"
+        },
+        {
+          "label": "Forvis Mazars: EU-Richtlinie zur Lohntransparenz in der Schweiz, Juli 2026",
+          "url": "https://www.forvismazars.com/ch/de/insights/swiss-tax-newsletter/swiss-tax-newsletter-juli-2026/eu-richtlinie-zur-lohntransparenz"
+        },
+        {
+          "label": "IHK Hannover: Berichtspflichten nach Grösse",
+          "url": "https://www.ihk.de/hannover/hauptnavigation/recht/aktuell3/entgelttransparenz-was-unternehmen-wissen-sollten-7072290"
+        },
+        {
+          "label": "IHK Koblenz: Umsetzung in Deutschland verzögert",
+          "url": "https://www.ihk.de/koblenz/unternehmensservice/recht/aktuelles/aktuelle-informationen-aus-recht-und-steuern/die-entgelttransparenzrichtlinie-6961298"
+        },
+        {
+          "label": "GTAI: Entgelttransparenz in Europa, 01.06.2026",
+          "url": "https://www.gtai.de/de/trade/eu/recht/entgelttransparenzrichtlinie-1995652"
+        }
+      ]
+    },
+    {
+      "id": "lohngleichheitsanalyse-schichtzulagen",
+      "published": "2026-11-22",
+      "date": "2026-06-17",
+      "category": "gesetze",
+      "tags": [
+        "Lohngleichheit",
+        "Gleichstellung",
+        "Lohnanalyse"
+      ],
+      "title": "Lohngleichheitsanalyse: Schichtzulagen fallen weg, Wirkungsbericht kommt Ende 2027",
+      "teaser": "Das Parlament hat die Lohngleichheitsanalyse angepasst, und der Bundesrat zieht seine Wirkungsevaluation vor. Ein Überblick, was sich für Arbeitgeber ab 100 Mitarbeitenden ändert.",
+      "summary": "Mit der Motion Schilliger müssen Erschwerniszulagen wie Schichtzulagen künftig nicht mehr zwingend in die Lohngleichheitsanalyse einfliessen; der Ständerat hat am 17. Juni 2026 zugestimmt. Der Bundesrat will seinen Bericht zur Wirkung der Analysepflicht bereits Ende 2027 vorlegen. Gemäss Bundesamt für Statistik haben die geschlechtsspezifischen Lohnunterschiede 2024 weiter abgenommen.",
+      "sections": [
+        {
+          "h": "Was das Parlament beschlossen hat",
+          "p": "Bisher mussten Unternehmen ab 100 Mitarbeitenden bei der Analyse auch Erschwerniszulagen wie Schichtzulagen berücksichtigen. Die Motion Schilliger hebt diese Pflicht auf. Der Nationalrat hatte sie im Mai 2025 gegen den Antrag des Bundesrats angenommen, am 17. Juni 2026 folgte der Ständerat. Der Bundesrat muss nun die Verordnung über die Überprüfung der Lohngleichheitsanalyse anpassen."
+        },
+        {
+          "h": "Wirkungsevaluation früher",
+          "p": "Ob die Analysepflicht zu mehr Lohngleichheit führt, soll eine Wirkungsevaluation zeigen. Der Bundesrat will den Bericht dazu Ende 2027 verabschieden statt wie ursprünglich vorgesehen 2029. Die Pflichten im Gleichstellungsgesetz sind befristet; laut einer Agenturmeldung vom Juni 2026 soll es nach 2032 keine obligatorischen Lohngleichheitsanalysen mehr geben."
+        },
+        {
+          "h": "Wer jetzt noch handeln muss",
+          "p": "Unternehmen, deren erste Analyse gezeigt hat, dass die Lohngleichheit nicht eingehalten ist, müssen die Analyse nach vier Jahren wiederholen, also mit Referenzmonat 2025 und Überprüfung 2026. Wer die Lohngleichheit eingehalten hat, ist von weiteren Analysen befreit. Gemäss BFS sind die geschlechtsspezifischen Lohnunterschiede 2024 weiter zurückgegangen."
+        }
+      ],
+      "takeaways": [
+        "Wer 2026 eine Wiederholungsanalyse durchführen muss: Überprüfung und Information der Mitarbeitenden fristgerecht planen.",
+        "Die Verordnungsänderung zu den Schichtzulagen abwarten, bevor die Analysemethodik angepasst wird.",
+        "Auch ohne Pflicht lohnt sich ein regelmässiger interner Lohnvergleich, besonders mit Blick auf die EU-Lohntransparenz."
+      ],
+      "refs": [
+        "Art. 13a–13i GlG",
+        "Motion Schilliger"
+      ],
+      "sources": [
+        {
+          "label": "Swissmem: Schichtzulagen werden nicht mehr berücksichtigt",
+          "url": "https://www.swissmem.ch/de/themen/arbeitsmarkt-und-sozialpolitik/lohngleichheitsanalyse-schichtzulagen-werden-nicht-mehr-beruecksichtigt.html"
+        },
+        {
+          "label": "Bundesamt für Justiz: Fragen und Antworten zur Revision des GlG",
+          "url": "https://www.bj.admin.ch/de/fragen-und-antworten-zur-revision-des-glg-von-2018"
+        },
+        {
+          "label": "Arbeitsrecht-Aktuell: Wirkungsevaluation bereits Ende 2027",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2025/03/13/ungenuegende-umsetzung-der-lohngleichheitsanalyse/"
+        },
+        {
+          "label": "Südostschweiz/SDA: Keine obligatorischen Lohngleichheitsanalysen nach 2032",
+          "url": "https://www.suedostschweiz.ch/schweiz-und-welt/keine-obligatorischen-lohngleichheitsanalysen-nach-2032-2-1927458"
+        },
+        {
+          "label": "BFS: Lohnunterschiede nahmen 2024 weiter ab, 31.08.2026",
+          "url": "https://www.admin.ch/de/newnsb/HOLsNqc6Wk9S_oKvUFDF5"
+        }
+      ]
+    },
+    {
+      "id": "4a-445-2025",
+      "published": "2026-11-22",
+      "date": "2026-09-09",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Kündigung",
+        "Änderungskündigung",
+        "Fürsorgepflicht"
+      ],
+      "title": "Missbräuchliche Änderungskündigung: Arbeitgeber darf eigene Versäumnisse nicht ausnützen",
+      "teaser": "Ein Spital wollte die Leiterin der Viszeralchirurgie zur Chefärztin mit rund CHF 28'600 tieferem Jahreslohn zurückstufen und kündigte ihr, als sie nicht vorbehaltlos zustimmte. Die angeführten Gründe liessen sich nicht beweisen, und Hinweisen auf Teamkonflikte war das Spital nie nachgegangen. Das Bundesgericht bestätigt eine Entschädigung von CHF 100'000: Eine Änderungskündigung ist missbräuchlich, wenn der Arbeitgeber eine Verletzung seiner eigenen Fürsorgepflicht nutzt, um sehr ungünstige Bedingungen durchzusetzen.",
+      "summary": "Ein Spital wollte die Leiterin der Viszeralchirurgie zur Chefärztin mit rund CHF 28'600 tieferem Jahreslohn zurückstufen und kündigte ihr, als sie nicht vorbehaltlos zustimmte. Die angeführten Gründe liessen sich nicht beweisen, und Hinweisen auf Teamkonflikte war das Spital nie nachgegangen. Das Bundesgericht bestätigt eine Entschädigung von CHF 100'000: Eine Änderungskündigung ist missbräuchlich, wenn der Arbeitgeber eine Verletzung seiner eigenen Fürsorgepflicht nutzt, um sehr ungünstige Bedingungen durchzusetzen.",
+      "sections": [
+        {
+          "h": "Sachverhalt",
+          "p": "Ein Walliser Spital wollte die Leiterin der Viszeralchirurgie auf die Stufe Chefärztin zurückversetzen. Damit wäre ihr Jahreslohn um rund CHF 28'600 gesunken. Weil sie dem Angebot nicht vorbehaltlos zustimmte, sprach das Spital die Kündigung aus. Im Verfahren konnte das Spital keinen der angeführten Gründe beweisen. Zudem hatte es trotz Warnsignalen nie abgeklärt, was hinter den Konflikten im Team steckte."
+        },
+        {
+          "h": "Entscheid",
+          "p": "Das Bundesgericht wies die Beschwerde des Spitals ab und bestätigte die Entschädigung wegen missbräuchlicher Kündigung von CHF 100'000. Eine Änderungskündigung ist missbräuchlich, wenn der Arbeitgeber eine Verletzung seiner eigenen Fürsorgepflicht ausnützt, um sehr ungünstige neue Bedingungen durchzusetzen. Das Gericht knüpft damit an BGE 123 III 246 an."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Eine Änderungskündigung ist kein Ersatz für Konfliktmanagement. Wer bei Spannungen im Team nicht hinschaut und anschliessend die betroffene Person mit schlechteren Bedingungen konfrontiert, riskiert eine hohe Entschädigung. Vor einer Änderungskündigung sollten deshalb die Fakten sauber abgeklärt, Gespräche dokumentiert und die neuen Bedingungen auf Sachlichkeit und Verhältnismässigkeit geprüft werden."
+        }
+      ],
+      "takeaways": [
+        "Vor einer Änderungskündigung Konflikte zuerst abklären und dokumentieren, Gründe belegbar machen und die neuen Bedingungen auf Verhältnismässigkeit prüfen."
+      ],
+      "refs": [
+        "BGer 4A_445/2025",
+        "Art. 336 OR",
+        "BGE 123 III 246"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        }
+      ]
+    },
+    {
+      "id": "4a-223-2026",
+      "published": "2026-11-22",
+      "date": "2026-09-30",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Kündigung",
+        "Fristlose Kündigung",
+        "Krankheit"
+      ],
+      "title": "Fristlose Entlassung kurz nach Arztzeugnis gilt als Retorsion",
+      "teaser": "Eine Anwaltskanzlei entliess eine Assistentin fristlos. Für den ersten Fehler hatte sie nur verwarnt, der zweite lag nicht nach der Verwarnung, und die Kanzlei hatte nach dessen Entdeckung zu lange zugewartet. Die Kündigung folgte am ersten Arbeitstag nach Eingang eines Arztzeugnisses; die Vorinstanzen werteten sie als Retorsion. Das Bundesgericht weist die Beschwerde ab.",
+      "summary": "Eine Anwaltskanzlei entliess eine Assistentin fristlos. Für den ersten Fehler hatte sie nur verwarnt, der zweite lag nicht nach der Verwarnung, und die Kanzlei hatte nach dessen Entdeckung zu lange zugewartet. Die Kündigung folgte am ersten Arbeitstag nach Eingang eines Arztzeugnisses; die Vorinstanzen werteten sie als Retorsion. Das Bundesgericht weist die Beschwerde ab.",
+      "sections": [
+        {
+          "h": "Sachverhalt",
+          "p": "Eine Genfer Anwaltskanzlei entliess eine juristische Assistentin fristlos. Für einen ersten Fehler hatte sie lediglich eine Verwarnung ausgesprochen. Der zweite vorgeworfene Fehler ereignete sich nicht nach dieser Verwarnung, und die Kanzlei hatte nach seiner Entdeckung zu lange zugewartet. Die Entlassung erfolgte am ersten Arbeitstag, nachdem ein Arztzeugnis wegen Burnout eingegangen war."
+        },
+        {
+          "h": "Entscheid",
+          "p": "Die kantonalen Gerichte werteten die fristlose Entlassung als Retorsion auf das Arztzeugnis. Das Bundesgericht wies die Beschwerde der Kanzlei ab. Offen liess es, ob eine Quittung des MyPost24-Automaten beweist, dass ein verlorener eingeschriebener Brief eine fristgerechte Berufung enthielt."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Für eine fristlose Kündigung nach Art. 337 OR zählen Tempo und Chronologie. Der Arbeitgeber muss rasch handeln, und eine Verwarnung trägt nur, wenn der neue Vorfall danach geschieht. Fällt die Kündigung zeitlich mit einer Krankmeldung zusammen, wird sie besonders kritisch geprüft."
+        }
+      ],
+      "takeaways": [
+        "Fristlos nur unmittelbar nach Kenntnis des Grundes kündigen, die Chronologie sauber festhalten und eine zeitliche Nähe zu Krankmeldungen kritisch prüfen."
+      ],
+      "refs": [
+        "BGer 4A_223/2026",
+        "Art. 337 OR"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        }
+      ]
+    },
+    {
+      "id": "4a-139-2026",
+      "published": "2026-11-22",
+      "date": "2026-10-02",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Krankentaggeld",
+        "Lohnfortzahlung",
+        "Überstunden"
+      ],
+      "title": "Krankentaggeld: Ohne Police und AVB scheitert die Schadenersatzklage",
+      "teaser": "Ein Arbeitnehmer verlangte rund CHF 20'900 Schadenersatz, weil der Arbeitgeber gerichtlich zugesprochene Überstunden nicht der Krankentaggeldversicherung gemeldet hatte. Ohne Police und Allgemeine Versicherungsbedingungen liess sich nicht prüfen, ob eine gleichwertige Lösung vorlag. Eine anwaltlich vertretene Partei muss diese Unterlagen selbst einreichen; die soziale Untersuchungsmaxime verpflichtet das Gericht nicht, sie anzufordern.",
+      "summary": "Ein Arbeitnehmer verlangte rund CHF 20'900 Schadenersatz, weil der Arbeitgeber gerichtlich zugesprochene Überstunden nicht der Krankentaggeldversicherung gemeldet hatte. Ohne Police und Allgemeine Versicherungsbedingungen liess sich nicht prüfen, ob eine gleichwertige Lösung vorlag. Eine anwaltlich vertretene Partei muss diese Unterlagen selbst einreichen; die soziale Untersuchungsmaxime verpflichtet das Gericht nicht, sie anzufordern.",
+      "sections": [
+        {
+          "h": "Sachverhalt",
+          "p": "Einem Waadtländer Arbeitnehmer waren in einem früheren Verfahren Überstunden zugesprochen worden. Er machte geltend, der Arbeitgeber habe diese Überstunden nicht der Krankentaggeldversicherung gemeldet, und verlangte rund CHF 20'900 Schadenersatz."
+        },
+        {
+          "h": "Entscheid",
+          "p": "Die Klage scheiterte an der Beweislage: Ohne Police und Allgemeine Versicherungsbedingungen konnten die Gerichte nicht prüfen, ob die Versicherung eine der gesetzlichen Lohnfortzahlung gleichwertige Lösung darstellt. Eine anwaltlich vertretene Partei muss diese Unterlagen selbst einreichen. Die soziale Untersuchungsmaxime im vereinfachten Verfahren verpflichtet das Gericht nicht, sie von sich aus anzufordern."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Das Urteil ging zugunsten des Arbeitgebers aus, aber aus prozessualen Gründen. In der Sache bleibt das Risiko bestehen, wenn versicherte Lohnbestandteile nicht gemeldet werden. HR sollte prüfen, welche Lohnbestandteile die KTG-Police deckt, und die Meldungen entsprechend vollständig halten."
+        }
+      ],
+      "takeaways": [
+        "Lohnmeldungen an die KTG-Versicherung vollständig halten (inkl. Überstunden, wo versichert) und Police sowie AVB griffbereit archivieren."
+      ],
+      "refs": [
+        "BGer 4A_139/2026",
+        "Art. 324a Abs. 4 OR",
+        "Art. 247 Abs. 2 lit. b Ziff. 2 ZPO"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        }
+      ]
+    },
+    {
+      "id": "4d-105-2026",
+      "published": "2026-11-22",
+      "date": "2026-09-30",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Arbeitszeugnis"
+      ],
+      "title": "Arbeitszeugnis: Pauschales Bestreiten reicht nicht",
+      "teaser": "Zwei Buchhalterinnen klagten auf ein wohlwollendes Arbeitszeugnis und reichten je einen eigenen Entwurf ein. Die Gerichte übernahmen beide Entwürfe, weil der Arbeitgeber sie nur allgemein bestritt, ohne eigenen Wortlaut vorzuschlagen oder Fehler zu belegen. Das Bundesgericht trat auf die Beschwerden nicht ein (Streitwert unter CHF 15'000, ungenügend begründete Rüge).",
+      "summary": "Zwei Buchhalterinnen klagten auf ein wohlwollendes Arbeitszeugnis und reichten je einen eigenen Entwurf ein. Die Gerichte übernahmen beide Entwürfe, weil der Arbeitgeber sie nur allgemein bestritt, ohne eigenen Wortlaut vorzuschlagen oder Fehler zu belegen. Das Bundesgericht trat auf die Beschwerden nicht ein (Streitwert unter CHF 15'000, ungenügend begründete Rüge).",
+      "sections": [
+        {
+          "h": "Sachverhalt",
+          "p": "Zwei Buchhalterinnen kündigten und klagten im Kanton Freiburg je auf ein wohlwollendes Arbeitszeugnis. Beide legten einen eigenen Zeugnisentwurf vor. Der Arbeitgeber bestritt die Entwürfe nur allgemein, ohne eigene Formulierungen vorzuschlagen oder konkret darzulegen, was daran falsch sei."
+        },
+        {
+          "h": "Entscheid",
+          "p": "Die kantonalen Gerichte übernahmen beide Entwürfe. Weil der Streitwert unter CHF 15'000 lag, stand nur die subsidiäre Verfassungsbeschwerde offen. Das Bundesgericht trat darauf nicht ein, weil die Beschwerden keine genügend begründete Rüge enthielten."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Im Zeugnisprozess gewinnt oft, wer konkret wird. Wer einen Entwurf der Gegenseite ablehnt, sollte eigene Formulierungen vorschlagen und jede Abweichung mit Tatsachen belegen, etwa mit Mitarbeitergesprächen oder Zielvereinbarungen."
+        }
+      ],
+      "takeaways": [
+        "Wer einen Zeugnisentwurf ablehnt, sollte einen eigenen Vorschlag machen und jede Abweichung mit Fakten begründen."
+      ],
+      "refs": [
+        "BGer 4D_105/2026",
+        "BGer 4D_106/2026",
+        "Art. 330a OR"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        }
+      ]
+    },
+    {
+      "id": "4a-450-2025",
+      "published": "2026-11-22",
+      "date": "2026-09-02",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Darlehen",
+        "Spesen"
+      ],
+      "title": "Darlehen an einen Mitarbeitenden ist nicht automatisch eine arbeitsrechtliche Streitigkeit",
+      "teaser": "Eine Bank lieh einem pensionierten Vermögensverwalter CHF 481'000, damit er einen Arrest im Libanon aufheben lassen konnte. Das Bundesgericht hielt es nicht für willkürlich, den Rückzahlungsstreit nicht dem Arbeitsrecht zuzuordnen: Das Darlehen diente persönlichen Zwecken (Reputation) und war kein Auslagenersatz.",
+      "summary": "Eine Bank lieh einem pensionierten Vermögensverwalter CHF 481'000, damit er einen Arrest im Libanon aufheben lassen konnte. Das Bundesgericht hielt es nicht für willkürlich, den Rückzahlungsstreit nicht dem Arbeitsrecht zuzuordnen: Das Darlehen diente persönlichen Zwecken (Reputation) und war kein Auslagenersatz.",
+      "sections": [
+        {
+          "h": "Sachverhalt",
+          "p": "Eine Bank lieh einem pensionierten Vermögensverwalter CHF 481'000. Damit sollte ein Arrest im Libanon aufgehoben werden, der mit einer Klage eines Kunden zusammenhing. Er gewann den Prozess, konnte das Darlehen wegen der libanesischen Bankenkrise aber nicht zurückzahlen."
+        },
+        {
+          "h": "Entscheid",
+          "p": "Das Bundesgericht hielt es nicht für willkürlich, dass die Genfer Gerichte den Streit nicht als arbeitsrechtliche Angelegenheit behandelten. Das Darlehen sei aus persönlichen Gründen, nämlich zum Schutz der Reputation, gewährt worden und nicht als Ersatz von Auslagen nach Art. 327a OR."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Ob ein Darlehen an Mitarbeitende arbeitsrechtlich einzuordnen ist, entscheidet über Zuständigkeit und Verfahren. Ein schriftlicher Darlehensvertrag mit klarem Zweck und Rückzahlungsplan schafft hier Klarheit."
+        }
+      ],
+      "takeaways": [
+        "Bei Darlehen an Mitarbeitende Zweck und Rückzahlung schriftlich regeln und klar vom Auslagenersatz abgrenzen."
+      ],
+      "refs": [
+        "BGer 4A_450/2025",
+        "Art. 327a OR"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        }
+      ]
+    },
+    {
+      "id": "egmr-alonso-radesca",
+      "published": "2026-11-22",
+      "date": "2026-11-05",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Streikrecht",
+        "EGMR",
+        "Sozialpartnerschaft"
+      ],
+      "title": "EGMR rügt die Schweiz wegen Streikrechtsprechung (Spitalstreik Neuenburg)",
+      "teaser": "Der Europäische Gerichtshof für Menschenrechte hat eine Verletzung der Gewerkschaftsfreiheit nach Art. 11 EMRK festgestellt. Hintergrund ist ein Arbeitskonflikt im Privatspital Hôpital de la Providence. Nach Ansicht des Gerichtshofs war die Rechtsanwendung der Schweizer Gerichte (u.a. BGer 4A_64/2018) für Gewerkschaften und Arbeitnehmende nicht ausreichend vorhersehbar.",
+      "summary": "Der Europäische Gerichtshof für Menschenrechte hat eine Verletzung der Gewerkschaftsfreiheit nach Art. 11 EMRK festgestellt. Hintergrund ist ein Arbeitskonflikt im Privatspital Hôpital de la Providence. Nach Ansicht des Gerichtshofs war die Rechtsanwendung der Schweizer Gerichte (u.a. BGer 4A_64/2018) für Gewerkschaften und Arbeitnehmende nicht ausreichend vorhersehbar.",
+      "sections": [
+        {
+          "h": "Hintergrund",
+          "p": "Im Privatspital Hôpital de la Providence in Neuenburg kam es wegen einer Verschlechterung der Arbeitsbedingungen zu einem Streik. Die Schweizer Gerichte, darunter das Bundesgericht im Urteil 4A_64/2018, beurteilten die Massnahmen der Arbeitgeberin gegen die Streikenden als zulässig."
+        },
+        {
+          "h": "Entscheid des EGMR",
+          "p": "Der Gerichtshof erinnerte daran, dass das Streikrecht ein wichtiger Bestandteil der Gewerkschaftsfreiheit nach Art. 11 EMRK ist. Die Auslegung durch die Schweizer Behörden habe bei Gewerkschaften und Arbeitnehmenden Unsicherheit über die Rechtmässigkeit des Streiks geschaffen. Die Rechtsanwendung sei nicht ausreichend vorhersehbar gewesen. Die Annahme eines politischen Streiks rechtfertige die Einschränkung nicht."
+        },
+        {
+          "h": "Bedeutung für die Praxis",
+          "p": "Das Urteil dürfte die Schweizer Rechtsprechung zum Streikrecht beeinflussen. Arbeitgeber sollten bei Arbeitskämpfen besonders vorsichtig sein, bevor sie einen Streik als unrechtmässig einstufen und Kündigungen aussprechen."
+        }
+      ],
+      "takeaways": [
+        "Bei Arbeitskonflikten mit Streikandrohung die Rechtmässigkeit des Streiks nicht vorschnell verneinen und Massnahmen wie Kündigungen juristisch eng begleiten lassen."
+      ],
+      "refs": [
+        "EGMR Alonso Radesca u.a. c. Schweiz",
+        "Art. 11 EMRK",
+        "Art. 28 BV"
+      ],
+      "sources": [
+        {
+          "label": "EGMR, 05.11.2026",
+          "url": "https://www.echr.coe.int/w/alonso-radesca-and-others-v.-switzerland"
+        }
+      ]
+    },
+    {
+      "id": "argv2-32c",
+      "published": "2026-11-22",
+      "date": "2026-10-28",
+      "category": "gesetze",
+      "tags": [
+        "Arbeitszeit",
+        "Start-ups"
+      ],
+      "title": "Start-ups: Neue Ausnahmen von Arbeits- und Ruhezeiten ab 1. Dezember 2026",
+      "teaser": "Der Bundesrat hat mit einer Revision der ArGV 2 die parlamentarische Initiative 16.442 umgesetzt. Ausnahmen von den allgemeinen Arbeits- und Ruhezeitvorschriften gelten nur, wenn kumulativ: spezifische Fähigkeiten, grosse Autonomie, eine Kapitalbeteiligung über einen Mitarbeiterbeteiligungsplan und die Arbeit in spezifischen, befristeten Projekten vorliegen.",
+      "summary": "Der Bundesrat hat mit einer Revision der ArGV 2 die parlamentarische Initiative 16.442 umgesetzt. Ausnahmen von den allgemeinen Arbeits- und Ruhezeitvorschriften gelten nur, wenn kumulativ: spezifische Fähigkeiten, grosse Autonomie, eine Kapitalbeteiligung über einen Mitarbeiterbeteiligungsplan und die Arbeit in spezifischen, befristeten Projekten vorliegen.",
+      "sections": [],
+      "takeaways": [
+        "Nur relevant für Jungunternehmen mit Beteiligungsplänen. Wer die Ausnahme nutzen will, sollte jede Voraussetzung pro Person dokumentieren."
+      ],
+      "refs": [
+        "Art. 32c ArGV 2",
+        "Pa.Iv. 16.442"
+      ],
+      "sources": [
+        {
+          "label": "Bundesrat, Medienmitteilung 28.10.2026",
+          "url": "https://www.admin.ch/de/newnsb/Iud3ocFMTVQE"
+        }
+      ],
+      "effective": "2026-12-01"
+    },
+    {
+      "id": "eo-angleichung",
+      "published": "2026-11-22",
+      "date": "2026-08-26",
+      "category": "gesetze",
+      "tags": [
+        "EO",
+        "Mutterschaft",
+        "Vaterschaft"
+      ],
+      "title": "EO-Leistungen für Eltern werden per 1. Juli 2027 angeglichen",
+      "teaser": "Das Parlament hat eine Revision des Erwerbsersatzgesetzes verabschiedet, die Leistungen für die verschiedenen Anspruchsgruppen vereinheitlicht. Mütter, Väter, die Ehefrau der Mutter, Adoptiveltern sowie Eltern schwer beeinträchtigter Kinder erhalten neu ebenfalls Nebenleistungen der EO wie Kinder- und Betriebszulagen, wie sie bisher nur Dienstleistende bekamen.",
+      "summary": "Das Parlament hat eine Revision des Erwerbsersatzgesetzes verabschiedet, die Leistungen für die verschiedenen Anspruchsgruppen vereinheitlicht. Mütter, Väter, die Ehefrau der Mutter, Adoptiveltern sowie Eltern schwer beeinträchtigter Kinder erhalten neu ebenfalls Nebenleistungen der EO wie Kinder- und Betriebszulagen, wie sie bisher nur Dienstleistende bekamen.",
+      "sections": [],
+      "takeaways": [
+        "Lohnfortzahlungs- und Mutterschaftsregelungen in Reglementen und Lohnsoftware bis Mitte 2027 auf die neuen EO-Leistungen abstimmen."
+      ],
+      "refs": [
+        "EOG",
+        "EOV"
+      ],
+      "sources": [
+        {
+          "label": "Bundesrat, Medienmitteilung 26.08.2026",
+          "url": "https://www.admin.ch/de/newnsb/H1kkO6iNTyPiN3YFktVAY"
+        }
+      ],
+      "effective": "2027-07-01"
+    },
+    {
+      "id": "bvv-anpassungen",
+      "published": "2026-11-22",
+      "date": "2026-06-12",
+      "category": "gesetze",
+      "tags": [
+        "Säule 3a",
+        "Vorsorge"
+      ],
+      "title": "Säule 3a: Mehr Flexibilität bei Begünstigten ab 1. Juni 2027",
+      "teaser": "Der Bundesrat hat die BVV 3 und mehrere BVG-Verordnungen angepasst. Versicherte können die Begünstigten ihrer 3a-Leistungen ab Juni 2027 flexibler bestimmen. Die BVV 2 wird mit der 13. AHV-Altersrente koordiniert, und Vorsorgeeinrichtungen erhalten Zugang zu kurzfristiger Liquidität für Wechselkursrisiken.",
+      "summary": "Der Bundesrat hat die BVV 3 und mehrere BVG-Verordnungen angepasst. Versicherte können die Begünstigten ihrer 3a-Leistungen ab Juni 2027 flexibler bestimmen. Die BVV 2 wird mit der 13. AHV-Altersrente koordiniert, und Vorsorgeeinrichtungen erhalten Zugang zu kurzfristiger Liquidität für Wechselkursrisiken.",
+      "sections": [],
+      "takeaways": [
+        "In Pensionierungs- und Vorsorgeberatungen für Mitarbeitende auf die neue 3a-Begünstigtenordnung hinweisen."
+      ],
+      "refs": [
+        "BVV 3",
+        "BVV 2"
+      ],
+      "sources": [
+        {
+          "label": "Bundesrat, Medienmitteilung 12.06.2026",
+          "url": "https://www.admin.ch/de/newnsb/fFBgrSAIiYiGRg9YfWRfM"
+        }
+      ],
+      "effective": "2027-06-01"
+    },
+    {
+      "id": "grenzgaenger-frankreich",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "gesetze",
+      "tags": [
+        "Grenzgänger",
+        "Homeoffice",
+        "Quellensteuer"
+      ],
+      "title": "Grenzgänger aus Frankreich: Homeoffice-Tage und Lohndaten werden meldepflichtig",
+      "teaser": "Ab 2027 melden Arbeitgeber Homeoffice-Tage und Lohndaten von Mitarbeitenden mit Wohnsitz in Frankreich an die kantonalen Steuerämter; der automatische Lohndatenaustausch mit Frankreich startet am 1. Januar 2027. Massgebend sind 40 % der Arbeitszeit für die Steuer und 49,9 % für die Sozialversicherung. Die erste Übermittlung für das Jahr 2026 erfolgt Anfang 2027, im Kanton Waadt bis 28. Februar 2027.",
+      "summary": "Ab 2027 melden Arbeitgeber Homeoffice-Tage und Lohndaten von Mitarbeitenden mit Wohnsitz in Frankreich an die kantonalen Steuerämter; der automatische Lohndatenaustausch mit Frankreich startet am 1. Januar 2027. Massgebend sind 40 % der Arbeitszeit für die Steuer und 49,9 % für die Sozialversicherung. Die erste Übermittlung für das Jahr 2026 erfolgt Anfang 2027, im Kanton Waadt bis 28. Februar 2027.",
+      "sections": [],
+      "takeaways": [
+        "Homeoffice-Tage französischer Grenzgänger für 2026 jetzt lückenlos erfassen und die Meldefrist des eigenen Kantons klären."
+      ],
+      "refs": [
+        "Zusatzabkommen DBA CH-FR"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "gav-mindestlohn-referendum",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "gesetze",
+      "tags": [
+        "GAV",
+        "Mindestlohn"
+      ],
+      "title": "Vorrang allgemeinverbindlicher GAV vor kantonalen Mindestlöhnen: Referendum zustande gekommen",
+      "teaser": "Das Gesetz, das allgemeinverbindlich erklärten GAV Vorrang vor kantonalen Mindestlöhnen geben würde, tritt vorerst nicht in Kraft, weil das Referendum zustande kam. Bis zur Volksabstimmung gilt das bisherige Recht.",
+      "summary": "Das Gesetz, das allgemeinverbindlich erklärten GAV Vorrang vor kantonalen Mindestlöhnen geben würde, tritt vorerst nicht in Kraft, weil das Referendum zustande kam. Bis zur Volksabstimmung gilt das bisherige Recht.",
+      "sections": [],
+      "takeaways": [
+        "In Kantonen mit Mindestlohn weiterhin den kantonalen Mindestlohn beachten, auch wenn ein GAV tiefere Löhne vorsieht."
+      ],
+      "refs": [
+        "AVEG",
+        "kantonale Mindestlohngesetze"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ]
+    },
+    {
+      "id": "abgangsentschaedigung-bund",
+      "published": "2026-11-22",
+      "date": "2026-10-02",
+      "category": "gesetze",
+      "tags": [
+        "Kader",
+        "Abgangsentschädigung",
+        "Öffentliches Personalrecht"
+      ],
+      "title": "Abgangsentschädigungen für oberstes Bundeskader weitgehend verboten",
+      "teaser": "Das Parlament hat am 2. Oktober 2026 beschlossen, Abgangsentschädigungen für das oberste Kader des Bundes und bundesnaher Unternehmen weitgehend zu verbieten.",
+      "summary": "Das Parlament hat am 2. Oktober 2026 beschlossen, Abgangsentschädigungen für das oberste Kader des Bundes und bundesnaher Unternehmen weitgehend zu verbieten.",
+      "sections": [],
+      "takeaways": [
+        "Relevant für bundesnahe Betriebe: Kaderverträge und Austrittsvereinbarungen auf die neue Regelung prüfen."
+      ],
+      "refs": [
+        "BPG"
+      ],
+      "sources": [
+        {
+          "label": "Arbeitsrecht-Aktuell, 17.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/beitraege/"
+        }
+      ]
+    },
+    {
+      "id": "ahv-renten-2027",
+      "published": "2026-11-22",
+      "date": "2026-10-02",
+      "category": "lohn",
+      "tags": [
+        "AHV",
+        "Jahreswechsel 2027"
+      ],
+      "title": "AHV/IV-Renten steigen um rund 1,59 %, Beitragssatz bleibt bei 10,6 %",
+      "teaser": "Der Bundesrat erhöht die Renten per 1. Januar 2027: Die Minimalrente steigt auf CHF 1'280, die Maximalrente auf CHF 2'560 pro Monat. Der AHV/IV/EO-Beitragssatz bleibt bei 10,6 % (je 5,3 % Arbeitgeber und Arbeitnehmende). Die 13. AHV-Rente wird im Dezember 2026 erstmals ausbezahlt.",
+      "summary": "Der Bundesrat erhöht die Renten per 1. Januar 2027: Die Minimalrente steigt auf CHF 1'280, die Maximalrente auf CHF 2'560 pro Monat. Der AHV/IV/EO-Beitragssatz bleibt bei 10,6 % (je 5,3 % Arbeitgeber und Arbeitnehmende). Die 13. AHV-Rente wird im Dezember 2026 erstmals ausbezahlt.",
+      "sections": [],
+      "takeaways": [
+        "Lohnbuchhaltung: Beitragssätze bleiben gleich, aber die abhängigen BVG-Grenzbeträge und 3a-Maxima ändern sich (siehe Kennzahlen)."
+      ],
+      "refs": [
+        "AHVG",
+        "AHVV"
+      ],
+      "sources": [
+        {
+          "label": "AMW Treuhand, Sozialversicherungen 2027",
+          "url": "https://amw-treuhand.ch/sozialversicherungen-2027-in-der-schweiz/"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "bvg-mindestzins",
+      "published": "2026-11-22",
+      "date": "2026-11-04",
+      "category": "lohn",
+      "tags": [
+        "BVG",
+        "Pensionskasse",
+        "Jahreswechsel 2027"
+      ],
+      "title": "BVG-Mindestzins steigt auf 2 %",
+      "teaser": "Der Bundesrat hebt den Mindestzinssatz im BVG-Obligatorium ab Januar 2027 von 1,25 % auf 2 % an. Er geht damit über die Empfehlung der BVG-Kommission von 1,75 % hinaus.",
+      "summary": "Der Bundesrat hebt den Mindestzinssatz im BVG-Obligatorium ab Januar 2027 von 1,25 % auf 2 % an. Er geht damit über die Empfehlung der BVG-Kommission von 1,75 % hinaus.",
+      "sections": [],
+      "takeaways": [
+        "Mit der Pensionskasse klären, wie sich der höhere Mindestzins auf Verzinsung und Finanzierung auswirkt, und die Mitarbeitenden informieren."
+      ],
+      "refs": [
+        "Art. 15 BVG",
+        "Art. 12 BVV 2"
+      ],
+      "sources": [
+        {
+          "label": "BSV, Medienmitteilung 04.11.2026",
+          "url": "https://www.bsv.admin.ch/de/newnsb/8DF8zxcfvu7l"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "bvg-grenzbetraege",
+      "published": "2026-11-22",
+      "date": "2026-10-05",
+      "category": "lohn",
+      "tags": [
+        "BVG",
+        "Säule 3a",
+        "Jahreswechsel 2027"
+      ],
+      "title": "Neue BVG-Grenzbeträge und 3a-Maxima ab 2027",
+      "teaser": "Mit der Rentenerhöhung steigen die BVG-Werte: Eintrittsschwelle CHF 23'040, Koordinationsabzug CHF 26'880, oberer Grenzbetrag CHF 92'160, maximal koordinierter Lohn CHF 65'280, minimal koordinierter Lohn CHF 3'840. Der 3a-Maximalabzug beträgt CHF 7'373 mit und CHF 36'864 ohne Pensionskasse.",
+      "summary": "Mit der Rentenerhöhung steigen die BVG-Werte: Eintrittsschwelle CHF 23'040, Koordinationsabzug CHF 26'880, oberer Grenzbetrag CHF 92'160, maximal koordinierter Lohn CHF 65'280, minimal koordinierter Lohn CHF 3'840. Der 3a-Maximalabzug beträgt CHF 7'373 mit und CHF 36'864 ohne Pensionskasse.",
+      "sections": [],
+      "takeaways": [
+        "BVG-Unterstellung von Teilzeitmitarbeitenden mit Löhnen nahe der Eintrittsschwelle auf den 1.1.2027 überprüfen."
+      ],
+      "refs": [
+        "Art. 7–8 BVG",
+        "BVV 3"
+      ],
+      "sources": [
+        {
+          "label": "Rivora Sammelstiftung, 05.10.2026",
+          "url": "https://www.rivora.ch/de/news/rivora-sammelstiftung-gewinnt-award-best-residential-properties-2025-2-2-2"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "kurzarbeit-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "lohn",
+      "tags": [
+        "Kurzarbeit",
+        "ALV",
+        "Jahreswechsel 2027"
+      ],
+      "title": "Kurzarbeit: Gleitzeit-Toleranz fällt weg, verlängerte Bezugsdauer läuft aus",
+      "teaser": "Ab 2027 entfällt die Toleranz von 20 Stunden positivem Gleitzeitsaldo; positive Salden müssen vor dem Bezug abgebaut werden. Die auf 24 Monate verlängerte Höchstbezugsdauer gilt bis 31. Januar 2027; danach ist eine schrittweise Rückkehr zu den ordentlichen Regeln vorgesehen, über die der Bundesrat im Dezember entscheidet. Ab 2028 ist ein höherer Arbeitgeber-Anteil bei der Wartezeit (3 statt 1 Tag) geplant; die Vernehmlassung folgt im Frühjahr 2027.",
+      "summary": "Ab 2027 entfällt die Toleranz von 20 Stunden positivem Gleitzeitsaldo; positive Salden müssen vor dem Bezug abgebaut werden. Die auf 24 Monate verlängerte Höchstbezugsdauer gilt bis 31. Januar 2027; danach ist eine schrittweise Rückkehr zu den ordentlichen Regeln vorgesehen, über die der Bundesrat im Dezember entscheidet. Ab 2028 ist ein höherer Arbeitgeber-Anteil bei der Wartezeit (3 statt 1 Tag) geplant; die Vernehmlassung folgt im Frühjahr 2027.",
+      "sections": [],
+      "takeaways": [
+        "Betriebe in oder vor Kurzarbeit: Gleitzeitsalden jetzt abbauen lassen und die Bezugsdauer ab Februar 2027 neu planen."
+      ],
+      "refs": [
+        "AVIG",
+        "AVIV"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "mindestloehne-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "lohn",
+      "tags": [
+        "Mindestlohn",
+        "Jahreswechsel 2027"
+      ],
+      "title": "Kantonale Mindestlöhne 2027",
+      "teaser": "Genf: CHF 24.73 pro Stunde. Basel-Stadt: CHF 22.50 (bisher 22.20), der Mindestlohn muss jeden Monat erreicht werden, ein 13. Monatslohn gleicht nicht aus. Jura: CHF 21.40 (unverändert). Tessin: je nach Branche CHF 20.50 bis 21.00. Neuenburg: Betrag 2027 noch nicht publiziert. Im Wallis wird am 29. November 2026 über eine Mindestlohn-Initiative (CHF 22.00) abgestimmt.",
+      "summary": "Genf: CHF 24.73 pro Stunde. Basel-Stadt: CHF 22.50 (bisher 22.20), der Mindestlohn muss jeden Monat erreicht werden, ein 13. Monatslohn gleicht nicht aus. Jura: CHF 21.40 (unverändert). Tessin: je nach Branche CHF 20.50 bis 21.00. Neuenburg: Betrag 2027 noch nicht publiziert. Im Wallis wird am 29. November 2026 über eine Mindestlohn-Initiative (CHF 22.00) abgestimmt.",
+      "sections": [],
+      "takeaways": [
+        "Stundenlöhne von Mitarbeitenden in diesen Kantonen per 1.1.2027 gegen die neuen Mindestwerte prüfen."
+      ],
+      "refs": [
+        "kantonale Mindestlohngesetze"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "familienzulagen-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "lohn",
+      "tags": [
+        "Familienzulagen"
+      ],
+      "title": "Familienzulagen: Bundes-Mindestbeträge bleiben unverändert",
+      "teaser": "Auf Bundesebene gibt es 2027 keine Erhöhung: Kinderzulage mindestens CHF 215, Ausbildungszulage mindestens CHF 268. Eine parlamentarische Initiative für CHF 250 bzw. 300 ist hängig; Kantone können höhere Beträge vorsehen.",
+      "summary": "Auf Bundesebene gibt es 2027 keine Erhöhung: Kinderzulage mindestens CHF 215, Ausbildungszulage mindestens CHF 268. Eine parlamentarische Initiative für CHF 250 bzw. 300 ist hängig; Kantone können höhere Beträge vorsehen.",
+      "sections": [],
+      "takeaways": [
+        "Kantonale Ansätze der Familienausgleichskasse für 2027 kontrollieren."
+      ],
+      "refs": [
+        "FamZG"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ]
+    },
+    {
+      "id": "referenzalter-frauen",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "lohn",
+      "tags": [
+        "AHV",
+        "Pensionierung"
+      ],
+      "title": "Referenzalter Frauen: Jahrgang 1963 mit 64 Jahren und 9 Monaten",
+      "teaser": "Das Referenzalter der Frauen steigt seit 2025 in Schritten von drei Monaten pro Jahrgang auf 65 Jahre. Jahrgang 1962: 64 Jahre und 6 Monate, Jahrgang 1963: 64 Jahre und 9 Monate, ab Jahrgang 1964: 65 Jahre. 2027 erreichen Frauen mit Geburt im zweiten Halbjahr 1962 sowie Januar bis März 1963 das Referenzalter.",
+      "summary": "Das Referenzalter der Frauen steigt seit 2025 in Schritten von drei Monaten pro Jahrgang auf 65 Jahre. Jahrgang 1962: 64 Jahre und 6 Monate, Jahrgang 1963: 64 Jahre und 9 Monate, ab Jahrgang 1964: 65 Jahre. 2027 erreichen Frauen mit Geburt im zweiten Halbjahr 1962 sowie Januar bis März 1963 das Referenzalter.",
+      "sections": [],
+      "takeaways": [
+        "Pensionierungsplanung und automatische Vertragsenden in Reglementen auf das gestaffelte Referenzalter abstimmen."
+      ],
+      "refs": [
+        "AHV 21",
+        "Art. 21 AHVG"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ]
+    },
+    {
+      "id": "stellenmeldepflicht-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "praxis",
+      "tags": [
+        "Stellenmeldepflicht",
+        "Recruiting"
+      ],
+      "title": "Stellenmeldepflicht 2027: Neu auch Detailhandel",
+      "teaser": "Gemäss provisorischer Liste fallen 2027 rund 14,7 % der Erwerbstätigen unter meldepflichtige Berufsarten (2026: 10,8 %). Neu dazu kommen unter anderem Detailhandel, Sicherheitspersonal, Baristas, Fachleute für strategische Planung sowie Regie und Produktion. Das WBF legt die definitive Liste Ende November 2026 fest.",
+      "summary": "Gemäss provisorischer Liste fallen 2027 rund 14,7 % der Erwerbstätigen unter meldepflichtige Berufsarten (2026: 10,8 %). Neu dazu kommen unter anderem Detailhandel, Sicherheitspersonal, Baristas, Fachleute für strategische Planung sowie Regie und Produktion. Das WBF legt die definitive Liste Ende November 2026 fest.",
+      "sections": [],
+      "takeaways": [
+        "Offene Stellen ab Januar 2027 mit dem Check-Up auf arbeit.swiss prüfen; meldepflichtige Stellen erst nach der fünftägigen Sperrfrist öffentlich ausschreiben."
+      ],
+      "refs": [
+        "Art. 21a AuG/AIG",
+        "Art. 53a AVV"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ],
+      "effective": "2027-01-01"
+    },
+    {
+      "id": "kontingente-2027",
+      "published": "2026-11-22",
+      "date": "2026-11-10",
+      "category": "praxis",
+      "tags": [
+        "Migration",
+        "Recruiting"
+      ],
+      "title": "Kontingente für Drittstaaten 2027 noch offen",
+      "teaser": "Die Kontingente für 2027 sind noch nicht festgelegt. 2026 galten 8'500 für Drittstaaten, 3'500 für das Vereinigte Königreich sowie 3'000 L- und 500 B-Bewilligungen für EU/EFTA-Dienstleistende über 120 Tage.",
+      "summary": "Die Kontingente für 2027 sind noch nicht festgelegt. 2026 galten 8'500 für Drittstaaten, 3'500 für das Vereinigte Königreich sowie 3'000 L- und 500 B-Bewilligungen für EU/EFTA-Dienstleistende über 120 Tage.",
+      "sections": [],
+      "takeaways": [
+        "Geplante Rekrutierungen aus Drittstaaten für Anfang 2027 frühzeitig beim kantonalen Migrationsamt einreichen."
+      ],
+      "refs": [
+        "AIG",
+        "VZAE"
+      ],
+      "sources": [
+        {
+          "label": "Loyco, Neuerungen 1.1.2027",
+          "url": "https://www.loyco.ch/de/actualites/arbeitsverhaltnisse-die-neuerungen-zum-1-januar-2027/"
+        }
+      ]
+    }
+  ],
+  "kennzahlen": {
+    "title": "Kennzahlen ab 1. Januar 2027",
+    "rows": [
+      {
+        "label": "AHV-Minimalrente / Monat",
+        "alt": "1'260",
+        "neu": "1'280"
+      },
+      {
+        "label": "AHV-Maximalrente / Monat",
+        "alt": "2'520",
+        "neu": "2'560"
+      },
+      {
+        "label": "AHV/IV/EO-Beitragssatz",
+        "alt": "10,6 %",
+        "neu": "10,6 %"
+      },
+      {
+        "label": "BVG-Eintrittsschwelle",
+        "alt": "22'680",
+        "neu": "23'040"
+      },
+      {
+        "label": "BVG-Koordinationsabzug",
+        "alt": "26'460",
+        "neu": "26'880"
+      },
+      {
+        "label": "BVG oberer Grenzbetrag",
+        "alt": "90'720",
+        "neu": "92'160"
+      },
+      {
+        "label": "Max. koordinierter Lohn",
+        "alt": "64'260",
+        "neu": "65'280"
+      },
+      {
+        "label": "Min. koordinierter Lohn",
+        "alt": "3'780",
+        "neu": "3'840"
+      },
+      {
+        "label": "BVG-Mindestzins",
+        "alt": "1,25 %",
+        "neu": "2,0 %"
+      },
+      {
+        "label": "Säule 3a mit PK",
+        "alt": "7'258",
+        "neu": "7'373"
+      },
+      {
+        "label": "Säule 3a ohne PK",
+        "alt": "36'288",
+        "neu": "36'864"
+      },
+      {
+        "label": "UVG max. versicherter Lohn",
+        "alt": "148'200",
+        "neu": "148'200"
+      }
+    ],
+    "note": "Beträge in CHF pro Jahr, sofern nicht anders angegeben."
+  },
+  "termine": [
+    {
+      "date": "2026-11-29",
+      "label": "Volksabstimmungen u.a. zur Finanzierung der 13. AHV-Rente (MWST) und im Wallis zum Mindestlohn"
+    },
+    {
+      "date": "2026-11-30",
+      "label": "WBF legt die definitive Liste der meldepflichtigen Berufsarten 2027 fest (Ende November)"
+    },
+    {
+      "date": "2026-12-01",
+      "label": "Art. 32c ArGV 2 (Start-ups) tritt in Kraft"
+    },
+    {
+      "date": "2027-01-01",
+      "label": "Neue AHV/BVG-Werte, BVG-Mindestzins 2 %, Wegfall Gleitzeit-Toleranz bei Kurzarbeit"
+    },
+    {
+      "date": "2027-01-31",
+      "label": "Ende der verlängerten Kurzarbeits-Bezugsdauer von 24 Monaten"
+    },
+    {
+      "date": "2027-02-28",
+      "label": "Waadt: Frist für die Meldung der Homeoffice-Tage französischer Grenzgänger 2026"
+    },
+    {
+      "date": "2027-06-01",
+      "label": "BVV 3: flexiblere Begünstigtenordnung in der Säule 3a"
+    },
+    {
+      "date": "2027-07-01",
+      "label": "Angleichung der EO-Leistungen für Eltern"
+    }
+  ]
+}
