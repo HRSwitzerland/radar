@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HR-Recht Radar Schweiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: amtliche Wochenzeitung – Masthead mit roter Linie, Feed links, Kennzahlen/Termine rechts */
+:root {
+  --paper: #f5f6f8;
+  --card: #ffffff;
+  --ink: #161a21;
+  --muted: #5a6270;
+  --line: #dde1e8;
+  --accent: #b3121e;
+  --accent-soft: #fbe9ea;
+  --c-rechtsprechung: #1f4e8c;
+  --c-gesetzgebung: #6a3d9a;
+  --c-sozialversicherung: #1d6b4f;
+  --c-praxis: #9a5b12;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12151b; --card: #1a1f27; --ink: #e8ebf0; --muted: #9aa3b2; --line: #2c333f;
+    --accent: #ff5a63; --accent-soft: #3a1c20;
+    --c-rechtsprechung: #7fb0f0; --c-gesetzgebung: #c3a2ef; --c-sozialversicherung: #6fd1a6; --c-praxis: #f0b56a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12151b; --card: #1a1f27; --ink: #e8ebf0; --muted: #9aa3b2; --line: #2c333f;
+  --accent: #ff5a63; --accent-soft: #3a1c20;
+  --c-rechtsprechung: #7fb0f0; --c-gesetzgebung: #c3a2ef; --c-sozialversicherung: #6fd1a6; --c-praxis: #f0b56a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+header.mast { border-top: 6px solid var(--accent); background: var(--card); border-bottom: 1px solid var(--line); }
+.mast-inner { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding: 22px 0 18px; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.cross { width: 38px; height: 38px; background: var(--accent); border-radius: 4px; position: relative; flex: none; }
+.cross::before, .cross::after { content: ""; position: absolute; background: #fff; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.cross::before { width: 22px; height: 7px; } .cross::after { width: 7px; height: 22px; }
+h1 { font-family: var(--font-display); font-weight: 650; font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0; letter-spacing: -0.01em; line-height: 1.1; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+.issue { text-align: right; font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.issue strong { display: block; color: var(--ink); font-family: var(--font-display); font-size: 1.15rem; font-weight: 650; }
+
+.brief { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 18px 22px; margin: 24px 0 8px; }
+.brief h2 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 8px; font-weight: 650; }
+.brief ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; padding: 18px 0 40px; align-items: start; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: 500 .88rem var(--font-body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 6px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dotc, var(--muted)); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.chip .n { font-variant-numeric: tabular-nums; opacity: .7; }
+.controls .grow { flex: 1 1 200px; display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+input[type="search"], select { font: 400 .92rem var(--font-body); padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); min-width: 0; }
+input[type="search"] { flex: 1 1 180px; max-width: 280px; }
+
+.feed { display: grid; gap: 14px; }
+article.item { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px 16px; border-top: 3px solid var(--catc); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cat { color: var(--catc); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .74rem; }
+.eff { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 1px 7px; font-weight: 500; }
+article h3 { font-family: var(--font-display); font-weight: 650; font-size: 1.22rem; line-height: 1.3; margin: 8px 0 8px; text-wrap: balance; }
+article p { margin: 0 0 10px; max-width: 70ch; }
+.todo { background: var(--paper); border-radius: 5px; padding: 10px 12px; font-size: .94rem; max-width: 70ch; }
+.todo b { color: var(--accent); font-weight: 600; }
+.foot { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; margin-top: 12px; }
+.refs { display: flex; flex-wrap: wrap; gap: 6px; }
+.ref { font: 500 .76rem var(--font-mono); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; color: var(--muted); }
+.src { font-size: .85rem; }
+.empty { color: var(--muted); padding: 24px; text-align: center; border: 1px dashed var(--line); border-radius: 6px; }
+
+aside { display: grid; gap: 18px; position: sticky; top: 16px; }
+@media (max-width: 900px) { aside { position: static; } }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+.panel h2 { font-family: var(--font-display); font-size: 1.08rem; font-weight: 650; margin: 0 0 10px; }
+table { width: 100%; border-collapse: collapse; font-size: .87rem; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 0 6px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+tbody th { white-space: normal; font-weight: 500; }
+th:first-child, td:first-child { text-align: left; padding-right: 8px; }
+thead th { font-weight: 600; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; }
+td.neu { font-weight: 600; }
+td.chg { color: var(--accent); }
+.note { font-size: .78rem; color: var(--muted); margin: 8px 0 0; }
+ul.dates { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+ul.dates li { display: grid; grid-template-columns: 74px 1fr; gap: 10px; font-size: .88rem; }
+ul.dates time { font: 500 .8rem var(--font-mono); color: var(--accent); padding-top: 2px; }
+ul.dates li.past { opacity: .5; }
+
+footer { border-top: 1px solid var(--line); background: var(--card); font-size: .84rem; color: var(--muted); }
+footer .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 32px; padding: 24px 20px 32px; }
+footer h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); margin: 0 0 6px; }
+footer p { margin: 0 0 6px; max-width: 60ch; }
+@media (prefers-reduced-motion: no-preference) { article.item { transition: border-color .15s; } }
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap mast-inner">
+    <div class="brand">
+      <div class="cross" aria-hidden="true"></div>
+      <div>
+        <h1>HR-Recht Radar</h1>
+        <p class="tagline">Arbeitsrecht, Sozialversicherungen und HR-Praxis in der Schweiz. Jede Woche neu.</p>
+      </div>
+    </div>
+    <div class="issue" id="issue"><strong>Ausgabe wird geladen</strong></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="brief" id="brief" aria-labelledby="brief-h">
+    <h2 id="brief-h">Das Wichtigste der Woche</h2>
+    <ol id="highlights"></ol>
+  </section>
+
+  <div class="layout">
+    <section aria-label="Meldungen">
+      <div class="controls">
+        <div class="chips" id="chips" role="group" aria-label="Nach Thema filtern"></div>
+        <div class="grow">
+          <input type="search" id="q" placeholder="Suchen, z.B. 337 OR, BVG" aria-label="Meldungen durchsuchen">
+          <select id="edition" aria-label="Ausgabe wählen"></select>
+        </div>
+      </div>
+      <div class="feed" id="feed"></div>
+    </section>
+
+    <aside>
+      <section class="panel" aria-labelledby="kz-h">
+        <h2 id="kz-h">Kennzahlen</h2>
+        <table>
+          <thead><tr><th scope="col">Wert</th><th scope="col">2026</th><th scope="col">2027</th></tr></thead>
+          <tbody id="kz"></tbody>
+        </table>
+        <p class="note" id="kz-note"></p>
+      </section>
+      <section class="panel" aria-labelledby="t-h">
+        <h2 id="t-h">Termine und Fristen</h2>
+        <ul class="dates" id="termine"></ul>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>Hinweis</h2>
+      <p>Die Meldungen fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen, insbesondere Urteile des Bundesgerichts und Publikationen des Bundes. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit und Richtigkeit übernommen.</p>
+      <p>Die Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
+    </div>
+    <div>
+      <h2>Impressum</h2>
+      <p>Herausgeber: [Name, Adresse und E-Mail ergänzen]</p>
+      <p>Erscheint wöchentlich am Montag. Letzte Aktualisierung: <span id="upd"></span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var CATS = {
+    rechtsprechung: { label: "Rechtsprechung", color: "var(--c-rechtsprechung)" },
+    gesetzgebung: { label: "Gesetzgebung", color: "var(--c-gesetzgebung)" },
+    sozialversicherung: { label: "Sozialversicherungen & Lohn", color: "var(--c-sozialversicherung)" },
+    praxis: { label: "HR-Praxis & Behörden", color: "var(--c-praxis)" }
+  };
+  var state = { cat: "alle", q: "", edition: null };
+  var DATA = null;
+
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) for (var k in attrs) {
+      if (k === "text") n.textContent = attrs[k];
+      else if (k === "style") n.setAttribute("style", attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(function (c) { if (c) n.appendChild(c); });
+    return n;
+  }
+  function fmt(iso) {
+    var p = iso.split("-");
+    return p[2] + "." + p[1] + "." + p[0];
+  }
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+
+  function renderHeader() {
+    var ed = DATA.editions.find(function (e) { return e.id === state.edition; }) || DATA.editions[0];
+    var issue = document.getElementById("issue");
+    issue.textContent = "";
+    issue.appendChild(el("strong", { text: "Ausgabe " + ed.label }));
+    issue.appendChild(document.createTextNode("Stand " + fmt(ed.date)));
+    var hl = document.getElementById("highlights");
+    hl.textContent = "";
+    (ed.highlights || []).forEach(function (h) { hl.appendChild(el("li", { text: h })); });
+    document.getElementById("upd").textContent = fmt(DATA.updated);
+  }
+
+  function itemsForEdition() {
+    if (state.edition === "alle") return DATA.items.slice();
+    return DATA.items.filter(function (i) { return i.edition === state.edition; });
+  }
+
+  function renderChips() {
+    var box = document.getElementById("chips");
+    box.textContent = "";
+    var base = itemsForEdition();
+    var entries = [["alle", { label: "Alle", color: "var(--muted)" }]].concat(Object.keys(CATS).map(function (k) { return [k, CATS[k]]; }));
+    entries.forEach(function (e) {
+      var key = e[0], c = e[1];
+      var count = key === "alle" ? base.length : base.filter(function (i) { return i.category === key; }).length;
+      var b = el("button", { type: "button", class: "chip", "aria-pressed": String(state.cat === key), style: "--dotc:" + c.color }, [
+        el("span", { class: "dot", "aria-hidden": "true" }),
+        el("span", { text: c.label }),
+        el("span", { class: "n", text: String(count) })
+      ]);
+      b.addEventListener("click", function () { state.cat = key; renderChips(); renderFeed(); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderFeed() {
+    var q = state.q.trim().toLowerCase();
+    var list = itemsForEdition().filter(function (i) {
+      if (state.cat !== "alle" && i.category !== state.cat) return false;
+      if (!q) return true;
+      var hay = [i.title, i.summary, i.todo, (i.refs || []).join(" ")].join(" ").toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+    var order = Object.keys(CATS);
+    list.sort(function (a, b) {
+      var c = order.indexOf(a.category) - order.indexOf(b.category);
+      return c !== 0 ? c : (a.date < b.date ? 1 : -1);
+    });
+    var feed = document.getElementById("feed");
+    feed.textContent = "";
+    if (!list.length) {
+      feed.appendChild(el("p", { class: "empty", text: "Keine Meldungen gefunden. Passen Sie Filter oder Suchbegriff an." }));
+      return;
+    }
+    list.forEach(function (i) {
+      var c = CATS[i.category] || { label: i.category, color: "var(--muted)" };
+      var meta = el("div", { class: "meta" }, [
+        el("span", { class: "cat", text: c.label }),
+        el("time", { datetime: i.date, text: fmt(i.date) }),
+        i.effective ? el("span", { class: "eff", text: "gilt ab " + fmt(i.effective) }) : null
+      ]);
+      var todo = el("p", { class: "todo" }, [el("b", { text: "Für die Praxis: " }), document.createTextNode(i.todo)]);
+      var refs = el("div", { class: "refs" }, (i.refs || []).map(function (r) { return el("span", { class: "ref", text: r }); }));
+      var src = i.source ? el("a", { class: "src", href: i.source.url, target: "_blank", rel: "noopener", text: "Quelle: " + i.source.label }) : null;
+      feed.appendChild(el("article", { class: "item", style: "--catc:" + c.color }, [
+        meta,
+        el("h3", { text: i.title }),
+        el("p", { text: i.summary }),
+        todo,
+        el("div", { class: "foot" }, [refs, src])
+      ]));
+    });
+  }
+
+  function renderAside() {
+    var kz = document.getElementById("kz");
+    kz.textContent = "";
+    document.getElementById("kz-h").textContent = DATA.kennzahlen.title;
+    DATA.kennzahlen.rows.forEach(function (r) {
+      kz.appendChild(el("tr", null, [
+        el("th", { scope: "row", text: r.label }),
+        el("td", { text: r.alt }),
+        el("td", { class: "neu" + (r.alt !== r.neu ? " chg" : ""), text: r.neu })
+      ]));
+    });
+    document.getElementById("kz-note").textContent = DATA.kennzahlen.note || "";
+    var t = document.getElementById("termine");
+    t.textContent = "";
+    var now = today();
+    DATA.termine.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; }).forEach(function (d) {
+      t.appendChild(el("li", { class: d.date < now ? "past" : "" }, [
+        el("time", { datetime: d.date, text: fmt(d.date) }),
+        el("span", { text: d.label })
+      ]));
+    });
+  }
+
+  function renderEditions() {
+    var s = document.getElementById("edition");
+    s.textContent = "";
+    DATA.editions.forEach(function (e, idx) {
+      s.appendChild(el("option", { value: e.id, text: (idx === 0 ? "Aktuell: " : "") + e.label }));
+    });
+    s.appendChild(el("option", { value: "alle", text: "Alle Ausgaben" }));
+    s.value = state.edition;
+    s.addEventListener("change", function () { state.edition = s.value; state.cat = "alle"; renderHeader(); renderChips(); renderFeed(); });
+  }
+
+  document.getElementById("q").addEventListener("input", function (e) { state.q = e.target.value; renderFeed(); });
+
+  fetch("data/news.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      DATA = d;
+      DATA.editions.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+      state.edition = DATA.editions[0].id;
+      renderHeader(); renderEditions(); renderChips(); renderFeed(); renderAside();
+    })
+    .catch(function () {
+      document.getElementById("feed").appendChild(el("p", { class: "empty", text: "Die Meldungen konnten nicht geladen werden. Bitte laden Sie die Seite neu." }));
+    });
+})();
+</script>
+</body>
+</html>
