@@ -4,332 +4,121 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HR-Recht Radar Schweiz</title>
+<meta name="description" content="Wöchentliche News zu Arbeitsrecht, Bundesgerichtsurteilen, Gesetzgebung und Sozialversicherungen für HR in der Schweiz.">
+<link rel="alternate" type="application/rss+xml" title="HR-Recht Radar" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* Layout: amtliche Wochenzeitung – Masthead mit roter Linie, Feed links, Kennzahlen/Termine rechts */
-:root {
-  --paper: #f5f6f8;
-  --card: #ffffff;
-  --ink: #161a21;
-  --muted: #5a6270;
-  --line: #dde1e8;
-  --accent: #b3121e;
-  --accent-soft: #fbe9ea;
-  --c-rechtsprechung: #1f4e8c;
-  --c-gesetzgebung: #6a3d9a;
-  --c-sozialversicherung: #1d6b4f;
-  --c-praxis: #9a5b12;
-  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #12151b; --card: #1a1f27; --ink: #e8ebf0; --muted: #9aa3b2; --line: #2c333f;
-    --accent: #ff5a63; --accent-soft: #3a1c20;
-    --c-rechtsprechung: #7fb0f0; --c-gesetzgebung: #c3a2ef; --c-sozialversicherung: #6fd1a6; --c-praxis: #f0b56a;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #12151b; --card: #1a1f27; --ink: #e8ebf0; --muted: #9aa3b2; --line: #2c333f;
-  --accent: #ff5a63; --accent-soft: #3a1c20;
-  --c-rechtsprechung: #7fb0f0; --c-gesetzgebung: #c3a2ef; --c-sozialversicherung: #6fd1a6; --c-praxis: #f0b56a;
-  color-scheme: dark;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; }
-body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
-
-header.mast { border-top: 6px solid var(--accent); background: var(--card); border-bottom: 1px solid var(--line); }
-.mast-inner { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding: 22px 0 18px; }
-.brand { display: flex; align-items: center; gap: 14px; }
-.cross { width: 38px; height: 38px; background: var(--accent); border-radius: 4px; position: relative; flex: none; }
-.cross::before, .cross::after { content: ""; position: absolute; background: #fff; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-.cross::before { width: 22px; height: 7px; } .cross::after { width: 7px; height: 22px; }
-h1 { font-family: var(--font-display); font-weight: 650; font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0; letter-spacing: -0.01em; line-height: 1.1; }
-.tagline { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
-.issue { text-align: right; font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.issue strong { display: block; color: var(--ink); font-family: var(--font-display); font-size: 1.15rem; font-weight: 650; }
-
-.brief { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 6px; padding: 18px 22px; margin: 24px 0 8px; }
-.brief h2 { font-family: var(--font-display); font-size: 1.15rem; margin: 0 0 8px; font-weight: 650; }
-.brief ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
-
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; padding: 18px 0 40px; align-items: start; }
-@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
-
-.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 16px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font: 500 .88rem var(--font-body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 6px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dotc, var(--muted)); }
-.chip[aria-pressed="true"] { background: var(--ink); color: var(--card); border-color: var(--ink); }
-.chip .n { font-variant-numeric: tabular-nums; opacity: .7; }
-.controls .grow { flex: 1 1 200px; display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
-input[type="search"], select { font: 400 .92rem var(--font-body); padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); min-width: 0; }
-input[type="search"] { flex: 1 1 180px; max-width: 280px; }
-
-.feed { display: grid; gap: 14px; }
-article.item { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 18px 20px 16px; border-top: 3px solid var(--catc); }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.cat { color: var(--catc); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .74rem; }
-.eff { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 1px 7px; font-weight: 500; }
-article h3 { font-family: var(--font-display); font-weight: 650; font-size: 1.22rem; line-height: 1.3; margin: 8px 0 8px; text-wrap: balance; }
-article p { margin: 0 0 10px; max-width: 70ch; }
-.todo { background: var(--paper); border-radius: 5px; padding: 10px 12px; font-size: .94rem; max-width: 70ch; }
-.todo b { color: var(--accent); font-weight: 600; }
-.foot { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; margin-top: 12px; }
-.refs { display: flex; flex-wrap: wrap; gap: 6px; }
-.ref { font: 500 .76rem var(--font-mono); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; color: var(--muted); }
-.src { font-size: .85rem; }
-.empty { color: var(--muted); padding: 24px; text-align: center; border: 1px dashed var(--line); border-radius: 6px; }
-
-aside { display: grid; gap: 18px; position: sticky; top: 16px; }
-@media (max-width: 900px) { aside { position: static; } }
-.panel { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
-.panel h2 { font-family: var(--font-display); font-size: 1.08rem; font-weight: 650; margin: 0 0 10px; }
-table { width: 100%; border-collapse: collapse; font-size: .87rem; font-variant-numeric: tabular-nums; }
-th, td { padding: 6px 0 6px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
-tbody th { white-space: normal; font-weight: 500; }
-th:first-child, td:first-child { text-align: left; padding-right: 8px; }
-thead th { font-weight: 600; color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; }
-td.neu { font-weight: 600; }
-td.chg { color: var(--accent); }
-.note { font-size: .78rem; color: var(--muted); margin: 8px 0 0; }
-ul.dates { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-ul.dates li { display: grid; grid-template-columns: 74px 1fr; gap: 10px; font-size: .88rem; }
-ul.dates time { font: 500 .8rem var(--font-mono); color: var(--accent); padding-top: 2px; }
-ul.dates li.past { opacity: .5; }
-
-footer { border-top: 1px solid var(--line); background: var(--card); font-size: .84rem; color: var(--muted); }
-footer .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 32px; padding: 24px 20px 32px; }
-footer h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink); margin: 0 0 6px; }
-footer p { margin: 0 0 6px; max-width: 60ch; }
-@media (prefers-reduced-motion: no-preference) { article.item { transition: border-color .15s; } }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="mast">
-  <div class="wrap mast-inner">
-    <div class="brand">
-      <div class="cross" aria-hidden="true"></div>
-      <div>
-        <h1>HR-Recht Radar</h1>
-        <p class="tagline">Arbeitsrecht, Sozialversicherungen und HR-Praxis in der Schweiz. Jede Woche neu.</p>
-      </div>
-    </div>
-    <div class="issue" id="issue"><strong>Ausgabe wird geladen</strong></div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="cross" aria-hidden="true"></span>HR-Recht Radar</a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="index.html" aria-current="page">Aktuell</a>
+      <a href="ausgaben/index.html">Ausgaben</a>
+      <a href="ueber.html">Über</a>
+      <a href="newsletter.html" class="cta">Newsletter</a>
+    </nav>
   </div>
 </header>
+<main>
+<section class="hero"><div class="wrap">
+<div>
+  <span class="kicker">Ausgabe KW 47/2026 · 22. November 2026</span>
+  <h1>Was diese Woche im HR-Recht zählt</h1>
+  <p class="lead">Neue Urteile, Gesetzesänderungen und Zahlen aus den Sozialversicherungen. Kurz eingeordnet, mit einem konkreten Hinweis, was HR jetzt tun sollte.</p>
+  <div class="btn-row"><a class="btn" href="ausgaben/2026-47.html">Ganze Ausgabe lesen</a><a class="btn ghost" href="newsletter.html">Newsletter</a></div>
+</div>
+<div class="highlights"><h2>Das Wichtigste in Kürze</h2><ol><li>BGer: Eine Änderungskündigung ist missbräuchlich, wenn der Arbeitgeber damit die Folgen seiner eigenen Fürsorgepflichtverletzung ausnützt (4A_445/2025, CHF 100&#x27;000 Entschädigung bestätigt).</li><li>BVG-Mindestzins steigt per 1.1.2027 von 1,25 % auf 2 %; AHV/IV-Renten steigen um rund 1,59 %, die BVG-Grenzbeträge ziehen mit.</li><li>Kurzarbeit: Ab 2027 entfällt die Toleranz von 20 Gleitzeit-Plusstunden; die verlängerte Bezugsdauer von 24 Monaten läuft Ende Januar 2027 aus.</li></ol></div>
+</div></section>
+<section class="block"><div class="wrap">
+<div class="block-head"><h2>Neueste Beiträge</h2><div class="chips" role="group" aria-label="Nach Thema filtern" data-filter="#latest .card"><button type="button" class="chip" data-cat="alle" aria-pressed="true">Alle</button><button type="button" class="chip" data-cat="rechtsprechung" aria-pressed="false">Rechtsprechung</button><button type="button" class="chip" data-cat="gesetzgebung" aria-pressed="false">Gesetzgebung</button><button type="button" class="chip" data-cat="sozialversicherung" aria-pressed="false">Sozialversicherungen &amp; Lohn</button><button type="button" class="chip" data-cat="praxis" aria-pressed="false">HR-Praxis &amp; Behörden</button></div></div>
+<div class="grid" id="latest"><a class="card feature cat-rechtsprechung" href="meldungen/egmr-alonso-radesca.html" data-cat="rechtsprechung">
+  <div><div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-11-05">05.11.2026</time><span>1 Min.</span></div><h3>EGMR rügt die Schweiz wegen Streikrechtsprechung (Spitalstreik Neuenburg)</h3><p>Der Europäische Gerichtshof für Menschenrechte hat eine Verletzung der Gewerkschaftsfreiheit nach Art. 11 EMRK festgestellt. Hintergrund ist ein Arbeitskonflikt im Privatspital Hôpital de la Providence. Nach Ansicht des Gerichtshofs war die Rechtsanwendung der Schweizer Gerichte (u.a. BGer 4A_64/2018) für Gewerkschaften und Arbeitnehmende nicht ausreichend vorhersehbar.</p><span class="more">Ganzen Beitrag lesen →</span></div>
+  <div class="feature-side"><b>Für die Praxis</b><span>Bei Arbeitskonflikten mit Streikandrohung die Rechtmässigkeit des Streiks nicht vorschnell verneinen und Massnahmen wie Kündigungen juristisch eng begleiten lassen.</span></div>
+</a><a class="card cat-rechtsprechung" href="meldungen/4a-139-2026.html" data-cat="rechtsprechung">
+  <div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-10-02">02.10.2026</time><span>1 Min.</span></div><h3>Krankentaggeld: Ohne Police und AVB scheitert die Schadenersatzklage</h3><p>Ein Arbeitnehmer verlangte rund CHF 20&#x27;900 Schadenersatz, weil der Arbeitgeber gerichtlich zugesprochene Überstunden nicht der Krankentaggeldversicherung gemeldet hatte. Ohne Police und Allgemeine Versicherungsbedingungen liess …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-rechtsprechung" href="meldungen/4a-223-2026.html" data-cat="rechtsprechung">
+  <div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-09-30">30.09.2026</time><span>1 Min.</span></div><h3>Fristlose Entlassung kurz nach Arztzeugnis gilt als Retorsion</h3><p>Eine Anwaltskanzlei entliess eine Assistentin fristlos. Für den ersten Fehler hatte sie nur verwarnt, der zweite lag nicht nach der Verwarnung, und die Kanzlei hatte nach dessen Entdeckung zu lange zugewartet. Die Kündigung …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-rechtsprechung" href="meldungen/4d-105-2026.html" data-cat="rechtsprechung">
+  <div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-09-30">30.09.2026</time><span>1 Min.</span></div><h3>Arbeitszeugnis: Pauschales Bestreiten reicht nicht</h3><p>Zwei Buchhalterinnen klagten auf ein wohlwollendes Arbeitszeugnis und reichten je einen eigenen Entwurf ein. Die Gerichte übernahmen beide Entwürfe, weil der Arbeitgeber sie nur allgemein bestritt, ohne eigenen Wortlaut …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-rechtsprechung" href="meldungen/4a-445-2025.html" data-cat="rechtsprechung">
+  <div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-09-09">09.09.2026</time><span>1 Min.</span></div><h3>Missbräuchliche Änderungskündigung: Arbeitgeber darf eigene Versäumnisse nicht ausnützen</h3><p>Ein Spital wollte die Leiterin der Viszeralchirurgie zur Chefärztin mit rund CHF 28&#x27;600 tieferem Jahreslohn zurückstufen und kündigte ihr, als sie nicht vorbehaltlos zustimmte. Die angeführten Gründe liessen sich nicht beweisen, …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-rechtsprechung" href="meldungen/4a-450-2025.html" data-cat="rechtsprechung">
+  <div class="meta"><span class="tag">Rechtsprechung</span><time datetime="2026-09-02">02.09.2026</time><span>1 Min.</span></div><h3>Darlehen an einen Mitarbeitenden ist nicht automatisch eine arbeitsrechtliche Streitigkeit</h3><p>Eine Bank lieh einem pensionierten Vermögensverwalter CHF 481&#x27;000, damit er einen Arrest im Libanon aufheben lassen konnte. Das Bundesgericht hielt es nicht für willkürlich, den Rückzahlungsstreit nicht dem Arbeitsrecht …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/grenzgaenger-frankreich.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-11-10">10.11.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>Grenzgänger aus Frankreich: Homeoffice-Tage und Lohndaten werden meldepflichtig</h3><p>Ab 2027 melden Arbeitgeber Homeoffice-Tage und Lohndaten von Mitarbeitenden mit Wohnsitz in Frankreich an die kantonalen Steuerämter; der automatische Lohndatenaustausch mit Frankreich startet am 1. Januar 2027. Massgebend sind …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/gav-mindestlohn-referendum.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-11-10">10.11.2026</time><span>1 Min.</span></div><h3>Vorrang allgemeinverbindlicher GAV vor kantonalen Mindestlöhnen: Referendum zustande gekommen</h3><p>Das Gesetz, das allgemeinverbindlich erklärten GAV Vorrang vor kantonalen Mindestlöhnen geben würde, tritt vorerst nicht in Kraft, weil das Referendum zustande kam. Bis zur Volksabstimmung gilt das bisherige Recht.</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/argv2-32c.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-10-28">28.10.2026</time><span class="eff">gilt ab 01.12.2026</span><span>1 Min.</span></div><h3>Start-ups: Neue Ausnahmen von Arbeits- und Ruhezeiten ab 1. Dezember 2026</h3><p>Der Bundesrat hat mit einer Revision der ArGV 2 die parlamentarische Initiative 16.442 umgesetzt. Ausnahmen von den allgemeinen Arbeits- und Ruhezeitvorschriften gelten nur, wenn kumulativ: spezifische Fähigkeiten, grosse …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/abgangsentschaedigung-bund.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-10-02">02.10.2026</time><span>1 Min.</span></div><h3>Abgangsentschädigungen für oberstes Bundeskader weitgehend verboten</h3><p>Das Parlament hat am 2. Oktober 2026 beschlossen, Abgangsentschädigungen für das oberste Kader des Bundes und bundesnaher Unternehmen weitgehend zu verbieten.</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/eo-angleichung.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-08-26">26.08.2026</time><span class="eff">gilt ab 01.07.2027</span><span>1 Min.</span></div><h3>EO-Leistungen für Eltern werden per 1. Juli 2027 angeglichen</h3><p>Das Parlament hat eine Revision des Erwerbsersatzgesetzes verabschiedet, die Leistungen für die verschiedenen Anspruchsgruppen vereinheitlicht. Mütter, Väter, die Ehefrau der Mutter, Adoptiveltern sowie Eltern schwer …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-gesetzgebung" href="meldungen/bvv-anpassungen.html" data-cat="gesetzgebung">
+  <div class="meta"><span class="tag">Gesetzgebung</span><time datetime="2026-06-12">12.06.2026</time><span class="eff">gilt ab 01.06.2027</span><span>1 Min.</span></div><h3>Säule 3a: Mehr Flexibilität bei Begünstigten ab 1. Juni 2027</h3><p>Der Bundesrat hat die BVV 3 und mehrere BVG-Verordnungen angepasst. Versicherte können die Begünstigten ihrer 3a-Leistungen ab Juni 2027 flexibler bestimmen. Die BVV 2 wird mit der 13. AHV-Altersrente koordiniert, und …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/kurzarbeit-2027.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-11-10">10.11.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>Kurzarbeit: Gleitzeit-Toleranz fällt weg, verlängerte Bezugsdauer läuft aus</h3><p>Ab 2027 entfällt die Toleranz von 20 Stunden positivem Gleitzeitsaldo; positive Salden müssen vor dem Bezug abgebaut werden. Die auf 24 Monate verlängerte Höchstbezugsdauer gilt bis 31. Januar 2027; danach ist eine schrittweise …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/mindestloehne-2027.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-11-10">10.11.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>Kantonale Mindestlöhne 2027</h3><p>Genf: CHF 24.73 pro Stunde. Basel-Stadt: CHF 22.50 (bisher 22.20), der Mindestlohn muss jeden Monat erreicht werden, ein 13. Monatslohn gleicht nicht aus. Jura: CHF 21.40 (unverändert). Tessin: je nach Branche CHF 20.50 bis …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/familienzulagen-2027.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-11-10">10.11.2026</time><span>1 Min.</span></div><h3>Familienzulagen: Bundes-Mindestbeträge bleiben unverändert</h3><p>Auf Bundesebene gibt es 2027 keine Erhöhung: Kinderzulage mindestens CHF 215, Ausbildungszulage mindestens CHF 268. Eine parlamentarische Initiative für CHF 250 bzw. 300 ist hängig; Kantone können höhere Beträge vorsehen.</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/referenzalter-frauen.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-11-10">10.11.2026</time><span>1 Min.</span></div><h3>Referenzalter Frauen: Jahrgang 1963 mit 64 Jahren und 9 Monaten</h3><p>Das Referenzalter der Frauen steigt seit 2025 in Schritten von drei Monaten pro Jahrgang auf 65 Jahre. Jahrgang 1962: 64 Jahre und 6 Monate, Jahrgang 1963: 64 Jahre und 9 Monate, ab Jahrgang 1964: 65 Jahre. 2027 erreichen Frauen …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/bvg-mindestzins.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-11-04">04.11.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>BVG-Mindestzins steigt auf 2 %</h3><p>Der Bundesrat hebt den Mindestzinssatz im BVG-Obligatorium ab Januar 2027 von 1,25 % auf 2 % an. Er geht damit über die Empfehlung der BVG-Kommission von 1,75 % hinaus.</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/bvg-grenzbetraege.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-10-05">05.10.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>Neue BVG-Grenzbeträge und 3a-Maxima ab 2027</h3><p>Mit der Rentenerhöhung steigen die BVG-Werte: Eintrittsschwelle CHF 23&#x27;040, Koordinationsabzug CHF 26&#x27;880, oberer Grenzbetrag CHF 92&#x27;160, maximal koordinierter Lohn CHF 65&#x27;280, minimal koordinierter Lohn CHF 3&#x27;840. Der …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-sozialversicherung" href="meldungen/ahv-renten-2027.html" data-cat="sozialversicherung">
+  <div class="meta"><span class="tag">Sozialversicherungen &amp; Lohn</span><time datetime="2026-10-02">02.10.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>AHV/IV-Renten steigen um rund 1,59 %, Beitragssatz bleibt bei 10,6 %</h3><p>Der Bundesrat erhöht die Renten per 1. Januar 2027: Die Minimalrente steigt auf CHF 1&#x27;280, die Maximalrente auf CHF 2&#x27;560 pro Monat. Der AHV/IV/EO-Beitragssatz bleibt bei 10,6 % (je 5,3 % Arbeitgeber und Arbeitnehmende). Die 13. …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-praxis" href="meldungen/stellenmeldepflicht-2027.html" data-cat="praxis">
+  <div class="meta"><span class="tag">HR-Praxis &amp; Behörden</span><time datetime="2026-11-10">10.11.2026</time><span class="eff">gilt ab 01.01.2027</span><span>1 Min.</span></div><h3>Stellenmeldepflicht 2027: Neu auch Detailhandel</h3><p>Gemäss provisorischer Liste fallen 2027 rund 14,7 % der Erwerbstätigen unter meldepflichtige Berufsarten (2026: 10,8 %). Neu dazu kommen unter anderem Detailhandel, Sicherheitspersonal, Baristas, Fachleute für strategische …</p><span class="more">Weiterlesen →</span>
+</a><a class="card cat-praxis" href="meldungen/kontingente-2027.html" data-cat="praxis">
+  <div class="meta"><span class="tag">HR-Praxis &amp; Behörden</span><time datetime="2026-11-10">10.11.2026</time><span>1 Min.</span></div><h3>Kontingente für Drittstaaten 2027 noch offen</h3><p>Die Kontingente für 2027 sind noch nicht festgelegt. 2026 galten 8&#x27;500 für Drittstaaten, 3&#x27;500 für das Vereinigte Königreich sowie 3&#x27;000 L- und 500 B-Bewilligungen für EU/EFTA-Dienstleistende über 120 Tage.</p><span class="more">Weiterlesen →</span>
+</a></div>
+</div></section>
+<section class="band nl-band"><div class="wrap">
+<div><h2>Nur das, was Sie betrifft</h2><p>Wählen Sie Ihre Themen und erhalten Sie jeden Montag eine kompakte Übersicht mit genau diesen Meldungen.</p></div>
+<div><a class="btn red" href="newsletter.html">Newsletter einrichten</a></div>
+</div></section>
+<section class="block"><div class="wrap"><div class="block-head"><h2>Auf einen Blick</h2></div>
+<div class="two"><div class="panel"><h3>Kennzahlen ab 1. Januar 2027</h3>
+<table><thead><tr><th scope="col">Wert</th><th scope="col">bisher</th><th scope="col">neu</th></tr></thead><tbody><tr><th scope="row">AHV-Minimalrente / Monat</th><td>1&#x27;260</td><td class="chg">1&#x27;280</td></tr><tr><th scope="row">AHV-Maximalrente / Monat</th><td>2&#x27;520</td><td class="chg">2&#x27;560</td></tr><tr><th scope="row">AHV/IV/EO-Beitragssatz</th><td>10,6 %</td><td class="">10,6 %</td></tr><tr><th scope="row">BVG-Eintrittsschwelle</th><td>22&#x27;680</td><td class="chg">23&#x27;040</td></tr><tr><th scope="row">BVG-Koordinationsabzug</th><td>26&#x27;460</td><td class="chg">26&#x27;880</td></tr><tr><th scope="row">BVG oberer Grenzbetrag</th><td>90&#x27;720</td><td class="chg">92&#x27;160</td></tr><tr><th scope="row">Max. koordinierter Lohn</th><td>64&#x27;260</td><td class="chg">65&#x27;280</td></tr><tr><th scope="row">Min. koordinierter Lohn</th><td>3&#x27;780</td><td class="chg">3&#x27;840</td></tr><tr><th scope="row">BVG-Mindestzins</th><td>1,25 %</td><td class="chg">2,0 %</td></tr><tr><th scope="row">Säule 3a mit PK</th><td>7&#x27;258</td><td class="chg">7&#x27;373</td></tr><tr><th scope="row">Säule 3a ohne PK</th><td>36&#x27;288</td><td class="chg">36&#x27;864</td></tr><tr><th scope="row">UVG max. versicherter Lohn</th><td>148&#x27;200</td><td class="">148&#x27;200</td></tr></tbody></table>
+<p class="note">Beträge in CHF pro Jahr, sofern nicht anders angegeben.</p></div><div class="panel"><h3>Termine und Fristen</h3><ul class="dates"><li><time datetime="2026-11-29">29.11.2026</time><span>Volksabstimmungen u.a. zur Finanzierung der 13. AHV-Rente (MWST) und im Wallis zum Mindestlohn</span></li><li><time datetime="2026-11-30">30.11.2026</time><span>WBF legt die definitive Liste der meldepflichtigen Berufsarten 2027 fest (Ende November)</span></li><li><time datetime="2026-12-01">01.12.2026</time><span>Art. 32c ArGV 2 (Start-ups) tritt in Kraft</span></li><li><time datetime="2027-01-01">01.01.2027</time><span>Neue AHV/BVG-Werte, BVG-Mindestzins 2 %, Wegfall Gleitzeit-Toleranz bei Kurzarbeit</span></li><li><time datetime="2027-01-31">31.01.2027</time><span>Ende der verlängerten Kurzarbeits-Bezugsdauer von 24 Monaten</span></li><li><time datetime="2027-02-28">28.02.2027</time><span>Waadt: Frist für die Meldung der Homeoffice-Tage französischer Grenzgänger 2026</span></li><li><time datetime="2027-06-01">01.06.2027</time><span>BVV 3: flexiblere Begünstigtenordnung in der Säule 3a</span></li><li><time datetime="2027-07-01">01.07.2027</time><span>Angleichung der EO-Leistungen für Eltern</span></li></ul></div></div></div></section>
 
-<main class="wrap">
-  <section class="brief" id="brief" aria-labelledby="brief-h">
-    <h2 id="brief-h">Das Wichtigste der Woche</h2>
-    <ol id="highlights"></ol>
-  </section>
-
-  <div class="layout">
-    <section aria-label="Meldungen">
-      <div class="controls">
-        <div class="chips" id="chips" role="group" aria-label="Nach Thema filtern"></div>
-        <div class="grow">
-          <input type="search" id="q" placeholder="Suchen, z.B. 337 OR, BVG" aria-label="Meldungen durchsuchen">
-          <select id="edition" aria-label="Ausgabe wählen"></select>
-        </div>
-      </div>
-      <div class="feed" id="feed"></div>
-    </section>
-
-    <aside>
-      <section class="panel" aria-labelledby="kz-h">
-        <h2 id="kz-h">Kennzahlen</h2>
-        <table>
-          <thead><tr><th scope="col">Wert</th><th scope="col">2026</th><th scope="col">2027</th></tr></thead>
-          <tbody id="kz"></tbody>
-        </table>
-        <p class="note" id="kz-note"></p>
-      </section>
-      <section class="panel" aria-labelledby="t-h">
-        <h2 id="t-h">Termine und Fristen</h2>
-        <ul class="dates" id="termine"></ul>
-      </section>
-    </aside>
-  </div>
 </main>
-
-<footer>
+<footer class="site-foot">
   <div class="wrap">
     <div>
+      <h2>HR-Recht Radar</h2>
+      <p>Wöchentliche News zu Arbeitsrecht, Rechtsprechung, Gesetzgebung und Sozialversicherungen für HR in der Schweiz. Erscheint jeden Montag.</p>
+      <p><a href="feed.xml">RSS-Feed</a> · <a href="newsletter.html">Newsletter</a></p>
+    </div>
+    <div>
       <h2>Hinweis</h2>
-      <p>Die Meldungen fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen, insbesondere Urteile des Bundesgerichts und Publikationen des Bundes. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit und Richtigkeit übernommen.</p>
-      <p>Die Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
+      <p>Die Beiträge fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen. Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
     </div>
     <div>
       <h2>Impressum</h2>
       <p>Herausgeber: [Name, Adresse und E-Mail ergänzen]</p>
-      <p>Erscheint wöchentlich am Montag. Letzte Aktualisierung: <span id="upd"></span></p>
+      <p>Letzte Aktualisierung: 22.11.2026</p>
     </div>
   </div>
 </footer>
-
 <script>
-(function () {
-  var CATS = {
-    rechtsprechung: { label: "Rechtsprechung", color: "var(--c-rechtsprechung)" },
-    gesetzgebung: { label: "Gesetzgebung", color: "var(--c-gesetzgebung)" },
-    sozialversicherung: { label: "Sozialversicherungen & Lohn", color: "var(--c-sozialversicherung)" },
-    praxis: { label: "HR-Praxis & Behörden", color: "var(--c-praxis)" }
-  };
-  var state = { cat: "alle", q: "", edition: null };
-  var DATA = null;
-
-  function el(tag, attrs, children) {
-    var n = document.createElement(tag);
-    if (attrs) for (var k in attrs) {
-      if (k === "text") n.textContent = attrs[k];
-      else if (k === "style") n.setAttribute("style", attrs[k]);
-      else n.setAttribute(k, attrs[k]);
-    }
-    (children || []).forEach(function (c) { if (c) n.appendChild(c); });
-    return n;
-  }
-  function fmt(iso) {
-    var p = iso.split("-");
-    return p[2] + "." + p[1] + "." + p[0];
-  }
-  function today() {
-    var d = new Date();
-    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
-  }
-
-  function renderHeader() {
-    var ed = DATA.editions.find(function (e) { return e.id === state.edition; }) || DATA.editions[0];
-    var issue = document.getElementById("issue");
-    issue.textContent = "";
-    issue.appendChild(el("strong", { text: "Ausgabe " + ed.label }));
-    issue.appendChild(document.createTextNode("Stand " + fmt(ed.date)));
-    var hl = document.getElementById("highlights");
-    hl.textContent = "";
-    (ed.highlights || []).forEach(function (h) { hl.appendChild(el("li", { text: h })); });
-    document.getElementById("upd").textContent = fmt(DATA.updated);
-  }
-
-  function itemsForEdition() {
-    if (state.edition === "alle") return DATA.items.slice();
-    return DATA.items.filter(function (i) { return i.edition === state.edition; });
-  }
-
-  function renderChips() {
-    var box = document.getElementById("chips");
-    box.textContent = "";
-    var base = itemsForEdition();
-    var entries = [["alle", { label: "Alle", color: "var(--muted)" }]].concat(Object.keys(CATS).map(function (k) { return [k, CATS[k]]; }));
-    entries.forEach(function (e) {
-      var key = e[0], c = e[1];
-      var count = key === "alle" ? base.length : base.filter(function (i) { return i.category === key; }).length;
-      var b = el("button", { type: "button", class: "chip", "aria-pressed": String(state.cat === key), style: "--dotc:" + c.color }, [
-        el("span", { class: "dot", "aria-hidden": "true" }),
-        el("span", { text: c.label }),
-        el("span", { class: "n", text: String(count) })
-      ]);
-      b.addEventListener("click", function () { state.cat = key; renderChips(); renderFeed(); });
-      box.appendChild(b);
+document.querySelectorAll('[data-filter]').forEach(function (group) {
+  var cards = document.querySelectorAll(group.getAttribute('data-filter'));
+  group.querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      group.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var c = b.getAttribute('data-cat');
+      cards.forEach(function (card) { card.classList.toggle('hidden', c !== 'alle' && card.getAttribute('data-cat') !== c); });
     });
-  }
-
-  function renderFeed() {
-    var q = state.q.trim().toLowerCase();
-    var list = itemsForEdition().filter(function (i) {
-      if (state.cat !== "alle" && i.category !== state.cat) return false;
-      if (!q) return true;
-      var hay = [i.title, i.summary, i.todo, (i.refs || []).join(" ")].join(" ").toLowerCase();
-      return hay.indexOf(q) !== -1;
-    });
-    var order = Object.keys(CATS);
-    list.sort(function (a, b) {
-      var c = order.indexOf(a.category) - order.indexOf(b.category);
-      return c !== 0 ? c : (a.date < b.date ? 1 : -1);
-    });
-    var feed = document.getElementById("feed");
-    feed.textContent = "";
-    if (!list.length) {
-      feed.appendChild(el("p", { class: "empty", text: "Keine Meldungen gefunden. Passen Sie Filter oder Suchbegriff an." }));
-      return;
-    }
-    list.forEach(function (i) {
-      var c = CATS[i.category] || { label: i.category, color: "var(--muted)" };
-      var meta = el("div", { class: "meta" }, [
-        el("span", { class: "cat", text: c.label }),
-        el("time", { datetime: i.date, text: fmt(i.date) }),
-        i.effective ? el("span", { class: "eff", text: "gilt ab " + fmt(i.effective) }) : null
-      ]);
-      var todo = el("p", { class: "todo" }, [el("b", { text: "Für die Praxis: " }), document.createTextNode(i.todo)]);
-      var refs = el("div", { class: "refs" }, (i.refs || []).map(function (r) { return el("span", { class: "ref", text: r }); }));
-      var src = i.source ? el("a", { class: "src", href: i.source.url, target: "_blank", rel: "noopener", text: "Quelle: " + i.source.label }) : null;
-      feed.appendChild(el("article", { class: "item", style: "--catc:" + c.color }, [
-        meta,
-        el("h3", { text: i.title }),
-        el("p", { text: i.summary }),
-        todo,
-        el("div", { class: "foot" }, [refs, src])
-      ]));
-    });
-  }
-
-  function renderAside() {
-    var kz = document.getElementById("kz");
-    kz.textContent = "";
-    document.getElementById("kz-h").textContent = DATA.kennzahlen.title;
-    DATA.kennzahlen.rows.forEach(function (r) {
-      kz.appendChild(el("tr", null, [
-        el("th", { scope: "row", text: r.label }),
-        el("td", { text: r.alt }),
-        el("td", { class: "neu" + (r.alt !== r.neu ? " chg" : ""), text: r.neu })
-      ]));
-    });
-    document.getElementById("kz-note").textContent = DATA.kennzahlen.note || "";
-    var t = document.getElementById("termine");
-    t.textContent = "";
-    var now = today();
-    DATA.termine.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; }).forEach(function (d) {
-      t.appendChild(el("li", { class: d.date < now ? "past" : "" }, [
-        el("time", { datetime: d.date, text: fmt(d.date) }),
-        el("span", { text: d.label })
-      ]));
-    });
-  }
-
-  function renderEditions() {
-    var s = document.getElementById("edition");
-    s.textContent = "";
-    DATA.editions.forEach(function (e, idx) {
-      s.appendChild(el("option", { value: e.id, text: (idx === 0 ? "Aktuell: " : "") + e.label }));
-    });
-    s.appendChild(el("option", { value: "alle", text: "Alle Ausgaben" }));
-    s.value = state.edition;
-    s.addEventListener("change", function () { state.edition = s.value; state.cat = "alle"; renderHeader(); renderChips(); renderFeed(); });
-  }
-
-  document.getElementById("q").addEventListener("input", function (e) { state.q = e.target.value; renderFeed(); });
-
-  fetch("data/news.json", { cache: "no-store" })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (d) {
-      DATA = d;
-      DATA.editions.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
-      state.edition = DATA.editions[0].id;
-      renderHeader(); renderEditions(); renderChips(); renderFeed(); renderAside();
-    })
-    .catch(function () {
-      document.getElementById("feed").appendChild(el("p", { class: "empty", text: "Die Meldungen konnten nicht geladen werden. Bitte laden Sie die Seite neu." }));
-    });
-})();
+  });
+});
 </script>
 </body>
 </html>

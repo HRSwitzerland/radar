@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über · HR-Recht Radar</title>
+<meta name="description" content="Wöchentliche News zu Arbeitsrecht, Bundesgerichtsurteilen, Gesetzgebung und Sozialversicherungen für HR in der Schweiz.">
+<link rel="alternate" type="application/rss+xml" title="HR-Recht Radar" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="cross" aria-hidden="true"></span>HR-Recht Radar</a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="index.html">Aktuell</a>
+      <a href="ausgaben/index.html">Ausgaben</a>
+      <a href="ueber.html" aria-current="page">Über</a>
+      <a href="newsletter.html" class="cta">Newsletter</a>
+    </nav>
+  </div>
+</header>
+<main>
+<div class="narrow">
+<div class="crumbs"><a href="index.html">Aktuell</a></div>
+<article class="post">
+  <span class="kicker">Über</span>
+  <h1>Über den HR-Recht Radar</h1>
+  <p class="lead">Der HR-Recht Radar fasst jede Woche zusammen, was sich im Schweizer Arbeitsrecht und rund um HR bewegt. Er richtet sich an HR-Leiterinnen und HR-Leiter, HR-Fachleute und alle, die Arbeitsverhältnisse gestalten.</p>
+  <h2>Themen</h2><ul><li><b>Rechtsprechung:</b> Neue Urteile des Bundesgerichts und des EGMR mit Bezug zum Arbeitsverhältnis.</li><li><b>Gesetzgebung:</b> Gesetzes- und Verordnungsänderungen, Vernehmlassungen und Inkraftsetzungen.</li><li><b>Sozialversicherungen &amp; Lohn:</b> AHV, BVG, UVG, ALV, Kurzarbeit, Familienzulagen und Mindestlöhne.</li><li><b>HR-Praxis &amp; Behörden:</b> Stellenmeldepflicht, Kontingente, Hinweise von SECO, EDÖB und Kantonen.</li></ul>
+  <h2>So entstehen die Beiträge</h2>
+  <p>Grundlage sind öffentlich zugängliche Quellen: Urteile des Bundesgerichts und des EGMR, Medienmitteilungen des Bundesrats und der Bundesämter sowie Fachpublikationen. Die Inhalte werden mit KI-Unterstützung recherchiert, zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag verlinkt seine Quelle.</p>
+  <h2>Keine Rechtsberatung</h2>
+  <p>Die Beiträge dienen der allgemeinen Information und ersetzen keine Beratung im Einzelfall. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen. Massgebend sind die Originalquellen.</p>
+  <h2>Impressum</h2>
+  <p>Herausgeber: [Name, Adresse und E-Mail ergänzen]</p>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h2>HR-Recht Radar</h2>
+      <p>Wöchentliche News zu Arbeitsrecht, Rechtsprechung, Gesetzgebung und Sozialversicherungen für HR in der Schweiz. Erscheint jeden Montag.</p>
+      <p><a href="feed.xml">RSS-Feed</a> · <a href="newsletter.html">Newsletter</a></p>
+    </div>
+    <div>
+      <h2>Hinweis</h2>
+      <p>Die Beiträge fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen. Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
+    </div>
+    <div>
+      <h2>Impressum</h2>
+      <p>Herausgeber: [Name, Adresse und E-Mail ergänzen]</p>
+      <p>Letzte Aktualisierung: 22.11.2026</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('[data-filter]').forEach(function (group) {
+  var cards = document.querySelectorAll(group.getAttribute('data-filter'));
+  group.querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      group.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var c = b.getAttribute('data-cat');
+      cards.forEach(function (card) { card.classList.toggle('hidden', c !== 'alle' && card.getAttribute('data-cat') !== c); });
+    });
+  });
+});
+</script>
+</body>
+</html>
