@@ -1,0 +1,2 @@
+# radar
+AI HR Newsletter
