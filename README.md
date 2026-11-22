@@ -6,7 +6,8 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
 - `data/articles.json` – einzige Inhaltsquelle: Einstellungen (`site`), Artikel, Kennzahlen, Termine
 - `build.py` – erzeugt alle Seiten: `python3 build.py` (prüft Pflichtfelder und bricht bei Fehlern ab)
 - `assets/style.css` – Design
-- Erzeugt: `index.html`, `artikel/<id>.html`, `rubrik/<rubrik>.html`, `archiv.html`, `suche.html` + `search.json`, `newsletter.html`, `ueber.html`, `feed.xml`, `feeds/<rubrik>.xml`
+- `tools.py` – Rechner (Kündigung/Sperrfrist, Lohnfortzahlung, Ferien, BVG) und Hilfsfunktionen; die Rechner laufen im Browser
+- Erzeugt: `aenderungen.html` (Zeitleiste aus `effective`-Daten und `termine`), `woche/<JJJJ-WW>.html` (Wochenrückblicke), `rechner/`, `index.html`, `artikel/<id>.html`, `rubrik/<rubrik>.html`, `archiv.html`, `suche.html` + `search.json`, `newsletter.html`, `ueber.html`, `feed.xml`, `feeds/<rubrik>.xml`
 
 ## Artikelformat (in `articles`, neue Artikel OBEN einfügen)
 ```json
@@ -30,3 +31,10 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
 `featured: true` macht einen Artikel zum Top-Thema auf der Startseite (immer nur der jüngste zählt).
 
 Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.
+
+## Wochenrückblick
+Wochenseiten entstehen automatisch aus allen Artikeln einer ISO-Kalenderwoche (Top 5: Top-Thema, dann Anzahl Quellen).
+Optional ergänzt die Freitags-Ausgabe eine redaktionelle Einordnung in `weeks`:
+```json
+"weeks": [{"id": "2026-48", "title": "Kurzer Titel der Woche", "intro": "3-5 Sätze Einordnung"}]
+```

@@ -2,8 +2,8 @@
 """Erzeugt die statische Newsplattform «HR Radar» aus data/articles.json.
 
 Aufruf:  python3 build.py
-Erzeugt: index.html, artikel/, rubrik/, archiv.html, suche.html, newsletter.html, ueber.html,
-         search.json, feed.xml, feeds/<rubrik>.xml
+Erzeugt: index.html, artikel/, rubrik/, woche/, rechner/, aenderungen.html, archiv.html, suche.html,
+         newsletter.html, ueber.html, search.json, feed.xml, feeds/<rubrik>.xml
 """
 import hashlib
 import html
@@ -13,6 +13,8 @@ import random
 import shutil
 from datetime import date, datetime
 from email.utils import format_datetime
+
+import tools
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = json.load(open(os.path.join(ROOT, "data", "articles.json"), encoding="utf-8"))
@@ -160,8 +162,10 @@ def layout(title, body, depth=0, desc="", active="", article=False):
     <a class="logo" href="{up}index.html">{LOGO}<span class="logo-text">{e(SITE_NAME)}<small>Was HR heute wissen muss</small></span></a>
     <nav class="main" aria-label="Hauptnavigation">
       {nav("index.html", "Aktuell", "home")}
+      {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
+      {nav("woche/index.html", "Wochenrückblick", "woche")}
+      {nav("rechner/index.html", "Rechner", "rechner")}
       {nav("archiv.html", "Archiv", "archiv")}
-      {nav("ueber.html", "Über", "ueber")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
   </div>
@@ -175,7 +179,7 @@ def layout(title, body, depth=0, desc="", active="", article=False):
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Täglich das Wichtigste für HR-Profis in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}archiv.html">Archiv</a></p>
+      <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}ueber.html">Über</a></p>
     </div>
     <div>
       <h2>Gut zu wissen</h2>
@@ -189,6 +193,8 @@ def layout(title, body, depth=0, desc="", active="", article=False):
   </div>
 </footer>
 <script>
+var pb = document.getElementById('print-btn');
+if (pb) {{ pb.addEventListener('click', function () {{ try {{ window.print(); }} catch (err) {{}} }}); }}
 document.querySelectorAll('[data-filter]').forEach(function (group) {{
   var cards = document.querySelectorAll(group.getAttribute('data-filter'));
   group.querySelectorAll('.chip').forEach(function (b) {{
@@ -316,9 +322,10 @@ def build_home():
   <div class="block-head"><div><span class="hand">Frisch eingetroffen</span><h2>Neueste Beiträge</h2></div>{chips('#latest .card', {a['category'] for a in latest})}</div>
   <div class="grid" id="latest">{"".join(card(a, "") for a in latest)}</div>
 </div></section>
+{home_extras()}
 {WAVE}
 <section class="block band"><div class="wrap">
-  <div class="block-head"><div><span class="hand">Zum Nachschlagen</span><h2>Auf einen Blick</h2></div></div>
+  <div class="block-head"><div><span class="hand">Zum Nachschlagen</span><h2>Auf einen Blick</h2></div><a class="see-all" href="aenderungen.html">Alle Änderungen</a></div>
   <div class="two">{kennzahlen_panel()}{termine_panel(6)}</div>
 </div></section>
 {WAVE_FLIP}
@@ -375,6 +382,128 @@ def build_category(k):
 </div></section>
 <section class="block"><div class="wrap"><div class="grid">{"".join(card(a, up) for a in items) or '<p class="empty">Noch keine Beiträge in dieser Rubrik. Schauen Sie bald wieder vorbei.</p>'}</div></div></section>"""
     write(f"rubrik/{k}.html", layout(CATS[k][0], body, 1, desc=CATS[k][2], active="rubrik-" + k))
+
+
+def week_top(items, n=5):
+    return sorted(items, key=lambda a: (a.get("featured", False), len(a.get("sources", [])), a["published"]), reverse=True)[:n]
+
+
+def weeks_map():
+    m = {}
+    for a in articles():
+        m.setdefault(tools.iso_week(a["published"]), []).append(a)
+    return m
+
+
+def home_extras():
+    wm = weeks_map()
+    wid = max(wm)
+    mon, sun = tools.week_range(wid)
+    top = week_top(wm[wid], 3)
+    lis = "".join(f'<li><a href="artikel/{a["id"]}.html">{e(a["title"])}</a></li>' for a in top)
+    calc = "".join(f'<a class="tool-chip" href="rechner/{k}.html" style="{cat_style(c)}">{ICONS[c]}{e(t)}</a>' for k, t, _, c in tools.RECHNER)
+    y, w = wid.split("-")
+    return f"""<section class="block"><div class="wrap"><div class="extras">
+  <a class="extra-card week-card" href="woche/{wid}.html"><span class="hand">Die Woche im HR</span><h3>KW {int(w)}/{y}: Das Wichtigste</h3><ol>{lis}</ol><span class="more">Zum Wochenrückblick</span></a>
+  <div class="extra-card tools-card"><span class="hand">Werkzeugkiste</span><h3>HR-Rechner</h3><p>Fristen, Lohnfortzahlung, Ferien und BVG in Sekunden berechnet.</p><div class="tool-chips">{calc}</div></div>
+</div></div></section>"""
+
+
+def build_changes():
+    today = date.today().isoformat()
+    entries = []
+    for a in articles():
+        if a.get("effective") and a["effective"] >= today:
+            entries.append({"date": a["effective"], "label": a["title"], "href": f"artikel/{a['id']}.html", "cat": a["category"], "text": a["teaser"]})
+    for t in DATA.get("termine", []):
+        if t["date"] >= today:
+            entries.append({"date": t["date"], "label": t["label"], "href": "", "cat": "", "text": ""})
+    entries.sort(key=lambda x: (x["date"], x["href"] == ""))
+    months = {}
+    for en in entries:
+        months.setdefault(en["date"][:7], []).append(en)
+    blocks = ""
+    for ym in sorted(months):
+        y, m = ym.split("-")
+        rows = ""
+        for en in months[ym]:
+            if en["href"]:
+                rows += f'<li class="chg-item" style="{cat_style(en["cat"])}">{cal(en["date"])}<div><span class="mini-cat">{e(CATS[en["cat"]][1])} · gilt ab {d_short(en["date"])}</span><a href="{en["href"]}"><b>{e(en["label"])}</b></a><p>{e(en["text"])}</p></div></li>'
+            else:
+                rows += f'<li class="chg-item termin">{cal(en["date"])}<div><span class="mini-cat">Termin · {d_short(en["date"])}</span><b>{e(en["label"])}</b></div></li>'
+        blocks += f'<section class="chg-month"><h2 class="hand">{MONTHS[int(m) - 1]} {y}</h2><ul class="chg-list">{rows}</ul></section>'
+    body = f"""<section class="cat-hero chg-hero"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS['gesetze']}</span>
+  <div><span class="hand">Zeitleiste</span><h1>Das ändert sich</h1><p class="lead">Alle kommenden Inkrafttreten, Fristen und Termine für HR auf einen Blick, nach Monat geordnet. Zum Ausdrucken für Lohnbuchhaltung und Geschäftsleitung.</p>
+  <div class="btn-row no-print"><button class="btn" id="print-btn" type="button">Seite drucken</button><a class="btn ghost" href="rubrik/gesetze.html">Alle Gesetzesbeiträge</a></div></div>
+</div></section>
+<div class="narrow page">{blocks or '<p class="empty">Aktuell sind keine kommenden Änderungen erfasst.</p>'}
+<p class="hint">Stand {d_long(DATA['updated'])}. Die Übersicht wird mit jedem neuen Beitrag automatisch aktualisiert. Massgebend sind die verlinkten Quellen.</p></div>"""
+    write("aenderungen.html", layout("Das ändert sich", body, 0, desc="Alle kommenden Gesetzesänderungen, Inkrafttreten und Fristen für HR in der Schweiz auf einen Blick.", active="aenderungen"))
+
+
+def build_weeks():
+    up = "../"
+    wm = weeks_map()
+    intros = {w["id"]: w for w in DATA.get("weeks", [])}
+    rows = ""
+    for wid in sorted(wm, reverse=True):
+        items = wm[wid]
+        mon, sun = tools.week_range(wid)
+        y, w = wid.split("-")
+        top = week_top(items)
+        ed = intros.get(wid, {})
+        intro = ed.get("intro") or f"Diese Woche sind {len(items)} Beiträge erschienen. Hier die fünf wichtigsten im Überblick."
+        top_html = "".join(f'<li class="wk-top" style="{cat_style(a["category"])}"><span class="wk-num">{i + 1}</span><div><span class="mini-cat">{e(CATS[a["category"]][1])}</span><a href="{up}artikel/{a["id"]}.html"><b>{e(a["title"])}</b></a><p>{e(a["summary"])}</p></div></li>' for i, a in enumerate(top))
+        others = [a for a in items if a not in top]
+        rest = f'<h2>Alle weiteren Beiträge der Woche</h2><div class="day-list">{"".join(mini_row(a, up) for a in others)}</div>' if others else ""
+        title = f"Die Woche im HR: KW {int(w)}/{y}"
+        body = f"""<div class="narrow page">
+<div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Wochenrückblicke</a></div>
+<span class="eyebrow"><span class="pill">KW {int(w)}/{y}</span>{d_short(mon.isoformat())} bis {d_short(sun.isoformat())}</span>
+<h1>{e(ed.get('title') or 'Die Woche im HR')}</h1>
+<p class="lead">{e(intro)}</p>
+<h2 class="hand top5">Die Top {len(top)} der Woche</h2>
+<ol class="wk-list">{top_html}</ol>
+{rest}
+</div>"""
+        write(f"woche/{wid}.html", layout(title, body, 1, desc=intro[:160], active="woche"))
+        first = ed.get("title") or (top[0]["title"] if top else "")
+        rows += f'<a class="list-row" href="{wid}.html"><div class="meta"><span class="pill-s">KW {int(w)}/{y}</span><span>{d_short(mon.isoformat())} bis {d_short(sun.isoformat())}</span><span class="dot-sep">{len(items)} Beiträge</span></div><h3>{e(first)}</h3><p>{e(intro)}</p></a>'
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Wochenrückblick</span></span>
+<h1>Die Woche im HR</h1>
+<p class="lead">Keine Zeit, jeden Tag reinzuschauen? Jede Woche fassen wir die wichtigsten Beiträge zusammen. Die aktuelle Woche wird laufend ergänzt, am Freitag erscheint die Einordnung der Redaktion.</p>
+{rows}
+</div>"""
+    write("woche/index.html", layout("Wochenrückblicke", body, 1, active="woche"))
+
+
+def build_calculators():
+    up = "../"
+    cards = ""
+    for k, title, desc, c in tools.RECHNER:
+        form, js, refs = tools.CALCS[k]
+        others = "".join(f'<a class="tool-chip" href="{kk}.html" style="{cat_style(cc)}">{ICONS[cc]}{e(tt)}</a>' for kk, tt, _, cc in tools.RECHNER if kk != k)
+        body = f"""<section class="cat-hero" style="{cat_style(c)}"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS[c]}</span>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Rechner</a></div><h1>{e(title)}</h1><p class="lead">{e(desc)}</p></div>
+</div></section>
+<div class="narrow page calc-page" style="{cat_style(c)}">
+{form}
+<div class="calc-note"><p><b>Wichtig:</b> Der Rechner bildet die gesetzliche Grundregel ab und dient der ersten Orientierung. Vertrag, Reglement, GAV und Einzelfall können zu anderen Ergebnissen führen. Keine Rechtsberatung.</p>
+<p class="refs-label">Rechtsgrundlagen</p><div class="refs">{"".join(f'<span class="ref">{e(r)}</span>' for r in refs)}</div></div>
+<h2>Weitere Rechner</h2><div class="tool-chips">{others}</div>
+</div>
+<script>{tools.JS_HELPERS}{js}</script>"""
+        write(f"rechner/{k}.html", layout(title, body, 1, desc=desc, active="rechner"))
+        cards += f'<a class="tool-card" href="{k}.html" style="{cat_style(c)}"><span class="mini-ico" aria-hidden="true">{ICONS[c]}</span><h3>{e(title)}</h3><p>{e(desc)}</p><span class="more">Rechner öffnen</span></a>'
+    body = f"""<section class="cat-hero chg-hero"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS['digital']}</span>
+  <div><span class="hand">Werkzeugkiste</span><h1>HR-Rechner</h1><p class="lead">Die häufigsten Fragen aus dem HR-Alltag in Sekunden beantwortet, mit Erklärung jedes Rechenschritts und den gesetzlichen Grundlagen.</p></div>
+</div></section>
+<section class="block"><div class="wrap"><div class="tool-grid">{cards}</div></div></section>"""
+    write("rechner/index.html", layout("HR-Rechner", body, 1, desc="Kostenlose HR-Rechner für die Schweiz: Kündigungsfrist und Sperrfrist, Lohnfortzahlung, Ferien pro rata, BVG.", active="rechner"))
 
 
 def build_archive():
@@ -523,13 +652,16 @@ def check():
 
 def main():
     check()
-    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben"):
+    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben", "woche", "rechner"):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     build_home()
     for a in DATA["articles"]:
         build_article(a)
     for k in ORDER:
         build_category(k)
+    build_changes()
+    build_weeks()
+    build_calculators()
     build_archive()
     build_search()
     build_newsletter()

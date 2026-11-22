@@ -390,3 +390,82 @@ article.post { padding: 0 0 30px; }
 .interest:has(input:checked) { border-color: var(--catc); background: var(--catb); }
 .interest b { color: var(--catc); }
 .post-hero .meta { margin-top: 14px; }
+
+/* ===== Wochenrückblick, Änderungen, Rechner ===== */
+.extras { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.extra-card { display: block; position: relative; border-radius: var(--radius); padding: 28px 30px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow); }
+.extra-card .hand { font-size: 1.5rem; display: block; transform: rotate(-2deg); transform-origin: left; }
+.extra-card h3 { font-size: 1.6rem; margin: 4px 0 14px; }
+.week-card { background: var(--ink); color: var(--bg); }
+.week-card .hand { color: var(--sun); }
+.week-card ol { margin: 0 0 16px; padding-left: 1.2em; display: grid; gap: 8px; }
+.week-card li { font-weight: 700; line-height: 1.4; }
+.week-card li a { color: inherit; text-decoration: none; }
+.week-card .more { color: var(--sun); font-weight: 800; }
+.week-card .more::after { content: " →"; }
+.tools-card { background: var(--mint); }
+.tools-card .hand { color: var(--c-sozialversicherung); }
+.tools-card p { margin: 0 0 14px; }
+.tool-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-chip { display: inline-flex; align-items: center; gap: 8px; background: var(--paper); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-weight: 800; font-size: .9rem; text-decoration: none; border: 1.5px solid transparent; }
+.tool-chip svg { width: 17px; height: 17px; color: var(--catc); }
+.tool-chip:hover { border-color: var(--catc); }
+
+.chg-hero { --catc: var(--accent-ink); --catb: var(--sun-soft); }
+.chg-month { margin-top: 26px; }
+.chg-month h2 { font-family: var(--font-hand); font-size: 1.9rem; color: var(--accent-ink); margin: 0 0 10px; }
+.chg-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.chg-item { display: grid; grid-template-columns: 62px 1fr; gap: 16px; align-items: start; background: var(--paper); border-radius: 20px; padding: 16px 18px; box-shadow: var(--shadow); border-left: 5px solid var(--catc, var(--line)); }
+.chg-item.termin { --catc: var(--muted); background: color-mix(in srgb, var(--paper) 70%, var(--bg)); box-shadow: none; border: 1.5px dashed var(--line); border-left: 5px solid var(--line); }
+.chg-item a { color: var(--ink); text-decoration: none; }
+.chg-item a:hover b { color: var(--accent-ink); }
+.chg-item b { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; line-height: 1.3; display: block; }
+.chg-item p { margin: 6px 0 0; color: var(--muted); font-size: .94rem; line-height: 1.5; }
+.hint { color: var(--muted); font-size: .9rem; }
+
+.top5 { font-family: var(--font-hand); color: var(--accent-ink); font-size: 1.8rem; margin: 30px 0 12px; }
+.wk-list { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 14px; }
+.wk-top { display: grid; grid-template-columns: 52px 1fr; gap: 16px; background: var(--paper); border-radius: 22px; padding: 18px 20px; box-shadow: var(--shadow); }
+.wk-num { width: 48px; height: 48px; border-radius: 16px; background: var(--catb); color: var(--catc); display: grid; place-items: center; font: 600 1.6rem var(--font-display); }
+.wk-top a { color: var(--ink); text-decoration: none; }
+.wk-top a:hover b { color: var(--accent-ink); }
+.wk-top b { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; line-height: 1.3; display: block; margin: 2px 0 6px; }
+.wk-top p { margin: 0; color: var(--muted); font-size: .96rem; line-height: 1.55; }
+.pill-s { background: var(--sun-soft); color: var(--ink); border-radius: 999px; padding: 2px 10px; font-weight: 800; }
+
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+.tool-card { display: flex; flex-direction: column; gap: 6px; background: var(--paper); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); text-decoration: none; color: var(--ink); border: 1.5px solid transparent; transition: border-color .2s, transform .2s; }
+.tool-card:hover { border-color: var(--catc); }
+@media (prefers-reduced-motion: no-preference) { .tool-card:hover { transform: translateY(-3px) rotate(-.4deg); } }
+.tool-card h3 { font-size: 1.3rem; margin: 10px 0 0; }
+.tool-card p { color: var(--muted); font-size: .96rem; margin: 0 0 10px; }
+.tool-card .more { margin-top: auto; font-weight: 800; color: var(--catc); }
+.tool-card .more::after { content: " →"; }
+.cat-hero .crumbs { padding: 0 0 6px; }
+
+.calc { background: var(--paper); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); display: grid; gap: 20px; margin-top: 10px; }
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 20px; }
+.calc .field label { font-weight: 800; font-size: .95rem; display: block; margin-bottom: 6px; }
+.calc .field small { display: block; color: var(--muted); font-size: .82rem; margin-top: 6px; line-height: 1.4; }
+.calc input[type="date"], .calc input[type="number"], .calc select { width: 100%; font: 600 1rem var(--font-body); padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--bg); color: var(--ink); }
+.calc input:focus, .calc select:focus { border-color: var(--catc); outline: none; }
+.calc-opt { border: 1.5px dashed var(--line); border-radius: 18px; padding: 16px 18px; }
+.calc-opt legend { font-weight: 800; padding: 0 6px; }
+.calc-opt .hint { margin: 0 0 12px; }
+.calc .btn { justify-self: start; }
+.calc-result { margin: 22px 0; background: var(--catb); border-radius: var(--radius); padding: 24px 26px; }
+.calc-result .big { font-size: 1.25rem; margin: 0 0 12px; }
+.calc-result .big b { font-family: var(--font-display); font-size: 1.7rem; color: var(--catc); }
+.calc-result ol, .calc-result ul { margin: 0 0 8px; padding-left: 1.2em; display: grid; gap: 6px; }
+.calc-result .danger b { color: var(--accent-ink); }
+.warn { margin: 0; font-weight: 700; color: var(--accent-ink); }
+.calc-note { background: var(--paper); border-radius: 20px; padding: 18px 22px; margin: 20px 0 30px; font-size: .94rem; box-shadow: var(--shadow); }
+.calc-note p { margin: 0 0 6px; }
+
+@media print {
+  .site-head, .site-foot, .no-print, .blob, .progress, nav { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .cat-hero { background: none; }
+  .chg-item, .wk-top, .day-list, .panel { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+  a { color: #000; text-decoration: none; }
+}
