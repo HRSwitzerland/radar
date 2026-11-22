@@ -8,13 +8,14 @@
 <link rel="alternate" type="application/rss+xml" title="HR-Recht Radar" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="index.html"><span class="cross" aria-hidden="true"></span>HR-Recht Radar</a>
+    <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--sun)"/><circle cx="20" cy="20" r="11.5" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="3 3.2"/><path d="M20 20 L31 11" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="var(--accent)"/><circle cx="28" cy="25" r="2.4" fill="var(--accent)"/></svg><span class="logo-text">HR-Recht Radar<small>HR-Recht, jede Woche frisch</small></span></a>
     <nav class="main" aria-label="Hauptnavigation">
       <a href="index.html">Aktuell</a>
       <a href="ausgaben/index.html">Ausgaben</a>
@@ -27,14 +28,14 @@
 <div class="narrow">
 <div class="crumbs"><a href="index.html">Aktuell</a></div>
 <article class="post">
-  <span class="kicker">Newsletter</span>
+  <span class="eyebrow"><span class="pill">Newsletter</span></span>
   <h1>Ihr persönlicher HR-Recht Radar</h1>
   <p class="lead">Wählen Sie die Themen, die für Sie relevant sind. Jeden Montag erhalten Sie eine E-Mail mit genau diesen Meldungen, kurz zusammengefasst und mit Link zum ausführlichen Beitrag.</p>
   <p class="notice">Die Anmeldung wird in Kürze freigeschaltet. Bis dahin können Sie die Themen über die RSS-Feeds unten abonnieren.</p>
   <form class="nl" action="#" onsubmit="return false">
     <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="email" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
     <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="vorname" autocomplete="given-name"></div>
-    <fieldset><legend>Welche Themen interessieren Sie?</legend><div class="interest-grid"><label class="interest cat-rechtsprechung"><input type="checkbox" name="interessen" value="rechtsprechung" checked><div><b>Rechtsprechung</b><span>Neue Urteile des Bundesgerichts und des EGMR mit Bezug zum Arbeitsverhältnis.</span></div></label><label class="interest cat-gesetzgebung"><input type="checkbox" name="interessen" value="gesetzgebung" checked><div><b>Gesetzgebung</b><span>Gesetzes- und Verordnungsänderungen, Vernehmlassungen und Inkraftsetzungen.</span></div></label><label class="interest cat-sozialversicherung"><input type="checkbox" name="interessen" value="sozialversicherung" checked><div><b>Sozialversicherungen &amp; Lohn</b><span>AHV, BVG, UVG, ALV, Kurzarbeit, Familienzulagen und Mindestlöhne.</span></div></label><label class="interest cat-praxis"><input type="checkbox" name="interessen" value="praxis" checked><div><b>HR-Praxis &amp; Behörden</b><span>Stellenmeldepflicht, Kontingente, Hinweise von SECO, EDÖB und Kantonen.</span></div></label></div></fieldset>
+    <fieldset><legend>Welche Themen interessieren Sie?</legend><div class="interest-grid"><label class="interest cat-rechtsprechung"><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M7 7h10M7 7l-3 7a3 3 0 0 0 6 0L7 7zM17 7l-3 7a3 3 0 0 0 6 0l-3-7z"/></svg></span><div><b>Rechtsprechung</b><span>Neue Urteile des Bundesgerichts und des EGMR mit Bezug zum Arbeitsverhältnis.</span></div><input type="checkbox" name="interessen" value="rechtsprechung" checked></label><label class="interest cat-gesetzgebung"><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><div><b>Gesetzgebung</b><span>Gesetzes- und Verordnungsänderungen, Vernehmlassungen und Inkraftsetzungen.</span></div><input type="checkbox" name="interessen" value="gesetzgebung" checked></label><label class="interest cat-sozialversicherung"><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10V5l7-2 7 2v6c0 5.6-7 10-7 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Sozialversicherungen &amp; Lohn</b><span>AHV, BVG, UVG, ALV, Kurzarbeit, Familienzulagen und Mindestlöhne.</span></div><input type="checkbox" name="interessen" value="sozialversicherung" checked></label><label class="interest cat-praxis"><span class="mini" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg></span><div><b>HR-Praxis &amp; Behörden</b><span>Stellenmeldepflicht, Kontingente, Hinweise von SECO, EDÖB und Kantonen.</span></div><input type="checkbox" name="interessen" value="praxis" checked></label></div></fieldset>
     <label class="consent"><input type="checkbox" id="nl-consent" name="einwilligung" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse und meine Themenwahl dafür gespeichert werden. Ich kann mich jederzeit über den Link in jeder E-Mail abmelden.</span></label>
     <div><button class="btn red" type="submit" disabled>Newsletter abonnieren</button></div>
   </form>
@@ -52,7 +53,7 @@
       <p><a href="feed.xml">RSS-Feed</a> · <a href="newsletter.html">Newsletter</a></p>
     </div>
     <div>
-      <h2>Hinweis</h2>
+      <h2>Gut zu wissen</h2>
       <p>Die Beiträge fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen. Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
     </div>
     <div>
@@ -73,6 +74,15 @@ document.querySelectorAll('[data-filter]').forEach(function (group) {
     });
   });
 });
+var bar = document.getElementById('progress');
+if (bar && document.querySelector('article.post')) {
+  var onScroll = function () {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  };
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+}
 </script>
 </body>
 </html>
