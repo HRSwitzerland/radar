@@ -1,0 +1,613 @@
+{
+  "_hinweis": "Themenseiten (Landingpages) unter thema/<slug>.html. match.tags und match.words bestimmen, welche Beiträge automatisch verlinkt werden. Texte sind allgemeine Informationen, keine Rechtsberatung.",
+  "themen": [
+    {
+      "slug": "kuendigung",
+      "category": "arbeitsrecht",
+      "title": "Kündigung im Arbeitsrecht: Fristen, Form und Schutz",
+      "seo_title": "Kündigungsfrist Schweiz: Fristen, Form und missbräuchliche Kündigung",
+      "description": "Kündigungsfristen nach OR, Kündigung in der Probezeit, Begründung, missbräuchliche Kündigung und Einsprache: der Überblick für HR, mit Rechner und aktuellen Urteilen.",
+      "intro": "Die ordentliche Kündigung ist im Schweizer Arbeitsrecht grundsätzlich frei: Arbeitgeber und Arbeitnehmende dürfen ein unbefristetes Arbeitsverhältnis ohne besonderen Grund beenden. Grenzen setzen die Kündigungsfristen, die Sperrfristen und das Verbot der missbräuchlichen Kündigung. Hier finden Sie die Grundregeln, typische Fehler und alle Beiträge zum Thema.",
+      "sections": [
+        {
+          "h": "Die gesetzlichen Kündigungsfristen",
+          "p": "In der Probezeit kann das Arbeitsverhältnis jederzeit mit einer Frist von sieben Tagen gekündigt werden (Art. 335b OR). Danach gelten nach Art. 335c OR im ersten Dienstjahr ein Monat, vom zweiten bis und mit neunten Dienstjahr zwei Monate und ab dem zehnten Dienstjahr drei Monate, jeweils auf das Ende eines Monats. Abweichungen sind durch schriftliche Abrede, Normalarbeitsvertrag oder Gesamtarbeitsvertrag möglich; unter einen Monat darf die Frist nur durch GAV und nur für das erste Dienstjahr gesenkt werden."
+        },
+        {
+          "h": "Form und Begründung",
+          "p": "Das Gesetz schreibt für die Kündigung keine Form vor; aus Beweisgründen empfiehlt sich die Schriftform mit nachweisbarem Zugang. Massgebend ist der Zeitpunkt, in dem die Kündigung bei der Empfängerin oder dem Empfänger eintrifft. Auf Verlangen muss die kündigende Partei die Kündigung schriftlich begründen (Art. 335 Abs. 2 OR). Die Begründung sollte wahr und vollständig sein, denn sie wird in einem späteren Streit oft zum zentralen Beweismittel."
+        },
+        {
+          "h": "Missbräuchliche Kündigung",
+          "p": "Missbräuchlich ist eine Kündigung etwa wegen einer persönlichen Eigenschaft, wegen der Ausübung verfassungsmässiger Rechte, als Rachekündigung nach dem Geltendmachen von Ansprüchen aus dem Arbeitsverhältnis oder bei einer Massenentlassung ohne Konsultation (Art. 336 OR). Die Kündigung bleibt gültig, die betroffene Person kann aber eine Entschädigung von bis zu sechs Monatslöhnen verlangen (Art. 336a OR). Voraussetzung ist eine schriftliche Einsprache bis zum Ende der Kündigungsfrist und eine Klage innert 180 Tagen nach Ende des Arbeitsverhältnisses (Art. 336b OR)."
+        },
+        {
+          "h": "Typische Fehler in der Praxis",
+          "p": "Häufig werden Sperrfristen übersehen, etwa wenn eine Kündigung kurz nach einer Krankmeldung ausgesprochen wird, oder der Endtermin wird falsch berechnet. Problematisch sind auch Kündigungen, deren zeitlicher Ablauf den Eindruck einer Reaktion auf eine Beschwerde oder ein Arztzeugnis erweckt. Eine saubere Dokumentation von Leistungs- oder Verhaltensproblemen und ein geordneter Prozess mit Gespräch, Verwarnung und Entscheid schützen vor solchen Vorwürfen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie lange ist die Kündigungsfrist in der Probezeit?",
+          "a": "Sieben Tage, sofern nichts anderes schriftlich vereinbart ist. Die Kündigung ist jederzeit möglich, nicht nur auf ein Monatsende (Art. 335b OR)."
+        },
+        {
+          "q": "Muss eine Kündigung begründet werden?",
+          "a": "Nur auf Verlangen der gekündigten Partei, dann aber schriftlich (Art. 335 Abs. 2 OR). Eine fehlende Begründung macht die Kündigung nicht ungültig."
+        },
+        {
+          "q": "Was droht bei einer missbräuchlichen Kündigung?",
+          "a": "Die Kündigung bleibt wirksam. Das Gericht kann aber eine Entschädigung von bis zu sechs Monatslöhnen zusprechen, wenn die betroffene Person rechtzeitig schriftlich Einsprache erhoben und fristgerecht geklagt hat."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 335 OR",
+        "Art. 335b OR",
+        "Art. 335c OR",
+        "Art. 336 OR",
+        "Art. 336a OR",
+        "Art. 336b OR"
+      ],
+      "match": {
+        "tags": [
+          "Kündigung",
+          "Änderungskündigung",
+          "Kündigungsschutz",
+          "Missbräuchliche Kündigung",
+          "Retorsion"
+        ],
+        "words": [
+          "Kündigung",
+          "kündig"
+        ]
+      }
+    },
+    {
+      "slug": "sperrfristen",
+      "category": "arbeitsrecht",
+      "title": "Sperrfristen: Kündigung bei Krankheit, Unfall und Schwangerschaft",
+      "seo_title": "Sperrfrist bei Krankheit und Unfall: Kündigungsschutz nach Art. 336c OR",
+      "description": "Wann eine Kündigung zur Unzeit nichtig ist, wie lange die Sperrfrist bei Krankheit dauert und wie sich die Kündigungsfrist verlängert: Überblick mit Rechner.",
+      "intro": "Nach Ablauf der Probezeit darf der Arbeitgeber während bestimmter Zeiten nicht kündigen. Die Sperrfristen nach Art. 336c OR schützen Mitarbeitende, die krank, verunfallt, schwanger oder im Militärdienst sind. Fehler kosten hier besonders viel, weil eine Kündigung während der Sperrfrist nichtig ist.",
+      "sections": [
+        {
+          "h": "Die wichtigsten Sperrfristen",
+          "p": "Bei unverschuldeter Arbeitsunfähigkeit wegen Krankheit oder Unfall gilt eine Sperrfrist von 30 Tagen im ersten Dienstjahr, 90 Tagen vom zweiten bis und mit fünften Dienstjahr und 180 Tagen ab dem sechsten Dienstjahr. Während der Schwangerschaft und in den 16 Wochen nach der Niederkunft ist eine Kündigung durch den Arbeitgeber ausgeschlossen. Geschützt sind unter anderem auch Personen im obligatorischen Militär-, Zivilschutz- oder Zivildienst, wenn er mehr als elf Tage dauert, während des Dienstes sowie vier Wochen davor und danach."
+        },
+        {
+          "h": "Kündigung während oder vor der Sperrfrist",
+          "p": "Eine Kündigung, die der Arbeitgeber während einer Sperrfrist ausspricht, ist nichtig und muss nach Ablauf wiederholt werden. Wurde die Kündigung vorher ausgesprochen und beginnt die Sperrfrist während der Kündigungsfrist, wird diese unterbrochen und erst nach Ende der Sperrfrist fortgesetzt. Gilt ein bestimmter Endtermin, etwa ein Monatsende, verschiebt sich das Ende auf den nächstfolgenden Endtermin."
+        },
+        {
+          "h": "Worauf HR achten sollte",
+          "p": "Vor jeder Kündigung lohnt sich ein Blick auf laufende Absenzen, Arztzeugnisse und bekannte Schwangerschaften. Mehrere Krankheiten mit unterschiedlichen Ursachen können je eine eigene Sperrfrist auslösen. Die Sperrfristen gelten nicht für Kündigungen durch die Arbeitnehmenden und nicht für fristlose Entlassungen aus wichtigem Grund; dort gelten aber eigene strenge Voraussetzungen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie lange dauert die Sperrfrist bei Krankheit?",
+          "a": "Im ersten Dienstjahr 30 Tage, vom zweiten bis fünften Dienstjahr 90 Tage, ab dem sechsten Dienstjahr 180 Tage (Art. 336c Abs. 1 lit. b OR)."
+        },
+        {
+          "q": "Gilt die Sperrfrist auch in der Probezeit?",
+          "a": "Nein. Die Sperrfristen nach Art. 336c OR gelten erst nach Ablauf der Probezeit."
+        },
+        {
+          "q": "Was passiert mit einer Kündigung, die während der Sperrfrist ausgesprochen wurde?",
+          "a": "Sie ist nichtig, also unwirksam. Der Arbeitgeber muss nach Ablauf der Sperrfrist erneut kündigen."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 336c OR",
+        "Art. 336d OR"
+      ],
+      "match": {
+        "tags": [
+          "Sperrfrist",
+          "Sperrfristen",
+          "Krankheit",
+          "Arztzeugnis"
+        ],
+        "words": [
+          "Sperrfrist",
+          "Arztzeugnis",
+          "krank"
+        ]
+      }
+    },
+    {
+      "slug": "fristlose-kuendigung",
+      "category": "arbeitsrecht",
+      "title": "Fristlose Kündigung: wichtiger Grund, Reaktionszeit und Folgen",
+      "seo_title": "Fristlose Kündigung Schweiz: Voraussetzungen nach Art. 337 OR",
+      "description": "Wann eine fristlose Entlassung gerechtfertigt ist, wie schnell der Arbeitgeber reagieren muss und was bei einer ungerechtfertigten fristlosen Kündigung droht.",
+      "intro": "Die fristlose Kündigung ist das schärfste Mittel im Arbeitsrecht. Sie ist nur zulässig, wenn der anderen Partei die Fortsetzung des Arbeitsverhältnisses nach Treu und Glauben nicht mehr zugemutet werden kann. Gerichte prüfen streng, und Fehler werden teuer.",
+      "sections": [
+        {
+          "h": "Der wichtige Grund",
+          "p": "Nach Art. 337 OR braucht es einen wichtigen Grund, also Umstände, welche das Vertrauensverhältnis zerstören oder so tief erschüttern, dass eine Fortsetzung bis zum Ablauf der ordentlichen Kündigungsfrist unzumutbar ist. Bei besonders schweren Verfehlungen, etwa Straftaten gegen den Arbeitgeber, kann ein einmaliger Vorfall genügen. Bei weniger schweren Pflichtverletzungen setzt die Rechtsprechung in der Regel eine vorgängige Verwarnung voraus."
+        },
+        {
+          "h": "Schnell handeln",
+          "p": "Wer fristlos kündigen will, muss rasch reagieren. Nach der Rechtsprechung des Bundesgerichts steht nur eine kurze Bedenkzeit zur Verfügung, in der Regel wenige Arbeitstage, um den Sachverhalt abzuklären und zu entscheiden. Wartet der Arbeitgeber zu lange, gilt dies als Zeichen, dass die Fortsetzung doch zumutbar ist."
+        },
+        {
+          "h": "Folgen einer ungerechtfertigten fristlosen Kündigung",
+          "p": "Auch eine ungerechtfertigte fristlose Kündigung beendet das Arbeitsverhältnis sofort. Der Arbeitgeber schuldet aber den Lohn, den die Person bis zum Ablauf der ordentlichen Kündigungsfrist verdient hätte, abzüglich dessen, was sie anderweitig verdient oder einspart. Zusätzlich kann das Gericht eine Entschädigung von bis zu sechs Monatslöhnen zusprechen (Art. 337c OR)."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Braucht es vor einer fristlosen Kündigung eine Verwarnung?",
+          "a": "Bei schweren Verfehlungen nicht. Bei weniger schweren Pflichtverletzungen verlangt die Rechtsprechung in der Regel eine vorherige Verwarnung mit Androhung der fristlosen Kündigung."
+        },
+        {
+          "q": "Wie schnell muss der Arbeitgeber fristlos kündigen?",
+          "a": "Sehr rasch nach Kenntnis des Grundes. Die Gerichte gewähren meist nur wenige Arbeitstage Bedenkzeit; für Abklärungen kann etwas mehr Zeit zulässig sein."
+        },
+        {
+          "q": "Was kostet eine ungerechtfertigte fristlose Kündigung?",
+          "a": "Lohnersatz bis zum Ende der ordentlichen Kündigungsfrist und zusätzlich eine Entschädigung von bis zu sechs Monatslöhnen (Art. 337c OR)."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 337 OR",
+        "Art. 337c OR",
+        "Art. 337d OR"
+      ],
+      "match": {
+        "tags": [
+          "Fristlose Kündigung",
+          "Fristlose Entlassung"
+        ],
+        "words": [
+          "fristlos"
+        ]
+      }
+    },
+    {
+      "slug": "massenentlassung",
+      "category": "praxis",
+      "title": "Massenentlassung: Schwellenwerte, Konsultation und Sozialplan",
+      "seo_title": "Massenentlassung Schweiz: Konsultationsverfahren, Meldung und Sozialplan",
+      "description": "Ab wann eine Massenentlassung vorliegt, wie das Konsultationsverfahren abläuft, wann die Meldung ans Arbeitsamt nötig ist und wann ein Sozialplan Pflicht ist.",
+      "intro": "Bei einem grösseren Stellenabbau gelten besondere Regeln. Wer die Schwellenwerte erreicht, muss die Belegschaft konsultieren, das kantonale Arbeitsamt informieren und ab einer bestimmten Grösse einen Sozialplan verhandeln. Fehler im Verfahren können Kündigungen missbräuchlich machen.",
+      "sections": [
+        {
+          "h": "Wann liegt eine Massenentlassung vor?",
+          "p": "Nach Art. 335d OR liegt eine Massenentlassung vor, wenn innerhalb von 30 Tagen aus Gründen, die nicht in der Person der Arbeitnehmenden liegen, gekündigt wird: in Betrieben mit mehr als 20 und weniger als 100 Arbeitnehmenden mindestens 10 Personen, in Betrieben mit 100 bis 299 Arbeitnehmenden mindestens 10 Prozent und in Betrieben mit mindestens 300 Arbeitnehmenden mindestens 30 Personen. Auch Änderungskündigungen können mitzählen."
+        },
+        {
+          "h": "Konsultation und Meldung",
+          "p": "Der Arbeitgeber muss die Arbeitnehmervertretung oder, wo keine besteht, die Arbeitnehmenden konsultieren und ihnen die Möglichkeit geben, Vorschläge zur Vermeidung, Verringerung oder Milderung der Kündigungen zu machen (Art. 335f OR). Dazu informiert er schriftlich über Gründe, Zahl der Betroffenen und Beschäftigten sowie den Zeitraum und stellt dem kantonalen Arbeitsamt eine Kopie zu. Nach der Konsultation zeigt er die Massenentlassung dem Arbeitsamt schriftlich an; die Arbeitsverhältnisse enden frühestens 30 Tage nach dieser Anzeige (Art. 335g OR)."
+        },
+        {
+          "h": "Sozialplan",
+          "p": "Beschäftigt ein Arbeitgeber üblicherweise mindestens 250 Arbeitnehmende und will er innert 30 Tagen mindestens 30 von ihnen aus betrieblichen Gründen kündigen, muss er mit der Arbeitnehmervertretung über einen Sozialplan verhandeln (Art. 335h ff. OR). Kommt keine Einigung zustande, entscheidet ein Schiedsgericht."
+        },
+        {
+          "h": "Folgen von Verfahrensfehlern",
+          "p": "Wird die Konsultation nicht oder nicht ernsthaft durchgeführt, gelten die Kündigungen als missbräuchlich (Art. 336 Abs. 2 lit. c OR). Die Entschädigung beträgt dann bis zu zwei Monatslöhne pro betroffener Person (Art. 336a Abs. 3 OR). Wichtig ist, dass der Entscheid zu Beginn der Konsultation noch nicht endgültig gefallen ist."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ab wie vielen Kündigungen spricht man von einer Massenentlassung?",
+          "a": "Das hängt von der Betriebsgrösse ab: 10 Kündigungen bei 21 bis 99 Mitarbeitenden, 10 Prozent bei 100 bis 299 und 30 Kündigungen ab 300 Mitarbeitenden, jeweils innert 30 Tagen (Art. 335d OR)."
+        },
+        {
+          "q": "Wie lange muss das Konsultationsverfahren dauern?",
+          "a": "Das Gesetz nennt keine feste Dauer. Die Frist für Vorschläge muss aber so bemessen sein, dass die Belegschaft ernsthaft Vorschläge erarbeiten kann; in der Praxis sind oft rund zwei Wochen üblich."
+        },
+        {
+          "q": "Wann ist ein Sozialplan Pflicht?",
+          "a": "Wenn der Arbeitgeber üblicherweise mindestens 250 Mitarbeitende beschäftigt und innert 30 Tagen mindestens 30 Kündigungen aus betrieblichen Gründen beabsichtigt (Art. 335i OR)."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 335d OR",
+        "Art. 335f OR",
+        "Art. 335g OR",
+        "Art. 335h–335k OR",
+        "Art. 336a Abs. 3 OR"
+      ],
+      "match": {
+        "tags": [
+          "Massenentlassung",
+          "Konsultationsverfahren",
+          "Stellenabbau",
+          "Sozialplan"
+        ],
+        "words": [
+          "Massenentlassung",
+          "Stellenabbau",
+          "Konsultationsverfahren"
+        ]
+      }
+    },
+    {
+      "slug": "lohnfortzahlung-krankheit",
+      "category": "gesundheit",
+      "title": "Lohnfortzahlung bei Krankheit und Unfall",
+      "seo_title": "Lohnfortzahlung bei Krankheit Schweiz: Skalen, Krankentaggeld, Art. 324a OR",
+      "description": "Wie lange der Arbeitgeber bei Krankheit den Lohn zahlen muss, was Berner, Zürcher und Basler Skala bedeuten und wann eine Krankentaggeldversicherung gleichwertig ist.",
+      "intro": "Wird eine Mitarbeiterin oder ein Mitarbeiter ohne eigenes Verschulden krank oder verunfallt, muss der Arbeitgeber den Lohn für eine beschränkte Zeit weiterzahlen. Wie lange, hängt von Dienstjahren, Region und allfälligen Versicherungslösungen ab.",
+      "sections": [
+        {
+          "h": "Die gesetzliche Grundregel",
+          "p": "Nach Art. 324a OR besteht die Lohnfortzahlungspflicht, wenn das Arbeitsverhältnis mehr als drei Monate gedauert hat oder für mehr als drei Monate eingegangen wurde. Im ersten Dienstjahr ist der Lohn für drei Wochen zu zahlen, danach für eine angemessen längere Zeit. Was angemessen ist, bestimmen die Gerichte mit Skalen: Verbreitet sind die Berner, die Zürcher und die Basler Skala, die je nach Kanton angewendet werden."
+        },
+        {
+          "h": "Krankentaggeldversicherung als Alternative",
+          "p": "Viele Arbeitgeber schliessen eine Krankentaggeldversicherung ab. Sie ersetzt die gesetzliche Lohnfortzahlung nur, wenn sie mindestens gleichwertig ist und schriftlich vereinbart wurde (Art. 324a Abs. 4 OR). Nach verbreiteter Praxis gilt eine Lösung als gleichwertig, wenn sie 80 Prozent des Lohnes während 720 Tagen innerhalb von 900 Tagen deckt und der Arbeitgeber mindestens die Hälfte der Prämie trägt; eine kurze Wartefrist ist möglich."
+        },
+        {
+          "h": "Unfall",
+          "p": "Bei Berufs- und Nichtberufsunfällen zahlt die obligatorische Unfallversicherung ab dem dritten Tag nach dem Unfall ein Taggeld von 80 Prozent des versicherten Verdienstes. Der Arbeitgeber zahlt in der Regel für den Unfalltag und die zwei folgenden Tage den Lohn und ist von der Lohnfortzahlung befreit, soweit die Versicherung mindestens 80 Prozent deckt (Art. 324b OR)."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie lange zahlt der Arbeitgeber im ersten Dienstjahr bei Krankheit?",
+          "a": "Drei Wochen, sofern das Arbeitsverhältnis länger als drei Monate gedauert hat oder dafür eingegangen wurde und keine gleichwertige Versicherungslösung besteht."
+        },
+        {
+          "q": "Welche Skala gilt in meinem Kanton?",
+          "a": "Das hängt von der kantonalen Gerichtspraxis ab. Verbreitet sind die Berner Skala, die Zürcher Skala und die Basler Skala. Der Rechner auf dieser Seite zeigt die Werte nach den gängigen Skalen."
+        },
+        {
+          "q": "Ersetzt eine Krankentaggeldversicherung die Lohnfortzahlung?",
+          "a": "Ja, wenn sie mindestens gleichwertig ist und schriftlich vereinbart wurde, etwa im Arbeitsvertrag oder Personalreglement."
+        }
+      ],
+      "tools": [
+        "lohnfortzahlung"
+      ],
+      "refs": [
+        "Art. 324a OR",
+        "Art. 324b OR"
+      ],
+      "match": {
+        "tags": [
+          "Krankentaggeld",
+          "Lohnfortzahlung",
+          "Absenzen",
+          "Psychische Gesundheit"
+        ],
+        "words": [
+          "Krankentaggeld",
+          "Lohnfortzahlung",
+          "Absenz"
+        ]
+      }
+    },
+    {
+      "slug": "ferien",
+      "category": "lohn",
+      "title": "Ferien im Arbeitsrecht: Anspruch, Kürzung und Auszahlung",
+      "seo_title": "Ferienanspruch Schweiz: 4 oder 5 Wochen, Kürzung, Auszahlung",
+      "description": "Wie viele Ferien Mitarbeitende mindestens haben, wann der Arbeitgeber Ferien kürzen darf, ob Ferien ausbezahlt werden dürfen und wie Ferien pro rata berechnet werden.",
+      "intro": "Ferien dienen der Erholung und sind deshalb im Gesetz besonders geschützt. Mindestanspruch, Bezug und Kürzung sind im Obligationenrecht geregelt; Abweichungen zuungunsten der Mitarbeitenden sind nicht zulässig.",
+      "sections": [
+        {
+          "h": "Mindestanspruch",
+          "p": "Arbeitnehmende haben pro Dienstjahr Anspruch auf mindestens vier Wochen Ferien, bis zum vollendeten 20. Altersjahr auf mindestens fünf Wochen (Art. 329a OR). Bei unvollständigen Dienstjahren werden die Ferien anteilsmässig berechnet. Mindestens zwei Ferienwochen müssen zusammenhängen, und der Arbeitgeber bestimmt den Zeitpunkt unter Rücksichtnahme auf die Wünsche der Mitarbeitenden (Art. 329c OR)."
+        },
+        {
+          "h": "Kürzung bei Abwesenheit",
+          "p": "Bei verschuldeter Verhinderung kann der Arbeitgeber die Ferien für jeden vollen Monat Abwesenheit um einen Zwölftel kürzen. Bei unverschuldeter Verhinderung, etwa wegen Krankheit, ist eine Kürzung erst möglich, wenn die Abwesenheit insgesamt mehr als einen Monat im Dienstjahr dauert; dann um einen Zwölftel für jeden weiteren vollen Monat. Für Schwangerschaft gelten zwei Monate ohne Kürzung, und für den Mutterschaftsurlaub ist keine Kürzung erlaubt (Art. 329b OR)."
+        },
+        {
+          "h": "Keine Auszahlung während des Arbeitsverhältnisses",
+          "p": "Solange das Arbeitsverhältnis dauert, dürfen Ferien nicht durch Geld oder andere Leistungen abgegolten werden (Art. 329d Abs. 2 OR). Ausnahmen bestehen etwa bei sehr unregelmässiger Teilzeitarbeit, wenn der Ferienlohnanteil klar ausgewiesen ist. Am Ende des Arbeitsverhältnisses können nicht bezogene Ferien ausbezahlt werden, soweit ein Bezug während der Kündigungsfrist nicht möglich oder zumutbar war."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie viele Ferien haben Mitarbeitende in der Schweiz mindestens?",
+          "a": "Vier Wochen pro Jahr, bis zum vollendeten 20. Altersjahr fünf Wochen (Art. 329a OR). Verträge, Reglemente und GAV sehen oft mehr vor."
+        },
+        {
+          "q": "Darf der Arbeitgeber Ferien auszahlen?",
+          "a": "Während des Arbeitsverhältnisses grundsätzlich nicht. Am Ende des Arbeitsverhältnisses können Restferien ausbezahlt werden, wenn sie nicht mehr bezogen werden konnten."
+        },
+        {
+          "q": "Werden Ferien bei Krankheit gekürzt?",
+          "a": "Erst wenn die unverschuldete Abwesenheit im Dienstjahr mehr als einen Monat dauert, und dann um einen Zwölftel für jeden weiteren vollen Monat."
+        }
+      ],
+      "tools": [
+        "ferien"
+      ],
+      "refs": [
+        "Art. 329a OR",
+        "Art. 329b OR",
+        "Art. 329c OR",
+        "Art. 329d OR"
+      ],
+      "match": {
+        "tags": [
+          "Ferien",
+          "Ferienanspruch"
+        ],
+        "words": [
+          "Ferien"
+        ]
+      }
+    },
+    {
+      "slug": "arbeitszeugnis",
+      "category": "arbeitsrecht",
+      "title": "Arbeitszeugnis: Anspruch, Inhalt und Streit",
+      "seo_title": "Arbeitszeugnis Schweiz: Vollzeugnis, Arbeitsbestätigung, Art. 330a OR",
+      "description": "Wann Mitarbeitende ein Arbeitszeugnis verlangen können, was in ein Vollzeugnis gehört, wie wahr und wohlwollend zusammenpassen und wie man Zeugnisstreitigkeiten vermeidet.",
+      "intro": "Das Arbeitszeugnis begleitet Mitarbeitende durch ihre ganze Laufbahn. Entsprechend häufig wird darüber gestritten. Die Regeln dazu stehen in Art. 330a OR und wurden von den Gerichten über Jahre konkretisiert.",
+      "sections": [
+        {
+          "h": "Anspruch jederzeit",
+          "p": "Mitarbeitende können jederzeit, also auch während des laufenden Arbeitsverhältnisses, ein Zeugnis verlangen (Art. 330a OR). Das Vollzeugnis äussert sich über Art und Dauer des Arbeitsverhältnisses sowie über Leistung und Verhalten. Auf besonderes Verlangen ist nur eine Arbeitsbestätigung über Art und Dauer auszustellen."
+        },
+        {
+          "h": "Wahr, vollständig und wohlwollend",
+          "p": "Das Zeugnis muss wahr und vollständig sein und soll das wirtschaftliche Fortkommen nicht unnötig erschweren. Wohlwollen bedeutet aber nicht, dass wesentliche negative Punkte verschwiegen werden dürfen, wenn sie für das Gesamtbild erheblich sind. Codierte Formulierungen, die heimlich etwas anderes aussagen, sind unzulässig."
+        },
+        {
+          "h": "Streit vermeiden",
+          "p": "Hilfreich sind ein klarer interner Prozess, Rückmeldungen der vorgesetzten Person und regelmässige Zwischenzeugnisse bei Wechseln der Funktion oder der Vorgesetzten. Im Streit muss grundsätzlich beweisen, wer eine bessere oder schlechtere Beurteilung als die übliche durchsetzen will; pauschales Bestreiten genügt vor Gericht nicht."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wann kann ein Arbeitszeugnis verlangt werden?",
+          "a": "Jederzeit, auch während des Arbeitsverhältnisses. Der Anspruch verjährt nach zehn Jahren."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Arbeitszeugnis und Arbeitsbestätigung?",
+          "a": "Die Arbeitsbestätigung nennt nur Art und Dauer der Anstellung. Das Vollzeugnis beurteilt zusätzlich Leistung und Verhalten."
+        },
+        {
+          "q": "Darf ein Zeugnis negative Punkte enthalten?",
+          "a": "Ja, wenn sie wahr und für die Gesamtbeurteilung wesentlich sind. Das Wohlwollen darf die Wahrheit nicht verdrängen."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 330a OR"
+      ],
+      "match": {
+        "tags": [
+          "Arbeitszeugnis",
+          "Zeugnis"
+        ],
+        "words": [
+          "Arbeitszeugnis",
+          "Zeugnis"
+        ]
+      }
+    },
+    {
+      "slug": "datenschutz-arbeitsverhaeltnis",
+      "category": "digital",
+      "title": "Datenschutz im Arbeitsverhältnis",
+      "seo_title": "Datenschutz Arbeitsverhältnis Schweiz: DSG und Art. 328b OR für HR",
+      "description": "Welche Personaldaten der Arbeitgeber bearbeiten darf, was das Datenschutzgesetz für HR bedeutet, wie das Auskunftsrecht funktioniert und wann Datenschutzverletzungen gemeldet werden müssen.",
+      "intro": "HR bearbeitet täglich besonders sensible Daten: Gesundheitsangaben, Lohndaten, Beurteilungen, Bewerbungsunterlagen. Das Datenschutzgesetz (DSG) und Art. 328b OR setzen dafür klare Grenzen, die mit KI-Tools und neuen HR-Systemen noch wichtiger werden.",
+      "sections": [
+        {
+          "h": "Was der Arbeitgeber bearbeiten darf",
+          "p": "Nach Art. 328b OR darf der Arbeitgeber Daten über Mitarbeitende nur bearbeiten, soweit sie deren Eignung für das Arbeitsverhältnis betreffen oder zur Durchführung des Arbeitsvertrags erforderlich sind. Dazu kommen die allgemeinen Grundsätze des DSG wie Zweckbindung, Verhältnismässigkeit und Datensicherheit. Gesundheitsdaten und andere besonders schützenswerte Daten verlangen besondere Sorgfalt."
+        },
+        {
+          "h": "Pflichten nach dem Datenschutzgesetz",
+          "p": "Seit dem 1. September 2023 gilt das revidierte DSG. Arbeitgeber müssen Mitarbeitende und Bewerbende angemessen über die Datenbearbeitung informieren, etwa mit einer Datenschutzerklärung für Mitarbeitende. Unternehmen ab 250 Mitarbeitenden müssen grundsätzlich ein Verzeichnis der Bearbeitungstätigkeiten führen; kleinere nur bei Bearbeitungen mit hohem Risiko. Führt eine Verletzung der Datensicherheit voraussichtlich zu einem hohen Risiko, ist sie dem EDÖB so rasch als möglich zu melden."
+        },
+        {
+          "h": "Auskunftsrecht und KI",
+          "p": "Mitarbeitende können Auskunft verlangen, welche Daten über sie bearbeitet werden; die Antwort ist in der Regel innert 30 Tagen zu geben. Wer KI-Tools für Bewerbungen oder Personalentscheide einsetzt, sollte prüfen, ob automatisierte Einzelentscheidungen vorliegen, über die zu informieren ist, und ob die Daten das Land verlassen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Darf der Arbeitgeber Gesundheitsdaten speichern?",
+          "a": "Nur soweit sie für das Arbeitsverhältnis nötig sind, etwa die Dauer der Arbeitsunfähigkeit. Diagnosen gehören grundsätzlich nicht ins Personaldossier."
+        },
+        {
+          "q": "Wie schnell muss ein Auskunftsgesuch beantwortet werden?",
+          "a": "In der Regel innert 30 Tagen. Eine Verlängerung ist möglich, muss aber begründet und mitgeteilt werden."
+        },
+        {
+          "q": "Muss jedes Unternehmen ein Bearbeitungsverzeichnis führen?",
+          "a": "Unternehmen ab 250 Mitarbeitenden grundsätzlich ja. Kleinere Unternehmen nur, wenn sie besonders schützenswerte Daten in grossem Umfang bearbeiten oder ein Profiling mit hohem Risiko durchführen."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 328b OR",
+        "Art. 19 DSG",
+        "Art. 24 DSG",
+        "Art. 25 DSG",
+        "Art. 12 DSG"
+      ],
+      "match": {
+        "tags": [
+          "Datenschutz",
+          "DSG",
+          "EDÖB"
+        ],
+        "words": [
+          "Datenschutz",
+          "EDÖB"
+        ]
+      }
+    },
+    {
+      "slug": "lohngleichheit",
+      "category": "gesetze",
+      "title": "Lohngleichheit: Analysepflicht und EU-Lohntransparenz",
+      "seo_title": "Lohngleichheitsanalyse Schweiz: Pflicht ab 100 Mitarbeitenden",
+      "description": "Wer eine Lohngleichheitsanalyse machen muss, wie sie überprüft und kommuniziert wird und was die EU-Lohntransparenzrichtlinie für Schweizer Arbeitgeber bedeutet.",
+      "intro": "Frauen und Männer haben Anspruch auf gleichen Lohn für gleichwertige Arbeit. Seit 2020 müssen grössere Arbeitgeber das mit einer Lohngleichheitsanalyse belegen. Gleichzeitig verschärft die EU die Regeln zur Lohntransparenz, was Schweizer Firmen mit EU-Standorten direkt betrifft.",
+      "sections": [
+        {
+          "h": "Wer analysieren muss",
+          "p": "Arbeitgeber, die zu Beginn eines Jahres mindestens 100 Arbeitnehmende beschäftigen, müssen eine betriebsinterne Lohngleichheitsanalyse durchführen; Lernende werden nicht mitgezählt (Art. 13a GlG). Die Analyse ist alle vier Jahre zu wiederholen, es sei denn, sie hat gezeigt, dass die Lohngleichheit eingehalten ist. Sie muss nach einer wissenschaftlichen und rechtskonformen Methode erfolgen; der Bund stellt dafür das Standard-Analyse-Tool Logib kostenlos zur Verfügung."
+        },
+        {
+          "h": "Überprüfung und Information",
+          "p": "Die Analyse muss von einer unabhängigen Stelle überprüft werden, etwa einem Revisionsunternehmen oder einer anerkannten Organisation. Innert eines Jahres nach Abschluss der Überprüfung sind die Mitarbeitenden schriftlich über das Ergebnis zu informieren. Börsenkotierte Gesellschaften veröffentlichen das Ergebnis zudem im Anhang der Jahresrechnung. Die Pflichten sind im Gesetz befristet und gelten bis Mitte 2032."
+        },
+        {
+          "h": "Blick in die EU",
+          "p": "Die EU-Lohntransparenzrichtlinie verpflichtet die Mitgliedstaaten, bis Juni 2026 unter anderem Lohnangaben in Stelleninseraten, Auskunftsrechte der Mitarbeitenden und Berichtspflichten zum Lohngefälle einzuführen. Schweizer Unternehmen sind betroffen, soweit sie Mitarbeitende in EU-Staaten beschäftigen. Auch wer nur in der Schweiz tätig ist, sollte seine Lohnsysteme nachvollziehbar dokumentieren."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ab wie vielen Mitarbeitenden ist eine Lohngleichheitsanalyse Pflicht?",
+          "a": "Ab 100 Arbeitnehmenden zu Beginn des Jahres, ohne Lernende (Art. 13a GlG)."
+        },
+        {
+          "q": "Wie oft muss die Analyse wiederholt werden?",
+          "a": "Alle vier Jahre. Zeigt die Analyse, dass die Lohngleichheit eingehalten ist, entfällt die Pflicht zur Wiederholung."
+        },
+        {
+          "q": "Gilt die EU-Lohntransparenzrichtlinie für Schweizer Firmen?",
+          "a": "Direkt nur für Mitarbeitende in EU-Staaten. Für Schweizer Standorte gilt weiterhin das Gleichstellungsgesetz."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 3 GlG",
+        "Art. 13a–13i GlG"
+      ],
+      "match": {
+        "tags": [
+          "Lohngleichheit",
+          "Lohntransparenz",
+          "Gleichstellung"
+        ],
+        "words": [
+          "Lohngleichheit",
+          "Lohntransparenz"
+        ]
+      }
+    },
+    {
+      "slug": "transparenzregister",
+      "category": "legal",
+      "title": "Transparenzregister: Wer bis wann melden muss",
+      "seo_title": "Transparenzregister Schweiz (TJPG): Fristen, Meldepflicht, wirtschaftlich Berechtigte",
+      "description": "Das Transparenzregister für wirtschaftlich berechtigte Personen: wer meldepflichtig ist, die Fristen bis April 2027, das vereinfachte Verfahren über EasyGov und die Bussen.",
+      "intro": "Seit dem 1. Oktober 2026 gibt es in der Schweiz ein zentrales Register der wirtschaftlich berechtigten Personen. AG, GmbH und Genossenschaften müssen melden, wer sie letztlich besitzt oder kontrolliert. Für bestehende Gesellschaften laufen gestaffelte Übergangsfristen.",
+      "sections": [
+        {
+          "h": "Wer melden muss",
+          "p": "Meldepflichtig sind insbesondere Aktiengesellschaften, GmbH und Genossenschaften sowie ausländische Gesellschaften mit bestimmten Bezügen zur Schweiz. In der Regel nicht erfasst sind Vereine, Stiftungen, Einzelunternehmen und Personengesellschaften; börsenkotierte Gesellschaften sind ausgenommen. Das Register wird vom Bundesamt für Justiz geführt und ist nicht öffentlich."
+        },
+        {
+          "h": "Wer als wirtschaftlich berechtigt gilt",
+          "p": "Wirtschaftlich berechtigt ist, wer direkt oder indirekt mindestens 25 Prozent des Kapitals oder der Stimmen hält oder die Gesellschaft auf andere Weise kontrolliert. Indirekte Beteiligungen über Zwischengesellschaften werden bis zu den natürlichen Personen verfolgt. Kann niemand ermittelt werden, ist ersatzweise das oberste Mitglied des leitenden Organs zu melden."
+        },
+        {
+          "h": "Fristen und Verfahren",
+          "p": "Die Übergangsfristen für bestehende Gesellschaften laufen gestaffelt vom 1. Januar bis 1. April 2027, je nach Rechtsform und Revisionspflicht. Sind alle wirtschaftlich Berechtigten bereits im Handelsregister eingetragen, gilt eine Frist bis 1. Oktober 2028. Gemeldet wird über EasyGov; für einfache Strukturen gibt es ein vereinfachtes Verfahren. Änderungen sind innert eines Monats nachzumelden, und vorsätzliche Verstösse können mit Bussen bis CHF 500'000 bestraft werden."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Bis wann muss eine bestehende GmbH melden?",
+          "a": "Das hängt von der Revisionspflicht ab: Gesellschaften mit ordentlicher Revision bis 1. Februar 2027, die übrigen bis 1. April 2027. Sind alle Berechtigten im Handelsregister eingetragen, gilt der 1. Oktober 2028."
+        },
+        {
+          "q": "Ist das Transparenzregister öffentlich?",
+          "a": "Nein. Zugriff haben nur Behörden und bestimmte Finanzintermediäre."
+        },
+        {
+          "q": "Wer ist für die Meldung verantwortlich?",
+          "a": "Die Gesellschaft, vertreten durch das oberste Leitungsorgan, also Verwaltungsrat oder Geschäftsführung, auch wenn sie die Meldung delegiert."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 4 TJPG",
+        "Art. 9 TJPG",
+        "Art. 12 TJPG",
+        "Art. 43 TJPG",
+        "Art. 51 TJPG"
+      ],
+      "match": {
+        "tags": [
+          "Transparenzregister",
+          "TJPG",
+          "Wirtschaftlich Berechtigte",
+          "Geldwäscherei"
+        ],
+        "words": [
+          "Transparenzregister",
+          "TJPG"
+        ]
+      }
+    },
+    {
+      "slug": "sozialversicherungen-lohn",
+      "category": "lohn",
+      "title": "AHV, BVG und Lohn: Werte und Änderungen",
+      "seo_title": "AHV und BVG 2027: Beiträge, Grenzbeträge, Renten und Lohnrunde",
+      "description": "Alles zu AHV, BVG, Familienzulagen, Mindestlöhnen und Lohnrunde: die aktuellen Werte, die Änderungen zum Jahreswechsel und der BVG-Rechner.",
+      "intro": "Zum Jahreswechsel ändern sich in der Lohnbuchhaltung regelmässig Werte: Renten, Grenzbeträge, Mindestzinsen, Zulagen und kantonale Mindestlöhne. Hier sammeln wir alle Beiträge dazu, damit HR und Payroll nichts verpassen.",
+      "sections": [
+        {
+          "h": "Was jedes Jahr zu prüfen ist",
+          "p": "Vor dem Jahreswechsel lohnt sich ein Check der AHV/IV/EO-Beitragssätze, der BVG-Grenzbeträge und des Koordinationsabzugs, der Maximalbeiträge für die Säule 3a, der Familienzulagen und der kantonalen Mindestlöhne. Auch Änderungen bei der Kurzarbeit, der Stellenmeldepflicht oder bei Kontingenten für Drittstaaten wirken sich auf die HR-Planung aus. Die konkreten Werte finden Sie in den verlinkten Beiträgen, jeweils mit der amtlichen Quelle."
+        },
+        {
+          "h": "Lohnrunde einordnen",
+          "p": "Für die Lohnrunde sind die Umfragen grosser Banken und der KOF, die Forderungen der Sozialpartner und die erwartete Teuerung die wichtigsten Orientierungspunkte. Daneben gewinnen Lohngleichheit und nachvollziehbare Lohnsysteme an Bedeutung, auch wegen der EU-Lohntransparenzrichtlinie."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wo finde ich die BVG-Grenzbeträge?",
+          "a": "In unserem Beitrag zu den BVG-Grenzbeträgen und im BVG-Rechner, beide mit Verweis auf die amtliche Quelle des Bundes."
+        },
+        {
+          "q": "Ändern sich die AHV-Beiträge?",
+          "a": "Die Beitragssätze sind gesetzlich festgelegt und ändern sich nur mit einer Gesetzesrevision. Unsere Beiträge zu den AHV-Renten und zur AHV-Finanzierung zeigen jeweils den aktuellen Stand."
+        }
+      ],
+      "tools": [
+        "bvg"
+      ],
+      "refs": [],
+      "match": {
+        "tags": [
+          "AHV",
+          "BVG",
+          "Säule 3a",
+          "Familienzulagen",
+          "Mindestlohn",
+          "Lohnrunde",
+          "13. AHV-Rente",
+          "Kurzarbeit"
+        ],
+        "words": [
+          "AHV",
+          "BVG",
+          "Mindestl",
+          "Lohnrunde",
+          "Familienzulagen"
+        ]
+      }
+    }
+  ]
+}

@@ -491,3 +491,18 @@ nav.cats a.bg-chip:hover, nav.cats a.bg-chip[aria-current="page"] { border-color
 .bg-box .card { color: var(--ink); }
 .bg-hero { --catc: var(--ink); --catb: var(--lilac); }
 .draft-banner { background: repeating-linear-gradient(-45deg, var(--sun), var(--sun) 14px, #ffe39a 14px, #ffe39a 28px); color: #2b2540; text-align: center; padding: 12px 20px; font-size: .95rem; }
+
+/* Themenseiten und SEO-Ergänzungen */
+.theme-body { padding-top: 34px; padding-bottom: 10px; }
+.theme-body h2 { margin-top: 1.6em; }
+.faq { display: grid; gap: 10px; margin: 12px 0 8px; }
+.faq-item { border: 1.5px solid var(--line); border-radius: 18px; background: var(--paper); padding: 14px 18px; }
+.faq-item summary { cursor: pointer; font-weight: 800; list-style: none; position: relative; padding-right: 28px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 0; top: -2px; font-size: 1.4rem; color: var(--catc, var(--accent)); }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p { margin: 10px 0 0; line-height: 1.6; }
+.theme-note { font-size: .9rem; color: var(--muted); margin-top: 26px; }
+.more-themes { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.topic.theme-link { background: var(--catb, #efebff); color: var(--catc, var(--ink)); font-weight: 800; }
+.foot-themes a { white-space: nowrap; }

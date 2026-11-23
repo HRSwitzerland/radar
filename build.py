@@ -7,6 +7,7 @@ Erzeugt: index.html, artikel/, rubrik/, woche/, rechner/, aenderungen.html, arch
 """
 import hashlib
 import html
+import re
 import json
 import os
 import random
@@ -25,6 +26,11 @@ SITE_URL = SITE.get("url", "https://hrswitzerland.github.io/radar/").rstrip("/")
 NL_ACTION = SITE.get("newsletter_form_action", "")
 PUBLISHER = SITE.get("publisher", "[Name, Adresse und E-Mail ergänzen]")
 e = html.escape
+_TH_PATH = os.path.join(ROOT, "data", "themen.json")
+THEMEN = json.load(open(_TH_PATH, encoding="utf-8")).get("themen", []) if os.path.exists(_TH_PATH) else []
+SITEMAP = {}   # url -> lastmod
+LASTMOD = {}   # path -> lastmod (für Artikel)
+DEFAULT_DESC = "Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz: Arbeitsrecht, Gesetze, Lohn und Sozialversicherungen, Arbeitsmarkt, HR-Tech und Rechtsänderungen für KMU. Verständlich zusammengefasst, immer mit Quellen."
 
 # Rubriken: key -> (Name, Kurzname, Beschreibung)
 CATS = {
@@ -101,7 +107,21 @@ def by_cat(k):
     return [a for a in articles() if a["category"] == k]
 
 
+def page_url(path):
+    path = path.replace(os.sep, "/")
+    if path == "index.html":
+        return SITE_URL
+    if path.endswith("/index.html"):
+        return SITE_URL + path[: -len("index.html")]
+    return SITE_URL + path
+
+
 def write(path, content):
+    if path.endswith(".html") and "<!--SEO:CANON-->" in content:
+        url = page_url(path)
+        content = content.replace("<!--SEO:CANON-->", f'<link rel="canonical" href="{e(url)}">\n<meta property="og:url" content="{e(url)}">')
+        if 'name="robots" content="noindex' not in content and path != "404.html":
+            SITEMAP[url] = LASTMOD.get(path, DATA.get("updated", date.today().isoformat()))
     full = os.path.join(ROOT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
@@ -139,13 +159,34 @@ def tag(k, up):
     return f'<a class="tag" href="{up}rubrik/{k}.html" style="{cat_style(k)}">{e(CATS[k][1])}</a>'
 
 
-def layout(title, body, depth=0, desc="", active="", article=False, noindex=False):
+def og_image(cat=None):
+    if cat and os.path.exists(os.path.join(ROOT, "assets", "og", f"{cat}.png")):
+        return f"{SITE_URL}assets/og/{cat}.png"
+    return f"{SITE_URL}assets/og/default.png"
+
+
+def ld_script(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+def breadcrumb(items):
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
+
+
+PUBLISHER_LD = {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL,
+                "logo": {"@type": "ImageObject", "url": SITE_URL + "assets/og/logo.png"}}
+
+
+def layout(title, body, depth=0, desc="", active="", article=False, noindex=False, ld=None, og_type="website", cat=None, extra_head=""):
     up = "../" * depth
     def nav(href, label, key, cls=""):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{up}{href}"{cur}{c}>{label}</a>'
-    full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News für HR-Profis in der Schweiz"
+    full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News zu Arbeitsrecht, HR und Legal in der Schweiz"
+    desc = desc or DEFAULT_DESC
+    ld_html = "".join(ld_script(x) for x in (ld or []))
     cats_nav = f'<a href="{up}hintergrund.html" class="bg-chip"{" aria-current=page" if active == "hintergrund" else ""}>{BOOK}Hintergrund</a>' + "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{" aria-current=page" if active == "rubrik-" + k else ""}>{ICONS[k]}{e(CATS[k][1])}</a>' for k in ORDER)
     return f"""<!DOCTYPE html>
 <html lang="de-CH">
@@ -153,8 +194,24 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
-<meta name="description" content="{e(desc or 'Täglich das Wichtigste für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn, Arbeitsmarkt, Gesundheit und HR-Tech. Verständlich zusammengefasst, immer mit Quellen.')}">
-{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else '<meta name="robots" content="index, follow, max-image-preview:large">'}
+<!--SEO:CANON-->
+<meta property="og:site_name" content="{e(SITE_NAME)}">
+<meta property="og:locale" content="de_CH">
+<meta property="og:type" content="{og_type}">
+<meta property="og:title" content="{e(title if title != SITE_NAME else full_title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:image" content="{og_image(cat)}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title if title != SITE_NAME else full_title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{og_image(cat)}">
+<meta name="theme-color" content="#ffd76e">
+<link rel="icon" href="{up}assets/og/favicon.png" type="image/png">
+{extra_head}{ld_html}
 <link rel="alternate" type="application/rss+xml" title="{e(SITE_NAME)}" href="{up}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,6 +227,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       {nav("index.html", "Aktuell", "home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
       {nav("woche/index.html", "Wochenrückblick", "woche")}
+      {nav("thema/index.html", "Themen", "themen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
       {nav("archiv.html", "Archiv", "archiv")}
       {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
@@ -185,8 +243,12 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
   <div class="wrap">
     <div>
       <h2>{e(SITE_NAME)}</h2>
-      <p>Täglich das Wichtigste für HR-Profis in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
+      <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
       <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}ueber.html">Über</a></p>
+    </div>
+    <div>
+      <h2>Themen</h2>
+      <p class="foot-themes">{" · ".join(f'<a href="{up}thema/{t["slug"]}.html">{e(t.get("short") or t["title"].split(":")[0])}</a>' for t in THEMEN)} · <a href="{up}thema/{neuerungen_slug()}.html">Neuerungen {neuerungen_year()}</a></p>
     </div>
     <div>
       <h2>Gut zu wissen</h2>
@@ -344,7 +406,11 @@ def build_home():
   {sections}
   <div class="topics-box"><h3>Beliebte Stichworte</h3><div class="topics">{tag_html}</div></div>
 </div></section>"""
-    write("index.html", layout(SITE_NAME, body, 0, active="home"))
+    ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": SITE_NAME, "url": SITE_URL, "inLanguage": "de-CH",
+           "description": DEFAULT_DESC, "publisher": PUBLISHER_LD,
+           "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": SITE_URL + "suche.html?q={search_term_string}"}, "query-input": "required name=search_term_string"}},
+          dict({"@context": "https://schema.org"}, **PUBLISHER_LD)]
+    write("index.html", layout(SITE_NAME, body, 0, active="home", ld=ld))
 
 
 def build_article(a, draft=False):
@@ -361,6 +427,8 @@ def build_article(a, draft=False):
         related += [x for x in articles() if x["id"] != a["id"] and x not in related][:3 - len(related)]
     event = f'<p class="event">Ereignis vom {d_long(a["date"])}</p>' if a.get("date") and a["date"] != a["published"] else ""
     refs_block = f'<p class="refs-label">Rechtsgrundlagen und Stichworte</p><div class="refs">{refs}</div>' if refs else ""
+    themes_html = "".join(f'<a class="topic theme-link" href="{up}thema/{t["slug"]}.html">Themenseite: {e(t.get("short") or t["title"].split(":")[0])}</a>' for t in themes_for(a))
+    practice_h = "Das heisst für Legal" if k == "legal" else "Das heisst für HR"
     banner = '<div class="draft-banner"><b>Entwurf, nicht veröffentlicht.</b> Diese Vorschau ist nur über den direkten Link erreichbar und erscheint nirgends auf der Seite.</div>' if draft else ""
     body = f"""{banner}<article class="post" style="{cat_style(k)}">
   <div class="post-hero"><div class="narrow">
@@ -374,9 +442,9 @@ def build_article(a, draft=False):
     <div class="post-cover">{cover(a)}</div>
     {tldr}
     <div class="body">{secs}</div>
-    <div class="practice"><span class="icon">{BULB}</span><h2>Das heisst für HR</h2><ul>{takeaways}</ul></div>
+    <div class="practice"><span class="icon">{BULB}</span><h2>{practice_h}</h2><ul>{takeaways}</ul></div>
     <section class="sources" aria-labelledby="q-h"><h2 id="q-h">Quellen</h2><ol>{srcs}</ol>{refs_block}</section>
-    <div class="post-foot"><div class="topics">{tags_html}</div><button class="btn ghost" id="copy-link" type="button">{LINK}<span>Link kopieren</span></button></div>
+    <div class="post-foot"><div class="topics">{themes_html}{tags_html}</div><button class="btn ghost" id="copy-link" type="button">{LINK}<span>Link kopieren</span></button></div>
   </div>
 </article>
 <section class="block band-soft"><div class="wrap"><div class="block-head"><div><span class="hand">Weiterlesen</span><h2>Das könnte Sie auch interessieren</h2></div></div>
@@ -384,7 +452,19 @@ def build_article(a, draft=False):
     if draft:
         write(f"vorschau/{a['id']}.html", layout("Entwurf: " + a["title"], body, 1, desc=a["teaser"][:160], article=True, noindex=True))
     else:
-        write(f"artikel/{a['id']}.html", layout(a["title"], body, 1, desc=a["teaser"][:160], article=True))
+        url = f"{SITE_URL}artikel/{a['id']}.html"
+        mod = a.get("updated", a["published"])
+        LASTMOD[f"artikel/{a['id']}.html"] = mod
+        art_ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": a["title"][:110],
+                  "description": a["teaser"], "datePublished": a["published"], "dateModified": mod,
+                  "inLanguage": "de-CH", "articleSection": CATS[k][0], "keywords": ", ".join(a.get("tags", [])),
+                  "image": [og_image(k)], "mainEntityOfPage": url,
+                  "author": {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL}, "publisher": PUBLISHER_LD,
+                  "isAccessibleForFree": True, "citation": [s["url"] for s in a.get("sources", [])]}
+        crumbs = breadcrumb([("Aktuell", SITE_URL), (CATS[k][0], f"{SITE_URL}rubrik/{k}.html"), (a["title"], url)])
+        extra = f'<meta property="article:published_time" content="{a["published"]}">\n<meta property="article:modified_time" content="{mod}">\n<meta property="article:section" content="{e(CATS[k][0])}">\n' + "".join(f'<meta property="article:tag" content="{e(t)}">\n' for t in a.get("tags", []))
+        desc = (a["teaser"] if len(a["teaser"]) <= 160 else a["teaser"][:157].rsplit(" ", 1)[0] + " …")
+        write(f"artikel/{a['id']}.html", layout(a["title"], body, 1, desc=desc, article=True, ld=[art_ld, crumbs], og_type="article", cat=k, extra_head=extra))
 
 
 def build_category(k):
@@ -395,7 +475,11 @@ def build_category(k):
   <div><span class="hand">Rubrik</span><h1>{e(CATS[k][0])}</h1><p class="lead">{e(CATS[k][2])}</p><p class="count">{len(items)} Beiträge</p></div>
 </div></section>
 <section class="block"><div class="wrap"><div class="grid">{"".join(card(a, up) for a in items) or '<p class="empty">Noch keine Beiträge in dieser Rubrik. Schauen Sie bald wieder vorbei.</p>'}</div></div></section>"""
-    write(f"rubrik/{k}.html", layout(CATS[k][0], body, 1, desc=CATS[k][2], active="rubrik-" + k))
+    url = f"{SITE_URL}rubrik/{k}.html"
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": CATS[k][0], "description": CATS[k][2], "url": url, "inLanguage": "de-CH",
+           "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{SITE_URL}artikel/{a['id']}.html"} for i, a in enumerate(items[:20])]}},
+          breadcrumb([("Aktuell", SITE_URL), (CATS[k][0], url)])]
+    write(f"rubrik/{k}.html", layout(CATS[k][0], body, 1, desc=CATS[k][2] + " Alle Beiträge mit Quellen.", active="rubrik-" + k, ld=ld, cat=k))
 
 
 def week_top(items, n=5):
@@ -576,7 +660,8 @@ def build_search():
   input.addEventListener('input', render);
   fetch('search.json').then(function (r) {{ return r.json(); }}).then(function (d) {{
     data = d;
-    if (location.hash) {{ input.value = decodeURIComponent(location.hash.slice(1)); }}
+    var qp = new URLSearchParams(location.search).get('q');
+    if (qp) {{ input.value = qp; }} else if (location.hash) {{ input.value = decodeURIComponent(location.hash.slice(1)); }}
     render();
   }}).catch(function () {{ status.textContent = 'Die Suche konnte nicht geladen werden. Bitte laden Sie die Seite neu.'; }});
 }})();
@@ -677,6 +762,7 @@ def build_about():
 <h1>Was HR heute wissen muss</h1>
 <p class="lead">{e(SITE_NAME)} ist die Newsplattform für HR-Leiterinnen, HR-Leiter und HR-Fachleute in der Schweiz. Jeden Werktag fassen wir zusammen, was sich bewegt: neue Urteile, Gesetze, Zahlen, Studien und Trends, dazu in der Rubrik Legal die wichtigsten Rechtsänderungen für Unternehmen und KMU.</p>
 <h2>{RUBRIK_WORT} Rubriken</h2><ul class="cat-list">{cats}</ul>
+<h2>Themenseiten</h2><p>Für die häufigsten Fragen gibt es <a href="thema/index.html">Themenseiten</a> mit den Grundlagen, häufigen Fragen, Rechnern und allen aktuellen Beiträgen.</p>
 <h2>So entstehen die Beiträge</h2>
 <p>Grundlage sind öffentlich zugängliche Quellen: Urteile, Medienmitteilungen von Bund und Kantonen, Studien, Fachpublikationen und Medienberichte. Die Inhalte werden mit KI-Unterstützung recherchiert, in eigenen Worten zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag nennt seine Quellen, damit Sie das Original nachlesen können.</p>
 <h2>Keine Rechtsberatung</h2>
@@ -711,6 +797,125 @@ def build_feeds():
         rss(f"feeds/{k}.xml", f"{SITE_NAME}: {v[0]}", [a for a in arts if a["category"] == k])
 
 
+# ---------- Themenseiten (Landingpages) und SEO-Dateien ----------
+
+def neuerungen_year():
+    t = date.today()
+    return t.year + 1 if t.month >= 9 else t.year
+
+
+def neuerungen_slug():
+    return f"neuerungen-{neuerungen_year()}"
+
+
+def themes_for(a):
+    tags = {x.lower() for x in a.get("tags", [])}
+    title = a["title"].lower()
+    out = []
+    for t in THEMEN:
+        m = t.get("match", {})
+        if tags & {x.lower() for x in m.get("tags", [])} or any(w.lower() in title for w in m.get("words", [])):
+            out.append(t)
+    return out[:3]
+
+
+def theme_articles(t):
+    return [a for a in articles() if t in themes_for(a) or t["slug"] in [x["slug"] for x in themes_for(a)]]
+
+
+def build_themes():
+    up = "../"
+    import tools
+    calc = {r[0]: r for r in tools.RECHNER}
+    cards = ""
+    for t in THEMEN:
+        k = t.get("category", "praxis")
+        items = theme_articles(t)
+        url = f"{SITE_URL}thema/{t['slug']}.html"
+        secs = "".join(f"<h2>{e(x['h'])}</h2><p>{e(x['p'])}</p>" for x in t.get("sections", []))
+        faq = "".join(f'<details class="faq-item"><summary>{e(f["q"])}</summary><p>{e(f["a"])}</p></details>' for f in t.get("faq", []))
+        tools_html = "".join(f'<a class="tool-card" href="{up}rechner/{c}.html" style="{cat_style(calc[c][3])}"><span class="mini-ico" aria-hidden="true">{ICONS[calc[c][3]]}</span><h3>{e(calc[c][1])}</h3><p>{e(calc[c][2])}</p><span class="more">Rechner öffnen</span></a>' for c in t.get("tools", []) if c in calc)
+        refs = "".join(f'<span class="ref">{e(r)}</span>' for r in t.get("refs", []))
+        others = "".join(f'<a class="topic" href="{x["slug"]}.html">{e(x.get("short") or x["title"].split(":")[0])}</a>' for x in THEMEN if x is not t)
+        grid = "".join(card(a, up) for a in items[:12]) or '<p class="empty">Zu diesem Thema erscheinen laufend neue Beiträge.</p>'
+        body = f"""<section class="cat-hero" style="{cat_style(k)}"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS[k]}</span>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p><p class="count">{len(items)} Beiträge zum Thema</p></div>
+</div></section>
+<div class="narrow theme-body" style="{cat_style(k)}">
+  <div class="body">{secs}</div>
+  {f'<p class="refs-label">Rechtsgrundlagen</p><div class="refs">{refs}</div>' if refs else ''}
+  {f'<h2>Häufige Fragen</h2><div class="faq">{faq}</div>' if faq else ''}
+  {f'<h2>Passender Rechner</h2><div class="tool-grid">{tools_html}</div>' if tools_html else ''}
+  <p class="theme-note">Allgemeine Information, keine Rechtsberatung. Massgebend sind Gesetz, Vertrag, GAV und die Umstände des Einzelfalls. Stand: {d_short(DATA['updated'])}.</p>
+</div>
+<section class="block band-soft"><div class="wrap"><div class="block-head"><div><span class="hand">Aktuell</span><h2>Beiträge zum Thema</h2></div></div>
+<div class="grid">{grid}</div>
+<div class="topics more-themes"><b>Weitere Themen:</b> {others}</div></div></section>"""
+        ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": t["title"], "description": t["description"], "url": url, "inLanguage": "de-CH",
+               "dateModified": DATA["updated"], "publisher": PUBLISHER_LD, "about": t.get("refs", [])}, breadcrumb([("Aktuell", SITE_URL), ("Themen", SITE_URL + "thema/"), (t["title"], url)])]
+        if t.get("faq"):
+            ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in t["faq"]]})
+        write(f"thema/{t['slug']}.html", layout(t.get("seo_title", t["title"]), body, 1, desc=t["description"], active="themen", ld=ld, cat=k))
+        cards += f'<a class="tool-card" href="{t["slug"]}.html" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><h3>{e(t["title"])}</h3><p>{e(t["description"])}</p><span class="more">{len(items)} Beiträge · Thema öffnen</span></a>'
+    # Neuerungen des kommenden Jahres
+    y = str(neuerungen_year())
+    entries = []
+    for a in articles():
+        if (a.get("effective") or "").startswith(y):
+            entries.append((a["effective"], a["title"], f"{up}artikel/{a['id']}.html", a["category"], a["teaser"]))
+    for tm in DATA.get("termine", []):
+        if tm["date"].startswith(y):
+            entries.append((tm["date"], tm["label"], "", "", ""))
+    entries.sort(key=lambda x: (x[0], x[2] == ""))
+    rows = ""
+    for dt, label, href, c, txt in entries:
+        st = cat_style(c) if c else ""
+        kicker = f'{e(CATS[c][1])} · ' if c else ""
+        inner = f'<a href="{href}"><b>{e(label)}</b></a><p>{e(txt)}</p>' if href else f'<b>{e(label)}</b>'
+        rows += f'<li class="chg-item" style="{st}">{cal(dt)}<div><span class="mini-cat">{kicker}ab {d_short(dt)}</span>{inner}</div></li>'
+    nurl = f"{SITE_URL}thema/{neuerungen_slug()}.html"
+    body = f"""<section class="cat-hero chg-hero"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS['gesetze']}</span>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Jahreswechsel</span><h1>Neuerungen {y}: Was sich für HR und Unternehmen ändert</h1><p class="lead">Alle Gesetzesänderungen, neuen Werte und Fristen {y} für Arbeitgeber, HR und Legal in der Schweiz auf einen Blick, chronologisch und mit Link zum ausführlichen Beitrag.</p><p class="count">{len(entries)} Einträge</p></div>
+</div></section>
+<section class="block"><div class="narrow"><ul class="chg-list">{rows or '<li>Noch keine Einträge.</li>'}</ul>
+<p class="theme-note">Laufend ergänzt. Die vollständige Zeitleiste über alle Jahre finden Sie unter <a href="{up}aenderungen.html">Das ändert sich</a>.</p></div></section>"""
+    ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": f"Neuerungen {y} für HR und Unternehmen in der Schweiz", "url": nurl, "inLanguage": "de-CH", "dateModified": DATA["updated"], "publisher": PUBLISHER_LD},
+          breadcrumb([("Aktuell", SITE_URL), ("Themen", SITE_URL + "thema/"), (f"Neuerungen {y}", nurl)])]
+    write(f"thema/{neuerungen_slug()}.html", layout(f"Neuerungen {y} für HR, Lohn und Unternehmen in der Schweiz", body, 1,
+          desc=f"Was ändert sich {y} für Arbeitgeber in der Schweiz? AHV, BVG, Kurzarbeit, Transparenzregister, Patentrecht und weitere Neuerungen mit Datum und Quellen.", active="themen", ld=ld, cat="gesetze"))
+    cards = f'<a class="tool-card" href="{neuerungen_slug()}.html" style="{cat_style("gesetze")}"><span class="mini-ico" aria-hidden="true">{ICONS["gesetze"]}</span><h3>Neuerungen {y}</h3><p>Alle Änderungen und Fristen {y} für HR und Unternehmen auf einen Blick.</p><span class="more">{len(entries)} Einträge · öffnen</span></a>' + cards
+    body = f"""<section class="cat-hero chg-hero"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{BOOK}</span>
+  <div><span class="hand">Wissen kompakt</span><h1>Themen für HR und Legal</h1><p class="lead">Die Grundlagen zu den wichtigsten Fragen aus dem Alltag von HR- und Legal-Verantwortlichen, mit häufigen Fragen, Rechnern und allen aktuellen Beiträgen zum Thema.</p></div>
+</div></section>
+<section class="block"><div class="wrap"><div class="tool-grid">{cards}</div></div></section>"""
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Themen für HR und Legal", "url": SITE_URL + "thema/", "inLanguage": "de-CH"},
+          breadcrumb([("Aktuell", SITE_URL), ("Themen", SITE_URL + "thema/")])]
+    write("thema/index.html", layout("Themen: Arbeitsrecht, Lohn und Legal kompakt erklärt", body, 1,
+          desc="Kündigung, Sperrfristen, Massenentlassung, Lohnfortzahlung, Ferien, Arbeitszeugnis, Datenschutz, Lohngleichheit, Transparenzregister: die Grundlagen mit FAQ und aktuellen Beiträgen.", active="themen", ld=ld))
+
+
+def build_404():
+    body = f"""<div class="narrow page"><span class="eyebrow"><span class="pill">404</span></span>
+<h1>Diese Seite gibt es nicht (mehr)</h1>
+<p class="lead">Vielleicht hilft die Suche weiter, oder Sie starten bei den aktuellen Beiträgen.</p>
+<div class="search-box">{SEARCH}<form action="{SITE_URL}suche.html" method="get"><input type="search" name="q" placeholder="z.B. Kündigung, BVG, Transparenzregister" aria-label="Suche"></form></div>
+<p><a class="btn" href="{SITE_URL}index.html">Zur Startseite</a> <a class="btn ghost" href="{SITE_URL}thema/index.html">Themen</a></p></div>"""
+    html_ = layout("Seite nicht gefunden", body, 0, noindex=True)
+    html_ = re.sub(r'(href|src)="(?!https?:|#|mailto:|/)([^"]+)"', lambda m: f'{m.group(1)}="{SITE_URL}{m.group(2)}"', html_)
+    write("404.html", html_)
+
+
+def build_sitemap():
+    rows = "".join(f"<url><loc>{e(u)}</loc><lastmod>{m}</lastmod></url>" for u, m in sorted(SITEMAP.items()))
+    write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{rows}</urlset>\n')
+    from urllib.parse import urlparse
+    base = urlparse(SITE_URL).path or "/"
+    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: {base}vorschau/\n\nSitemap: {SITE_URL}sitemap.xml\n")
+
+
 def check():
     ids = set()
     for a in DATA["articles"]:
@@ -724,7 +929,7 @@ def check():
 
 def main():
     check()
-    for d in ("artikel", "rubrik", "feeds", "meldungen", "ausgaben", "woche", "rechner", "vorschau", os.path.join("newsletter", "archiv")):
+    for d in ("artikel", "rubrik", "thema", "feeds", "meldungen", "ausgaben", "woche", "rechner", "vorschau", os.path.join("newsletter", "archiv")):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     build_home()
     for a in DATA["articles"]:
@@ -742,6 +947,9 @@ def main():
     nl.write_outbox(ROOT, DATA, articles(), CATS, PALETTE, ORDER, SITE_NAME, SITE_URL, upcoming_list())
     build_about()
     build_feeds()
+    build_themes()
+    build_404()
+    build_sitemap()
     print(f"OK: {len(DATA['articles'])} Artikel in {len(CATS)} Rubriken, {drafts} Entwürfe")
 
 

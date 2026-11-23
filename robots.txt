@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /radar/vorschau/
+
+Sitemap: https://hrswitzerland.github.io/radar/sitemap.xml
