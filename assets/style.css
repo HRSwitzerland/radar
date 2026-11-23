@@ -506,3 +506,23 @@ nav.cats a.bg-chip:hover, nav.cats a.bg-chip[aria-current="page"] { border-color
 .more-themes { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .topic.theme-link { background: var(--catb, #efebff); color: var(--catc, var(--ink)); font-weight: 800; }
 .foot-themes a { white-space: nowrap; }
+
+/* Dezente Rubrikenleiste */
+nav.cats { gap: 2px 22px; padding: 2px 0 12px; }
+nav.cats a, nav.cats a.bg-chip { background: none; color: var(--muted); padding: 4px 0; border: 0; border-bottom: 2px solid transparent; border-radius: 0; font-weight: 700; font-size: .86rem; gap: 7px; }
+nav.cats a:not(.plain)::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--catc); flex: none; }
+nav.cats a:hover, nav.cats a[aria-current="page"], nav.cats a.bg-chip:hover, nav.cats a.bg-chip[aria-current="page"] { color: var(--ink); border-color: var(--catc, var(--ink)); }
+nav.cats a.plain:hover, nav.cats a.plain[aria-current="page"] { border-color: var(--ink); }
+nav.cats .cats-sep { flex: none; width: 1.5px; align-self: stretch; background: var(--line); margin: 4px 0; }
+@media (max-width: 520px) {
+  nav.main { gap: 0; width: 100%; justify-content: space-between; }
+  nav.main a { padding: 8px 9px; font-size: .88rem; }
+  nav.main a.cta { padding: 8px 12px; }
+  .site-head .wrap { min-height: 0; padding-top: 10px; padding-bottom: 8px; }
+}
+@media (max-width: 520px) {
+  nav.main { flex-wrap: nowrap; }
+  nav.main a { padding: 7px 7px; font-size: .82rem; white-space: nowrap; }
+  nav.main a.cta { padding: 7px 11px; }
+  nav.main a.icon-link { padding: 7px 4px; }
+}

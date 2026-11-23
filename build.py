@@ -187,7 +187,9 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News zu Arbeitsrecht, HR und Legal in der Schweiz"
     desc = desc or DEFAULT_DESC
     ld_html = "".join(ld_script(x) for x in (ld or []))
-    cats_nav = f'<a href="{up}hintergrund.html" class="bg-chip"{" aria-current=page" if active == "hintergrund" else ""}>{BOOK}Hintergrund</a>' + "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{" aria-current=page" if active == "rubrik-" + k else ""}>{ICONS[k]}{e(CATS[k][1])}</a>' for k in ORDER)
+    cur = lambda key: ' aria-current="page"' if active == key else ""
+    cats_nav = "".join(f'<a href="{up}rubrik/{k}.html" style="{cat_style(k)}"{cur("rubrik-" + k)}>{e(CATS[k][1])}</a>' for k in ORDER) + \
+        f'<span class="cats-sep" aria-hidden="true"></span><a href="{up}hintergrund.html" class="plain"{cur("hintergrund")}>Hintergrund</a><a href="{up}thema/index.html" class="plain"{cur("themen")}>Themen</a>'
     return f"""<!DOCTYPE html>
 <html lang="de-CH">
 <head>
@@ -224,12 +226,9 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
   <div class="wrap head-row">
     <a class="logo" href="{up}index.html">{LOGO}<span class="logo-text">{e(SITE_NAME)}<small>Was HR heute wissen muss</small></span></a>
     <nav class="main" aria-label="Hauptnavigation">
-      {nav("index.html", "Aktuell", "home")}
+      {nav("index.html", "Home", "home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
-      {nav("woche/index.html", "Wochenrückblick", "woche")}
-      {nav("thema/index.html", "Themen", "themen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
-      {nav("archiv.html", "Archiv", "archiv")}
       {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
@@ -244,7 +243,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}ueber.html">Über</a></p>
+      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a></p>
     </div>
     <div>
       <h2>Themen</h2>
