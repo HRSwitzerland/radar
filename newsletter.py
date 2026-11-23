@@ -18,6 +18,7 @@ ATTR = {
     "gesundheit": "THEMA_GESUNDHEIT",
     "digital": "THEMA_DIGITAL",
     "praxis": "THEMA_PRAXIS",
+    "legal": "THEMA_LEGAL",
 }
 ALERT_ATTR = "EILMELDUNG"
 MAX_AGE_DAYS = 3  # ältere, nicht versendete Ausgaben werden nicht mehr verschickt

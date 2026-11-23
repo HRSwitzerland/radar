@@ -35,6 +35,7 @@ CATS = {
     "gesundheit": ("Gesundheit & Führung", "Gesundheit", "Absenzen, psychische Gesundheit, BGM, Führung und Unternehmenskultur."),
     "digital": ("HR-Tech & KI", "HR-Tech", "Künstliche Intelligenz, HR-Software, Daten und die digitale Personalarbeit."),
     "praxis": ("HR-Praxis & Behörden", "Praxis", "Stellenmeldepflicht, Bewilligungen, Kontingente und Hinweise von SECO, EDÖB und Kantonen."),
+    "legal": ("Legal & Compliance", "Legal", "Gesetzesänderungen für Unternehmen und KMU: Gesellschafts- und Vertragsrecht, Register, Datenschutz, Wettbewerb, Geldwäscherei und Compliance."),
 }
 ORDER = list(CATS)
 PALETTE = {
@@ -45,6 +46,7 @@ PALETTE = {
     "gesundheit": ("#c2417a", "#fde8f1"),
     "digital": ("#0f8b8d", "#dff5f4"),
     "praxis": ("#b9780a", "#fff3d6"),
+    "legal": ("#3d5a80", "#e6edf6"),
 }
 _I = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
 ICONS = {
@@ -55,6 +57,7 @@ ICONS = {
     "gesundheit": _I + '<path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"/></svg>',
     "digital": _I + '<rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>',
     "praxis": _I + '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg>',
+    "legal": _I + '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18M11 13v2h2v-2"/></svg>',
 }
 BULB = _I + '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>'
 LINK = _I + '<path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1 1"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1-1"/></svg>'
@@ -667,12 +670,13 @@ def build_newsletter():
 
 
 def build_about():
+    RUBRIK_WORT = {7: "Sieben", 8: "Acht", 9: "Neun", 10: "Zehn"}.get(len(CATS), str(len(CATS)))
     cats = "".join(f'<li style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div></li>' for k, v in CATS.items())
     body = f"""<div class="narrow page">
 <span class="eyebrow"><span class="pill">Über</span></span>
 <h1>Was HR heute wissen muss</h1>
-<p class="lead">{e(SITE_NAME)} ist die Newsplattform für HR-Leiterinnen, HR-Leiter und HR-Fachleute in der Schweiz. Jeden Tag fassen wir zusammen, was sich bewegt: neue Urteile, Gesetze, Zahlen, Studien und Trends.</p>
-<h2>Sieben Rubriken</h2><ul class="cat-list">{cats}</ul>
+<p class="lead">{e(SITE_NAME)} ist die Newsplattform für HR-Leiterinnen, HR-Leiter und HR-Fachleute in der Schweiz. Jeden Werktag fassen wir zusammen, was sich bewegt: neue Urteile, Gesetze, Zahlen, Studien und Trends, dazu in der Rubrik Legal die wichtigsten Rechtsänderungen für Unternehmen und KMU.</p>
+<h2>{RUBRIK_WORT} Rubriken</h2><ul class="cat-list">{cats}</ul>
 <h2>So entstehen die Beiträge</h2>
 <p>Grundlage sind öffentlich zugängliche Quellen: Urteile, Medienmitteilungen von Bund und Kantonen, Studien, Fachpublikationen und Medienberichte. Die Inhalte werden mit KI-Unterstützung recherchiert, in eigenen Worten zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag nennt seine Quellen, damit Sie das Original nachlesen können.</p>
 <h2>Keine Rechtsberatung</h2>

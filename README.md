@@ -1,6 +1,6 @@
 # HR Radar
 
-Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn und Vorsorge, Arbeitsmarkt, Gesundheit und Führung, HR-Tech und KI, HR-Praxis. Jeder Beitrag mit Quellen.
+Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lohn und Vorsorge, Arbeitsmarkt, Gesundheit und Führung, HR-Tech und KI, HR-Praxis, dazu die Rubrik Legal & Compliance mit Rechtsänderungen für Unternehmen und KMU. Jeder Beitrag mit Quellen.
 
 ## Aufbau
 - `data/articles.json` – einzige Inhaltsquelle: Einstellungen (`site`), Artikel, Kennzahlen, Termine
@@ -15,7 +15,7 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
   "id": "slug-a-z-0-9",
   "published": "JJJJ-MM-TT",
   "date": "JJJJ-MM-TT (Datum des Ereignisses, optional)",
-  "category": "arbeitsrecht | gesetze | lohn | arbeitsmarkt | gesundheit | digital | praxis",
+  "category": "arbeitsrecht | gesetze | lohn | arbeitsmarkt | gesundheit | digital | praxis | legal",
   "featured": true,
   "tags": ["Stichwort"],
   "title": "...",
@@ -31,6 +31,9 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
 `featured: true` macht einen Artikel zum Top-Thema auf der Startseite (immer nur der jüngste zählt).
 
 Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.
+
+## Rubrik Legal & Compliance
+`legal`: Gesetzes- und Verordnungsänderungen für Unternehmen und KMU ausserhalb des Arbeitsrechts, z.B. Gesellschaftsrecht, Handels- und Transparenzregister, Vertrags- und Haftpflichtrecht, Datenschutz, Wettbewerbs- und Kartellrecht, Geldwäscherei, Immaterialgüterrecht, Mehrwertsteuer-Verfahren, Digitalisierung (E-ID), Lieferketten und Nachhaltigkeit sowie EU-Recht mit Wirkung auf Schweizer Firmen. Arbeitsrechtliche Gesetzgebung bleibt in `gesetze`.
 
 ## Wochenrückblick
 Wochenseiten entstehen automatisch aus allen Artikeln einer ISO-Kalenderwoche (Top 5: Top-Thema, dann Anzahl Quellen).
@@ -50,5 +53,5 @@ Optional ergänzt die Freitags-Ausgabe eine redaktionelle Einordnung in `weeks`:
 - Eilmeldung: im Artikel `"alert": true` setzen (nur bei sehr grosser Tragweite).
 - `build.py` legt Versandaufträge in `newsletter/outbox/` ab (nur wenn nicht schon in `newsletter/sent/` und höchstens 3 Tage alt). Webversionen: `newsletter/archiv/<id>.html`.
 - Versand: GitHub Action `.github/workflows/newsletter.yml` ruft `send_newsletter.py` auf (Brevo-API). Benötigt Secret `BREVO_API_KEY` und Variablen `BREVO_LIST_ID`, `BREVO_ALERT_SEGMENT_ID`, `SENDER_EMAIL`, `SENDER_NAME`. Ohne Key passiert nichts.
-- Themenwahl: Brevo-Kontaktattribute `THEMA_ARBEITSRECHT`, `THEMA_GESETZE`, `THEMA_LOHN`, `THEMA_ARBEITSMARKT`, `THEMA_GESUNDHEIT`, `THEMA_DIGITAL`, `THEMA_PRAXIS`, `EILMELDUNG` (Typ Boolean), `VORNAME` (Text).
+- Themenwahl: Brevo-Kontaktattribute `THEMA_ARBEITSRECHT`, `THEMA_GESETZE`, `THEMA_LOHN`, `THEMA_ARBEITSMARKT`, `THEMA_GESUNDHEIT`, `THEMA_DIGITAL`, `THEMA_PRAXIS`, `THEMA_LEGAL`, `EILMELDUNG` (Typ Boolean), `VORNAME` (Text).
 - Anmeldeformular: Formular-URL von Brevo in `site.newsletter_form_action` eintragen.
