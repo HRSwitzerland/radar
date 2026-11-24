@@ -28,7 +28,7 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
   "sources": [{"label": "Quelle, Datum", "url": "https://..."}]
 }
 ```
-`featured: true` macht einen Artikel zum Top-Thema auf der Startseite (immer nur der jüngste zählt).
+`featured: true` macht einen Artikel zum Top-Thema auf der Startseite, aber nur am Tag seiner Veröffentlichung (Erscheinungstag = neuester Tag). Sobald neuere Artikel erscheinen, rückt automatisch der neueste Artikel nach oben.
 
 Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.
 

@@ -359,7 +359,9 @@ def chips(target, present):
 
 def build_home():
     arts = articles()
-    lead = next((a for a in arts if a.get("featured")), arts[0])
+    # Top-Thema: ein "featured"-Artikel nur, wenn er vom neuesten Erscheinungstag ist;
+    # sonst der neueste Artikel. So bleibt kein älteres Top-Thema über neuen Beiträgen stehen.
+    lead = next((a for a in arts if a.get("featured") and a["published"] == arts[0]["published"]), arts[0])
     rest = [a for a in arts if a is not lead]
     side = rest[:4]
     latest = rest[4:16]
