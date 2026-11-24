@@ -800,7 +800,7 @@ def build_newsletter_archive():
 def build_newsletter():
     archive_rows = build_newsletter_archive()
     interests = "".join(
-        f'<label class="interest" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div><input type="checkbox" name="{nl.ATTR[k]}" value="true" checked></label>'
+        f'<label class="interest" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><div><b>{e(v[0])}</b><span>{e(v[2])}</span></div><input type="checkbox" name="{nl.ATTR[k]}" value="1" checked></label>'
         for k, v in CATS.items())
     if NL_ACTION:
         action, notice, disabled = f'action="{e(NL_ACTION)}" method="post"', "", ""
@@ -819,13 +819,27 @@ def build_newsletter():
   <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
   <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="VORNAME" autocomplete="given-name"></div>
   <fieldset><legend>Welche Rubriken interessieren Sie?</legend><div class="interest-grid">{interests}</div></fieldset>
-  <label class="interest alert-opt"><span class="mini-ico" aria-hidden="true">{ICONS['gesetze']}</span><div><b>Eilmeldungen</b><span>Sofort informiert bei sehr wichtigen Entscheiden, etwa einem wegweisenden Urteil oder einer kurzfristigen Gesetzesänderung. Höchstens wenige Male pro Jahr.</span></div><input type="checkbox" name="{nl.ALERT_ATTR}" value="true" checked></label>
+  <label class="interest alert-opt"><span class="mini-ico" aria-hidden="true">{ICONS['gesetze']}</span><div><b>Eilmeldungen</b><span>Sofort informiert bei sehr wichtigen Entscheiden, etwa einem wegweisenden Urteil oder einer kurzfristigen Gesetzesänderung. Höchstens wenige Male pro Jahr.</span></div><input type="checkbox" name="{nl.ALERT_ATTR}" value="1" checked></label>
   <label class="consent"><input type="checkbox" id="nl-consent" name="OPT_IN" value="1" required><span>Ich möchte den Newsletter erhalten und bin einverstanden, dass meine E-Mail-Adresse, mein Vorname und meine Themenwahl dafür gespeichert und vom Versanddienst Brevo verarbeitet werden. Abmelden ist jederzeit über den Link in jeder E-Mail möglich.</span></label>
+  <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+  <input type="hidden" name="locale" value="de"><input type="hidden" name="html_type" value="simple">
   <div><button class="btn red" type="submit"{disabled}>Newsletter abonnieren</button></div>
+  <p class="nl-hint">Nach dem Absenden erhalten Sie eine E-Mail mit einem Bestätigungslink. Erst nach dem Klick darauf ist die Anmeldung aktiv.</p>
 </form>
 {archive}
 </div>"""
-    write("newsletter.html", layout("Newsletter", body, 0, active="newsletter"))
+    write("newsletter.html", layout("Newsletter", body, 0, active="newsletter", desc="Der HR Radar Newsletter: alle zwei Wochen die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus den Rubriken, die Sie wählen. Kostenlos, jederzeit abbestellbar."))
+    for slug, title, lead, text in (
+        ("newsletter-danke", "Fast geschafft: Bitte bestätigen Sie Ihre Anmeldung",
+         "Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt.",
+         "Klicken Sie auf den Link in dieser E-Mail, damit Ihre Anmeldung aktiv wird. Sie finden die E-Mail nicht? Schauen Sie im Spam- oder Werbeordner nach. Die E-Mail kommt von newsletter@hr-radar.ch."),
+        ("newsletter-bestaetigt", "Willkommen beim HR Radar Newsletter",
+         "Ihre Anmeldung ist bestätigt. Danke für Ihr Interesse!",
+         "Die nächste Ausgabe kommt an einem Montagmorgen in Ihr Postfach, mit den Themen, die Sie gewählt haben. Bis dahin finden Sie alle aktuellen Beiträge hier auf der Seite.")):
+        page = f"""<div class="narrow page"><span class="eyebrow"><span class="pill">Newsletter</span></span>
+<h1>{e(title)}</h1><p class="lead">{e(lead)}</p><p>{e(text)}</p>
+<p><a class="btn" href="index.html">Zu den aktuellen Beiträgen</a> <a class="btn ghost" href="thema/index.html">Themen</a></p></div>"""
+        write(f"{slug}.html", layout(title, page, 0, active="newsletter", noindex=True))
 
 
 def build_about():
