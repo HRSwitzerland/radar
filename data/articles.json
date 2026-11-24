@@ -8,6 +8,124 @@
   "updated": "2026-11-24",
   "articles": [
     {
+      "id": "fristenlauf-wochenendzustellung-2029",
+      "published": "2026-11-24",
+      "date": "2026-11-18",
+      "category": "legal",
+      "tags": [
+        "Fristen",
+        "Zustellung",
+        "Verfahrensrecht",
+        "A-Post Plus"
+      ],
+      "title": "Post am Samstag im Briefkasten: Ab 2029 beginnen Fristen erst am Montag",
+      "teaser": "Der Bundesrat setzt die neue Zustellregel für das ganze Bundesrecht auf den 1. Januar 2029 in Kraft. Wer Verfügungen, Urteile oder Kündigungen per A-Post Plus erhält oder verschickt, sollte die Fristberechnung anpassen.",
+      "summary": "Sendungen, die eine Frist auslösen und an einem Samstag, Sonntag oder Feiertag ohne Unterschrift zugestellt werden, gelten künftig erst am nächsten Werktag als zugestellt. Was im Zivilprozess seit 2025 gilt, wird auf Verwaltungs-, Steuer- und Sozialversicherungsverfahren, das Bundesgericht sowie auf privatrechtliche Fristen ausgedehnt. Der Bundesrat hat das Inkrafttreten am 18. November 2026 auf den 1. Januar 2029 festgelegt, damit die Kantone ihr Recht anpassen können.",
+      "sections": [
+        {
+          "h": "Was sich ändert",
+          "p": "Heute beginnt eine Frist bei einer Zustellung am Samstag bereits am Sonntag zu laufen, ob die Empfängerin den Brief gesehen hat oder nicht. Neu gilt eine Sendung, die am Wochenende oder an einem anerkannten Feiertag ohne Unterschrift in den Briefkasten gelegt wird, erst am folgenden Werktag als zugestellt. Die Frist läuft dann ab diesem Werktag. Der Bundesrat hat am 18. November 2026 beschlossen, die Regelung auf den 1. Januar 2029 in Kraft zu setzen."
+        },
+        {
+          "h": "Welche Gesetze betroffen sind",
+          "p": "Die Zivilprozessordnung kennt diese Regel bereits seit dem 1. Januar 2025 (Art. 142 Abs. 1bis ZPO). Nun wird sie auf das übrige Bundesrecht übertragen: Angepasst werden unter anderem das Verwaltungsverfahrensgesetz, das Bundesgerichtsgesetz, das Gesetz über die direkte Bundessteuer, das Steuerharmonisierungsgesetz, das ATSG für die Sozialversicherungen sowie das Militärstrafrecht. Als Auffanggesetz dient das Bundesgesetz über den Fristenlauf an Samstagen; es erfasst gemäss Botschaft auch privatrechtliche Fristen ohne eigene Berechnungsregel. Die Strafprozessordnung ist ausgenommen, weil dort ohnehin gegen Unterschrift zugestellt werden muss."
+        },
+        {
+          "h": "Hintergrund: A-Post Plus",
+          "p": "Auslöser ist die Versandart A-Post Plus: Solche Sendungen werden ohne Unterschrift, aber mit Sendungsverfolgung auch am Samstag zugestellt, und die Gerichte stellen für den Fristbeginn auf den erfassten Zustellzeitpunkt ab. Eingeschriebene Sendungen sind nicht betroffen, weil die Post sie am Samstag nicht zustellt. Grundlage der Reform ist die Motion 22.3381 der Rechtskommission des Nationalrats zur Harmonisierung der Fristenberechnung. Die Botschaft nennt als Beispiel eine Mietkündigung per A-Post Plus, bei der sich die 30-tägige Anfechtungsfrist nach Art. 273 OR entsprechend verschiebt."
+        },
+        {
+          "h": "Warum erst 2029",
+          "p": "Die lange Vorlaufzeit begründet der Bundesrat mit den Kantonen: Sie sollen genügend Zeit erhalten, ihr eigenes Verfahrens- und Steuerrecht anzupassen, damit die Regel schweizweit einheitlich angewendet wird. Bis Ende 2028 gilt ausserhalb des Zivilprozesses weiterhin die bisherige Praxis. Unternehmen müssen also während gut zwei Jahren mit zwei Systemen rechnen: ZPO-Fristen nach neuer Regel, Verwaltungs-, Steuer- und Sozialversicherungsfristen nach alter."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für Legal: Bis Ende 2028 bei Verfügungen von Steuer-, Sozialversicherungs- und Bundesbehörden, die per A-Post Plus am Samstag eintreffen, weiterhin ab Sonntag rechnen; Fristenkontrolle und Posteingang nicht auf den Montag umstellen.",
+        "Das heisst für Legal: Ab 2029 die Fristenregeln im Fristenkalender, in Vorlagen und Schulungen für Posteingang und Rechtsabteilung anpassen und kantonale Umsetzungen verfolgen.",
+        "Das heisst für Legal: Wer selbst fristauslösende Schreiben versendet, etwa Kündigungen, sollte ab 2029 mit einer Verschiebung bei Zustellung am Wochenende rechnen; wo der Zugangszeitpunkt entscheidend ist, bleibt der eingeschriebene Versand oder die persönliche Übergabe mit Empfangsbestätigung die sicherere Wahl."
+      ],
+      "refs": [
+        "Motion 22.3381",
+        "Geschäft 25.023",
+        "Art. 142 Abs. 1bis ZPO",
+        "SR 173.110.3 (Fristenlauf an Samstagen)"
+      ],
+      "effective": "2029-01-01",
+      "sources": [
+        {
+          "label": "BJ: Fristenlauf bei Postzustellung am Wochenende, 18.11.2026",
+          "url": "https://www.bj.admin.ch/de/newnsb/C4JjbQYF0XSP"
+        },
+        {
+          "label": "BJ: Dossier Zustellung an Wochenenden und Feiertagen mit «A-Post Plus»",
+          "url": "https://www.bj.admin.ch/de/zustellung-an-wochenenden-und-feiertagen-mit-a-post-plus"
+        },
+        {
+          "label": "Botschaft des Bundesrates vom 12.02.2025",
+          "url": "https://www.newsd.admin.ch/newsd/message/attachments/91711.pdf"
+        },
+        {
+          "label": "Bundesrat: Fristenlauf soll im Bundesrecht erst am Montag beginnen, 12.02.2025",
+          "url": "https://www.admin.ch/de/nsb?id=104102"
+        },
+        {
+          "label": "law.ch: Postzustellung am Wochenende, 13.02.2025",
+          "url": "https://law.ch/lawnews/2025/02/postzustellung-am-wochenende-sog-samstagzustellung-fristenlauf-soll-im-bundesrecht-erst-am-montag-beginnen/"
+        }
+      ]
+    },
+    {
+      "id": "erwerbslosenquote-ilo-q3-2026",
+      "published": "2026-11-24",
+      "date": "2026-11-12",
+      "category": "arbeitsmarkt",
+      "tags": [
+        "Arbeitslosigkeit",
+        "Arbeitsmarkt",
+        "Statistik"
+      ],
+      "title": "Erwerbslosenquote bei 5,6 Prozent: Warum die zweite Arbeitslosenzahl fast doppelt so hoch ist",
+      "teaser": "Während die SECO-Quote seit Monaten bei 3 Prozent verharrt, ist die Erwerbslosigkeit nach ILO-Definition im dritten Quartal 2026 deutlich gestiegen. Was hinter der Differenz steckt und was sie für die Personalplanung bedeutet.",
+      "summary": "Laut Schweizerischer Arbeitskräfteerhebung (SAKE) des BFS waren im dritten Quartal 2026 rund 288'000 Personen erwerbslos, 27'000 mehr als ein Jahr zuvor. Die Quote nach ILO stieg von 5,1 auf 5,6 Prozent, saisonbereinigt auf 5,3 Prozent. Die Zahl der Erwerbstätigen wuchs zwar um 0,5 Prozent, ging saisonbereinigt gegenüber dem Vorquartal aber leicht zurück.",
+      "sections": [
+        {
+          "h": "Die Zahlen",
+          "p": "Im dritten Quartal 2026 zählte die Schweiz 5,387 Millionen Erwerbstätige, 0,5 Prozent mehr als im Vorjahresquartal; in Vollzeitäquivalenten betrug das Plus nur 0,1 Prozent. Die Erwerbstätigenquote der 15- bis 64-Jährigen sank von 79,8 auf 79,2 Prozent. Erwerbslos waren 288'000 Personen, die ILO-Quote stieg von 5,1 auf 5,6 Prozent. Saisonbereinigt nahm die Zahl der Erwerbstätigen gegenüber dem Vorquartal um 0,3 Prozent ab, die Erwerbslosenquote stieg von 5,1 auf 5,3 Prozent."
+        },
+        {
+          "h": "Zwei Quoten, zwei Messmethoden",
+          "p": "Die SECO-Quote, die im Oktober bei 3,0 Prozent lag, zählt nur Personen, die bei einem RAV als arbeitslos gemeldet sind. Die ILO-Quote des BFS beruht dagegen auf einer Befragung und erfasst alle, die keine Arbeit haben, aktiv suchen und verfügbar sind, auch wenn sie sich nicht beim RAV melden, etwa Ausgesteuerte, Wiedereinsteigende oder Junge nach der Ausbildung. Deshalb liegt sie regelmässig deutlich höher. Laut BFS ist ein solches Niveau nicht beispiellos; ähnliche Werte gab es Mitte der 2000er-Jahre und während der Pandemie. In den saisonbereinigten Daten zeige sich seit 2023 ein stetiger Anstieg."
+        },
+        {
+          "h": "Einordnung im europäischen Vergleich",
+          "p": "In der EU lag die Erwerbslosenquote im gleichen Zeitraum bei 6,2 Prozent. Deutschland verzeichnete 4,2 Prozent, Österreich 6,1, Italien 6,5 und Frankreich 8,4 Prozent. Die Schweiz steht damit weiterhin besser da als der EU-Durchschnitt, der Abstand ist aber kleiner geworden. Das SECO erwartet für 2027 eine registrierte Arbeitslosenquote von 3,0 Prozent nach 3,1 Prozent im laufenden Jahr."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Der verdeckte Bewerbermarkt ist grösser, als die RAV-Zahlen zeigen. Wer nur über Stellenportale sucht, erreicht Wiedereinsteigende und Ausgesteuerte oft nicht; Partnerschaften mit RAV und Integrationsangeboten können helfen.",
+        "Das heisst für HR: Die stagnierenden Vollzeitäquivalente bei wachsender Erwerbstätigenzahl deuten auf mehr Teilzeit hin. Teilzeit- und Jobsharing-Modelle bleiben ein Rekrutierungsvorteil.",
+        "Das heisst für HR: Bei Personalabbau mit längeren Suchzeiten der Betroffenen rechnen und Outplacement- und Sozialplanleistungen entsprechend planen."
+      ],
+      "refs": [
+        "SAKE",
+        "ILO-Erwerbslosigkeit"
+      ],
+      "sources": [
+        {
+          "label": "BFS: SAKE im 3. Quartal 2026 – Arbeitsangebot, 12.11.2026",
+          "url": "https://www.bfs.admin.ch/de/newnsb/CXwrzhzqrnVn"
+        },
+        {
+          "label": "Cash/AWP: Erwerbslosenquote erreicht Corona-Niveau, 12.11.2026",
+          "url": "https://www.cash.ch/news/erwerbslosenquote-erreicht-corona-niveau-984818"
+        },
+        {
+          "label": "SECO: Die Lage auf dem Arbeitsmarkt im Oktober 2026",
+          "url": "https://www.admin.ch/de/newnsb/UuA5YIwSJ2xh"
+        }
+      ]
+    },
+    {
       "id": "maschinenverordnung-mra-2027",
       "published": "2026-11-24",
       "date": "2026-11-20",
@@ -1684,6 +1802,10 @@
     {
       "date": "2028-10-01",
       "label": "Transparenzregister: Frist, wenn alle wirtschaftlich Berechtigten im Handelsregister eingetragen sind"
+    },
+    {
+      "date": "2029-01-01",
+      "label": "Zustellung am Wochenende: Fristen beginnen im ganzen Bundesrecht erst am nächsten Werktag"
     }
   ]
 }
