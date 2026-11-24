@@ -5,8 +5,146 @@
     "publisher": "[Name, Adresse und E-Mail ergänzen]",
     "newsletter_form_action": ""
   },
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "articles": [
+    {
+      "id": "maschinenverordnung-mra-2027",
+      "published": "2026-11-24",
+      "date": "2026-11-20",
+      "category": "legal",
+      "tags": [
+        "Maschinenverordnung",
+        "MRA",
+        "EU-Recht",
+        "Export",
+        "Produktsicherheit"
+      ],
+      "title": "Neue EU-Maschinenverordnung ab 20. Januar 2027: Schweizer Zertifikate könnten nicht mehr reichen",
+      "teaser": "In acht Wochen gilt in der EU die neue Maschinenverordnung. Weil Brüssel das Abkommen über die gegenseitige Anerkennung nicht aktualisiert, drohen Schweizer Exporteuren zusätzliche Zertifizierungen und eine Vertretung in der EU.",
+      "summary": "Ab dem 20. Januar 2027 ersetzt die Verordnung (EU) 2023/1230 die bisherige Maschinenrichtlinie. Laut SECO müssen Schweizer Hersteller bestimmte Hochrisiko-Maschinen dann zusätzlich in der EU zertifizieren lassen und einen Vertreter in der EU angeben, falls das MRA bis dahin nicht aktualisiert wird. Die EU-Kommission will das erst tun, wenn die neuen bilateralen Verträge in Kraft sind; Bundespräsident Parmelin hat bei Kommissionspräsidentin von der Leyen interveniert.",
+      "sections": [
+        {
+          "h": "Was am 20. Januar 2027 passiert",
+          "p": "In der EU gilt ab diesem Datum die neue Maschinenverordnung (EU) 2023/1230 und löst die Maschinenrichtlinie 2006/42/EG ab. Massgebend ist der Zeitpunkt des Inverkehrbringens: Maschinen, die ab dem 20. Januar 2027 in der EU auf den Markt kommen, brauchen eine Konformitätserklärung nach neuem Recht. Die Schweiz will ihre Maschinenverordnung (MaschV) gleichwertig nachführen; der Bundesrat hat die Totalrevision im September 2025 in die Vernehmlassung geschickt. Neu sollen sechs Maschinenkategorien, zum Beispiel Hebebühnen für Fahrzeuge, zwingend durch eine Konformitätsbewertungsstelle geprüft werden."
+        },
+        {
+          "h": "Das Problem mit dem MRA",
+          "p": "Bisher gilt eine Zertifizierung durch eine Schweizer Stelle dank dem Abkommen über die gegenseitige Anerkennung von Konformitätsbewertungen (MRA) auch in der EU. Das MRA umfasst 20 Produktkategorien und deckt laut SECO wertmässig rund zwei Drittel des Handels mit Industrieerzeugnissen zwischen der Schweiz und der EU ab. Das Kapitel Maschinen bezieht sich aber noch auf die alte Richtlinie. Die EU-Kommission verknüpft die Aktualisierung mit dem Inkrafttreten der neuen bilateralen Verträge, die zwar unterzeichnet, aber noch nicht ratifiziert sind. Ohne Aktualisierung müssen Exporteure gemäss SECO bestimmte Hochrisiko-Maschinen zusätzlich in der EU zertifizieren lassen und einen Vertreter in der EU benennen, dessen Kontaktdaten auf der Maschine oder in den Begleitdokumenten stehen."
+        },
+        {
+          "h": "Politische Intervention, offener Ausgang",
+          "p": "Bundespräsident Guy Parmelin hat das Thema vergangene Woche am Gipfel der Europäischen Politischen Gemeinschaft in Dublin bei Ursula von der Leyen angesprochen. Vereinbart wurde laut SECO, dass sich die zuständigen Behörden austauschen; eine Übergangslösung ist nicht bekannt. Medizinprodukte sind seit 2021 in derselben Lage, der Branchenverband Swiss Medtech weist seither auf erhebliche Zusatzkosten hin. Besonders betroffen wären KMU ohne eigenen Standort in der EU. Ob die revidierte Schweizer MaschV gleichzeitig mit dem EU-Recht in Kraft tritt, war bei Redaktionsschluss nicht öffentlich bestätigt."
+        },
+        {
+          "h": "Neue Pflichten unabhängig vom MRA",
+          "p": "Auch wenn das MRA gelöst würde, ändern sich die technischen Anforderungen. Die neue Verordnung verlangt unter anderem Schutz vor Manipulation und Cyberangriffen, soweit diese die Sicherheit beeinträchtigen, und regelt Maschinen mit selbstlernenden Systemen, die Sicherheitsfunktionen übernehmen. Betriebsanleitung und Konformitätserklärung dürfen digital bereitgestellt werden; auf Verlangen ist eine Papierversion kostenlos nachzuliefern. Wer eine Maschine wesentlich verändert, kann selbst zum Hersteller mit allen Pflichten werden, was auch Betreiber mit eigener Instandhaltung betrifft."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für Legal: Prüfen Sie mit Produktion und Vertrieb, welche Maschinen ab dem 20. Januar 2027 in die EU geliefert werden und ob sie unter die Kategorien mit Pflicht zur Drittprüfung fallen.",
+        "Klären Sie vorsorglich, wer als Vertreter oder Bevollmächtigter in der EU auftreten kann, und passen Sie Verträge mit Händlern, Importeuren und Kunden an (Verantwortung, Dokumentation, Haftung).",
+        "Lassen Sie Konformitätserklärungen, Betriebsanleitungen und Risikobeurteilungen auf das neue Recht umstellen, inklusive Cybersicherheit; Lieferdatum vor oder nach dem Stichtag ist entscheidend.",
+        "Verfolgen Sie die Inkraftsetzung der revidierten Schweizer MaschV und allfällige Übergangsregeln des SECO; diese können sich kurzfristig ergeben."
+      ],
+      "refs": [
+        "Verordnung (EU) 2023/1230",
+        "Richtlinie 2006/42/EG",
+        "MaschV (SR 819.14)",
+        "MRA (SR 0.946.526.81)"
+      ],
+      "effective": "2027-01-20",
+      "sources": [
+        {
+          "label": "Nau.ch/Keystone-SDA: Maschinenbauer drohen höhere Hürden zum EU-Markt, 20.11.2026",
+          "url": "https://www.nau.ch/politik/international/maschinenbauer-drohen-hohere-hurden-zum-eu-markt-67205085"
+        },
+        {
+          "label": "Bote der Urschweiz/CH Media: Neuer EU-Nadelstich – jetzt trifft es die Maschinenbauer, 20.11.2026",
+          "url": "https://www.bote.ch/nachrichten/schweizundwelt/neuer-nadelstich-aus-bruessel-jetzt-trifft-es-die-maschinenbauer-art-1733322"
+        },
+        {
+          "label": "Bundesrat: Maschinen – Erhalt des erleichterten Zugangs zum EU-Binnenmarkt (Vernehmlassung), 19.09.2025",
+          "url": "https://www.admin.ch/de/newnsb/Vw47o_OIAjefyvEdNuC0o"
+        },
+        {
+          "label": "SECO: Maschinen",
+          "url": "https://www.seco.admin.ch/de/maschinen"
+        },
+        {
+          "label": "Muri Rechtsanwälte: Neue EU-Maschinenverordnung – auch für Schweizer Unternehmen besteht Handlungsbedarf, 29.07.2026",
+          "url": "https://muri-anwaelte.ch/de/Publikationen/Publikationen_Inhalte/Neue-EU-Maschinenverordnung-Auch-fuer-Schweizer-Unternehmen-besteht-Handlungsbedarf.php"
+        }
+      ]
+    },
+    {
+      "id": "scheinselbstaendigkeit-plattformen-just-eat",
+      "published": "2026-11-24",
+      "date": "2026-11-11",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Scheinselbständigkeit",
+        "AHV",
+        "Plattformarbeit",
+        "Freelancer",
+        "Massenentlassung"
+      ],
+      "title": "Selbständig oder angestellt? Der Fall Just Eat zeigt, worauf Ausgleichskassen schauen",
+      "teaser": "Just Eat ersetzt in der Deutschschweiz einen Teil der festangestellten Kuriere durch Selbständige. Gewerkschaften sprechen von Scheinselbständigkeit, die SVA Zürich mahnt, dass der Vertrag nicht entscheidet. Was das für alle Firmen mit Freelancern heisst.",
+      "summary": "Just Eat baut in der Schweiz 373 Stellen ab, darunter 193 festangestellte Kuriere, und setzt künftig vermehrt auf selbständige Kuriere. Im Zürcher Kantonsrat verlangt eine Anfrage Auskunft zur Durchsetzung des geltenden Rechts. Massgebend für den Status sind nach der Rechtsprechung die tatsächlichen Verhältnisse, nicht die Bezeichnung im Vertrag; wer falsch einstuft, riskiert Nachzahlungen von Sozialversicherungsbeiträgen.",
+      "sections": [
+        {
+          "h": "Was passiert ist",
+          "p": "Just Eat hat am 9. November den Abbau von 373 der rund 700 Stellen in der Schweiz bestätigt: 193 direkt angestellte Kuriere und 180 Personen externer Personaldienstleister in Zürich, Winterthur, Bern, Biel, Freiburg und St. Gallen. Das Unternehmen begründet den Schritt mit fehlender Flexibilität des bisherigen Schichtmodells und bezeichnet ihn nicht als Sparmassnahme; das Konsultationsverfahren sei abgeschlossen, über den Sozialplan werde noch verhandelt. Die Gewerkschaften Unia und Syndicom kritisieren, sie seien nicht einbezogen worden, und werfen dem Unternehmen vor, Angestellte durch Scheinselbständige zu ersetzen. In der Westschweiz bleiben die Kuriere angestellt, weil Genf und Waadt Plattformen gestützt auf Bundesgerichtsurteile als Arbeitgeber einstufen."
+        },
+        {
+          "h": "Politik und Behörden",
+          "p": "Im Zürcher Kantonsrat haben AL, Grüne, SP und EVP am 11. November eine Anfrage eingereicht, warum geltendes Recht bisher nicht durchgesetzt worden sei; der Regierungsrat wird in den kommenden Wochen antworten. Auch in St. Gallen ist ein Vorstoss zu Sanktionsmöglichkeiten hängig. Die Sozialversicherungsanstalt (SVA) Zürich betont, dass nicht der Vertrag, sondern die tatsächlichen Verhältnisse über den Status entscheiden. Just Eat hält an seinem hybriden Modell fest und verweist auf veränderte Kundenbedürfnisse und den Wettbewerb."
+        },
+        {
+          "h": "Die Kriterien der Rechtsprechung",
+          "p": "Im Fall Uber hat das Bundesgericht 2023 entschieden, dass die Fahrerinnen und Fahrer im damaligen Modell AHV-rechtlich unselbständig erwerbstätig waren (Urteil 9C_70/2022 vom 16. Februar 2023). Massgebend sind die wirtschaftlichen Umstände: Für eine Anstellung sprechen verbindliche Weisungen, eine Kontrolle über die App, ein Unterordnungsverhältnis und das Fehlen eines eigenen Unternehmerrisikos. Für Selbständigkeit sprechen erhebliche eigene Investitionen, eigene Geschäftsräume, eigenes Personal und das Auftreten für mehrere Kunden in eigenem Namen. Die Vertragsklausel «selbständig» allein hilft nicht, wenn die Praxis anders aussieht."
+        },
+        {
+          "h": "Warum das alle Arbeitgeber betrifft",
+          "p": "Die Frage stellt sich nicht nur bei Plattformen, sondern bei jedem Einsatz von Freelancern, Beratern oder ehemaligen Mitarbeitenden auf Auftragsbasis. Stuft die Ausgleichskasse eine Tätigkeit als unselbständig ein, schuldet der Auftraggeber die paritätischen Beiträge, und zwar rückwirkend für bis zu fünf Kalenderjahre (Art. 16 AHVG), dazu Verzugszinsen. Arbeitsrechtlich können zudem Ansprüche auf Ferien, Lohnfortzahlung bei Krankheit und Kündigungsschutz entstehen. Der Status wird für jedes Auftragsverhältnis gesondert beurteilt; eine Anmeldung als Selbständigerwerbender bei der Ausgleichskasse ist ein Indiz, aber keine Garantie."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Erfassen Sie alle Personen, die regelmässig auf Auftragsbasis für Ihr Unternehmen arbeiten, und prüfen Sie Weisungsgebundenheit, Integration in Abläufe und Unternehmerrisiko.",
+        "Verlassen Sie sich nicht auf die Vertragsbezeichnung: Entscheidend ist, wie die Zusammenarbeit tatsächlich gelebt wird (Arbeitszeiten, Preisgestaltung, Kontrolle, Exklusivität).",
+        "Lassen Sie sich bei Zweifeln die Selbständigkeit für das konkrete Auftragsverhältnis von der Ausgleichskasse bestätigen, bevor Nachforderungen für mehrere Jahre drohen.",
+        "Wer Angestellte durch Selbständige ersetzen will, muss neben dem Statusrisiko auch die Regeln zur Massenentlassung beachten (Art. 335d ff. OR)."
+      ],
+      "refs": [
+        "BGer 9C_70/2022",
+        "Art. 5 und 9 AHVG",
+        "Art. 16 AHVG",
+        "Art. 319 OR",
+        "Art. 335d ff. OR"
+      ],
+      "sources": [
+        {
+          "label": "SRF: Just Eat streicht in der Schweiz 373 Stellen, 09.11.2026",
+          "url": "https://www.srf.ch/news/wirtschaft/essenslieferung-just-eat-streicht-in-der-schweiz-373-stellen"
+        },
+        {
+          "label": "Cash.ch/AWP: Zürcher Regierung muss zu Just Eat Stellung beziehen, 11.11.2026",
+          "url": "https://www.cash.ch/news/zurcher-regierung-muss-zu-just-eat-stellung-beziehen-984417"
+        },
+        {
+          "label": "Nau.ch: Streik brachte nichts – Just Eat streicht 373 Stellen, 09.11.2026",
+          "url": "https://www.nau.ch/news/schweiz/streik-brachte-nichts-just-eat-streicht-373-stellen-67199758"
+        },
+        {
+          "label": "law.ch: Uber B.V. und Rasier Operations B.V. sind für Uber-Fahrer AHV-pflichtig, 22.03.2023",
+          "url": "https://law.ch/lawnews/2023/03/uber-b-v-rasier-operations-b-v-sind-fuer-uber-fahrer-ahv-pflichtig/"
+        },
+        {
+          "label": "arbeitsrecht-aktuell.ch: BGer – Uber-Fahrer sind unselbständig, 22.03.2023",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2023/03/22/bger-uber-fahrer-sind-unselbstaendig/"
+        }
+      ]
+    },
     {
       "id": "abstimmung-ahv-mwst-29-november",
       "published": "2026-11-23",
@@ -1510,6 +1648,10 @@
     {
       "date": "2027-01-01",
       "label": "Transparenzregister: Meldefrist für AG mit ordentlicher Revision; neues Patentrecht; MWST-Portalpflicht für Saldo- und Pauschalsteuersatzmethode"
+    },
+    {
+      "date": "2027-01-20",
+      "label": "EU-Maschinenverordnung (EU) 2023/1230 gilt; ohne MRA-Aktualisierung Zusatzzertifizierung und EU-Vertreter für bestimmte Maschinen"
     },
     {
       "date": "2027-01-31",
