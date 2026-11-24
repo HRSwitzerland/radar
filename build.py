@@ -150,9 +150,82 @@ def cover(a, cls="cover"):
     return f'<svg class="{cls}" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration zur Rubrik {e(CATS[a["category"]][0])}"><rect width="600" height="320" fill="{bg}"/>{"".join(shapes)}{rect}{dots}{badge}{icon}</svg>'
 
 
+# ---------- Farben: helle und dunkle Variante pro Rubrik, mit Kontrastprüfung ----------
+DARK_BG, DARK_INK, LIGHT_INK = "#17141f", "#f3f0fa", "#2b2540"
+MIN_CONTRAST = 4.5  # WCAG AA für normalen Text
+
+
+def _rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _hex(rgb):
+    return "#" + "".join(f"{max(0, min(255, round(c))):02x}" for c in rgb)
+
+
+def _mix(a, b, t):
+    """t = Anteil von a (0..1)."""
+    ra, rb = _rgb(a), _rgb(b)
+    return _hex(tuple(ra[i] * t + rb[i] * (1 - t) for i in range(3)))
+
+
+def contrast(a, b):
+    def lum(h):
+        out = []
+        for c in _rgb(h):
+            c = c / 255
+            out.append(c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4)
+        return 0.2126 * out[0] + 0.7152 * out[1] + 0.0722 * out[2]
+    la, lb = sorted((lum(a), lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def dark_variant(fg):
+    """Dunkler Hintergrund und helle Akzentfarbe für den Dunkelmodus, so gewählt, dass Text lesbar bleibt."""
+    bg_d = _mix(fg, DARK_BG, 0.2)
+    t = 0.45
+    fg_d = _mix(fg, "#ffffff", 1 - t)
+    while contrast(fg_d, bg_d) < MIN_CONTRAST and t > 0:
+        t -= 0.05
+        fg_d = _mix(fg, "#ffffff", 1 - t)
+    return fg_d, bg_d
+
+
+def light_variant(fg, bg):
+    """Akzentfarbe im hellen Modus, bei Bedarf abgedunkelt, damit sie auf dem Rubrik-Hintergrund lesbar ist."""
+    t, out = 1.0, fg
+    while contrast(out, bg) < MIN_CONTRAST and t > 0:
+        t -= 0.05
+        out = _mix(fg, LIGHT_INK, t)
+    return out
+
+
+def palette_css():
+    light = "".join(f"--cc-{k}:{light_variant(fg, bg)};--cb-{k}:{bg};" for k, (fg, bg) in PALETTE.items())
+    dark = "".join(f"--cc-{k}:{dark_variant(fg)[0]};--cb-{k}:{dark_variant(fg)[1]};" for k, (fg, bg) in PALETTE.items())
+    return (f"<style>:root{{{light}}}"
+            f"@media (prefers-color-scheme: dark){{:root:not([data-theme=\"light\"]){{{dark}}}}}"
+            f":root[data-theme=\"dark\"]{{{dark}}}</style>")
+
+
+def check_contrast():
+    """Bricht den Build ab, wenn Text auf einer Rubrikfarbe in Hell oder Dunkel schlecht lesbar wäre."""
+    problems = []
+    for k, (fg, bg) in PALETTE.items():
+        fd, bd = dark_variant(fg)
+        for name, a, b in (("hell: Titel auf Rubrikfarbe", LIGHT_INK, bg), ("hell: Akzent auf Rubrikfarbe", light_variant(fg, bg), bg),
+                           ("dunkel: Titel auf Rubrikfarbe", DARK_INK, bd), ("dunkel: Akzent auf Rubrikfarbe", fd, bd)):
+            if contrast(a, b) < MIN_CONTRAST:
+                problems.append(f"{k} ({name}): Kontrast {contrast(a, b):.2f} < {MIN_CONTRAST}")
+    if problems:
+        raise SystemExit("FEHLER Kontrast:\n  " + "\n  ".join(problems))
+
+
 def cat_style(k):
-    fg, bg = PALETTE[k]
-    return f"--catc:{fg};--catb:{bg};"
+    if k not in PALETTE:
+        return ""
+    return f"--catc:var(--cc-{k});--catb:var(--cb-{k});"
 
 
 def tag(k, up):
@@ -213,7 +286,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
 <meta name="twitter:image" content="{og_image(cat)}">
 <meta name="theme-color" content="#ffd76e">
 <link rel="icon" href="{up}assets/og/favicon.png" type="image/png">
-{extra_head}{ld_html}
+{extra_head}{palette_css()}{ld_html}
 <link rel="alternate" type="application/rss+xml" title="{e(SITE_NAME)}" href="{up}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -626,7 +699,7 @@ def build_search():
     index = [{"id": a["id"], "t": a["title"], "x": a["teaser"], "c": a["category"], "cn": CATS[a["category"]][1],
               "g": a.get("tags", []), "r": a.get("refs", []), "d": a["published"]} for a in articles()]
     write("search.json", json.dumps(index, ensure_ascii=False))
-    colors = json.dumps({k: PALETTE[k] for k in PALETTE})
+    colors = json.dumps({k: [f"var(--cc-{k})", f"var(--cb-{k})"] for k in PALETTE})
     body = f"""<div class="narrow page">
 <span class="eyebrow"><span class="pill">Suche</span></span>
 <h1>Was suchen Sie?</h1>
@@ -841,7 +914,7 @@ def build_themes():
         grid = "".join(card(a, up) for a in items[:12]) or '<p class="empty">Zu diesem Thema erscheinen laufend neue Beiträge.</p>'
         body = f"""<section class="cat-hero" style="{cat_style(k)}"><span class="blob b1"></span><div class="wrap">
   <span class="cat-big" aria-hidden="true">{ICONS[k]}</span>
-  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p><p class="count">{len(items)} Beiträge zum Thema</p></div>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p><p class="count">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} zum Thema</p></div>
 </div></section>
 <div class="narrow theme-body" style="{cat_style(k)}">
   <div class="body">{secs}</div>
@@ -858,7 +931,7 @@ def build_themes():
         if t.get("faq"):
             ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in t["faq"]]})
         write(f"thema/{t['slug']}.html", layout(t.get("seo_title", t["title"]), body, 1, desc=t["description"], active="themen", ld=ld, cat=k))
-        cards += f'<a class="tool-card" href="{t["slug"]}.html" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><h3>{e(t["title"])}</h3><p>{e(t["description"])}</p><span class="more">{len(items)} Beiträge · Thema öffnen</span></a>'
+        cards += f'<a class="tool-card" href="{t["slug"]}.html" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><h3>{e(t["title"])}</h3><p>{e(t["description"])}</p><span class="more">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} · Thema öffnen</span></a>'
     # Neuerungen des kommenden Jahres
     y = str(neuerungen_year())
     entries = []
@@ -930,6 +1003,7 @@ def check():
 
 def main():
     check()
+    check_contrast()
     for d in ("artikel", "rubrik", "thema", "feeds", "meldungen", "ausgaben", "woche", "rechner", "vorschau", os.path.join("newsletter", "archiv")):
         shutil.rmtree(os.path.join(ROOT, d), ignore_errors=True)
     build_home()

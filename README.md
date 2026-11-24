@@ -35,6 +35,9 @@ Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und
 ## Rubrik Legal & Compliance
 `legal`: Gesetzes- und Verordnungsänderungen für Unternehmen und KMU ausserhalb des Arbeitsrechts, z.B. Gesellschaftsrecht, Handels- und Transparenzregister, Vertrags- und Haftpflichtrecht, Datenschutz, Wettbewerbs- und Kartellrecht, Geldwäscherei, Immaterialgüterrecht, Mehrwertsteuer-Verfahren, Digitalisierung (E-ID), Lieferketten und Nachhaltigkeit sowie EU-Recht mit Wirkung auf Schweizer Firmen. Arbeitsrechtliche Gesetzgebung bleibt in `gesetze`.
 
+## Farben und Lesbarkeit
+Jede Rubrik hat in `build.py` (`PALETTE`) eine Akzent- und eine Hintergrundfarbe. `build.py` leitet daraus automatisch eine helle und eine dunkle Variante (Dunkelmodus) ab und prüft bei jedem Build den Kontrast nach WCAG AA (mindestens 4,5:1) für Titel und Akzenttext auf dem Rubrik-Hintergrund. Ist ein Wert zu tief, bricht der Build mit «FEHLER Kontrast» ab. Farben nie direkt in HTML oder Artikeltexte schreiben, sondern nur über `PALETTE`.
+
 ## Themenseiten (Landingpages) und SEO
 - `data/themen.json`: evergreen Themenseiten unter `thema/<slug>.html` (Grundlagen, FAQ, Rechner, automatisch verlinkte Beiträge über `match.tags` und `match.words`). Dazu `thema/index.html` und die automatische Seite `thema/neuerungen-<Jahr>.html` aus allen `effective`-Daten und `termine` des kommenden Jahres.
 - `build.py` erzeugt pro Seite Canonical-URL, Open-Graph- und Twitter-Tags, strukturierte Daten (NewsArticle, BreadcrumbList, CollectionPage, FAQPage, WebSite mit Suche), `sitemap.xml`, `robots.txt` und `404.html`.
