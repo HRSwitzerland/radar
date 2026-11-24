@@ -24,6 +24,7 @@ SITE = DATA.get("site", {})
 SITE_NAME = SITE.get("name", "HR Radar")
 SITE_URL = SITE.get("url", "https://hrswitzerland.github.io/radar/").rstrip("/") + "/"
 NL_ACTION = SITE.get("newsletter_form_action", "")
+SUPPORT_URL = SITE.get("support_url", "")
 PUBLISHER = SITE.get("publisher", "[Name, Adresse und E-Mail ergänzen]")
 e = html.escape
 _TH_PATH = os.path.join(ROOT, "data", "themen.json")
@@ -316,7 +317,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a></p>
+      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
     </div>
     <div>
       <h2>Themen</h2>
@@ -487,6 +488,32 @@ def build_home():
     write("index.html", layout(SITE_NAME, body, 0, active="home", ld=ld))
 
 
+COFFEE = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg>'
+
+
+def support_box(up):
+    """Dezenter Unterstuetzen-Kasten. Erscheint erst, wenn site.support_url gesetzt ist."""
+    if not SUPPORT_URL:
+        return ""
+    return f"""<aside class="support-box" aria-label="HR Radar unterstützen"><span class="icon">{COFFEE}</span><div><h2>Hat Ihnen dieser Beitrag geholfen?</h2><p>{e(SITE_NAME)} ist kostenlos, werbefrei und unabhängig. Wenn Sie die Arbeit daran unterstützen möchten, freuen wir uns über einen Kaffee.</p></div><a class="btn" href="{e(SUPPORT_URL)}" target="_blank" rel="noopener">Einen Kaffee spendieren</a></aside>"""
+
+
+def build_support():
+    if not SUPPORT_URL:
+        return
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Unterstützen</span></span>
+<h1>{e(SITE_NAME)} unterstützen</h1>
+<p class="lead">{e(SITE_NAME)} ist kostenlos, ohne Werbung und ohne Paywall. Jeden Werktag fassen wir zusammen, was HR- und Legal-Verantwortliche in der Schweiz wissen müssen, immer mit Quellen.</p>
+<p>Recherche, Hosting, Newsletter-Versand und die Pflege der Themenseiten und Rechner kosten Zeit und etwas Geld. Wenn Ihnen {e(SITE_NAME)} im Arbeitsalltag hilft, können Sie die Arbeit mit einem freiwilligen Beitrag unterstützen. Jeder Betrag hilft, auch ein einzelner Kaffee.</p>
+<p><a class="btn red" href="{e(SUPPORT_URL)}" target="_blank" rel="noopener">Einen Kaffee spendieren</a></p>
+<h2>Gut zu wissen</h2>
+<ul><li>Die Zahlung läuft über Buy Me a Coffee. Wir sehen keine Kartendaten.</li><li>Der Beitrag ist freiwillig und an keine Gegenleistung gebunden. Alle Inhalte bleiben für alle frei zugänglich.</li><li>{e(SITE_NAME)} ist keine gemeinnützige Organisation. Beiträge sind deshalb nicht steuerlich abziehbar.</li></ul>
+<p>Andere Wege, uns zu helfen: <a href="newsletter.html">Newsletter abonnieren</a> und {e(SITE_NAME)} Kolleginnen und Kollegen weiterempfehlen.</p>
+</div>"""
+    write("unterstuetzen.html", layout("Unterstützen", body, 0, desc=f"{SITE_NAME} ist kostenlos und werbefrei. Mit einem freiwilligen Beitrag unterstützen Sie die Arbeit an der Newsplattform für HR und Legal in der Schweiz."))
+
+
 def build_article(a, draft=False):
     up = "../"
     k = a["category"]
@@ -519,6 +546,7 @@ def build_article(a, draft=False):
     <div class="practice"><span class="icon">{BULB}</span><h2>{practice_h}</h2><ul>{takeaways}</ul></div>
     <section class="sources" aria-labelledby="q-h"><h2 id="q-h">Quellen</h2><ol>{srcs}</ol>{refs_block}</section>
     <div class="post-foot"><div class="topics">{themes_html}{tags_html}</div><button class="btn ghost" id="copy-link" type="button">{LINK}<span>Link kopieren</span></button></div>
+    {support_box(up)}
   </div>
 </article>
 <section class="block band-soft"><div class="wrap"><div class="block-head"><div><span class="hand">Weiterlesen</span><h2>Das könnte Sie auch interessieren</h2></div></div>
@@ -826,6 +854,7 @@ def build_newsletter():
   <div><button class="btn red" type="submit"{disabled}>Newsletter abonnieren</button></div>
   <p class="nl-hint">Nach dem Absenden erhalten Sie eine E-Mail mit einem Bestätigungslink. Erst nach dem Klick darauf ist die Anmeldung aktiv.</p>
 </form>
+{support_box("")}
 {archive}
 </div>"""
     write("newsletter.html", layout("Newsletter", body, 0, active="newsletter", desc="Der HR Radar Newsletter: alle zwei Wochen die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus den Rubriken, die Sie wählen. Kostenlos, jederzeit abbestellbar."))
@@ -1035,6 +1064,7 @@ def main():
     build_newsletter()
     nl.write_outbox(ROOT, DATA, articles(), CATS, PALETTE, ORDER, SITE_NAME, SITE_URL, upcoming_list())
     build_about()
+    build_support()
     build_feeds()
     build_themes()
     build_404()
