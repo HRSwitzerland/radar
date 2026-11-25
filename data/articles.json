@@ -6,8 +6,139 @@
     "newsletter_form_action": "https://80169828.sibforms.com/serve/MUIFAJLveruUsCzyIzbb1uLRbTXY8Pl144fUeTnlGmfzvh9gnMIy8_FU9YJo-pxCzPHZ_QkYztve5AbUlqBHoHYt_Bll2bkmCPEAr6QBFBEFHc-bo51x-7IA7NqoeeMW6MGbwhlGMrUYGfZub3UAPsREI8Zwz3s_cTWYhIwLBAwFnfKm7RkHYNGnPQict075NyPj7pDBoG1316tJbg==",
     "support_url": ""
   },
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "articles": [
+    {
+      "id": "iv-integrationsreform-lohnbeitraege",
+      "published": "2026-11-25",
+      "date": "2026-11-04",
+      "category": "lohn",
+      "featured": true,
+      "tags": [
+        "IV",
+        "Lohnbeiträge",
+        "Sozialversicherungen",
+        "Vernehmlassung",
+        "Eingliederung"
+      ],
+      "title": "IV-Integrationsreform: Lohnbeiträge sollen um 0,2 Prozentpunkte steigen",
+      "teaser": "Der IV droht das Geld auszugehen. Der Bundesrat will Lohnbeiträge erhöhen, hohe Löhne befristet zusätzlich belasten und junge Erkrankte gezielter eingliedern. Die Vernehmlassung läuft bis am 4. Februar 2027, die Kritik kommt von beiden Seiten.",
+      "summary": "Der Bundesrat hat am 4. November 2026 die IV-Integrationsreform in die Vernehmlassung geschickt: unbefristet 0,2 Lohnprozente mehr für die IV (je zur Hälfte von Arbeitgebenden und Arbeitnehmenden), befristet von 2030 bis 2039 ein Zusatzbeitrag von 0,6 Prozentpunkten auf Lohnteilen über CHF 181'440 sowie Einsparungen bei Renten und Taggeldern. Arbeitnehmer- und Behindertenorganisationen halten die Vorlage für zu schwach, der Arbeitgeberverband lehnt höhere Lohnbeiträge ab. Für HR bedeutet die Reform höhere Lohnnebenkosten ab voraussichtlich 2030 und neue Regeln bei Taggeldern und Integration.",
+      "sections": [
+        {
+          "h": "Warum die IV saniert werden muss",
+          "p": "Die Invalidenversicherung schreibt wieder Defizite: Ohne Schuldzinsen lag das Umlagedefizit 2025 laut BSV bei über 200 Millionen Franken, im Referenzszenario steigt es bis 2030 auf rund 600 Millionen pro Jahr. Dazu kommen jährlich rund 200 Millionen Franken Zinsen auf der Schuld von rund 10,3 Milliarden Franken beim AHV-Ausgleichsfonds. Der IV-Fonds deckt nur noch rund ein Drittel einer Jahresausgabe, gesetzlich vorgeschrieben ist die Hälfte. Ohne Gegenmassnahmen wäre das Vermögen laut Bundesrat 2031 aufgebraucht."
+        },
+        {
+          "h": "Was auf die Lohnabrechnung zukommt",
+          "p": "Kern der Finanzierung ist eine unbefristete Erhöhung des IV-Beitrags um 0,2 Prozentpunkte, je 0,1 Prozentpunkte zulasten von Arbeitgebenden und Arbeitnehmenden; das soll 2030 rund 980 Millionen Franken einbringen. Befristet von 2030 bis 2039 kommt ein Zusatzbeitrag von 0,6 Prozentpunkten hinzu, der nur auf dem Teil des Einkommens über CHF 181'440 erhoben wird (das Sechsfache der maximalen AHV-Rente) und ebenfalls hälftig geteilt ist; erwartet werden rund 530 Millionen pro Jahr. Zudem sollen befristet 0,05 Prozentpunkte vom EO- zum IV-Beitrag verschoben werden, ohne dass der Gesamtsatz für AHV/IV/EO steigt, und ein Teil der Spielbankenabgabe soll an die IV fliessen. Ein fixes Inkrafttreten nennt die Vorlage noch nicht; die Berechnungen im erläuternden Bericht gehen von 2030 aus."
+        },
+        {
+          "h": "Weniger Rente, mehr Integration",
+          "p": "Auf der Leistungsseite soll eine ganze Rente erst ab einem Invaliditätsgrad von 80 statt 70 Prozent ausgerichtet werden; das gilt für neue Fälle. Das IV-Taggeld für Versicherte ohne Unterhaltspflichten soll analog zur Arbeitslosenversicherung von 80 auf 70 Prozent des letzten Einkommens sinken, mit Ausnahmen für tiefe Einkommen. Junge Erwachsene zwischen 18 und 24 Jahren, die gesundheitlich noch keine Massnahmen absolvieren können, sollen statt einer Rente eine monatliche Integrationsentschädigung von rund 1000 Franken und eine enge Begleitung durch die IV-Stelle erhalten. Der Bund rechnet damit, so rund einen Drittel der Neurenten in dieser Altersgruppe zu vermeiden. Zudem wird die Fallführung durch die IV-Stellen gesetzlich verankert."
+        },
+        {
+          "h": "Die Positionen",
+          "p": "Eine Allianz aus Arbeitnehmer-, Gesundheits- und Behindertenorganisationen, darunter Travail.Suisse und Inclusion Handicap, hält die Vorlage laut SRF für zu schwach und verlangt unter anderem eine zusätzliche befristete Beitragserhöhung, eine Entlastung bei den Schuldzinsen und stärkere Pflichten der Arbeitgeber bei Arbeitsplätzen und Wiedereinstieg. Der Schweizerische Arbeitgeberverband lehnt höhere Lohnbeiträge ab und fordert strukturelle Massnahmen auf der Ausgabenseite. Der Bundesrat sieht in seinem Paket ein Gleichgewicht zwischen Einsparungen von rund 150 Millionen Franken im Jahr 2030 und Mehreinnahmen. Das letzte Wort hat nach der Vernehmlassung das Parlament."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Rechnen Sie in der mittelfristigen Personalkostenplanung mit 0,1 Lohnprozent mehr Arbeitgeberbeitrag an die IV, voraussichtlich ab 2030; bei Löhnen über CHF 181'440 kommt befristet ein Zusatzbeitrag auf dem übersteigenden Teil hinzu.",
+        "Arbeitgeberverbände und Branchenverbände sammeln bis zur Vernehmlassungsfrist vom 4. Februar 2027 Stellungnahmen; wer Erfahrungen aus Eingliederungsfällen einbringen will, sollte sich dort melden.",
+        "Lohnsoftware und Reglemente müssen vorerst nicht angepasst werden: Es handelt sich um einen Vorentwurf, Sätze und Zeitpunkt können sich im Parlament noch ändern.",
+        "Das Case Management bei langen Absenzen bleibt wichtig: Die Reform setzt stärker auf Integration, und frühe Meldung an die IV-Stelle erleichtert den Wiedereinstieg."
+      ],
+      "refs": [
+        "IVG (Vorentwurf Integrationsreform)",
+        "Art. 3 IVG"
+      ],
+      "effective": "2027-02-04",
+      "sources": [
+        {
+          "label": "BSV: IV-Integrationsreform, Vernehmlassungsunterlagen, 04.11.2026",
+          "url": "https://www.bsv.admin.ch/de/integrationsreform"
+        },
+        {
+          "label": "BSV: Erläuternder Bericht zur Integrationsreform, 04.11.2026",
+          "url": "https://www.bsv.admin.ch/dam/de/sd-web/6jytU68mn46D/Integrationsreform%20Erl%C3%A4uternder%20Bericht.pdf"
+        },
+        {
+          "label": "SRF: Der IV geht das Geld aus – wer zahlt die Rechnung?, 23.11.2026",
+          "url": "https://www.srf.ch/news/schweiz/kritik-an-geplanter-reform-der-iv-geht-das-geld-aus-wer-zahlt-die-rechnung"
+        },
+        {
+          "label": "Cash.ch/AWP: Bundesrat schickt IV-Reform in die Vernehmlassung, 04.11.2026",
+          "url": "https://www.cash.ch/news/bundesrat-schickt-iv-reform-in-die-vernehmlassung-982525"
+        },
+        {
+          "label": "Watson/SDA: So will der Bundesrat die Invalidenversicherung sanieren, 04.11.2026",
+          "url": "https://www.watson.ch/schweiz/bundesrat/259330207-iv-reform-so-will-der-bundesrat-die-invalidenversicherung-sanieren"
+        }
+      ]
+    },
+    {
+      "id": "eu-plattformrichtlinie-2-dezember-2026",
+      "published": "2026-11-25",
+      "date": "2026-12-02",
+      "category": "gesetze",
+      "tags": [
+        "Plattformarbeit",
+        "EU-Recht",
+        "Scheinselbständigkeit",
+        "Algorithmisches Management",
+        "Freelancer"
+      ],
+      "title": "EU-Plattformrichtlinie: Ab 2. Dezember gilt die Vermutung der Anstellung",
+      "teaser": "In einer Woche läuft die Frist zur Umsetzung der EU-Richtlinie über Plattformarbeit ab. Die meisten Staaten sind im Verzug, doch für Schweizer Firmen, die über Apps Arbeit in der EU vermitteln, lohnt sich der Blick schon jetzt.",
+      "summary": "Die Richtlinie (EU) 2024/2831 muss bis am 2. Dezember 2026 umgesetzt sein. Sie führt eine widerlegbare Vermutung eines Arbeitsverhältnisses ein, wenn Tatsachen auf Steuerung und Kontrolle durch die Plattform hindeuten, und setzt Grenzen für algorithmisches Management. Sie gilt unabhängig vom Sitz der Plattform, sobald die Arbeit in der EU geleistet wird; in der Schweiz bleibt es bei der Prüfung im Einzelfall, wie die Debatte um Just Eat zeigt.",
+      "sections": [
+        {
+          "h": "Was die Richtlinie verlangt",
+          "p": "Die Richtlinie über die Verbesserung der Arbeitsbedingungen in der Plattformarbeit vom 23. Oktober 2024 wurde am 11. November 2024 im EU-Amtsblatt veröffentlicht; die Mitgliedstaaten müssen sie bis am 2. Dezember 2026 in nationales Recht überführen (Art. 29). Zentral ist eine gesetzliche Vermutung (Art. 5): Finden sich Tatsachen, die auf Steuerung und Kontrolle hindeuten, gilt das Vertragsverhältnis als Arbeitsverhältnis, und die Plattform muss das Gegenteil beweisen. Die Vermutung gilt in Verwaltungs- und Gerichtsverfahren zum Status; für Steuer-, Straf- und Sozialversicherungsverfahren sind die Staaten nicht zur Anwendung verpflichtet, dürfen sie aber vorsehen. Rückwirkend gilt sie nicht."
+        },
+        {
+          "h": "Grenzen für Algorithmen",
+          "p": "Der zweite Teil regelt das algorithmische Management und gilt auch für echte Selbständige auf Plattformen. Verboten ist unter anderem, mit automatisierten Systemen den emotionalen oder psychischen Zustand abzuleiten, private Gespräche auszuwerten oder auf Gewerkschaftszugehörigkeit, Gesundheit oder politische Meinung zu schliessen (Art. 7). Plattformen müssen offenlegen, welche automatisierten Überwachungs- und Entscheidungssysteme sie einsetzen. Entscheide, ein Konto zu sperren oder ein Vertragsverhältnis zu beenden, muss ein Mensch treffen, und Betroffene haben Anspruch auf eine Begründung und Überprüfung."
+        },
+        {
+          "h": "Stand der Umsetzung",
+          "p": "Kurz vor Fristablauf hat nach einer Übersicht des Anbieters Teamed (Stand 17. November) noch kein Mitgliedstaat die Richtlinie vollständig in Kraft gesetzt; Italien und die Slowakei haben Gesetze verabschiedet, die auf den 2. Dezember wirksam werden sollen, rund ein Dutzend Staaten hat Entwürfe vorgelegt, darunter Frankreich. In Deutschland und Österreich lag noch kein Gesetzesentwurf vor. Verpasste Fristen ändern aber nichts an der Richtung: Die EU-Kommission kann Vertragsverletzungsverfahren einleiten, und nationale Gerichte orientieren sich an der Richtlinie."
+        },
+        {
+          "h": "Was das für die Schweiz bedeutet",
+          "p": "Die Schweiz übernimmt die Richtlinie nicht; hier entscheidet weiterhin die Gesamtwürdigung der tatsächlichen Verhältnisse, wie im Uber-Urteil des Bundesgerichts (9C_70/2022). Wie unterschiedlich das gehandhabt wird, zeigt eine SRF-Umfrage vom 21. November: Nur fünf Kantone kontrollieren Kuriere von Lieferdiensten, 17 tun es nicht. Betroffen von der EU-Regel sind Schweizer Unternehmen, die über eine App oder Plattform Aufträge an Personen in EU-Staaten vergeben, etwa Liefer-, Fahr-, Reinigungs- oder Freelancer-Plattformen, denn die Richtlinie gilt unabhängig vom Sitz der Plattform. Wir hatten am 24. November über den Fall Just Eat und die Kriterien der Ausgleichskassen berichtet."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Wer über eine eigene App oder Plattform Arbeit in EU-Staaten organisiert, sollte die Vertragsmodelle mit Selbständigen jetzt im Licht der Vermutung prüfen und die Umsetzung im jeweiligen Land verfolgen.",
+        "Dokumentieren Sie, welche automatisierten Systeme Aufträge zuteilen, Leistung bewerten oder Konten sperren, und stellen Sie sicher, dass einschneidende Entscheide von Menschen getroffen und begründet werden.",
+        "Für Einsätze in der Schweiz ändert sich rechtlich nichts: Massgebend bleiben Weisungsgebundenheit, Integration und Unternehmerrisiko im Einzelfall.",
+        "Konzerne mit EU-Gesellschaften sollten Plattformarbeit in die bestehende Compliance zur EU-KI-Verordnung und zum Datenschutz einbinden, da sich die Pflichten überschneiden."
+      ],
+      "refs": [
+        "Richtlinie (EU) 2024/2831, Art. 5, 7 und 29",
+        "BGer 9C_70/2022"
+      ],
+      "effective": "2026-12-02",
+      "sources": [
+        {
+          "label": "EUR-Lex: Richtlinie (EU) 2024/2831 zur Verbesserung der Arbeitsbedingungen in der Plattformarbeit, ABl. L vom 11.11.2024",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202402831"
+        },
+        {
+          "label": "SRF: Lieferdienste werden in den meisten Kantonen nicht kontrolliert, 21.11.2026",
+          "url": "https://www.srf.ch/news/wirtschaft/uber-eats-und-just-eat-lieferdienste-werden-in-den-meisten-kantonen-nicht-kontrolliert"
+        },
+        {
+          "label": "Teamed: EU Platform Work Directive Transposition Tracker, Stand 17.11.2026",
+          "url": "https://www.teamed.global/eu-platform-work/transposition-tracker"
+        },
+        {
+          "label": "Remote Work Europe: Platform Work Directive, 2 December 2026 transposition deadline, 27.05.2026",
+          "url": "https://remoteworkeurope.eu/news/2026/platform-work-directive-enforcement-divergence-2026/"
+        }
+      ]
+    },
     {
       "id": "fristenlauf-wochenendzustellung-2029",
       "published": "2026-11-24",
@@ -269,7 +400,6 @@
       "published": "2026-11-23",
       "date": "2026-11-29",
       "category": "lohn",
-      "featured": true,
       "tags": [
         "AHV",
         "13. AHV-Rente",
@@ -1761,6 +1891,10 @@
       "label": "Art. 32c ArGV 2 (Start-ups) tritt in Kraft"
     },
     {
+      "date": "2026-12-02",
+      "label": "EU-Plattformrichtlinie (EU) 2024/2831: Ende der Umsetzungsfrist, Vermutung der Anstellung gilt"
+    },
+    {
       "date": "2027-01-01",
       "label": "Neue AHV/BVG-Werte, BVG-Mindestzins 2 %, Wegfall Gleitzeit-Toleranz bei Kurzarbeit"
     },
@@ -1779,6 +1913,10 @@
     {
       "date": "2027-02-01",
       "label": "Transparenzregister: Meldefrist für übrige Gesellschaften mit ordentlicher Revision"
+    },
+    {
+      "date": "2027-02-04",
+      "label": "Ende der Vernehmlassung zur IV-Integrationsreform (u.a. +0,2 Lohnprozente)"
     },
     {
       "date": "2027-02-28",
