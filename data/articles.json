@@ -9,6 +9,111 @@
   "updated": "2026-11-25",
   "articles": [
     {
+      "id": "bfs-neurenten-kapitalbezug-2025",
+      "published": "2026-11-25",
+      "date": "2026-11-24",
+      "category": "lohn",
+      "tags": [
+        "Pensionskasse",
+        "BVG",
+        "Kapitalbezug",
+        "Pensionierung",
+        "Gleichstellung"
+      ],
+      "title": "Pensionskasse: Fast die Hälfte der Neupensionierten nimmt nur noch Kapital",
+      "teaser": "Die neue Neurentenstatistik des BFS zeigt: Der Kapitalbezug aus der 2. Säule ist zum Normalfall geworden, der Medianbetrag hat sich in zehn Jahren fast verdoppelt. Frauen erhalten weiterhin deutlich weniger.",
+      "summary": "Laut der am 24. November 2026 veröffentlichten Neurentenstatistik des Bundesamts für Statistik (BFS) bezogen 2025 rund 73'700 Personen eine Kapitalleistung aus der 2. Säule, 60 Prozent mehr als 2015; der Medianbetrag stieg von rund CHF 81'500 auf rund CHF 150'000. Bei den Pensionskassen wählten 48 Prozent nur Kapital, 33 Prozent nur Rente und 18 Prozent eine Kombination. Die Medianrente der Frauen liegt bei rund CHF 1'300 im Monat, jene der Männer bei rund CHF 2'000. Für HR heisst das: Die Beratung vor der Pensionierung und die Information über die Wahlmöglichkeiten werden wichtiger.",
+      "sections": [
+        {
+          "h": "Kapital statt Rente wird zum Normalfall",
+          "p": "2025 erhielten rund 97'600 Personen erstmals eine Altersleistung aus der 2. Säule, also von einer Pensionskasse oder einer Freizügigkeitseinrichtung; 2015 waren es 72'800. Gewachsen ist vor allem der Kapitalbezug: Die Zahl der Personen mit Kapitalleistung stieg von rund 46'000 auf rund 73'700. Die Zahl der neuen Altersrenten liegt dagegen mit rund 38'100 wieder auf dem Stand von 2015, nach einem Höchstwert von rund 45'300 im Jahr 2022. Bei den Pensionskassen bezogen 2025 knapp die Hälfte der Neupensionierten ausschliesslich Kapital, ein Drittel nur eine Rente und knapp ein Fünftel beides. Im Vorjahr lagen die Anteile laut BFS noch bei 45, 36 und 19 Prozent."
+        },
+        {
+          "h": "Höhere Beträge, aber eine Momentaufnahme",
+          "p": "Der Median der ausbezahlten Kapitalleistungen stieg innert zehn Jahren von rund CHF 81'500 auf rund CHF 150'000, ein Plus von knapp 84 Prozent. Die Medianrente hat sich im gleichen Zeitraum laut BFS nur wenig verändert. Das BFS betont, dass die Statistik nur die im jeweiligen Jahr erstmals bezogenen Leistungen zeigt; ob jemand früher oder später weitere Leistungen bezieht, ist nicht erfasst. Als Gründe für den Kapitalbezug nennen Studien und Fachleute etwa Flexibilität, die Absicherung von Angehörigen oder die Rückzahlung von Hypotheken; laut der Swisscanto-Pensionskassenstudie ist der Umwandlungssatz nicht der Haupttreiber. Auch in der Säule 3a nehmen die Bezüge zu: 2025 bezogen rund 140'100 Personen Alterskapital, 2015 waren es rund 78'400."
+        },
+        {
+          "h": "Grosse Lücke zwischen Frauen und Männern",
+          "p": "Männer erhielten 2025 eine Medianrente aus der 2. Säule von rund CHF 2'000 pro Monat, Frauen von rund CHF 1'300; die Männerrente liegt damit 54 Prozent höher. Noch grösser ist der Abstand beim Kapital: Der Median lag bei Männern bei rund CHF 216'800, bei Frauen bei rund CHF 87'100, also rund 60 Prozent tiefer (2015: 58 Prozent). Das BFS führt dies auf häufigere Erwerbsunterbrüche und Teilzeitarbeit der Frauen, auf Lohnunterschiede sowie auf unbezahlte Haus- und Familienarbeit zurück. In der Säule 3a sind die Unterschiede deutlich kleiner (Median 2025: Frauen CHF 43'300, Männer CHF 50'800)."
+        },
+        {
+          "h": "Was das für Arbeitgeber bedeutet",
+          "p": "Die Wahl zwischen Rente und Kapital ist für Mitarbeitende eine der folgenreichsten Finanzentscheidungen, und die Frist für die Kapitalwahl richtet sich nach dem Reglement der Pensionskasse. Viele Fragen landen trotzdem bei HR, etwa zu Fristen, zur Zustimmung des Ehegatten oder zu den Folgen einer Teilpensionierung. Gleichzeitig zeigen die Zahlen, wie stark Teilzeit und Unterbrüche die Vorsorge schmälern; das betrifft auch die Gestaltung von Teilzeitmodellen und die Wahl des Vorsorgeplans, etwa beim Koordinationsabzug. Eine neutrale Information über die Optionen gehört deshalb in jede gute Pensionierungsvorbereitung, ohne in die persönliche Beratung einzugreifen."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Mitarbeitende frühzeitig, spätestens einige Jahre vor der Pensionierung, auf die Wahl zwischen Rente und Kapital und die Fristen im Pensionskassenreglement hinweisen.",
+        "Das heisst für HR: Pensionierungsseminare oder Gespräche mit der Pensionskasse anbieten, aber keine individuelle Finanz- oder Steuerberatung leisten.",
+        "Das heisst für HR: Bei Teilzeitpensen prüfen, wie der Vorsorgeplan (z.B. Koordinationsabzug) die Vorsorge von Teilzeitbeschäftigten beeinflusst, und darüber transparent informieren."
+      ],
+      "refs": [
+        "Art. 37 BVG"
+      ],
+      "sources": [
+        {
+          "label": "BFS, Medienmitteilung Neurentenstatistik, 24.11.2026",
+          "url": "https://www.admin.ch/de/newnsb/Oo4HssBK3PDd"
+        },
+        {
+          "label": "BFS, Beziehende von Altersleistungen",
+          "url": "https://www.bfs.admin.ch/bfs/de/home/statistiken/soziale-sicherheit/berichterstattung-altersvorsorge/beziehende-altersleistungen.html"
+        },
+        {
+          "label": "Bilanz/Handelszeitung, Immer mehr beziehen die Pensionskasse als Kapital, 07.07.2026",
+          "url": "https://www.bilanz.ch/invest/pensionierung-immer-mehr-beziehen-die-pensionskasse-als-kapital/tfvzhdj"
+        }
+      ]
+    },
+    {
+      "id": "swissmechanic-barometer-november-2026",
+      "published": "2026-11-25",
+      "date": "2026-11-25",
+      "category": "arbeitsmarkt",
+      "tags": [
+        "MEM-Industrie",
+        "Kurzarbeit",
+        "Konjunktur",
+        "Stellenabbau",
+        "KMU"
+      ],
+      "title": "MEM-KMU: Kurzarbeit geht stark zurück, doch jede siebte Firma plant Abbau",
+      "teaser": "Das Geschäftsklima in der Maschinen-, Elektro- und Metallindustrie ist so gut wie seit drei Jahren nicht mehr. Für die Belegschaften heisst das aber noch keine Entwarnung.",
+      "summary": "Laut dem am 25. November 2026 veröffentlichten Wirtschaftsbarometer von Swissmechanic und BAK Economics ist der Geschäftsklimaindex der MEM-KMU im Oktober auf minus 5 Punkte gestiegen, den höchsten Wert seit drei Jahren. Nur noch knapp 8 Prozent der Betriebe arbeiten kurz, vor einem Jahr waren es 21 Prozent. Trotzdem beurteilt mehr als die Hälfte die Lage als ungünstig, und 15 Prozent wollen Stellen abbauen. Für HR in der Industrie bleibt die Personalplanung vorsichtig.",
+      "sections": [
+        {
+          "h": "Stimmung hellt sich auf",
+          "p": "Der Geschäftsklimaindex des Verbands Swissmechanic für die kleinen und mittleren Unternehmen der Maschinen-, Elektro- und Metallindustrie (MEM) lag im Oktober bei minus 5 Punkten. Im Juli waren es noch minus 20, zu Jahresbeginn minus 30. Die Produktionskapazitäten sind zu 86 Prozent ausgelastet und liegen damit erstmals seit Ende 2023 wieder über dem langjährigen Durchschnitt. 37 Prozent der befragten Firmen melden höhere Auftragseingänge, 40 Prozent steigende Umsätze. Die MEM-Exporte legten im dritten Quartal gegenüber dem Vorjahr um 8,5 Prozent zu, das fünfte Wachstumsquartal in Folge."
+        },
+        {
+          "h": "Kurzarbeit fast nur noch die Ausnahme",
+          "p": "Besonders deutlich ist der Rückgang bei der Kurzarbeit: Nur noch knapp 8 Prozent der Betriebe nutzen sie, gegenüber 21 Prozent ein Jahr zuvor. Das deutet darauf hin, dass sich die Auslastung in vielen Betrieben normalisiert hat. Gleichzeitig nennen 55 Prozent den Auftragsmangel als grösste Herausforderung, 4 Prozentpunkte mehr als im Juli. Der Fachkräftemangel (27 Prozent) und der Wechselkurs (26 Prozent) werden weniger oft genannt als zuvor. Swissmechanic spricht von einer erreichten Talsohle, das Tempo der Erholung hänge aber von einer breiten Verbesserung der Aufträge ab."
+        },
+        {
+          "h": "Personalplanung bleibt vorsichtig",
+          "p": "Beim Personal zeigt die Umfrage ein gemischtes Bild: 72 Prozent der Firmen wollen ihren Bestand halten, 15 Prozent planen einen Abbau, 12 Prozent wollen neue Stellen schaffen. Rund ein Drittel der Unternehmen verzeichnete im dritten Quartal eine sinkende operative Marge. Hinzu kommt wachsender Druck aus China: Gut die Hälfte der Firmen sieht ihren Qualitäts- oder Innovationsvorsprung schwinden, über zwei Drittel der Betroffenen setzen auf Qualität, Service und Know-how. Die Zahlen passen zum Bild eines insgesamt stagnierenden Arbeitsmarkts mit einer Arbeitslosenquote von rund 3 Prozent."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Wer noch Kurzarbeit hat, sollte die Voraussetzungen (insbesondere vorübergehender Arbeitsausfall) laufend prüfen und den Ausstieg rechtzeitig planen.",
+        "Das heisst für HR: Bei einem geplanten Abbau früh klären, ob die Schwellen der Massenentlassung (Art. 335d OR) erreicht werden, und das Konsultationsverfahren sorgfältig vorbereiten.",
+        "Das heisst für HR: Trotz Abbaudruck Schlüsselkompetenzen und Lernende halten, damit bei anziehender Nachfrage keine Lücken entstehen."
+      ],
+      "refs": [
+        "Art. 31 AVIG",
+        "Art. 335d OR"
+      ],
+      "sources": [
+        {
+          "label": "cash.ch (AWP), KMU der Maschinenindustrie sehen Licht am Ende des Tunnels, 25.11.2026",
+          "url": "https://www.cash.ch/news/top-news/kmu-der-maschinenindustrie-sehen-licht-am-ende-des-tunnels-987942"
+        },
+        {
+          "label": "Swissmechanic, Wirtschaftsbarometer",
+          "url": "https://www.swissmechanic.ch/aktuell/publikationen/wirtschaftsbarometer"
+        }
+      ]
+    },
+    {
       "id": "iv-integrationsreform-lohnbeitraege",
       "published": "2026-11-25",
       "date": "2026-11-04",
