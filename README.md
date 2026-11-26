@@ -64,3 +64,10 @@ Optional ergänzt die Freitags-Ausgabe eine redaktionelle Einordnung in `weeks`:
 - Versand: GitHub Action `.github/workflows/newsletter.yml` ruft `send_newsletter.py` auf (Brevo-API). Benötigt Secret `BREVO_API_KEY` und Variablen `BREVO_LIST_ID`, `BREVO_ALERT_SEGMENT_ID`, `SENDER_EMAIL`, `SENDER_NAME`. Ohne Key passiert nichts.
 - Themenwahl: Brevo-Kontaktattribute `THEMA_ARBEITSRECHT`, `THEMA_GESETZE`, `THEMA_LOHN`, `THEMA_ARBEITSMARKT`, `THEMA_GESUNDHEIT`, `THEMA_DIGITAL`, `THEMA_PRAXIS`, `THEMA_LEGAL`, `EILMELDUNG` (Typ Boolean), `VORNAME` (Text).
 - Anmeldeformular: Formular-URL von Brevo in `site.newsletter_form_action` eintragen.
+
+
+## SEO-Feinschliff
+- `SEO_OVERRIDES` in build.py setzt Suchmaschinen-Titel und -Beschreibungen für Übersichtsseiten, Rubriken und Rechner.
+- Titel über 65 Zeichen erhalten keinen Zusatz «· HR Radar»; Beschreibungen werden auf 158 Zeichen gekürzt.
+- Seiten ohne eigene strukturierte Daten erhalten automatisch ein WebPage-JSON-LD.
+- Rechner verlinken unter «Mehr zum Thema» auf Themenseiten, die den Rechner in `tools` führen.

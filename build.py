@@ -119,6 +119,65 @@ def page_url(path):
     return SITE_URL + path
 
 
+# Suchmaschinen-Titel und -Beschreibungen für Seiten, deren Anzeigetitel kurz ist.
+SEO_OVERRIDES = {
+    "suche.html": ("Suche: HR-News, Urteile und Gesetze finden · HR Radar",
+                   "Durchsuchen Sie alle Beiträge von HR Radar zu Arbeitsrecht, Lohn, Sozialversicherungen, Gesetzen und Legal & Compliance in der Schweiz."),
+    "ueber.html": ("Über HR Radar: News für HR und Legal in der Schweiz",
+                   "Was HR Radar ist, wie die Beiträge entstehen und wer dahinter steht: werktäglich eingeordnete News zu Arbeitsrecht, HR und Legal in der Schweiz."),
+    "archiv.html": ("Archiv: alle HR-News und Urteile · HR Radar",
+                    "Alle Beiträge von HR Radar nach Datum: Bundesgerichtsurteile, Gesetzesänderungen, Lohn und Sozialversicherungen, Arbeitsmarkt und Legal."),
+    "newsletter.html": ("HR-Newsletter Schweiz: jeden Dienstag · HR Radar",
+                        "Kostenloser HR-Newsletter: jeden Dienstag die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus Ihren Rubriken."),
+    "hintergrund.html": ("Hintergrund: HR- und Rechtsthemen vertieft · HR Radar",
+                         "Ausführliche Hintergrundartikel zu Arbeitsrecht, HR-Praxis und Legal in der Schweiz: Rechtslage, Rechtsprechung, typische Fehler und Checklisten."),
+    "unterstuetzen.html": ("HR Radar unterstützen: werbefrei und unabhängig",
+                           "HR Radar ist kostenlos und werbefrei. Mit einem freiwilligen Beitrag unterstützen Sie die Newsplattform für HR und Legal in der Schweiz."),
+    "aenderungen.html": ("Das ändert sich 2026/2027: Fristen für HR und KMU",
+                         "Zeitleiste aller Inkrafttreten und Fristen für HR, Lohn und Unternehmen in der Schweiz: Gesetze, Sozialversicherungen, Register und Meldepflichten."),
+    "rechner/index.html": ("HR-Rechner Schweiz: Kündigungsfrist, Lohnfortzahlung, BVG",
+                           "Kostenlose HR-Rechner für die Schweiz: Kündigungsfrist und Sperrfrist, Lohnfortzahlung bei Krankheit, Ferien pro rata und BVG-Check."),
+    "rechner/kuendigung.html": ("Kündigungsfrist-Rechner Schweiz mit Sperrfrist (OR)",
+                                "Kündigungsfrist berechnen: Enddatum des Arbeitsverhältnisses mit Probezeit, Dienstjahren und Verlängerung durch Krankheit oder Unfall (Art. 335c, 336c OR)."),
+    "rechner/lohnfortzahlung.html": ("Lohnfortzahlung bei Krankheit berechnen: Berner Skala",
+                                     "Wie lange muss der Lohn bei Krankheit bezahlt werden? Rechner nach Berner, Zürcher und Basler Skala (Art. 324a OR), mit Dienstjahren."),
+    "rechner/ferien.html": ("Ferienanspruch pro rata berechnen (Schweiz)",
+                            "Ferientage bei Eintritt oder Austritt unter dem Jahr und bei Teilzeit berechnen: Rechner nach Art. 329a OR, mit 4, 5 oder 6 Wochen Ferien."),
+    "rechner/bvg.html": ("BVG-Rechner: koordinierter Lohn und Altersgutschrift",
+                         "Ist der Lohn BVG-pflichtig? Koordinierten Lohn und minimale Altersgutschriften berechnen, mit den Grenzbeträgen 2026 und 2027."),
+}
+for _k, (_long, _short, _d) in CATS.items():
+    SEO_OVERRIDES[f"rubrik/{_k}.html"] = (f"{_long}: aktuelle News Schweiz · {SITE_NAME}"[:70],
+                                          f"{_long} – aktuelle News für HR und Legal in der Schweiz: {_d}")
+SEO_OVERRIDES["woche/index.html"] = ("Wochenrückblicke: die HR-Woche in der Schweiz · HR Radar",
+                                     "Jeden Freitag der Wochenrückblick von HR Radar: die wichtigsten Urteile, Gesetzesänderungen und HR-News der Woche, kurz eingeordnet.")
+
+DESC_MAX = 158
+
+
+def _short_desc(d):
+    if len(d) <= DESC_MAX:
+        return d
+    cut = d[:DESC_MAX].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + " …"
+
+
+def seo_postprocess(path, content):
+    if path in SEO_OVERRIDES:
+        t, d = SEO_OVERRIDES[path]
+        content = re.sub(r"<title>.*?</title>", f"<title>{e(t)}</title>", content, count=1, flags=re.S)
+        content = re.sub(r'(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*"', lambda m: m.group(1) + e(d) + '"', content)
+    content = re.sub(r'(<meta name="description" content=")([^"]*)"', lambda m: m.group(1) + e(_short_desc(html.unescape(m.group(2)))) + '"', content, count=1)
+    if "application/ld+json" not in content and 'content="noindex' not in content and "</head>" in content:
+        t = re.search(r"<title>(.*?)</title>", content, re.S)
+        d = re.search(r'<meta name="description" content="([^"]*)"', content)
+        ld = {"@context": "https://schema.org", "@type": "WebPage", "name": html.unescape(t.group(1)) if t else SITE_NAME,
+              "description": html.unescape(d.group(1)) if d else DEFAULT_DESC, "url": page_url(path), "inLanguage": "de-CH",
+              "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL}}
+        content = content.replace("</head>", ld_script(ld) + "</head>", 1)
+    return content
+
+
 _INDEX_HREF = re.compile(r'href="((?:' + re.escape(SITE_URL) + r')?(?:\.\./)*)((?:[\w-]+/)*)index\.html(#[^"]*)?"')
 
 
@@ -133,6 +192,7 @@ def clean_index_links(html):
 def write(path, content):
     if path.endswith(".html"):
         content = clean_index_links(content)
+        content = seo_postprocess(path, content)
     if path.endswith(".html") and "<!--SEO:CANON-->" in content:
         url = page_url(path)
         content = content.replace("<!--SEO:CANON-->", f'<link rel="canonical" href="{e(url)}">\n<meta property="og:url" content="{e(url)}">')
@@ -273,7 +333,12 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
         return f'<a href="{up}{href}"{cur}{c}>{label}</a>'
-    full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else f"{SITE_NAME} · News zu Arbeitsrecht, HR und Legal in der Schweiz"
+    if title == SITE_NAME:
+        full_title = f"{SITE_NAME} · News zu Arbeitsrecht, HR und Legal in der Schweiz"
+    elif len(title) + len(SITE_NAME) + 3 <= 65:
+        full_title = f"{title} · {SITE_NAME}"
+    else:
+        full_title = title
     desc = desc or DEFAULT_DESC
     ld_html = "".join(ld_script(x) for x in (ld or []))
     cur = lambda key: ' aria-current="page"' if active == key else ""
@@ -701,6 +766,8 @@ def build_calculators():
     for k, title, desc, c in tools.RECHNER:
         form, js, refs = tools.CALCS[k]
         others = "".join(f'<a class="tool-chip" href="{kk}.html" style="{cat_style(cc)}">{ICONS[cc]}{e(tt)}</a>' for kk, tt, _, cc in tools.RECHNER if kk != k)
+        related = [t for t in THEMEN if k in t.get("tools", [])]
+        related_html = ("<h2>Mehr zum Thema</h2><div class=\"tool-chips\">" + "".join(f'<a class="tool-chip" href="{up}thema/{t["slug"]}.html" style="{cat_style(t.get("category", "praxis"))}">{ICONS[t.get("category", "praxis")]}{e(t["title"])}</a>' for t in related) + "</div>") if related else ""
         body = f"""<section class="cat-hero" style="{cat_style(c)}"><span class="blob b1"></span><div class="wrap">
   <span class="cat-big" aria-hidden="true">{ICONS[c]}</span>
   <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Rechner</a></div><h1>{e(title)}</h1><p class="lead">{e(desc)}</p></div>
@@ -709,6 +776,7 @@ def build_calculators():
 {form}
 <div class="calc-note"><p><b>Wichtig:</b> Der Rechner bildet die gesetzliche Grundregel ab und dient der ersten Orientierung. Vertrag, Reglement, GAV und Einzelfall können zu anderen Ergebnissen führen. Keine Rechtsberatung.</p>
 <p class="refs-label">Rechtsgrundlagen</p><div class="refs">{"".join(f'<span class="ref">{e(r)}</span>' for r in refs)}</div></div>
+{related_html}
 <h2>Weitere Rechner</h2><div class="tool-chips">{others}</div>
 </div>
 <script>{tools.JS_HELPERS}{js}</script>"""
@@ -974,7 +1042,7 @@ def build_themes():
         grid = "".join(card(a, up) for a in items[:12]) or '<p class="empty">Zu diesem Thema erscheinen laufend neue Beiträge.</p>'
         body = f"""<section class="cat-hero" style="{cat_style(k)}"><span class="blob b1"></span><div class="wrap">
   <span class="cat-big" aria-hidden="true">{ICONS[k]}</span>
-  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p><p class="count">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} zum Thema</p></div>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p>{f'<p class="count">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} zum Thema</p>' if items else ""}</div>
 </div></section>
 <div class="narrow theme-body" style="{cat_style(k)}">
   <div class="body">{secs}</div>
@@ -991,7 +1059,7 @@ def build_themes():
         if t.get("faq"):
             ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in t["faq"]]})
         write(f"thema/{t['slug']}.html", layout(t.get("seo_title", t["title"]), body, 1, desc=t["description"], active="themen", ld=ld, cat=k))
-        cards += f'<a class="tool-card" href="{t["slug"]}.html" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><h3>{e(t["title"])}</h3><p>{e(t["description"])}</p><span class="more">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} · Thema öffnen</span></a>'
+        cards += f'<a class="tool-card" href="{t["slug"]}.html" style="{cat_style(k)}"><span class="mini-ico" aria-hidden="true">{ICONS[k]}</span><h3>{e(t["title"])}</h3><p>{e(t["description"])}</p><span class="more">{(str(len(items)) + (" Beitrag" if len(items) == 1 else " Beiträge") + " · ") if items else ""}Thema öffnen</span></a>'
     # Neuerungen des kommenden Jahres
     y = str(neuerungen_year())
     entries = []
