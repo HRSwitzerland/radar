@@ -61,7 +61,7 @@ def main():
         else:
             recipients = {"listIds": [int(list_id)]}
         body = {"name": job["id"], "subject": job["subject"], "previewText": job.get("preheader", ""),
-                "sender": sender, "htmlContent": job["html"], "recipients": recipients, "inlineImageActivation": False}
+                "sender": sender, "replyTo": sender["email"], "htmlContent": job["html"], "recipients": recipients, "inlineImageActivation": False}
         try:
             created = call("POST", "/emailCampaigns", key, body)
             cid = created["id"]
