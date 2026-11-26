@@ -21,6 +21,7 @@ ATTR = {
     "legal": "THEMA_LEGAL",
 }
 ALERT_ATTR = "EILMELDUNG"
+SUPPORT_URL = ""  # wird von write_outbox aus data/articles.json (site.support_url) gesetzt
 MAX_AGE_DAYS = 3  # ältere, nicht versendete Ausgaben werden nicht mehr verschickt
 
 
@@ -111,8 +112,18 @@ def build_issue_html(issue, articles, cats, palette, order, site_name, site_url,
 {sections}
 {hint}
 <p style="margin:32px 0 0;text-align:center;">{_btn(site_url, 'Alle Beiträge auf HR Radar')}</p>
-<p style="margin:16px 0 0;font-size:13px;color:{MUTED};text-align:center;">Sie erhalten nur die Rubriken, die Sie gewählt haben.</p>"""
+<p style="margin:16px 0 0;font-size:13px;color:{MUTED};text-align:center;">Sie erhalten nur die Rubriken, die Sie gewählt haben.</p>
+{_support_box()}"""
     return _shell(site_name, site_url, issue.get("intro", "")[:120], inner)
+
+
+def _support_box():
+    if not SUPPORT_URL:
+        return ""
+    return f"""<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:30px 0 0;border-top:1px solid {LINE};"><tr><td style="padding:24px 0 0;text-align:center;">
+<div style="font-family:{SERIF};font-size:19px;font-weight:700;color:{INK};margin-bottom:6px;">Hilft Ihnen HR Radar?</div>
+<div style="font-size:15px;color:#4a4560;margin:0 auto 14px;max-width:440px;">HR Radar ist kostenlos, werbefrei und unabhängig. Wenn Sie die Arbeit daran unterstützen möchten, freuen wir uns über einen Kaffee.</div>
+<a href="{SUPPORT_URL}" style="display:inline-block;background:{SUN};color:{INK};text-decoration:none;font-weight:800;padding:11px 22px;border-radius:999px;font-family:{SANS};font-size:15px;">&#9749; Einen Kaffee spendieren</a></td></tr></table>"""
 
 
 def build_alert_html(a, cats, palette, site_name, site_url):
@@ -146,6 +157,8 @@ def build_doi_html(site_name, site_url):
 
 def write_outbox(root, data, articles, cats, palette, order, site_name, site_url, upcoming):
     """Legt Versandaufträge in newsletter/outbox/ ab, wenn sie noch nicht verschickt wurden."""
+    global SUPPORT_URL
+    SUPPORT_URL = data.get("site", {}).get("support_url", "")
     today = date.today()
     outbox = os.path.join(root, "newsletter", "outbox")
     sent = os.path.join(root, "newsletter", "sent")
