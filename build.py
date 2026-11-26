@@ -26,6 +26,7 @@ SITE_URL = SITE.get("url", "https://hrswitzerland.github.io/radar/").rstrip("/")
 NL_ACTION = SITE.get("newsletter_form_action", "")
 SUPPORT_URL = SITE.get("support_url", "")
 PUBLISHER = SITE.get("publisher", "[Name, Adresse und E-Mail ergänzen]")
+HAS_PUBLISHER = bool(PUBLISHER.strip()) and not PUBLISHER.strip().startswith("[")
 e = html.escape
 _TH_PATH = os.path.join(ROOT, "data", "themen.json")
 THEMEN = json.load(open(_TH_PATH, encoding="utf-8")).get("themen", []) if os.path.exists(_TH_PATH) else []
@@ -328,8 +329,8 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       <p>Die Beiträge fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung. Massgebend sind die verlinkten Originalquellen. Inhalte werden mit KI-Unterstützung recherchiert und redaktionell zusammengestellt.</p>
     </div>
     <div>
-      <h2>Impressum</h2>
-      <p>Herausgeber: {e(PUBLISHER)}</p>
+      <h2>{"Impressum" if HAS_PUBLISHER else "Aktualität"}</h2>
+      {f'<p>Herausgeber: {e(PUBLISHER)}</p>' if HAS_PUBLISHER else ""}
       <p>Letzte Aktualisierung: {d_short(DATA["updated"])}</p>
     </div>
   </div>
@@ -884,7 +885,7 @@ def build_about():
 <p>Grundlage sind öffentlich zugängliche Quellen: Urteile, Medienmitteilungen von Bund und Kantonen, Studien, Fachpublikationen und Medienberichte. Die Inhalte werden mit KI-Unterstützung recherchiert, in eigenen Worten zusammengefasst und redaktionell zusammengestellt. Jeder Beitrag nennt seine Quellen, damit Sie das Original nachlesen können.</p>
 <h2>Keine Rechtsberatung</h2>
 <p>Die Beiträge dienen der allgemeinen Information und ersetzen keine Beratung im Einzelfall. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen.</p>
-<h2>Impressum</h2><p>Herausgeber: {e(PUBLISHER)}</p>
+{f"<h2>Impressum</h2><p>Herausgeber: {e(PUBLISHER)}</p>" if HAS_PUBLISHER else ""}
 </div>"""
     write("ueber.html", layout("Über", body, 0, active="ueber"))
 
