@@ -1,4 +1,4 @@
-"""Newsletter-Bausteine für HR Radar: Ausgaben alle zwei Wochen, Eilmeldungen, Versand-Ausgang.
+"""Newsletter-Bausteine für HR Radar: Ausgaben jeden Montag, Eilmeldungen, Versand-Ausgang.
 
 Die E-Mails werden über Brevo verschickt (siehe send_newsletter.py und .github/workflows/newsletter.yml).
 Die Themenwahl wird über Kontakt-Attribute in Brevo umgesetzt (THEMA_<RUBRIK> = true/false, EILMELDUNG = true/false):
@@ -79,7 +79,7 @@ def _item(a, site_url, cats, color, first=False):
 <a href="{url}" style="display:inline-block;margin-top:6px;color:{CORAL};font-weight:800;text-decoration:none;font-size:14px;">Weiterlesen →</a></td></tr>"""
 
 
-def issue_items(articles, issue_date, days=14):
+def issue_items(articles, issue_date, days=7):
     start = (datetime.strptime(issue_date, "%Y-%m-%d") - timedelta(days=days)).date().isoformat()
     return [a for a in articles if start <= a["published"] <= issue_date and a.get("type") != "entwurf"]
 
@@ -106,7 +106,7 @@ def build_issue_html(issue, articles, cats, palette, order, site_name, site_url,
     d = issue["date"]
     inner = f"""<div style="font-family:{SANS};font-size:13px;font-weight:700;color:{MUTED};">Ausgabe {e(issue['label'])} · {d[8:10]}.{d[5:7]}.{d[:4]}</div>
 <div style="font-family:{SERIF};font-size:18px;font-weight:600;color:{CORAL};margin:14px 0 4px;">Neu auf dem Radar</div>
-<h1 class="h1" style="font-family:{SERIF};font-size:30px;line-height:1.2;font-weight:700;margin:0 0 16px;color:{INK};">{e(issue.get('title') or 'Die wichtigsten HR-News der letzten zwei Wochen')}</h1>
+<h1 class="h1" style="font-family:{SERIF};font-size:30px;line-height:1.2;font-weight:700;margin:0 0 16px;color:{INK};">{e(issue.get('title') or 'Die wichtigsten HR-News der Woche')}</h1>
 <p style="margin:0 0 4px;">Guten Tag</p>
 <p style="margin:0;">{e(issue.get('intro', ''))}</p>
 {sections}
@@ -150,7 +150,7 @@ def build_doi_html(site_name, site_url):
 <p style="margin:0 0 28px;text-align:center;">{_btn('{{ doubleoptin }}', 'Anmeldung bestätigen', CORAL)}</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{SUN_SOFT};border-radius:20px;"><tr><td style="padding:18px 22px;font-size:15px;">
 <div style="font-family:{SERIF};font-size:19px;font-weight:700;color:{INK};margin-bottom:6px;">Das erwartet Sie</div>
-<ul style="margin:0;padding-left:18px;"><li style="margin:0 0 4px;">Alle zwei Wochen am Montagmorgen die wichtigsten News zu Arbeitsrecht, HR und Legal</li><li style="margin:0 0 4px;">Nur aus den Rubriken, die Sie gewählt haben</li><li style="margin:0;">Auf Wunsch Eilmeldungen bei sehr wichtigen Entscheiden</li></ul></td></tr></table>
+<ul style="margin:0;padding-left:18px;"><li style="margin:0 0 4px;">Jeden Montagmorgen die wichtigsten News der Woche zu Arbeitsrecht, HR und Legal</li><li style="margin:0 0 4px;">Nur aus den Rubriken, die Sie gewählt haben</li><li style="margin:0;">Auf Wunsch Eilmeldungen bei sehr wichtigen Entscheiden</li></ul></td></tr></table>
 <p style="margin:24px 0 0;font-size:13px;color:{MUTED};">Sie haben sich nicht angemeldet? Dann ignorieren Sie diese E-Mail einfach. Ohne Bestätigung erhalten Sie keine weiteren E-Mails von uns.</p>"""
     return _shell(site_name, site_url, "Ein Klick, dann sind Sie dabei.", inner, unsubscribe=False, footer_text="Sie erhalten diese E-Mail, weil diese Adresse auf hr-radar.ch für den Newsletter angemeldet wurde.")
 
