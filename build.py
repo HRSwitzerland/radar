@@ -25,6 +25,7 @@ SITE_NAME = SITE.get("name", "HR Radar")
 SITE_URL = SITE.get("url", "https://hrswitzerland.github.io/radar/").rstrip("/") + "/"
 NL_ACTION = SITE.get("newsletter_form_action", "")
 SUPPORT_URL = SITE.get("support_url", "")
+GOATCOUNTER = SITE.get("goatcounter", "")  # z.B. "hrradar" fuer https://hrradar.goatcounter.com
 PUBLISHER = SITE.get("publisher", "[Name, Adresse und E-Mail ergänzen]")
 HAS_PUBLISHER = bool(PUBLISHER.strip()) and not PUBLISHER.strip().startswith("[")
 e = html.escape
@@ -284,6 +285,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
+{f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>' if GOATCOUNTER and not noindex else ""}
 <meta name="description" content="{e(desc)}">
 {'<meta name="robots" content="noindex, nofollow">' if noindex else '<meta name="robots" content="index, follow, max-image-preview:large">'}
 <!--SEO:CANON-->
@@ -899,6 +901,7 @@ def build_about():
 <h2>Keine Rechtsberatung</h2>
 <p>Die Beiträge dienen der allgemeinen Information und ersetzen keine Beratung im Einzelfall. Trotz sorgfältiger Prüfung wird keine Gewähr für Vollständigkeit, Richtigkeit und Aktualität übernommen.</p>
 {f"<h2>Impressum</h2><p>Herausgeber: {e(PUBLISHER)}</p>" if HAS_PUBLISHER else ""}
+{"<h2>Datenschutz</h2><p>Wir zählen Seitenaufrufe anonym mit GoatCounter, um zu sehen, welche Beiträge gelesen werden. Dabei werden keine Cookies gesetzt und keine Personendaten gespeichert. Die Newsletter-Anmeldung läuft über Brevo, Beiträge zur Unterstützung über Buy Me a Coffee.</p>" if GOATCOUNTER else ""}
 </div>"""
     write("ueber.html", layout("Über", body, 0, active="ueber"))
 
