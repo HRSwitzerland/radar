@@ -854,10 +854,10 @@ def build_newsletter():
         disabled = " disabled"
     archive = f'<h2>Bisherige Ausgaben</h2>{archive_rows}' if archive_rows else ""
     body = f"""<div class="narrow page">
-<span class="eyebrow"><span class="pill">Newsletter</span>jeden Montag</span>
+<span class="eyebrow"><span class="pill">Newsletter</span>jeden Dienstag</span>
 <h1>Ihr persönlicher HR Radar</h1>
-<p class="lead">Jeden Montag die wichtigsten HR-News der Woche, nur aus den Rubriken, die Sie wählen. Und wenn etwas wirklich Wichtiges passiert, auf Wunsch sofort eine Eilmeldung.</p>
-<div class="nl-points"><div><b>Jeden Montag</b><span>am Morgen, kompakt, mit Link zu jedem Beitrag</span></div><div><b>Nur Ihre Themen</b><span>Sie wählen die Rubriken, der Rest bleibt draussen</span></div><div><b>Eilmeldungen</b><span>nur bei Entscheiden mit grosser Tragweite für HR</span></div></div>
+<p class="lead">Jeden Dienstag die wichtigsten HR-News der Woche, nur aus den Rubriken, die Sie wählen. Und wenn etwas wirklich Wichtiges passiert, auf Wunsch sofort eine Eilmeldung.</p>
+<div class="nl-points"><div><b>Jeden Dienstag</b><span>am Morgen, kompakt, mit Link zu jedem Beitrag</span></div><div><b>Nur Ihre Themen</b><span>Sie wählen die Rubriken, der Rest bleibt draussen</span></div><div><b>Eilmeldungen</b><span>nur bei Entscheiden mit grosser Tragweite für HR</span></div></div>
 {notice}
 <form class="nl" {action}>
   <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
@@ -873,7 +873,7 @@ def build_newsletter():
 {support_box("")}
 {archive}
 </div>"""
-    write("newsletter.html", layout("Newsletter", body, 0, active="newsletter", desc="Der HR Radar Newsletter: jeden Montag die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus den Rubriken, die Sie wählen. Kostenlos, jederzeit abbestellbar."))
+    write("newsletter.html", layout("Newsletter", body, 0, active="newsletter", desc="Der HR Radar Newsletter: jeden Dienstag die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus den Rubriken, die Sie wählen. Kostenlos, jederzeit abbestellbar."))
     for slug, title, lead, text in (
         ("newsletter-danke", "Fast geschafft: Bitte bestätigen Sie Ihre Anmeldung",
          "Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt.",

@@ -1,4 +1,4 @@
-"""Newsletter-Bausteine für HR Radar: Ausgaben jeden Montag, Eilmeldungen, Versand-Ausgang.
+"""Newsletter-Bausteine für HR Radar: Ausgaben jeden Dienstag, Eilmeldungen, Versand-Ausgang.
 
 Die E-Mails werden über Brevo verschickt (siehe send_newsletter.py und .github/workflows/newsletter.yml).
 Die Themenwahl wird über Kontakt-Attribute in Brevo umgesetzt (THEMA_<RUBRIK> = true/false, EILMELDUNG = true/false):
@@ -150,7 +150,7 @@ def build_doi_html(site_name, site_url):
 <p style="margin:0 0 28px;text-align:center;">{_btn('{{ doubleoptin }}', 'Anmeldung bestätigen', CORAL)}</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{SUN_SOFT};border-radius:20px;"><tr><td style="padding:18px 22px;font-size:15px;">
 <div style="font-family:{SERIF};font-size:19px;font-weight:700;color:{INK};margin-bottom:6px;">Das erwartet Sie</div>
-<ul style="margin:0;padding-left:18px;"><li style="margin:0 0 4px;">Jeden Montagmorgen die wichtigsten News der Woche zu Arbeitsrecht, HR und Legal</li><li style="margin:0 0 4px;">Nur aus den Rubriken, die Sie gewählt haben</li><li style="margin:0;">Auf Wunsch Eilmeldungen bei sehr wichtigen Entscheiden</li></ul></td></tr></table>
+<ul style="margin:0;padding-left:18px;"><li style="margin:0 0 4px;">Jeden Dienstagmorgen die wichtigsten News der Woche zu Arbeitsrecht, HR und Legal</li><li style="margin:0 0 4px;">Nur aus den Rubriken, die Sie gewählt haben</li><li style="margin:0;">Auf Wunsch Eilmeldungen bei sehr wichtigen Entscheiden</li></ul></td></tr></table>
 <p style="margin:24px 0 0;font-size:13px;color:{MUTED};">Sie haben sich nicht angemeldet? Dann ignorieren Sie diese E-Mail einfach. Ohne Bestätigung erhalten Sie keine weiteren E-Mails von uns.</p>"""
     return _shell(site_name, site_url, "Ein Klick, dann sind Sie dabei.", inner, unsubscribe=False, footer_text="Sie erhalten diese E-Mail, weil diese Adresse auf hr-radar.ch für den Newsletter angemeldet wurde.")
 
