@@ -50,7 +50,10 @@ def main():
             continue
         path = os.path.join(OUTBOX, name)
         job = json.load(open(path, encoding="utf-8"))
-        if job["type"] == "alert":
+        if job["type"] == "test":
+            # Testversand: Kampagne anlegen, aber nur als Test an die angegebenen Adressen schicken, nie an die Liste.
+            recipients = {"listIds": [int(list_id)]}
+        elif job["type"] == "alert":
             if not alert_seg:
                 print(f"{name}: kein Eilmeldungs-Segment konfiguriert, übersprungen.")
                 continue
@@ -62,12 +65,15 @@ def main():
         try:
             created = call("POST", "/emailCampaigns", key, body)
             cid = created["id"]
-            call("POST", f"/emailCampaigns/{cid}/sendNow", key)
+            if job["type"] == "test":
+                call("POST", f"/emailCampaigns/{cid}/sendTest", key, {"emailTo": job["test_to"]})
+            else:
+                call("POST", f"/emailCampaigns/{cid}/sendNow", key)
             job["brevo_campaign_id"] = cid
             with open(os.path.join(SENT, name), "w", encoding="utf-8") as f:
                 json.dump({k: v for k, v in job.items() if k != "html"}, f, ensure_ascii=False, indent=1)
             os.remove(path)
-            print(f"{name}: versendet (Kampagne {cid}).")
+            print(f"{name}: {'Test verschickt an ' + ', '.join(job['test_to']) if job['type'] == 'test' else 'versendet'} (Kampagne {cid}).")
         except Exception as exc:  # Fehler melden, aber andere Aufträge weiter versuchen
             failures += 1
             print(f"{name}: Fehler beim Versand: {exc}", file=sys.stderr)
