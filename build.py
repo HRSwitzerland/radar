@@ -118,7 +118,20 @@ def page_url(path):
     return SITE_URL + path
 
 
+_INDEX_HREF = re.compile(r'href="((?:' + re.escape(SITE_URL) + r')?(?:\.\./)*)((?:[\w-]+/)*)index\.html(#[^"]*)?"')
+
+
+def clean_index_links(html):
+    """Interne Links auf .../index.html zeigen auf die Verzeichnisadresse (= kanonische URL)."""
+    def rep(m):
+        target = (m.group(1) + m.group(2)) or "./"
+        return f'href="{target}{m.group(3) or ""}"'
+    return _INDEX_HREF.sub(rep, html)
+
+
 def write(path, content):
+    if path.endswith(".html"):
+        content = clean_index_links(content)
     if path.endswith(".html") and "<!--SEO:CANON-->" in content:
         url = page_url(path)
         content = content.replace("<!--SEO:CANON-->", f'<link rel="canonical" href="{e(url)}">\n<meta property="og:url" content="{e(url)}">')

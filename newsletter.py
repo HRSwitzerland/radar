@@ -41,8 +41,8 @@ def _rubric_head(title, color, soft):
 def _shell(site_name, site_url, preheader, inner, footer_extra="", unsubscribe=True, footer_text="Die Beiträge fassen öffentlich zugängliche Quellen zusammen und ersetzen keine Rechtsberatung."):
     logo = f"{site_url}assets/og/logo.png"
     links = (f'<a href="{site_url}aenderungen.html" style="color:{INK};text-decoration:none;font-weight:700;">Das ändert sich</a> &nbsp;·&nbsp; '
-             f'<a href="{site_url}rechner/index.html" style="color:{INK};text-decoration:none;font-weight:700;">Rechner</a> &nbsp;·&nbsp; '
-             f'<a href="{site_url}thema/index.html" style="color:{INK};text-decoration:none;font-weight:700;">Themen</a>')
+             f'<a href="{site_url}rechner/" style="color:{INK};text-decoration:none;font-weight:700;">Rechner</a> &nbsp;·&nbsp; '
+             f'<a href="{site_url}thema/" style="color:{INK};text-decoration:none;font-weight:700;">Themen</a>')
     unsub = f' &nbsp;·&nbsp; <a href="{{{{ unsubscribe }}}}" style="color:{MUTED};">Newsletter abbestellen</a>' if unsubscribe else ""
     return f"""<!DOCTYPE html><html lang="de-CH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>{e(site_name)}</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
