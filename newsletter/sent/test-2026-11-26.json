@@ -1,0 +1,11 @@
+{
+ "id": "test-2026-11-26",
+ "type": "test",
+ "test_to": [
+  "newsletter@hr-radar.ch"
+ ],
+ "subject": "[TEST] HR Radar Newsletter",
+ "preheader": "Dies ist ein Testversand an newsletter@hr-radar.ch. Er geht nicht an Abonnentinnen und Abonnenten.",
+ "date": "2026-11-26",
+ "brevo_campaign_id": 5
+}
