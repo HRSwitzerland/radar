@@ -7,8 +7,127 @@
     "support_url": "https://buymeacoffee.com/hrradar",
     "goatcounter": "hrradar"
   },
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "articles": [
+    {
+      "id": "verpackungsverordnung-2027",
+      "published": "2026-11-27",
+      "date": "2026-06-24",
+      "category": "legal",
+      "featured": true,
+      "tags": [
+        "Verpackungen",
+        "Kreislaufwirtschaft",
+        "Umweltrecht",
+        "Rücknahmepflicht",
+        "Handel"
+      ],
+      "title": "Neue Verpackungsverordnung ab 2027: Welche Pflichten auf Hersteller und Händler zukommen",
+      "teaser": "Am 1. Januar 2027 tritt die neue Verpackungsverordnung in Kraft. Sie ersetzt die Regeln für Getränkeverpackungen und erfasst erstmals alle Verpackungen. Die wichtigsten Pflichten kommen gestaffelt bis 2032, vorbereiten sollten sich Firmen aber schon jetzt.",
+      "summary": "Der Bundesrat hat am 24. Juni 2026 die neue Verpackungsverordnung (VerpV) verabschiedet, sie gilt ab Anfang 2027 und ersetzt die Getränkeverpackungsverordnung aus dem Jahr 2000. Ziele sind weniger unnötige Verpackungen, bessere Rezyklierbarkeit und Recyclingquoten von 55 Prozent für Kunststoffverpackungen und 70 Prozent für Getränkekartons. Laut Branchenverbänden greifen die Kernpflichten gestaffelt zwischen 2028 und 2032; Rücknahme- und Meldepflichten treffen nur Firmen über CHF 1 Mio. Umsatz und 500 kg Verpackungsmaterial pro Jahr.",
+      "sections": [
+        {
+          "h": "Was der Bundesrat beschlossen hat",
+          "p": "Mit der Verpackungsverordnung (VerpV) setzt der Bundesrat Vorgaben des Parlaments zur Kreislaufwirtschaft um, namentlich die Motion 20.3695 und die parlamentarische Initiative 20.433. Die bisherige Verordnung über Getränkeverpackungen wird durch einen Erlass für sämtliche Verpackungen ersetzt. Verpackungen sollen rezyklierbar sein, mehr Rezyklat enthalten und auf das Nötige beschränkt werden; besonders besorgniserregende Stoffe sind zu vermeiden. Die Verordnung gilt gemäss Medienmitteilung ab Anfang 2027, die Branchenverbände nennen übereinstimmend den 1. Januar 2027. Bereits seit dem 1. August 2026 gelten geänderte Bestimmungen der Abfallverordnung (VVEA), unter anderem schweizweit einheitliche Ordnungsbussen von bis zu CHF 250 für Littering."
+        },
+        {
+          "h": "Der Zeitplan: viele Pflichten erst später",
+          "p": "Laut Swiss Recycle und dem Markenartikelverband Promarca kommen die Pflichten gestaffelt. Ab 2028 wird die vorgezogene Entsorgungsgebühr auf weitere Glasverpackungen ausgedehnt, etwa für Lebensmittel und Kosmetik. Ab 2030 gelten allgemeine Anforderungen an Verpackungen: möglichst wenig Volumen und Gewicht, sammel- und rezyklierfähig, möglichst hoher Rezyklatanteil. Ab 2031 müssen Hersteller und Händler Einweg-Kunststoffverpackungen und Getränkekartons zurücknehmen, entweder selbst oder über eine Branchenorganisation. Ab 2032 gelten die Verwertungsquoten von 55 Prozent für Kunststoff und 70 Prozent für Getränkekartons; werden sie verfehlt, kann der Bund weitere Massnahmen bis hin zu einer Pfandpflicht anordnen."
+        },
+        {
+          "h": "Wer betroffen ist",
+          "p": "Als Hersteller gilt, wer verpackte Produkte in der Schweiz herstellt oder importiert und gewerblich abgibt, als Händler, wer solche Produkte in der Schweiz bezieht und weiterverkauft. Erfasst sind laut Swiss Recycle stationärer und Online-Handel sowie B2C- und B2B-Geschäfte. Die Rücknahme- und die Meldepflicht für Verpackungsmengen treffen nur Unternehmen, die in zwei aufeinanderfolgenden Geschäftsjahren mehr als CHF 1 Mio. Jahresumsatz erzielen und mehr als 500 Kilogramm Verpackungsmaterial in Verkehr bringen. Kleinere Betriebe sind davon ausgenommen. Wann die Meldepflicht genau beginnt, beschreiben die Verbände unterschiedlich; massgebend ist der Verordnungstext."
+        },
+        {
+          "h": "Branchenlösung statt Eigenrücknahme",
+          "p": "Die Rücknahmepflicht ist subsidiär: Wer sich einem anerkannten Sammelsystem anschliesst, erfüllt sie über die Branchenorganisation, genannt wird insbesondere RecyPac. Wer keinem System angehört, muss Verpackungen am Abgabeort oder in dessen Nähe selbst zurücknehmen und die Entsorgung organisieren. Eine einheitliche staatliche Gebühr für Kunststoffverpackungen gibt es nicht; die Systeme finanzieren sich über zweckgebundene Beiträge. Für viele Firmen dürfte der Beitritt zu einer Branchenlösung der einfachste Weg sein, er setzt aber saubere Mengendaten voraus."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für Legal: Prüfen, ob das Unternehmen als Hersteller oder Händler gilt und ob es die Schwellen von CHF 1 Mio. Umsatz und 500 kg Verpackungsmaterial in zwei aufeinanderfolgenden Jahren überschreitet.",
+        "Das heisst für Legal: Schon 2027 eine Erfassung der in Verkehr gebrachten Verpackungsmengen nach Material aufbauen; sie ist Grundlage für Meldungen und Beiträge an ein Sammelsystem.",
+        "Das heisst für Legal: Den Beitritt zu einer Branchenorganisation wie RecyPac frühzeitig abklären und Lieferantenverträge um Angaben zu Material, Rezyklat und besorgniserregenden Stoffen ergänzen.",
+        "Das heisst für Legal: Die gestaffelten Stichtage 2028, 2030, 2031 und 2032 in die Compliance-Planung aufnehmen und Details am Verordnungstext (VerpV) prüfen."
+      ],
+      "refs": [
+        "Verpackungsverordnung (VerpV) vom 24.06.2026",
+        "Motion 20.3695",
+        "Pa. Iv. 20.433",
+        "VVEA"
+      ],
+      "effective": "2027-01-01",
+      "sources": [
+        {
+          "label": "Bundesrat: Bundesrat stärkt Recycling bei Verpackungen und Abfällen, 24.06.2026",
+          "url": "https://www.admin.ch/de/newnsb/eE-NjVjEsGK1BJKzk1ITa"
+        },
+        {
+          "label": "Handelsverband.swiss: Neue Verpackungsvorschriften ab 2027, 20.07.2026",
+          "url": "https://handelsverband.swiss/news/neue-verpackungsvorschriften-ab-2027-jetzt-handeln-statt-spaeter-reagieren/"
+        },
+        {
+          "label": "Handelsverband.swiss / Swiss Recycle: Neue Schweizer Verpackungsverordnung, 16.09.2026",
+          "url": "https://handelsverband.swiss/news/neue-schweizer-verpackungsverordnung-wichtige-weichenstellung-fuer-die-kreislaufwirtschaft-von-verpackungen/"
+        },
+        {
+          "label": "Promarca: Neue Verpackungsverordnung ab 2027, 30.06.2026",
+          "url": "https://www.promarca.ch/neue-verpackungsverordnung-ab-2027/"
+        }
+      ]
+    },
+    {
+      "id": "wtw-finanzielle-sorgen-2026",
+      "published": "2026-11-27",
+      "date": "2026-11-11",
+      "category": "gesundheit",
+      "tags": [
+        "Financial Wellbeing",
+        "Benefits",
+        "Absenzen",
+        "Mitarbeiterbindung"
+      ],
+      "title": "Geldsorgen am Arbeitsplatz: Mehr Beschäftigte unter Druck, Benefits werden wichtiger",
+      "teaser": "Fast vier von zehn Beschäftigten in der Schweiz sagen, finanzielle Probleme belasteten ihr Leben. Laut einer WTW-Studie fehlen stark Belastete fast doppelt so oft. Für HR wird Financial Wellbeing zum Thema für Gesundheit und Bindung.",
+      "summary": "Die Beratungsfirma WTW hat rund 1000 Beschäftigte in der Schweiz befragt: 38 Prozent geben an, Geldprobleme beeinträchtigten ihr Leben, vor zwei Jahren waren es 25 Prozent. Stark belastete Mitarbeitende haben laut Studie fast doppelt so viele Ausfalltage und fühlen sich mehr als doppelt so oft ausgebrannt. Gleichzeitig nennen 75 Prozent die Benefits als wichtigen Grund für die Wahl ihres Arbeitgebers.",
+      "sections": [
+        {
+          "h": "Die wichtigsten Zahlen",
+          "p": "Die Studie «Global Benefits Attitudes 2026» von WTW beruht auf einer Befragung von rund 1000 Beschäftigten in der Schweiz zwischen Februar und Mai 2026, weltweit nahmen rund 41'000 Personen in 31 Märkten teil. 38 Prozent der Befragten sagen, finanzielle Probleme wirkten sich negativ auf ihr Leben aus, gegenüber 25 Prozent zwei Jahre zuvor. 27 Prozent bezeichnen ihre finanzielle Lage als schlecht, 2024 waren es 16 Prozent. Fast die Hälfte (49 Prozent) erwartet, im Alter schlechter dazustehen als die Elterngeneration, und 35 Prozent befürchten sinkende Leistungen der Pensionskasse."
+        },
+        {
+          "h": "Was Geldsorgen im Betrieb auslösen",
+          "p": "Für Arbeitgeber relevant ist der Zusammenhang mit Gesundheit und Leistung. Beschäftigte mit hoher finanzieller Belastung haben laut WTW fast doppelt so viele Ausfalltage wie solche mit geringer Belastung; in der Mitteilung von WTW werden dazu neben Absenzen auch Produktivitätsverluste bei Anwesenheit gezählt. Zudem fühlen sie sich mehr als doppelt so häufig ausgebrannt. Die Wechselbereitschaft ist dagegen gesunken: 23 Prozent denken über einen Stellenwechsel nach, nach 38 Prozent vor zwei Jahren. Gleichzeitig fühlen sich 18 Prozent gefangen und würden gehen, wenn sie könnten (2024: 12 Prozent)."
+        },
+        {
+          "h": "Benefits gewinnen an Gewicht",
+          "p": "75 Prozent der Befragten nennen die Leistungen des Arbeitgebers als wichtigen Grund für ihre Stellenwahl, 2024 waren es 42 Prozent. 43 Prozent sagen, sie bräuchten Unterstützung bei ihrer finanziellen Situation. Laut einer weiteren WTW-Erhebung setzen aber nur 13 Prozent der Arbeitgeber das Thema in den nächsten zwei Jahren auf ihre Prioritätenliste. WTW empfiehlt, bestehende Leistungen gezielter auf die Bedürfnisse auszurichten statt das Angebot auszubauen, und vorhandene Schulungen von Vorsorge- und Versicherungspartnern sichtbar zu machen."
+        },
+        {
+          "h": "Einordnung",
+          "p": "Die Zahlen stammen aus einer Arbeitgeberberatung, die selbst Benefits-Lösungen anbietet; sie beruhen auf Selbstauskünften und zeigen Zusammenhänge, keine Ursachen. Sie passen aber zu anderen Befunden dieser Woche, etwa zum hohen Anteil von Kapitalbezügen bei Neupensionierten und zur Unsicherheit über die Finanzierung der Altersvorsorge. Für HR ist das ein Hinweis, dass Lohnrunden mit kleinen Spielräumen und unklare Vorsorgeleistungen auch die Gesundheit und das Engagement der Belegschaft beeinflussen können."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Finanzielle Belastung im Absenzen- und Gesundheitsmanagement mitdenken, etwa mit vertraulichen Beratungsangeboten oder einer Anlaufstelle über das Employee Assistance Program.",
+        "Das heisst für HR: Bestehende Benefits und Vorsorgeleistungen verständlich erklären; Vorsorgeeinrichtungen und Versicherer bieten oft Informationsveranstaltungen an, die sich ohne grosse Kosten nutzen lassen.",
+        "Das heisst für HR: Bei der Pensionskasse prüfen, ob Wahlpläne mit unterschiedlichen Sparbeiträgen angeboten und klar kommuniziert werden.",
+        "Das heisst für HR: Tiefere Wechselbereitschaft nicht mit Bindung verwechseln; Mitarbeitende, die sich gefangen fühlen, brauchen Gespräche und Perspektiven."
+      ],
+      "sources": [
+        {
+          "label": "WTW-Mitteilung (allnews.ch): Les employés attendent du soutien de leur employeur, 11.11.2026",
+          "url": "https://allnews.ch/content/points-de-vue/les-employ%C3%A9s-attendent-du-soutien-de-leur-employeur-face-aux-pr%C3%A9occupations"
+        },
+        {
+          "label": "cash.ch (AWP): Finanzielle Sorgen der Schweizer Beschäftigten nehmen deutlich zu, 11.11.2026",
+          "url": "https://www.cash.ch/news/finanzielle-sorgen-der-schweizer-beschaftigten-nehmen-deutlich-zu-984308"
+        },
+        {
+          "label": "bluewin.ch (Keystone-SDA): Financial concerns among Swiss workers are rising significantly, 11.11.2026",
+          "url": "https://www.bluewin.ch/en/news/financial-concerns-among-swiss-workers-are-rising-significantly-li.3669514"
+        }
+      ]
+    },
     {
       "id": "beschaeftigungsbarometer-q3-2026",
       "published": "2026-11-26",
@@ -66,7 +185,6 @@
       "published": "2026-11-26",
       "date": "2026-11-25",
       "category": "legal",
-      "featured": true,
       "tags": [
         "Konzernverantwortung",
         "Sorgfaltspflichten",
@@ -2133,6 +2251,10 @@
       "label": "Transparenzregister: Meldefrist für AG mit ordentlicher Revision; neues Patentrecht; MWST-Portalpflicht für Saldo- und Pauschalsteuersatzmethode"
     },
     {
+      "date": "2027-01-01",
+      "label": "Neue Verpackungsverordnung (VerpV) tritt in Kraft; weitere Pflichten gestaffelt bis 2032"
+    },
+    {
       "date": "2027-01-20",
       "label": "EU-Maschinenverordnung (EU) 2023/1230 gilt; ohne MRA-Aktualisierung Zusatzzertifizierung und EU-Vertreter für bestimmte Maschinen"
     },
@@ -2175,6 +2297,13 @@
     {
       "date": "2029-01-01",
       "label": "Zustellung am Wochenende: Fristen beginnen im ganzen Bundesrecht erst am nächsten Werktag"
+    }
+  ],
+  "weeks": [
+    {
+      "id": "2026-48",
+      "title": "Konzernverantwortung, Vorsorge und ein Arbeitsmarkt im Abwarten",
+      "intro": "Die Woche vor der Abstimmung über die Finanzierung der 13. AHV-Rente stand im Zeichen der Vorsorge: Fast die Hälfte der Neupensionierten bezieht nur noch Kapital, und die IV-Integrationsreform soll die Lohnbeiträge erhöhen. Im Legal-Bereich legte der Bundesrat das Gesetz über die nachhaltige Unternehmensführung vor, das die Berichtspflicht auf rund 110 Firmen beschränkt; daneben rücken Fristen wie das Transparenzregister, das neue Patentrecht, die EU-Maschinenverordnung und die Verpackungsverordnung näher. Die Arbeitsmarktdaten zeigen ein gemischtes Bild: mehr Beschäftigte als vor einem Jahr, aber mehr Firmen mit Abbauplänen. Und ab dem 2. Dezember gilt in der EU die Vermutung der Anstellung für Plattformarbeit."
     }
   ]
 }
