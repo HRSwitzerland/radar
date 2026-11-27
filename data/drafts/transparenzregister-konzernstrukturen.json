@@ -1,0 +1,105 @@
+{
+  "id": "transparenzregister-konzernstrukturen",
+  "type": "hintergrund",
+  "published": "2026-11-27",
+  "category": "legal",
+  "tags": [
+    "Transparenzregister",
+    "TJPG",
+    "Wirtschaftlich Berechtigte",
+    "Konzern",
+    "Compliance"
+  ],
+  "title": "Transparenzregister in der Gruppe: Wie Legal die wirtschaftlich Berechtigten durch Konzernketten richtig ermittelt",
+  "teaser": "Am 1. Januar 2027 läuft die erste Meldefrist für Aktiengesellschaften mit ordentlicher Revision ab. Einfach ist die Meldung nur bei klaren Verhältnissen – in Holdingstrukturen, mit Aktionärbindungsverträgen oder ausländischen Müttern stecken die Tücken im Detail.",
+  "summary": "Seit dem 1. Oktober 2026 müssen AG, GmbH, Genossenschaften und bestimmte ausländische Gesellschaften ihre wirtschaftlich berechtigten Personen an das nicht öffentliche Transparenzregister des Bundes melden. Massgebend sind 25 Prozent Kapital oder Stimmen oder Kontrolle auf andere Weise; über Zwischengesellschaften zählt eine Beteiligung erst ab mehr als 50 Prozent. Die Übergangsfristen laufen gestaffelt vom 1. Januar bis 1. April 2027, ab April 2027 müssen Finanzintermediäre Abweichungen melden. Vorsätzliche Verstösse kosten bis CHF 500'000 Busse, im Extremfall drohen die Suspendierung von Aktionärsrechten oder die Liquidation.",
+  "sections": [
+    {
+      "h": "Ausgangslage: Die erste Frist steht vor der Tür",
+      "p": "Mit dem Bundesgesetz über die Transparenz juristischer Personen (TJPG) und der zugehörigen Verordnung (TJPV) hat die Schweiz am 1. Oktober 2026 ein zentrales Register der wirtschaftlich berechtigten Personen eingeführt. Gemäss Bund sind über 500'000 Gesellschaften meldepflichtig; an der Pilotphase hatten sich rund 2'500 Unternehmen beteiligt. Die Fristen für bestehende Gesellschaften sind gestaffelt (HR Radar berichtete), die erste endet bereits am 1. Januar 2027. Für eine Einpersonen-GmbH ist die Meldung in wenigen Minuten erledigt. Anspruchsvoll wird es dort, wo Beteiligungen über mehrere Stufen laufen, Familienaktionäre über Bindungsverträge zusammenwirken oder eine ausländische Muttergesellschaft im Spiel ist. Genau diese Konstellationen sind in mittelgrossen Unternehmen und KMU-Gruppen häufig, und hier passieren die Fehler, die später zu einem Vermerk im Register führen."
+    },
+    {
+      "h": "Die Rechtslage: Wer meldet, wer gemeldet wird",
+      "p": "Meldepflichtig sind nach Art. 2 TJPG Aktiengesellschaften, Kommanditaktiengesellschaften, GmbH, Genossenschaften sowie SICAV, SICAF und Kommanditgesellschaften für kollektive Kapitalanlagen. Erfasst werden auch ausländische Rechtseinheiten mit einer Zweigniederlassung im Handelsregister, mit tatsächlicher Verwaltung in der Schweiz oder mit Schweizer Grundeigentum. Vereine und Stiftungen sind nicht als meldepflichtige Rechtseinheiten aufgeführt. Ausgenommen sind nach Art. 3 TJPG kotierte Gesellschaften und deren Tochtergesellschaften, wenn die kotierte Mutter mehr als 75 Prozent hält, ferner Vorsorgeeinrichtungen und Gesellschaften, die zu mindestens 75 Prozent der öffentlichen Hand gehören. Wirtschaftlich berechtigt ist nach Art. 4 TJPG immer eine natürliche Person, die die Gesellschaft letztlich kontrolliert, direkt oder indirekt, allein oder gemeinsam mit Dritten, sei es über mindestens 25 Prozent des Kapitals oder der Stimmen oder auf andere Weise. Findet sich niemand, gilt ersatzweise das oberste Mitglied des leitenden Organs als wirtschaftlich berechtigt. Die Verantwortung für die Meldung trägt die Gesellschaft; sie darf Treuhänder oder Anwältinnen beiziehen, bleibt aber in der Pflicht."
+    },
+    {
+      "h": "Konzernketten richtig durchrechnen",
+      "p": "Der Kern der Praxisfragen liegt in Art. 2 Abs. 2 TJPV: Eine indirekte Beteiligung vermittelt Kontrolle nur, wenn die Person mehr als 50 Prozent an einer oder mehreren Zwischengesellschaften hält, die ihrerseits direkt oder indirekt mindestens 25 Prozent an der meldenden Gesellschaft besitzen. Eine rein rechnerische Durchmultiplikation der Quoten ist also nicht vorgesehen. Ein Beispiel: Die Holding AG hält 80 Prozent der operativen Produktions AG. An der Holding sind zwei Familienstämme je hälftig beteiligt. Keiner hält mehr als 50 Prozent an der Holding, also kontrolliert keiner die Produktions AG indirekt – sofern sie nicht gemeinsam handeln. Kann niemand ermittelt werden, ist ersatzweise das oberste Mitglied des leitenden Organs zu melden. Hält dagegen eine Person 60 Prozent der Holding, ist sie bei der Produktions AG zu melden, obwohl ihr rechnerischer Anteil nur 48 Prozent beträgt. Wichtig für Gruppen: Jede Schweizer Gesellschaft im Anwendungsbereich meldet selbst. Eine Befreiung, weil die Mutter bereits gemeldet hat, kennt das Gesetz nicht. Nur die Tochter einer kotierten Gesellschaft mit über 75 Prozent Beteiligung ist ausgenommen; Töchter nicht kotierter ausländischer Gruppen müssen die Kette bis zur natürlichen Person offenlegen."
+    },
+    {
+      "h": "Kontrolle auf andere Weise: Bindungsverträge, Vetorechte, Optionen",
+      "p": "Wer nur auf Beteiligungsquoten schaut, übersieht die zweite Schiene. Nach Art. 3 TJPV liegt Kontrolle auf andere Weise vor, wenn jemand direkt oder indirekt das Recht oder die tatsächliche Möglichkeit hat, mehr als die Hälfte des Verwaltungs- oder Leitungsorgans zu ernennen oder abzuberufen, ein Veto gegen bestimmte Beschlüsse einzulegen oder Gewinnausschüttungen und andere Vermögensverfügungen durchzusetzen. Als Mittel nennt die Verordnung etwa Aktionärbindungsverträge, Optionen und andere Finanzinstrumente sowie Treuhandverhältnisse. Praktisch heisst das: Zwei Aktionäre mit je 20 Prozent, die sich in einem Bindungsvertrag zur gemeinsamen Stimmabgabe verpflichtet haben, können gemeinsam als wirtschaftlich Berechtigte gelten. Ein Investor mit 15 Prozent und einem Vetorecht bei Dividenden kann ebenfalls zu melden sein. Auch Treuhandverhältnisse, bei denen jemand Aktien für eine andere Person hält, können Kontrolle vermitteln. Legal sollte deshalb nicht nur das Aktienbuch, sondern auch Bindungs-, Darlehens- und Finanzierungsverträge sowie Statuten durchsehen."
+    },
+    {
+      "h": "Fristen und Mitwirkungspflichten",
+      "p": "Für bestehende Gesellschaften gelten die Übergangsfristen von Art. 51 TJPG, gerechnet ab dem Inkrafttreten: Aktiengesellschaften mit ordentlicher Revision melden innert drei Monaten, also bis 1. Januar 2027, übrige Gesellschaften mit ordentlicher Revision innert vier, Aktiengesellschaften ohne ordentliche Revision innert fünf und alle übrigen innert sechs Monaten, das heisst bis 1. April 2027. Sind alle wirtschaftlich Berechtigten bereits als Gesellschafter oder Organ im Handelsregister eingetragen, beträgt die Frist zwei Jahre. Achtung: Ändert der Handelsregistereintrag vorher, etwa wegen eines neuen Verwaltungsrats, ist innert eines Monats danach zu melden. Ausländische Rechtseinheiten haben sechs Monate (Art. 53 TJPG). Danach gilt für jede Änderung eine Monatsfrist ab Kenntnis (Art. 10 TJPG). Die Gesellschaft ist dabei auf ihre Aktionäre angewiesen: Wer eine kontrollierende Beteiligung erwirbt, muss die wirtschaftlich berechtigte Person innert eines Monats melden und auf Verlangen Belege liefern (Art. 13 TJPG); die berechtigte Person selbst muss mitwirken (Art. 14 TJPG). Meldungen nach altem Recht (Art. 697j und 790a OR) gelten als erfüllt, sofern sie der neuen Definition entsprechen. Belege sind während zehn Jahren aufzubewahren, nachdem jemand die Eigenschaft als wirtschaftlich Berechtigter verloren hat (Art. 8 Abs. 3 TJPG)."
+    },
+    {
+      "h": "Kontrolle und Sanktionen",
+      "p": "Das Register führt das Bundesamt für Justiz; geprüft werden die Einträge von einer Kontrollstelle im Eidgenössischen Finanzdepartement, risikobasiert oder stichprobenweise. Ab sechs Monaten nach Inkrafttreten, also ab April 2027, müssen Banken und andere Finanzintermediäre Abweichungen melden, die sie bei der Kundenprüfung feststellen und die der Kunde trotz Hinweis und Nachfrist nicht bereinigt (Art. 30 und 54 TJPG). Auch Behörden melden Abweichungen. Die Folge ist ein Vermerk im Register (Art. 34 TJPG), der die Kontrollstelle auf den Plan ruft und im Bankverkehr unangenehme Rückfragen auslösen kann. Stellt die Kontrollstelle Fehler fest, kann sie Nachweise verlangen, Änderungen verfügen und bei wiederholten oder trotz Mahnung nicht behobenen Verstössen die Mitwirkungs- und Vermögensrechte des betreffenden Aktionärs suspendieren (Art. 38 Abs. 2 TJPG). Ist die Gesellschaft offensichtlich ohne Geschäftstätigkeit oder verwertbare Aktiven, kann sie deren Auflösung und Liquidation anordnen. Strafrechtlich drohen bei vorsätzlicher Verletzung der Melde- und Auskunftspflichten Bussen bis CHF 500'000, bei Missachtung einer rechtskräftigen Verfügung bis CHF 100'000 (Art. 43 und 44 TJPG). Fahrlässigkeit ist nicht strafbar, die Verfolgung verjährt nach sieben Jahren."
+    },
+    {
+      "h": "Typische Fehler aus der Praxis",
+      "p": "Erstens wird die Kette zu früh abgebrochen: Gemeldet wird die Holding statt der natürlichen Person dahinter. Zweitens werden Quoten multipliziert statt nach der 50-Prozent-Regel geprüft, was je nach Fall zu viele oder zu wenige Personen ergibt. Drittens bleiben Bindungsverträge und Vetorechte unberücksichtigt. Viertens wird der Ersatztatbestand vorschnell angewendet, obwohl bei genauer Prüfung doch eine kontrollierende Person existiert, oder es bleibt unklar, wer als oberstes Mitglied des leitenden Organs gilt; hier lohnt ein Blick in die FAQ des Bundesamts für Justiz. Fünftens schleichen sich banale Datenfehler ein: Das Bundesamt nennt vertauschte Vor- und Nachnamen, Tippfehler im Geburtsdatum oder fehlende Ausweiskopien bei Personen ohne AHV-Nummer; eine falsche Identität kann eine gebührenpflichtige Korrekturaufforderung nach sich ziehen. Sechstens zahlen Unternehmen für Angebote, die sie nicht brauchen: Die Meldung über EasyGov ist kostenlos, das Bundesamt hat ausdrücklich vor kostenpflichtigen privaten Diensten und nicht offiziellen Schreiben gewarnt. Und schliesslich fehlt oft ein Prozess für spätere Änderungen, obwohl jede Verschiebung über eine Schwelle innert eines Monats nachzumelden ist."
+    },
+    {
+      "h": "Vorgehen in sechs Schritten",
+      "p": "1. Frist bestimmen: Rechtsform und Revisionsart jeder Gruppengesellschaft feststellen und prüfen, ob eine Handelsregisteränderung ansteht, die die Frist vorzieht. 2. Beteiligungsstruktur zeichnen: alle Stufen bis zu den natürlichen Personen, mit Kapital- und Stimmenanteilen, und die 25- und 50-Prozent-Regel anwenden. 3. Vertragslage prüfen: Bindungsverträge, Vetorechte, Optionen, Treuhandverhältnisse und Statuten auf Kontrolle auf andere Weise untersuchen. 4. Informationen einholen: Aktionäre schriftlich zur Meldung nach Art. 13 TJPG und zu Belegen auffordern, Ausweisdaten sorgfältig erfassen. 5. Melden und dokumentieren: AGOV-Login einrichten, über EasyGov melden, Herleitung und Belege zehn Jahre aufbewahren. 6. Prozess verankern: Zuständigkeit im Verwaltungsrat oder Legal festlegen, Änderungen an Beteiligungen, Organen und Verträgen mit dem Register verknüpfen und vor April 2027 mit den Hausbanken abgleichen, damit keine Abweichungsmeldung entsteht."
+    }
+  ],
+  "takeaways": [
+    "Das heisst für Legal: Für Aktiengesellschaften mit ordentlicher Revision endet die Frist am 1. Januar 2027 – jetzt prüfen, welche Gruppengesellschaften darunter fallen.",
+    "Das heisst für Legal: Indirekte Kontrolle nicht durch Multiplizieren ermitteln, sondern mit der Regel «mehr als 50 Prozent an der Zwischengesellschaft, die mindestens 25 Prozent hält».",
+    "Das heisst für Legal: Aktionärbindungsverträge, Vetorechte und Treuhandverhältnisse gehören in die Analyse, nicht nur das Aktienbuch.",
+    "Das heisst für Legal: Jede Schweizer Gesellschaft der Gruppe meldet selbst; nur Töchter kotierter Gesellschaften mit über 75 Prozent Beteiligung sind befreit.",
+    "Das heisst für Legal: Ab April 2027 melden Banken Abweichungen – Registereintrag und KYC-Angaben bei den Hausbanken vorher abgleichen.",
+    "Das heisst für Legal: Die Meldung über EasyGov ist kostenlos; Schreiben privater Anbieter mit Gebühren nicht ungeprüft bezahlen."
+  ],
+  "refs": [
+    "Art. 2, 3, 4 TJPG",
+    "Art. 8 Abs. 3, 10, 13, 14 TJPG",
+    "Art. 30, 34, 38 TJPG",
+    "Art. 43, 44, 45 TJPG",
+    "Art. 51, 53, 54 TJPG",
+    "Art. 2 Abs. 2 und Art. 3 TJPV"
+  ],
+  "effective": "2027-01-01",
+  "sources": [
+    {
+      "label": "Fedlex: Bundesgesetz über die Transparenz juristischer Personen (TJPG), BBl-Fassung vom 26.09.2025",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2025/2900/de"
+    },
+    {
+      "label": "Fedlex: Verordnung über die Transparenz juristischer Personen (TJPV) vom 12.06.2026",
+      "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/364/de/html/fedlex-data-admin-ch-eli-oc-2026-364-de-html.html"
+    },
+    {
+      "label": "Bundesamt für Justiz: Schweizerisches Transparenzregister (transpareg)",
+      "url": "https://www.transpareg.admin.ch/de"
+    },
+    {
+      "label": "Bundesamt für Justiz: Merkblatt TJPG",
+      "url": "https://media.bs.ch/dynamic/noop/80ffd0c4e4cf24485eacd141a5c160730ad13921/merkblatt-tjpg.pdf"
+    },
+    {
+      "label": "EasyGov: Transparenzregister nimmt den Betrieb auf, 01.10.2026",
+      "url": "https://aktuell.easygov.swiss/news/transparenzregister/"
+    },
+    {
+      "label": "CMS: Die Schweiz führt ein zentralisiertes UBO-Register ein, 26.09.2025",
+      "url": "https://cms.law/de/che/publication/legal-flash/die-schweiz-fuehrt-ein-zentralisiertes-ubo-register-ein"
+    },
+    {
+      "label": "BDO: Transparenzregister Schweiz – was Unternehmen jetzt tun müssen, 19.10.2026",
+      "url": "https://www.bdo.ch/de-ch/publikationen/transparenzregister-schweiz-was-unternehmen-jetzt-tun-mussen"
+    },
+    {
+      "label": "GTAI: Rechtsbericht Schweiz – Transparenzregister, 14.10.2026",
+      "url": "https://www.gtai.de/de/trade/schweiz/recht/transparenzregister-2001480"
+    },
+    {
+      "label": "Steiger Legal: BJ warnt vor privatem Transparenzregister-Dienst, 06.10.2026",
+      "url": "https://steigerlegal.ch/2026/10/06/warnung-transparenzregister-schweiz/"
+    }
+  ]
+}
