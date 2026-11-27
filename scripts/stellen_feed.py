@@ -33,7 +33,7 @@ HR = re.compile(
     r"|Compensation|Total Rewards|Reward|Ressources humaines|\bRH\b|Gestionnaire (?:de )?(?:la )?(?:paie|salaires|personnel)|\bpaie\b|Responsable du personnel|Risorse umane"
     r"|Learning (?:&|and) Development|Employer Branding|Arbeitsrecht|Employee Relations|Workforce Planning|Onboarding Specialist",
     re.I)
-NOT_HR = re.compile(r"Patient|Clinical|Klinisch|Personal Banker|Personal Trainer|Fitness|HR-Software Vertrieb|Account Executive|Sales", re.I)
+NOT_HR = re.compile(r"Patient|Clinical|Procurement|Einkauf|Klinisch|Personal Banker|Personal Trainer|Fitness|HR-Software Vertrieb|Account Executive|Sales", re.I)
 
 CH = re.compile(
     r"Switzerland|Schweiz|Suisse|Svizzera|\bCH\b|Z(?:ü|u)rich|Basel|\bBern\b|Gen(?:è|e)v|\bGenf\b|Lausanne|Luzern|Lucerne|\bZug\b|St\.? ?Gallen|Winterthur|Lugano|Aarau|(?<!-)\bBaden\b(?!-)"
@@ -84,13 +84,19 @@ def workday(s):
     base = f"https://{host}/wday/cxs/{tenant}/{site}"
     seen, out = set(), []
     for q in ("HR", "Human Resources", "People", "Payroll", "Recruit", "Talent", "Personal", "Compensation"):
-        try:
-            res = jget(base + "/jobs", {"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": q})
-        except Exception:
-            continue
-        for p in res.get("jobPostings", []):
+        posts = []
+        for off in (0, 20, 40):
+            try:
+                res = jget(base + "/jobs", {"appliedFacets": {}, "limit": 20, "offset": off, "searchText": q})
+            except Exception:
+                break
+            posts += res.get("jobPostings", [])
+            if off + 20 >= res.get("total", 0):
+                break
+            time.sleep(PAUSE)
+        for p in posts:
             path = p.get("externalPath")
-            if not path or path in seen or not HR.search(p.get("title", "")):
+            if not path or path in seen or not HR.search(re.sub(r"\([^)]*\)", " ", p.get("title", ""))):
                 continue
             seen.add(path)
             loc, date = p.get("locationsText", ""), ""
@@ -189,7 +195,8 @@ def main():
             continue
         hits = 0
         for j in raw:
-            if not j["u"] or not j["t"] or not HR.search(j["t"]) or NOT_HR.search(j["t"]):
+            core = re.sub(r"\([^)]*\)|\[[^]]*\]", " ", j["t"])
+            if not j["u"] or not j["t"] or not HR.search(core) or NOT_HR.search(core):
                 continue
             if not (s.get("nur_ch") or CH.search(j["o"])):
                 continue

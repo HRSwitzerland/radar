@@ -1,43 +1,204 @@
 {
  "_hinweis": "Quellen für die Seite HR-Stellen (scripts/stellen_feed.py, täglich per GitHub Action). Nur öffentliche Stellen-Schnittstellen der Arbeitgeber. typ: workday (host, site), greenhouse/smartrecruiters/lever/recruitee/personio/teamtailor/ashby (slug). nur_ch: true = alle Stellen der Quelle liegen in der Schweiz. aus: true = vorübergehend deaktiviert.",
  "quellen": [
-  {"typ": "workday", "name": "Novartis", "host": "novartis.wd3.myworkdayjobs.com", "site": "Novartis_Careers"},
-  {"typ": "workday", "name": "Sandoz", "host": "sandoz.wd3.myworkdayjobs.com", "site": "Sandoz_Careers"},
-  {"typ": "workday", "name": "Alcon", "host": "alcon.wd5.myworkdayjobs.com", "site": "careers_alcon"},
-  {"typ": "workday", "name": "Lonza", "host": "lonza.wd3.myworkdayjobs.com", "site": "Lonza_Careers"},
-  {"typ": "workday", "name": "CSL Behring / CSL Vifor", "host": "csl.wd1.myworkdayjobs.com", "site": "CSL_External"},
-  {"typ": "workday", "name": "Takeda", "host": "takeda.wd502.myworkdayjobs.com", "site": "external"},
-  {"typ": "workday", "name": "Julius Bär", "host": "juliusbaer.wd3.myworkdayjobs.com", "site": "External"},
-  {"typ": "workday", "name": "Swisscom", "host": "swisscom.wd103.myworkdayjobs.com", "site": "SwisscomExternalCareers", "nur_ch": true},
-  {"typ": "workday", "name": "Swiss Re", "host": "swissre.wd3.myworkdayjobs.com", "site": "SwissReCareers"},
-  {"typ": "workday", "name": "Zurich Versicherung", "host": "zurich.wd3.myworkdayjobs.com", "site": "Careers"},
-  {"typ": "workday", "name": "Logitech", "host": "logitech.wd5.myworkdayjobs.com", "site": "Logitech"},
-  {"typ": "workday", "name": "Givaudan", "host": "givaudan.wd3.myworkdayjobs.com", "site": "External"},
-  {"typ": "workday", "name": "Galderma", "host": "galderma.wd3.myworkdayjobs.com", "site": "External"},
-  {"typ": "workday", "name": "DocMorris / Zur Rose", "host": "zrg.wd3.myworkdayjobs.com", "site": "jobs"},
-  {"typ": "workday", "name": "Everest Re", "host": "everestre.wd5.myworkdayjobs.com", "site": "External"},
-  {"typ": "workday", "name": "Berner Group", "host": "bernergroup.wd3.myworkdayjobs.com", "site": "Careers_Berner_Group"},
-  {"typ": "workday", "name": "Workday", "host": "workday.wd5.myworkdayjobs.com", "site": "Workday"},
-  {"typ": "greenhouse", "name": "On", "slug": "onrunning"},
-  {"typ": "greenhouse", "name": "COFRA Holding", "slug": "cofraholding"},
-  {"typ": "greenhouse", "name": "DEPT", "slug": "dept"},
-  {"typ": "greenhouse", "name": "GetYourGuide", "slug": "getyourguide"},
-  {"typ": "greenhouse", "name": "Scandit", "slug": "scandit"},
-  {"typ": "greenhouse", "name": "Sonar", "slug": "sonarsource"},
-  {"typ": "greenhouse", "name": "Proton", "slug": "proton"},
-  {"typ": "greenhouse", "name": "Frontify", "slug": "frontify"},
-  {"typ": "greenhouse", "name": "Climeworks", "slug": "climeworks"},
-  {"typ": "greenhouse", "name": "Beekeeper", "slug": "beekeeper"},
-  {"typ": "greenhouse", "name": "Smallpdf", "slug": "smallpdf"},
-  {"typ": "greenhouse", "name": "DFINITY", "slug": "dfinity"},
-  {"typ": "greenhouse", "name": "iCapital", "slug": "icapitalnetwork"},
-  {"typ": "lever", "name": "Nexthink", "slug": "nexthink"},
-  {"typ": "smartrecruiters", "name": "CERN", "slug": "CERN"},
-  {"typ": "smartrecruiters", "name": "Bosch", "slug": "BoschGroup"},
-  {"typ": "smartrecruiters", "name": "Visa", "slug": "Visa"},
-  {"typ": "smartrecruiters", "name": "Johnson & Johnson", "slug": "JohnsonJohnson"},
-  {"typ": "teamtailor", "name": "ERNI Schweiz", "slug": "weareerniswjobs", "nur_ch": true},
-  {"typ": "teamtailor", "name": "Avosano", "slug": "avosano", "nur_ch": true},
-  {"typ": "ashby", "name": "Ledgy", "slug": "ledgy"}
+  {
+   "typ": "workday",
+   "name": "Roche",
+   "host": "roche.wd3.myworkdayjobs.com",
+   "site": "roche-ext"
+  },
+  {
+   "typ": "workday",
+   "name": "Swiss Life International",
+   "host": "swisslife.wd3.myworkdayjobs.com",
+   "site": "Swiss_Life_International_Division_Career_Site"
+  },
+  {
+   "typ": "workday",
+   "name": "Sanofi",
+   "host": "sanofi.wd3.myworkdayjobs.com",
+   "site": "SanofiCareers"
+  },
+  {
+   "typ": "workday",
+   "name": "Accenture",
+   "host": "accenture.wd3.myworkdayjobs.com",
+   "site": "AccentureCareers"
+  },
+  {
+   "typ": "workday",
+   "name": "Novartis",
+   "host": "novartis.wd3.myworkdayjobs.com",
+   "site": "Novartis_Careers"
+  },
+  {
+   "typ": "workday",
+   "name": "Sandoz",
+   "host": "sandoz.wd3.myworkdayjobs.com",
+   "site": "Sandoz_Careers"
+  },
+  {
+   "typ": "workday",
+   "name": "Alcon",
+   "host": "alcon.wd5.myworkdayjobs.com",
+   "site": "careers_alcon"
+  },
+  {
+   "typ": "workday",
+   "name": "Lonza",
+   "host": "lonza.wd3.myworkdayjobs.com",
+   "site": "Lonza_Careers"
+  },
+  {
+   "typ": "workday",
+   "name": "CSL Behring / CSL Vifor",
+   "host": "csl.wd1.myworkdayjobs.com",
+   "site": "CSL_External"
+  },
+  {
+   "typ": "workday",
+   "name": "Takeda",
+   "host": "takeda.wd502.myworkdayjobs.com",
+   "site": "external"
+  },
+  {
+   "typ": "workday",
+   "name": "Julius Bär",
+   "host": "juliusbaer.wd3.myworkdayjobs.com",
+   "site": "External"
+  },
+  {
+   "typ": "workday",
+   "name": "Swisscom",
+   "host": "swisscom.wd103.myworkdayjobs.com",
+   "site": "SwisscomExternalCareers",
+   "nur_ch": true
+  },
+  {
+   "typ": "workday",
+   "name": "Swiss Re",
+   "host": "swissre.wd3.myworkdayjobs.com",
+   "site": "SwissReCareers"
+  },
+  {
+   "typ": "workday",
+   "name": "Zurich Versicherung",
+   "host": "zurich.wd3.myworkdayjobs.com",
+   "site": "Careers"
+  },
+  {
+   "typ": "workday",
+   "name": "Logitech",
+   "host": "logitech.wd5.myworkdayjobs.com",
+   "site": "Logitech"
+  },
+  {
+   "typ": "workday",
+   "name": "Givaudan",
+   "host": "givaudan.wd3.myworkdayjobs.com",
+   "site": "External"
+  },
+  {
+   "typ": "workday",
+   "name": "Galderma",
+   "host": "galderma.wd3.myworkdayjobs.com",
+   "site": "External"
+  },
+  {
+   "typ": "workday",
+   "name": "DocMorris / Zur Rose",
+   "host": "zrg.wd3.myworkdayjobs.com",
+   "site": "jobs"
+  },
+  {
+   "typ": "workday",
+   "name": "Everest Re",
+   "host": "everestre.wd5.myworkdayjobs.com",
+   "site": "External"
+  },
+  {
+   "typ": "workday",
+   "name": "Berner Group",
+   "host": "bernergroup.wd3.myworkdayjobs.com",
+   "site": "Careers_Berner_Group"
+  },
+  {
+   "typ": "workday",
+   "name": "Workday",
+   "host": "workday.wd5.myworkdayjobs.com",
+   "site": "Workday"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "On",
+   "slug": "onrunning"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "COFRA Holding",
+   "slug": "cofraholding"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "DEPT",
+   "slug": "dept"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "GetYourGuide",
+   "slug": "getyourguide"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "Scandit",
+   "slug": "scandit"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "Proton",
+   "slug": "proton"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "DFINITY",
+   "slug": "dfinity"
+  },
+  {
+   "typ": "greenhouse",
+   "name": "iCapital",
+   "slug": "icapitalnetwork"
+  },
+  {
+   "typ": "smartrecruiters",
+   "name": "CERN",
+   "slug": "CERN"
+  },
+  {
+   "typ": "smartrecruiters",
+   "name": "Bosch",
+   "slug": "BoschGroup"
+  },
+  {
+   "typ": "smartrecruiters",
+   "name": "Visa",
+   "slug": "Visa"
+  },
+  {
+   "typ": "smartrecruiters",
+   "name": "Johnson & Johnson",
+   "slug": "JohnsonJohnson"
+  },
+  {
+   "typ": "teamtailor",
+   "name": "ERNI Schweiz",
+   "slug": "weareerniswjobs",
+   "nur_ch": true
+  },
+  {
+   "typ": "teamtailor",
+   "name": "Avosano",
+   "slug": "avosano",
+   "nur_ch": true
+  }
  ]
 }
