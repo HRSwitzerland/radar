@@ -411,7 +411,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     </div>
     <div>
       <h2>Themen</h2>
-      <p class="foot-themes">{" · ".join(f'<a href="{up}thema/{t["slug"]}.html">{e(t.get("short") or t["title"].split(":")[0])}</a>' for t in THEMEN)} · <a href="{up}thema/{neuerungen_slug()}.html">Neuerungen {neuerungen_year()}</a></p>
+      <p class="foot-themes">{" · ".join(f'<a href="{up}thema/{t["slug"]}.html">{e(t.get("short") or t["title"].split(":")[0])}</a>' for t in THEMEN if not t["slug"].startswith("unterschied-"))} · <a href="{up}thema/{neuerungen_slug()}.html">Neuerungen {neuerungen_year()}</a></p>
     </div>
     <div>
       <h2>Gut zu wissen</h2>
@@ -1093,10 +1093,15 @@ def build_themes():
             if not x.get("items"):
                 return ""
             li = "".join(
-                f'<li><b>{(f"<a href=\"{e(i[chr(117)])}\" target=\"_blank\" rel=\"noopener\">{e(i[chr(116)])}</a>") if i.get("u") else e(i["t"])}</b>{(" – " + e(i["d"])) if i.get("d") else ""}</li>'
+                f'<li><b>{(f"<a href=\"{e(i[chr(117)])}\"" + (" target=\"_blank\" rel=\"noopener\"" if i[chr(117)].startswith("http") else "") + f">{e(i[chr(116)])}</a>") if i.get("u") else e(i["t"])}</b>{(" – " + e(i["d"])) if i.get("d") else ""}</li>'
                 for i in x["items"])
             return f'<ul class="edu-list">{li}</ul>'
         secs = "".join(f"<h2>{e(x['h'])}</h2>" + (f"<p>{e(x['p'])}</p>" if x.get("p") else "") + _items(x) + (f"<p>{e(x['p2'])}</p>" if x.get("p2") else "") for x in t.get("sections", []))
+        if t.get("compare"):
+            c = t["compare"]
+            head = "".join(f"<th scope=\"col\">{e(h)}</th>" for h in c["cols"])
+            rows = "".join("<tr>" + f"<th scope=\"row\">{e(r[0])}</th>" + "".join(f"<td data-l=\"{e(c['cols'][i])}\">{e(v)}</td>" for i, v in enumerate(r[1:])) + "</tr>" for r in c["rows"])
+            secs = f'<h2>{e(c.get("h", "Der Vergleich auf einen Blick"))}</h2><div class="cmp-wrap"><table class="cmp"><thead><tr><th></th>{head}</tr></thead><tbody>{rows}</tbody></table></div>' + secs
         art_ids = {a["id"] for a in articles()}
         theme_slugs = {x["slug"] for x in THEMEN}
         for grp in t.get("checklist", []):
@@ -1115,11 +1120,11 @@ def build_themes():
         faq = "".join(f'<details class="faq-item"><summary>{e(f["q"])}</summary><p>{e(f["a"])}</p></details>' for f in t.get("faq", []))
         tools_html = "".join(f'<a class="tool-card" href="{up}rechner/{c}.html" style="{cat_style(calc[c][3])}"><span class="mini-ico" aria-hidden="true">{ICONS[calc[c][3]]}</span><h3>{e(calc[c][1])}</h3><p>{e(calc[c][2])}</p><span class="more">Rechner öffnen</span></a>' for c in t.get("tools", []) if c in calc)
         refs = "".join(f'<span class="ref">{e(r)}</span>' for r in t.get("refs", []))
-        others = "".join(f'<a class="topic" href="{x["slug"]}.html">{e(x.get("short") or x["title"].split(":")[0])}</a>' for x in THEMEN if x is not t)
+        others = "".join(f'<a class="topic" href="{x["slug"]}.html">{e(x.get("short") or x["title"].split(":")[0])}</a>' for x in THEMEN if x is not t and not x["slug"].startswith("unterschied-"))
         grid = "".join(card(a, up) for a in items[:12]) or '<p class="empty">Zu diesem Thema erscheinen laufend neue Beiträge.</p>'
         body = f"""<section class="cat-hero" style="{cat_style(k)}"><span class="blob b1"></span><div class="wrap">
   <span class="cat-big" aria-hidden="true">{ICONS[k]}</span>
-  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">Thema</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p>{f'<p class="count">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} zum Thema</p>' if items else ""}</div>
+  <div><div class="crumbs"><a href="{up}index.html">Aktuell</a> › <a href="index.html">Themen</a></div><span class="hand">{"Vergleich" if t.get("compare") else "Thema"}</span><h1>{e(t['title'])}</h1><p class="lead">{e(t['intro'])}</p>{f'<p class="count">{len(items)} {"Beitrag" if len(items) == 1 else "Beiträge"} zum Thema</p>' if items else ""}</div>
 </div></section>
 <div class="narrow theme-body" style="{cat_style(k)}">
   <div class="body">{secs}</div>

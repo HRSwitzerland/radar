@@ -2118,6 +2118,1231 @@
           "Weiterbildung"
         ]
       }
+    },
+    {
+      "slug": "unterschiede",
+      "short": "Unterschiede einfach erklärt",
+      "category": "praxis",
+      "title": "Unterschiede im Arbeitsrecht und HR einfach erklärt",
+      "seo_title": "Arbeitsrecht Schweiz: Unterschiede einfach erklärt",
+      "description": "Was ist der Unterschied zwischen ordentlicher und fristloser Kündigung, Sperrfrist und Kündigungsfrist, GAV und NAV? Alle Vergleiche für HR im Überblick.",
+      "intro": "Viele Begriffe im Arbeitsrecht und im HR klingen ähnlich, haben aber ganz unterschiedliche Folgen. Hier finden Sie die häufigsten Fragen nach dem Unterschied, jeweils mit Vergleichstabelle, kurzer Erklärung und FAQ.",
+      "sections": [
+        {
+          "h": "Kündigung und Beendigung",
+          "items": [
+            {
+              "t": "Ordentliche oder fristlose Kündigung",
+              "u": "unterschied-ordentliche-fristlose-kuendigung.html"
+            },
+            {
+              "t": "Kündigung oder Aufhebungsvertrag",
+              "u": "unterschied-kuendigung-aufhebungsvertrag.html"
+            },
+            {
+              "t": "Sperrfrist oder Kündigungsfrist",
+              "u": "unterschied-sperrfrist-kuendigungsfrist.html"
+            },
+            {
+              "t": "Missbräuchliche oder ungerechtfertigte fristlose Kündigung",
+              "u": "unterschied-missbraeuchliche-ungerechtfertigte-kuendigung.html"
+            }
+          ]
+        },
+        {
+          "h": "Arbeitsvertrag und Anstellung",
+          "items": [
+            {
+              "t": "Befristeter oder unbefristeter Arbeitsvertrag",
+              "u": "unterschied-befristet-unbefristet.html"
+            },
+            {
+              "t": "Arbeitsvertrag oder Auftrag",
+              "u": "unterschied-arbeitsvertrag-auftrag.html"
+            },
+            {
+              "t": "GAV, NAV und Einzelarbeitsvertrag",
+              "u": "unterschied-gav-nav-arbeitsvertrag.html"
+            },
+            {
+              "t": "Temporärstelle oder Festanstellung",
+              "u": "unterschied-temporaer-festanstellung.html"
+            },
+            {
+              "t": "Arbeitszeugnis oder Arbeitsbestätigung",
+              "u": "unterschied-arbeitszeugnis-arbeitsbestaetigung.html"
+            }
+          ]
+        },
+        {
+          "h": "Krankheit, Ferien und Absenzen",
+          "items": [
+            {
+              "t": "Krankheit oder Unfall",
+              "u": "unterschied-krankheit-unfall.html"
+            },
+            {
+              "t": "Freistellung oder Ferien",
+              "u": "unterschied-freistellung-ferien.html"
+            }
+          ]
+        },
+        {
+          "h": "Weiterbildung",
+          "items": [
+            {
+              "t": "HR-Fachfrau/-mann oder Leiter/in HR",
+              "u": "unterschied-hr-fachfrau-leiter-hr.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ersetzen diese Seiten eine Rechtsberatung?",
+          "a": "Nein. Sie geben einen verständlichen Überblick über die gesetzlichen Grundregeln. Für den Einzelfall sind Vertrag, GAV und die konkreten Umstände massgebend."
+        }
+      ],
+      "tools": [
+        "kuendigung",
+        "ferien"
+      ],
+      "refs": [
+        "OR Art. 319–362"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-ordentliche-fristlose-kuendigung",
+      "short": "Ordentliche vs. fristlose Kündigung",
+      "category": "arbeitsrecht",
+      "title": "Ordentliche oder fristlose Kündigung: der Unterschied",
+      "seo_title": "Ordentliche vs. fristlose Kündigung: Unterschied",
+      "description": "Ordentliche und fristlose Kündigung im Vergleich: Grund, Fristen, Sperrfristen, Begründung und Folgen nach Schweizer Arbeitsrecht (Art. 335 ff. und 337 OR).",
+      "intro": "Beide beenden das Arbeitsverhältnis, aber unter ganz anderen Voraussetzungen. Die ordentliche Kündigung ist der Normalfall und braucht keinen besonderen Grund. Die fristlose Kündigung ist die Ausnahme für schwere Fälle und wird von den Gerichten streng geprüft.",
+      "compare": {
+        "cols": [
+          "Ordentliche Kündigung",
+          "Fristlose Kündigung"
+        ],
+        "rows": [
+          [
+            "Rechtsgrundlage",
+            "Art. 335 ff. OR",
+            "Art. 337 ff. OR"
+          ],
+          [
+            "Grund nötig?",
+            "Nein, Kündigungsfreiheit; aber kein missbräuchliches Motiv (Art. 336 OR)",
+            "Ja, ein wichtiger Grund, der die Fortsetzung unzumutbar macht"
+          ],
+          [
+            "Ende des Arbeitsverhältnisses",
+            "Nach Ablauf der Kündigungsfrist, in der Regel auf ein Monatsende",
+            "Sofort mit Zugang der Kündigung"
+          ],
+          [
+            "Kündigungsfristen",
+            "Gesetzlich 1 Monat im 1. Dienstjahr, 2 Monate bis 9. Dienstjahr, danach 3 Monate; in der Probezeit 7 Tage",
+            "Keine"
+          ],
+          [
+            "Sperrfristen (Krankheit, Unfall, Schwangerschaft)",
+            "Gelten für Kündigungen durch den Arbeitgeber (Art. 336c OR)",
+            "Gelten nicht"
+          ],
+          [
+            "Begründung",
+            "Auf Verlangen schriftlich (Art. 335 Abs. 2 OR)",
+            "Auf Verlangen schriftlich (Art. 337 Abs. 1 OR)"
+          ],
+          [
+            "Folgen bei Fehlern",
+            "Missbräuchlich: gültig, aber Entschädigung bis 6 Monatslöhne",
+            "Ungerechtfertigt: wirksam, aber Lohnersatz bis Fristende plus Entschädigung bis 6 Monatslöhne"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Wann reicht die ordentliche Kündigung?",
+          "p": "In den allermeisten Fällen. Arbeitgeber und Arbeitnehmende dürfen in der Schweiz ohne besonderen Grund kündigen, solange sie die Frist einhalten und kein missbräuchliches Motiv vorliegt. Auch bei Leistungsproblemen oder Konflikten ist die ordentliche Kündigung, allenfalls kombiniert mit einer Freistellung, meist der sicherere Weg."
+        },
+        {
+          "h": "Wann ist eine fristlose Kündigung gerechtfertigt?",
+          "p": "Nur wenn das Vertrauen zerstört oder so tief erschüttert ist, dass schon das Abwarten der Kündigungsfrist nicht zumutbar ist, etwa bei Diebstahl, Betrug, schweren Tätlichkeiten oder beharrlicher Arbeitsverweigerung trotz Verwarnung. Wer fristlos kündigen will, muss rasch handeln; die Gerichte gewähren in der Regel nur wenige Arbeitstage Bedenkzeit."
+        },
+        {
+          "h": "Praxistipp",
+          "p": "Ist unklar, ob der Grund für eine fristlose Kündigung reicht, kann der Arbeitgeber ordentlich kündigen und die Person freistellen. Das kostet den Lohn bis Fristende, vermeidet aber das Risiko einer zusätzlichen Entschädigung von bis zu sechs Monatslöhnen."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite fristlose Kündigung",
+              "u": "fristlose-kuendigung.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Muss eine Kündigung schriftlich sein?",
+          "a": "Nein, beide Kündigungsarten sind grundsätzlich formfrei, sofern Vertrag oder GAV nichts anderes vorsehen. Aus Beweisgründen ist die Schriftform aber dringend zu empfehlen."
+        },
+        {
+          "q": "Endet das Arbeitsverhältnis auch bei einer ungerechtfertigten fristlosen Kündigung?",
+          "a": "Ja, es endet sofort. Der Arbeitgeber schuldet aber den Lohn bis zum Ende der ordentlichen Kündigungsfrist und kann zu einer Entschädigung verpflichtet werden."
+        },
+        {
+          "q": "Gilt die Sperrfrist bei Krankheit auch für die fristlose Kündigung?",
+          "a": "Nein. Die Sperrfristen nach Art. 336c OR schützen nur vor ordentlichen Kündigungen durch den Arbeitgeber."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 335 OR",
+        "Art. 335c OR",
+        "Art. 336 OR",
+        "Art. 336c OR",
+        "Art. 337 OR",
+        "Art. 337c OR"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-kuendigung-aufhebungsvertrag",
+      "short": "Kündigung vs. Aufhebungsvertrag",
+      "category": "arbeitsrecht",
+      "title": "Kündigung oder Aufhebungsvertrag: der Unterschied",
+      "seo_title": "Kündigung vs. Aufhebungsvertrag: Unterschied",
+      "description": "Kündigung und Aufhebungsvertrag im Vergleich: einseitig oder einvernehmlich, Fristen, Sperrfristen, Arbeitslosenkasse und typische Risiken für HR.",
+      "intro": "Eine Kündigung ist eine einseitige Erklärung, ein Aufhebungsvertrag eine Einigung beider Seiten. Das wirkt sich auf Fristen, den Kündigungsschutz und die Arbeitslosenversicherung aus.",
+      "compare": {
+        "cols": [
+          "Kündigung",
+          "Aufhebungsvertrag"
+        ],
+        "rows": [
+          [
+            "Zustandekommen",
+            "Einseitig durch Arbeitgeber oder Arbeitnehmende",
+            "Einvernehmlich, beide müssen zustimmen"
+          ],
+          [
+            "Enddatum",
+            "Nach Ablauf der Kündigungsfrist",
+            "Frei vereinbar, auch kurzfristig"
+          ],
+          [
+            "Sperrfristen",
+            "Gelten bei Kündigung durch den Arbeitgeber",
+            "Gelten nicht, Vertrag darf den Schutz aber nicht einseitig aushebeln"
+          ],
+          [
+            "Verzicht auf Ansprüche",
+            "Nicht nötig",
+            "Nur mit gegenseitigen Zugeständnissen gültig (Art. 341 OR)"
+          ],
+          [
+            "Arbeitslosenkasse",
+            "Bei Arbeitgeberkündigung in der Regel keine Einstelltage",
+            "Einstelltage möglich, wenn ohne triftigen Grund zugestimmt"
+          ],
+          [
+            "Typischer Inhalt",
+            "Kündigungstermin, allenfalls Freistellung",
+            "Enddatum, Lohn, Ferien, Überstunden, Zeugnis, Abfindung, Saldoklausel"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Wann sich ein Aufhebungsvertrag eignet",
+          "p": "Wenn beide Seiten eine rasche oder geregelte Trennung wollen, etwa bei einer neuen Stelle, nach einem Konflikt oder bei einer Reorganisation mit Abfindung. Er schafft Klarheit über alle offenen Punkte und verhindert spätere Streitigkeiten."
+        },
+        {
+          "h": "Die grössten Risiken",
+          "p": "Ein Aufhebungsvertrag, der unter Zeitdruck unterschrieben wurde oder nur der Arbeitnehmerin Nachteile bringt, ist angreifbar. Mehr dazu auf der Themenseite Aufhebungsvertrag."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Aufhebungsvertrag",
+              "u": "aufhebungsvertrag.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kann ein Aufhebungsvertrag während einer Krankheit abgeschlossen werden?",
+          "a": "Ja, aber nur mit angemessenen Gegenleistungen, weil sonst der Schutz der Sperrfrist umgangen würde. Gerichte prüfen solche Vereinbarungen besonders genau."
+        },
+        {
+          "q": "Muss ein Aufhebungsvertrag schriftlich sein?",
+          "a": "Gesetzlich nicht, aus Beweisgründen aber unbedingt."
+        },
+        {
+          "q": "Ist eine Abfindung beim Aufhebungsvertrag Pflicht?",
+          "a": "Nein, aber es braucht gegenseitige Zugeständnisse. Eine Abfindung ist die häufigste Form davon."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 115 OR",
+        "Art. 335 OR",
+        "Art. 336c OR",
+        "Art. 341 OR",
+        "Art. 30 AVIG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-arbeitszeugnis-arbeitsbestaetigung",
+      "short": "Arbeitszeugnis vs. Arbeitsbestätigung",
+      "category": "arbeitsrecht",
+      "title": "Arbeitszeugnis oder Arbeitsbestätigung: der Unterschied",
+      "seo_title": "Arbeitszeugnis vs. Arbeitsbestätigung: Unterschied",
+      "description": "Vollzeugnis, Zwischenzeugnis und Arbeitsbestätigung im Vergleich: Inhalt, Anspruch, Zeitpunkt und was HR bei der Formulierung beachten muss (Art. 330a OR).",
+      "intro": "Beides stellt der Arbeitgeber auf Verlangen aus, aber mit sehr unterschiedlichem Inhalt. Die Arbeitsbestätigung nennt nur Fakten, das Arbeitszeugnis bewertet auch Leistung und Verhalten.",
+      "compare": {
+        "cols": [
+          "Arbeitszeugnis (Vollzeugnis)",
+          "Arbeitsbestätigung"
+        ],
+        "rows": [
+          [
+            "Rechtsgrundlage",
+            "Art. 330a Abs. 1 OR",
+            "Art. 330a Abs. 2 OR"
+          ],
+          [
+            "Inhalt",
+            "Art und Dauer der Tätigkeit sowie Leistung und Verhalten",
+            "Nur Art und Dauer der Tätigkeit"
+          ],
+          [
+            "Wer entscheidet?",
+            "Standard, wenn nichts anderes verlangt wird",
+            "Nur auf ausdrücklichen Wunsch der Arbeitnehmerin oder des Arbeitnehmers"
+          ],
+          [
+            "Zeitpunkt",
+            "Jederzeit, auch während des Arbeitsverhältnisses (Zwischenzeugnis)",
+            "Jederzeit"
+          ],
+          [
+            "Wann sinnvoll?",
+            "Normalfall für die Stellensuche",
+            "Wenn ein Zeugnis eher schaden würde, etwa nach kurzer oder konfliktreicher Anstellung"
+          ],
+          [
+            "Verjährung des Anspruchs",
+            "10 Jahre nach Ende des Arbeitsverhältnisses",
+            "10 Jahre nach Ende des Arbeitsverhältnisses"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Was ein Arbeitszeugnis leisten muss",
+          "p": "Es muss wahr, vollständig und klar sein und zugleich wohlwollend formuliert werden, damit es das berufliche Fortkommen nicht unnötig erschwert. Negative Punkte gehören nur hinein, wenn sie für das Gesamtbild wesentlich sind. Codierte Formulierungen, die heimlich abwerten, sind unzulässig."
+        },
+        {
+          "h": "Zwischenzeugnis",
+          "p": "Ein Zwischenzeugnis können Arbeitnehmende jederzeit verlangen, etwa bei einem Vorgesetztenwechsel, einer Reorganisation oder einer Kündigung. Es ist ein vollwertiges Arbeitszeugnis und bindet den Arbeitgeber weitgehend für das spätere Schlusszeugnis."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Arbeitszeugnis",
+              "u": "arbeitszeugnis.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kann ich statt eines Zeugnisses nur eine Arbeitsbestätigung verlangen?",
+          "a": "Ja. Die Arbeitsbestätigung wird nur auf ausdrücklichen Wunsch der Arbeitnehmerin oder des Arbeitnehmers ausgestellt; der Arbeitgeber darf sie nicht von sich aus wählen."
+        },
+        {
+          "q": "Muss der Kündigungsgrund im Arbeitszeugnis stehen?",
+          "a": "Nur auf Wunsch der Arbeitnehmerin oder des Arbeitnehmers, oder wenn er für die Gesamtbeurteilung wesentlich ist, etwa bei einer gerechtfertigten fristlosen Entlassung."
+        },
+        {
+          "q": "Wie lange kann ein Zeugnis verlangt werden?",
+          "a": "Der Anspruch verjährt nach zehn Jahren."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 330a OR",
+        "Art. 127 OR"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-krankheit-unfall",
+      "short": "Krankheit vs. Unfall",
+      "category": "gesundheit",
+      "title": "Krankheit oder Unfall: Unterschiede bei Lohn und Versicherung",
+      "seo_title": "Krankheit vs. Unfall: Lohnfortzahlung im Vergleich",
+      "description": "Krankheit und Unfall im Arbeitsverhältnis: wer den Lohn zahlt, welche Versicherung greift, ab wann Taggeld fliesst und was bei der Sperrfrist gilt.",
+      "intro": "Für die Mitarbeitenden ist eine Arbeitsunfähigkeit eine Arbeitsunfähigkeit. Für HR macht es einen grossen Unterschied, ob sie auf Krankheit oder Unfall beruht: Es gelten andere Versicherungen, Wartefristen und Leistungen.",
+      "compare": {
+        "cols": [
+          "Krankheit",
+          "Unfall"
+        ],
+        "rows": [
+          [
+            "Versicherung",
+            "Krankentaggeldversicherung (freiwillig, aber weit verbreitet)",
+            "Obligatorische Unfallversicherung (UVG)"
+          ],
+          [
+            "Lohnfortzahlung ohne Versicherung",
+            "Nach Art. 324a OR für eine beschränkte Zeit (Basler, Berner oder Zürcher Skala)",
+            "Unfalltag und zwei Folgetage: 80 Prozent durch Arbeitgeber (Art. 324b OR)"
+          ],
+          [
+            "Taggeld",
+            "Je nach Police, häufig 80 Prozent während 720 von 900 Tagen nach einer Wartefrist",
+            "80 Prozent des versicherten Verdienstes ab dem 3. Tag nach dem Unfalltag"
+          ],
+          [
+            "Prämien",
+            "Gemäss Vertrag, oft hälftig geteilt",
+            "Berufsunfall: Arbeitgeber; Nichtberufsunfall: darf den Mitarbeitenden abgezogen werden"
+          ],
+          [
+            "Heilungskosten",
+            "Krankenkasse (KVG) mit Franchise und Selbstbehalt",
+            "Unfallversicherung ohne Franchise"
+          ],
+          [
+            "Sperrfrist bei Kündigung",
+            "30, 90 oder 180 Tage je nach Dienstjahr",
+            "Gleich wie bei Krankheit (Art. 336c OR)"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Warum die Abgrenzung wichtig ist",
+          "p": "Ein Unfall ist eine plötzliche, nicht beabsichtigte schädigende Einwirkung eines ungewöhnlichen äusseren Faktors. Fehlt eines dieser Elemente, etwa bei einer Abnützung oder einem Hexenschuss ohne äusseren Anlass, gilt das Ereignis als Krankheit. Ausnahmen bilden unfallähnliche Körperschädigungen, die das UVG ausdrücklich wie Unfälle behandelt, etwa bestimmte Bänder- oder Meniskusverletzungen."
+        },
+        {
+          "h": "Was HR tun sollte",
+          "p": "Unfälle umgehend dem Unfallversicherer melden, Krankheitsfälle je nach Police nach Ablauf einer bestimmten Dauer dem Krankentaggeldversicherer. Bei längeren Absenzen frühzeitig das Case Management des Versicherers einbeziehen."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Unfall und UVG",
+              "u": "unfall-uvg.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Zählen Krankheit und Unfall bei der Sperrfrist zusammen?",
+          "a": "Nach der Rechtsprechung löst jede neue, unabhängige Arbeitsunfähigkeit eine neue Sperrfrist aus; Rückfälle derselben Ursache gelten dagegen in der Regel nicht als neue Verhinderung."
+        },
+        {
+          "q": "Wer zahlt die ersten zwei Tage nach einem Unfall?",
+          "a": "Der Arbeitgeber mit 80 Prozent des Lohnes. Ab dem dritten Tag nach dem Unfalltag zahlt die Unfallversicherung das Taggeld."
+        },
+        {
+          "q": "Ist eine Krankentaggeldversicherung Pflicht?",
+          "a": "Nein, sie ist gesetzlich freiwillig. Viele GAV schreiben sie aber vor, und sie ersetzt bei gleichwertiger Leistung die Lohnfortzahlung nach Skala."
+        }
+      ],
+      "tools": [
+        "lohnfortzahlung"
+      ],
+      "refs": [
+        "Art. 324a OR",
+        "Art. 324b OR",
+        "Art. 336c OR",
+        "Art. 4 ATSG",
+        "Art. 6 UVG",
+        "Art. 16 UVG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-befristet-unbefristet",
+      "short": "Befristet vs. unbefristet",
+      "category": "arbeitsrecht",
+      "title": "Befristeter oder unbefristeter Arbeitsvertrag: der Unterschied",
+      "seo_title": "Befristet vs. unbefristet: Arbeitsvertrag im Vergleich",
+      "description": "Befristete und unbefristete Arbeitsverträge im Vergleich: Ende, Kündigung, Probezeit, Kettenverträge und Sperrfristen nach Schweizer Arbeitsrecht.",
+      "intro": "Ein befristeter Vertrag endet automatisch, ein unbefristeter nur durch Kündigung oder Vereinbarung. Daraus ergeben sich Unterschiede bei Kündigungsmöglichkeiten und Kündigungsschutz.",
+      "compare": {
+        "cols": [
+          "Befristeter Vertrag",
+          "Unbefristeter Vertrag"
+        ],
+        "rows": [
+          [
+            "Ende",
+            "Automatisch mit Ablauf der vereinbarten Dauer (Art. 334 OR)",
+            "Durch Kündigung oder Aufhebungsvertrag"
+          ],
+          [
+            "Ordentliche Kündigung",
+            "Nur möglich, wenn vertraglich vereinbart",
+            "Jederzeit unter Einhaltung der Frist"
+          ],
+          [
+            "Probezeit",
+            "Möglich, wenn vereinbart",
+            "Erster Monat gilt automatisch als Probezeit"
+          ],
+          [
+            "Sperrfristen",
+            "Verlängern das Vertragsende nicht",
+            "Schieben das Ende einer Kündigung hinaus"
+          ],
+          [
+            "Sehr lange Dauer",
+            "Nach 10 Jahren kündbar mit 6 Monaten Frist (Art. 334 Abs. 3 OR)",
+            "Kein Thema"
+          ],
+          [
+            "Risiko",
+            "Kettenverträge ohne sachlichen Grund gelten als unbefristet",
+            "Kündigungsschutz bei Missbrauch und Sperrfristen"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Wann eine Befristung sinnvoll ist",
+          "p": "Für Projekte, Stellvertretungen (etwa Mutterschaftsvertretungen), Saisonarbeit oder klar begrenzte Aufgaben. Wer flexibel bleiben will, sollte im befristeten Vertrag ausdrücklich eine ordentliche Kündigungsmöglichkeit vereinbaren."
+        },
+        {
+          "h": "Vorsicht bei Kettenverträgen",
+          "p": "Werden befristete Verträge ohne sachlichen Grund wiederholt aneinandergereiht, kann das als Umgehung des Kündigungsschutzes gelten. Das Verhältnis wird dann wie ein unbefristetes behandelt."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kann ein befristeter Vertrag vorzeitig gekündigt werden?",
+          "a": "Nur wenn eine Kündigungsmöglichkeit vereinbart wurde oder bei einem wichtigen Grund fristlos."
+        },
+        {
+          "q": "Was passiert, wenn nach Ablauf einfach weitergearbeitet wird?",
+          "a": "Dann gilt das Arbeitsverhältnis als unbefristet fortgesetzt (Art. 334 Abs. 2 OR)."
+        },
+        {
+          "q": "Gilt die Sperrfrist bei befristeten Verträgen?",
+          "a": "Sie schützt nur vor Kündigungen. Das vereinbarte Ende eines befristeten Vertrags verschiebt sich durch Krankheit nicht."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 334 OR",
+        "Art. 335b OR",
+        "Art. 336c OR"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-arbeitsvertrag-auftrag",
+      "short": "Angestellt vs. selbständig",
+      "category": "legal",
+      "title": "Arbeitsvertrag oder Auftrag: angestellt oder selbständig?",
+      "seo_title": "Arbeitsvertrag vs. Auftrag: angestellt oder selbständig",
+      "description": "Arbeitsvertrag, Auftrag und Werkvertrag im Vergleich: Unterordnung, Kündigung, Sozialversicherungen und Risiken der Scheinselbständigkeit für Unternehmen.",
+      "intro": "Ob jemand angestellt ist oder als Freelancer im Auftrag arbeitet, entscheidet nicht der Vertragstitel, sondern wie die Zusammenarbeit tatsächlich gelebt wird. Die Unterschiede betreffen Kündigung, Lohnfortzahlung und Sozialversicherungen.",
+      "compare": {
+        "cols": [
+          "Arbeitsvertrag",
+          "Auftrag / Werkvertrag"
+        ],
+        "rows": [
+          [
+            "Rechtsgrundlage",
+            "Art. 319 ff. OR",
+            "Auftrag Art. 394 ff. OR, Werkvertrag Art. 363 ff. OR"
+          ],
+          [
+            "Kernmerkmal",
+            "Unterordnung, Weisungen, Eingliederung in den Betrieb",
+            "Selbständige Erledigung, eigenes Unternehmerrisiko"
+          ],
+          [
+            "Beendigung",
+            "Kündigung mit Fristen und Kündigungsschutz",
+            "Auftrag jederzeit widerrufbar (Art. 404 OR), bei Unzeit Schadenersatz"
+          ],
+          [
+            "Sozialversicherungen",
+            "Arbeitgeber rechnet AHV, ALV, BVG und UVG ab",
+            "Selbständige rechnen ihre AHV selbst ab"
+          ],
+          [
+            "Ferien und Lohnfortzahlung",
+            "Ja, zwingende Ansprüche",
+            "Nein"
+          ],
+          [
+            "Bezahlung",
+            "Lohn",
+            "Honorar bzw. Werklohn gegen Rechnung"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Worauf die Behörden schauen",
+          "p": "Massgebend sind die tatsächlichen Verhältnisse: Weisungsgebundenheit, feste Arbeitszeiten, Arbeit für einen einzigen Auftraggeber und fehlendes Unternehmerrisiko sprechen für eine Anstellung. Eigene Infrastruktur, mehrere Kunden und eigenes Personal sprechen für Selbständigkeit. Mehr dazu auf der Themenseite Scheinselbständigkeit."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Scheinselbständigkeit",
+              "u": "scheinselbstaendigkeit.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Reicht es, im Vertrag «Auftrag» zu schreiben?",
+          "a": "Nein. Gerichte und Ausgleichskassen schauen auf die tatsächliche Zusammenarbeit, nicht auf die Bezeichnung."
+        },
+        {
+          "q": "Was droht bei einer Fehleinstufung?",
+          "a": "Nachzahlung der Sozialversicherungsbeiträge für bis zu fünf Jahre plus Verzugszinsen sowie arbeitsrechtliche Ansprüche wie Ferien und Lohnfortzahlung."
+        },
+        {
+          "q": "Was ist der Unterschied zwischen Auftrag und Werkvertrag?",
+          "a": "Beim Auftrag wird ein sorgfältiges Tätigwerden geschuldet, beim Werkvertrag ein bestimmtes Ergebnis, etwa eine fertige Software oder ein Gutachten."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 319 OR",
+        "Art. 363 OR",
+        "Art. 394 OR",
+        "Art. 404 OR",
+        "Art. 5 AHVG",
+        "Art. 16 AHVG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-sperrfrist-kuendigungsfrist",
+      "short": "Sperrfrist vs. Kündigungsfrist",
+      "category": "arbeitsrecht",
+      "title": "Sperrfrist oder Kündigungsfrist: der Unterschied",
+      "seo_title": "Sperrfrist vs. Kündigungsfrist: Unterschied erklärt",
+      "description": "Sperrfrist und Kündigungsfrist im Vergleich: was sie regeln, wie sie zusammenwirken und wie sich das Ende des Arbeitsverhältnisses bei Krankheit verschiebt.",
+      "intro": "Die Begriffe werden oft verwechselt. Die Kündigungsfrist bestimmt, wann eine Kündigung wirkt. Die Sperrfrist ist eine Schutzzeit, in der der Arbeitgeber gar nicht kündigen darf oder in der eine laufende Frist stillsteht.",
+      "compare": {
+        "cols": [
+          "Kündigungsfrist",
+          "Sperrfrist"
+        ],
+        "rows": [
+          [
+            "Zweck",
+            "Zeit bis zum Ende des Arbeitsverhältnisses nach einer Kündigung",
+            "Schutz vor Kündigung in besonderen Lebenslagen"
+          ],
+          [
+            "Rechtsgrundlage",
+            "Art. 335a bis 335c OR",
+            "Art. 336c OR"
+          ],
+          [
+            "Gilt für",
+            "Arbeitgeber und Arbeitnehmende",
+            "Nur Kündigungen durch den Arbeitgeber, nach der Probezeit"
+          ],
+          [
+            "Auslöser",
+            "Jede ordentliche Kündigung",
+            "U.a. Krankheit, Unfall, Schwangerschaft und 16 Wochen nach der Geburt, Militär- und Zivildienst"
+          ],
+          [
+            "Dauer",
+            "1, 2 oder 3 Monate je nach Dienstjahr (abweichend vereinbar)",
+            "Krankheit/Unfall: 30, 90 oder 180 Tage je nach Dienstjahr"
+          ],
+          [
+            "Kündigung während der Frist",
+            "Normalfall",
+            "Nichtig, muss nach Ablauf wiederholt werden"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Wie beide zusammenwirken",
+          "p": "Erkrankt eine Person nach Erhalt der Kündigung, steht die Kündigungsfrist während der Sperrfrist still und läuft danach weiter. Endet das Arbeitsverhältnis auf einen Endtermin wie das Monatsende, verschiebt sich das Ende auf den nächsten solchen Termin (Art. 336c Abs. 3 OR). Der Sperrfrist-Rechner zeigt das konkrete Datum."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Sperrfristen",
+              "u": "sperrfristen.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Gilt die Sperrfrist auch, wenn die Mitarbeiterin selbst kündigt?",
+          "a": "Nein. Die Sperrfristen schützen nur vor Kündigungen durch den Arbeitgeber."
+        },
+        {
+          "q": "Gilt die Sperrfrist in der Probezeit?",
+          "a": "Nein, erst nach Ablauf der Probezeit."
+        },
+        {
+          "q": "Was passiert mit einer Kündigung während einer Sperrfrist?",
+          "a": "Sie ist nichtig und entfaltet keine Wirkung. Der Arbeitgeber muss nach Ablauf der Sperrfrist erneut kündigen."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 335b OR",
+        "Art. 335c OR",
+        "Art. 336c OR"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-missbraeuchliche-ungerechtfertigte-kuendigung",
+      "short": "Missbräuchlich vs. ungerechtfertigt",
+      "category": "arbeitsrecht",
+      "title": "Missbräuchliche oder ungerechtfertigte fristlose Kündigung: der Unterschied",
+      "seo_title": "Missbräuchlich vs. ungerechtfertigt fristlos",
+      "description": "Missbräuchliche Kündigung und ungerechtfertigte fristlose Entlassung im Vergleich: Voraussetzungen, Folgen, Entschädigung und Fristen nach Art. 336 und 337c OR.",
+      "intro": "Beide Begriffe beschreiben fehlerhafte Kündigungen, betreffen aber unterschiedliche Fälle. Missbräuchlich ist eine ordentliche Kündigung aus einem verpönten Motiv. Ungerechtfertigt ist eine fristlose Kündigung ohne wichtigen Grund.",
+      "compare": {
+        "cols": [
+          "Missbräuchliche Kündigung",
+          "Ungerechtfertigte fristlose Kündigung"
+        ],
+        "rows": [
+          [
+            "Betrifft",
+            "Ordentliche Kündigung",
+            "Fristlose Kündigung"
+          ],
+          [
+            "Fehler",
+            "Unzulässiges Motiv, z.B. wegen einer persönlichen Eigenschaft, Rachekündigung, Ausübung verfassungsmässiger Rechte (Art. 336 OR)",
+            "Kein wichtiger Grund oder zu langes Zuwarten (Art. 337 OR)"
+          ],
+          [
+            "Ist die Kündigung gültig?",
+            "Ja, das Arbeitsverhältnis endet nach Ablauf der Frist",
+            "Ja, das Arbeitsverhältnis endet sofort"
+          ],
+          [
+            "Ansprüche",
+            "Entschädigung bis 6 Monatslöhne (Art. 336a OR)",
+            "Lohnersatz bis Ende der ordentlichen Frist plus Entschädigung bis 6 Monatslöhne (Art. 337c OR)"
+          ],
+          [
+            "Vorgehen",
+            "Schriftliche Einsprache bis Ende der Kündigungsfrist, Klage innert 180 Tagen nach Ende (Art. 336b OR)",
+            "Forderung geltend machen, im Streitfall Klage beim Arbeitsgericht"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Warum der Unterschied in der Praxis zählt",
+          "p": "Bei der missbräuchlichen Kündigung verlieren Arbeitnehmende ihre Ansprüche, wenn sie die Einsprache verpassen. Bei der ungerechtfertigten fristlosen Kündigung ist das finanzielle Risiko für den Arbeitgeber grösser, weil zusätzlich der Lohn bis zum Ende der ordentlichen Frist geschuldet ist."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite missbräuchliche Kündigung",
+              "u": "missbraeuchliche-kuendigung.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kann eine missbräuchliche Kündigung rückgängig gemacht werden?",
+          "a": "Grundsätzlich nicht. Das Gesetz sieht eine Entschädigung vor, keine Weiterbeschäftigung. Eine Ausnahme bildet die Rachekündigung nach Gleichstellungsgesetz, die angefochten werden kann."
+        },
+        {
+          "q": "Wie hoch ist die Entschädigung typischerweise?",
+          "a": "Die Gerichte sprechen häufig zwei bis vier Monatslöhne zu; das Maximum liegt bei sechs Monatslöhnen."
+        },
+        {
+          "q": "Muss bei einer fristlosen Kündigung auch Einsprache erhoben werden?",
+          "a": "Die Einsprachepflicht nach Art. 336b OR gilt für missbräuchliche ordentliche Kündigungen. Bei der fristlosen Kündigung sollte der Arbeitnehmer aber rasch reagieren und seine Arbeitsleistung anbieten."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 336 OR",
+        "Art. 336a OR",
+        "Art. 336b OR",
+        "Art. 337 OR",
+        "Art. 337c OR",
+        "Art. 10 GlG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-gav-nav-arbeitsvertrag",
+      "short": "GAV vs. NAV vs. Arbeitsvertrag",
+      "category": "arbeitsrecht",
+      "title": "GAV, NAV und Einzelarbeitsvertrag: was gilt wann?",
+      "seo_title": "GAV vs. NAV vs. Arbeitsvertrag: Unterschied",
+      "description": "Gesamtarbeitsvertrag, Normalarbeitsvertrag und Einzelarbeitsvertrag im Vergleich: wer sie abschliesst, für wen sie gelten und welche Regel im Konflikt vorgeht.",
+      "intro": "In vielen Arbeitsverhältnissen gelten mehrere Regelwerke gleichzeitig. Wer weiss, wer sie erlässt und wie verbindlich sie sind, kann Konflikte zwischen Vertrag, GAV und Gesetz richtig auflösen.",
+      "compare": {
+        "cols": [
+          "Einzelarbeitsvertrag",
+          "Gesamtarbeitsvertrag (GAV)",
+          "Normalarbeitsvertrag (NAV)"
+        ],
+        "rows": [
+          [
+            "Wer schliesst ab?",
+            "Arbeitgeber und Arbeitnehmer/in",
+            "Arbeitgeber oder -verbände und Gewerkschaften",
+            "Bund oder Kanton erlässt ihn"
+          ],
+          [
+            "Für wen gilt er?",
+            "Für die Vertragsparteien",
+            "Für die Mitglieder; bei Allgemeinverbindlicherklärung für die ganze Branche",
+            "Für alle Arbeitsverhältnisse seines Geltungsbereichs"
+          ],
+          [
+            "Verbindlichkeit",
+            "Im Rahmen des zwingenden Rechts frei",
+            "Zwingend; Abweichungen nur zugunsten der Arbeitnehmenden",
+            "Grundsätzlich dispositiv; Mindestlöhne nach Art. 360a OR zwingend"
+          ],
+          [
+            "Rechtsgrundlage",
+            "Art. 319 ff. OR",
+            "Art. 356 ff. OR, AVEG",
+            "Art. 359 ff. OR"
+          ],
+          [
+            "Typische Inhalte",
+            "Lohn, Pensum, Funktion, individuelle Regeln",
+            "Mindestlöhne, Arbeitszeit, Zuschläge, Ferien, Lohnfortzahlung",
+            "Arbeits- und Ruhezeiten, z.B. Landwirtschaft oder Hausdienst"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Welche Regel geht vor?",
+          "p": "Zuerst gilt zwingendes Gesetzesrecht. Ein anwendbarer GAV geht dem Einzelarbeitsvertrag vor, ausser der Einzelvertrag ist für die Arbeitnehmenden günstiger (Günstigkeitsprinzip). Ein NAV gilt nur, soweit der Einzelvertrag nichts anderes vereinbart, ausser bei zwingenden Mindestlöhnen."
+        },
+        {
+          "h": "Praxistipp",
+          "p": "Ob ein allgemeinverbindlicher GAV gilt, lässt sich auf der Website des SECO nachschlagen. Arbeitgeber sollten das bei jeder neuen Tätigkeit oder Branche prüfen, weil ein allgemeinverbindlicher GAV auch ohne Verbandsmitgliedschaft gilt."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Gilt ein GAV, wenn mein Arbeitgeber nicht im Verband ist?",
+          "a": "Nur wenn der GAV allgemeinverbindlich erklärt wurde oder der Arbeitgeber sich ihm angeschlossen hat."
+        },
+        {
+          "q": "Darf der Arbeitsvertrag vom GAV abweichen?",
+          "a": "Nur zugunsten der Arbeitnehmenden. Ungünstigere Abreden werden durch die GAV-Bestimmungen ersetzt."
+        },
+        {
+          "q": "Gibt es in der Schweiz einen gesetzlichen Mindestlohn?",
+          "a": "Nicht auf Bundesebene. Mindestlöhne ergeben sich aus GAV, NAV und in einzelnen Kantonen aus kantonalen Mindestlohngesetzen."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 356 OR",
+        "Art. 357 OR",
+        "Art. 359 OR",
+        "Art. 360a OR",
+        "AVEG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-freistellung-ferien",
+      "short": "Freistellung vs. Ferien",
+      "category": "arbeitsrecht",
+      "title": "Freistellung oder Ferien: der Unterschied",
+      "seo_title": "Freistellung vs. Ferien: was gilt nach der Kündigung?",
+      "description": "Freistellung und Ferien im Vergleich: Lohn, Erholungszweck, Anrechnung von Ferien und Überstunden sowie Nebenverdienst während der Freistellung.",
+      "intro": "Nach einer Kündigung werden Mitarbeitende oft freigestellt. Dann stellt sich die Frage, ob damit auch die restlichen Ferien bezogen sind. Freistellung und Ferien folgen unterschiedlichen Regeln.",
+      "compare": {
+        "cols": [
+          "Freistellung",
+          "Ferien"
+        ],
+        "rows": [
+          [
+            "Was ist das?",
+            "Arbeitgeber verzichtet einseitig auf die Arbeitsleistung",
+            "Bezahlte Erholungszeit"
+          ],
+          [
+            "Lohn",
+            "Läuft weiter",
+            "Läuft weiter"
+          ],
+          [
+            "Rechtsgrundlage",
+            "Nicht ausdrücklich geregelt; Annahmeverzug nach Art. 324 OR",
+            "Art. 329a bis 329d OR"
+          ],
+          [
+            "Zweck",
+            "Meist Schutz von Geschäftsinteressen oder Entlastung nach Kündigung",
+            "Erholung"
+          ],
+          [
+            "Anderweitiger Verdienst",
+            "Wird grundsätzlich angerechnet",
+            "Arbeit für Dritte, die den Erholungszweck vereitelt, ist unzulässig"
+          ],
+          [
+            "Verhältnis zueinander",
+            "Ferien gelten als bezogen, wenn die Freistellung im Verhältnis zum Restguthaben genügend lang ist",
+            "Dürfen während des Arbeitsverhältnisses nicht ausbezahlt werden"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Ferien während der Freistellung",
+          "p": "Nach der Rechtsprechung müssen Arbeitnehmende Restferien während einer Freistellung beziehen, wenn die Freistellung deutlich länger dauert als das Ferienguthaben und noch genügend Zeit für die Stellensuche bleibt. Bei kurzer Freistellung und hohem Ferienguthaben ist ein Teil auszubezahlen. Am besten hält der Arbeitgeber in der Freistellungserklärung ausdrücklich fest, dass Ferien und Überstunden damit kompensiert werden."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Themenseite Freistellung",
+              "u": "freistellung.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Darf ich während der Freistellung eine neue Stelle antreten?",
+          "a": "In der Regel ja, wenn keine Konkurrenzsituation besteht. Der neue Lohn wird aber an den Lohn des bisherigen Arbeitgebers angerechnet."
+        },
+        {
+          "q": "Muss ein Freigestellter erreichbar sein?",
+          "a": "Nur wenn die Freistellung widerruflich ist oder das ausdrücklich vereinbart wurde. Bei einer unwiderruflichen Freistellung muss die Person nicht zur Verfügung stehen."
+        },
+        {
+          "q": "Verfallen Überstunden bei einer Freistellung?",
+          "a": "Sie gelten ebenfalls als kompensiert, wenn die Freistellung lang genug ist, um sie abzubauen."
+        }
+      ],
+      "tools": [
+        "ferien"
+      ],
+      "refs": [
+        "Art. 324 OR",
+        "Art. 329a OR",
+        "Art. 329c OR",
+        "Art. 329d OR",
+        "Art. 321c OR"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-temporaer-festanstellung",
+      "short": "Temporär vs. Festanstellung",
+      "category": "arbeitsmarkt",
+      "title": "Temporärstelle oder Festanstellung: der Unterschied",
+      "seo_title": "Temporär vs. Festanstellung: Unterschiede im Überblick",
+      "description": "Temporärarbeit (Personalverleih) und Festanstellung im Vergleich: Vertragspartner, Kündigungsfristen, GAV Personalverleih, Sozialversicherungen und Weisungen.",
+      "intro": "Bei Temporärarbeit besteht ein Dreiecksverhältnis: Angestellt ist man beim Personalverleiher, gearbeitet wird im Einsatzbetrieb. Das hat Folgen für Kündigung, Lohn und Zuständigkeiten.",
+      "compare": {
+        "cols": [
+          "Temporäranstellung (Personalverleih)",
+          "Festanstellung"
+        ],
+        "rows": [
+          [
+            "Arbeitgeber",
+            "Personalverleiher, Einsatz beim Kundenbetrieb",
+            "Der Betrieb selbst"
+          ],
+          [
+            "Rechtsgrundlage",
+            "Arbeitsvermittlungsgesetz (AVG) und OR, GAV Personalverleih",
+            "OR, allenfalls Branchen-GAV"
+          ],
+          [
+            "Kündigungsfristen",
+            "In den ersten 6 Monaten verkürzt: mind. 2 Tage in den ersten 3 Monaten, mind. 7 Tage im 4. bis 6. Monat",
+            "Nach OR bzw. Vertrag, in der Regel 1 bis 3 Monate"
+          ],
+          [
+            "Weisungen",
+            "Im Alltag durch den Einsatzbetrieb",
+            "Durch den Arbeitgeber"
+          ],
+          [
+            "Lohn und Sozialversicherungen",
+            "Zahlt und rechnet der Verleiher ab",
+            "Zahlt und rechnet der Arbeitgeber ab"
+          ],
+          [
+            "Übernahme",
+            "Einsatzbetrieb kann übernehmen; Vermittlungsgebühr nur in engen Grenzen zulässig",
+            "–"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Für wen sich Temporärarbeit eignet",
+          "p": "Für Unternehmen, die Spitzen, Projekte oder Absenzen überbrücken, und für Stellensuchende als Einstieg oder Brücke zur Festanstellung. Viele Temporäreinsätze führen später zu einer Übernahme durch den Einsatzbetrieb."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wer ist bei Temporärarbeit für das Arbeitszeugnis zuständig?",
+          "a": "Der Personalverleiher als Arbeitgeber. Er holt dafür in der Regel eine Beurteilung beim Einsatzbetrieb ein."
+        },
+        {
+          "q": "Gilt für Temporärarbeitende der GAV des Einsatzbetriebs?",
+          "a": "Für Lohn und Arbeitszeit gelten die Bestimmungen eines allgemeinverbindlichen GAV des Einsatzbetriebs; im Übrigen gilt der GAV Personalverleih."
+        },
+        {
+          "q": "Darf der Verleiher eine Gebühr verlangen, wenn der Einsatzbetrieb die Person fest anstellt?",
+          "a": "Nur in engen Grenzen, die das AVG und die Verordnung vorgeben, insbesondere abhängig von der bisherigen Einsatzdauer."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 19 AVG",
+        "Art. 20 AVG",
+        "Art. 22 AVG",
+        "GAV Personalverleih"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
+    },
+    {
+      "slug": "unterschied-hr-fachfrau-leiter-hr",
+      "short": "HR-Fachfrau vs. Leiter HR",
+      "category": "praxis",
+      "title": "HR-Fachfrau/-mann oder Leiter/in HR: welcher Abschluss passt?",
+      "seo_title": "HR-Fachfrau vs. Leiter HR: Abschlüsse im Vergleich",
+      "description": "Eidg. Fachausweis HR-Fachleute und eidg. Diplom Leiter/in Human Resources im Vergleich: Stufe, Zulassung, Inhalte, Zielfunktion und Bundesbeiträge.",
+      "intro": "Die beiden wichtigsten eidgenössischen HR-Abschlüsse bauen aufeinander auf. Der Fachausweis qualifiziert für operative und fachliche HR-Aufgaben, das Diplom für strategische und leitende Funktionen.",
+      "compare": {
+        "cols": [
+          "HR-Fachfrau/-mann mit eidg. Fachausweis",
+          "Leiter/in HR mit eidg. Diplom"
+        ],
+        "rows": [
+          [
+            "Stufe",
+            "Berufsprüfung (Professional Bachelor)",
+            "Höhere Fachprüfung (Professional Master)"
+          ],
+          [
+            "Zielfunktion",
+            "HR-Generalist/in, HR Business Partner, Personalberatung",
+            "HR-Leitung, HR-Strategie, Mitglied der Geschäftsleitung"
+          ],
+          [
+            "Zulassung",
+            "Abschluss Sekundarstufe II, HRSE-Zertifikat HR-Assistent/in, HR-Praxis",
+            "In der Regel Fachausweis im HR und mehrjährige Berufserfahrung, davon mindestens 2 Jahre in einer HR-Funktion"
+          ],
+          [
+            "Inhalte",
+            "HR-Prozesse, Arbeitsrecht, Sozialversicherungen, Rekrutierung, Personaladministration",
+            "HR-Strategie, Organisation, Change, Führung, Personalpolitik"
+          ],
+          [
+            "Fachrichtungen",
+            "Betriebliches HRM, öffentliche Personalvermittlung, private Personalvermittlung und -verleih",
+            "Keine"
+          ],
+          [
+            "Bundesbeitrag an Kurskosten",
+            "50 Prozent, max. CHF 9'500",
+            "50 Prozent, max. CHF 10'500"
+          ]
+        ]
+      },
+      "sections": [
+        {
+          "h": "Welcher Weg passt?",
+          "p": "Wer HR-Prozesse selbständig betreut und Linienvorgesetzte berät, ist mit dem Fachausweis gut ausgerüstet. Wer eine HR-Abteilung führt oder HR strategisch mitgestaltet, profitiert vom Diplom. Für Personen mit Hochschulabschluss kann auch ein MAS in Human Resource Management eine Alternative sein. Alle Wege, Anbieter und Kosten stehen auf der Seite Weiterbildung im HR."
+        },
+        {
+          "h": "Weiterlesen",
+          "items": [
+            {
+              "t": "Weiterbildung im HR: alle Abschlüsse und Anbieter",
+              "u": "weiterbildung-hr.html"
+            },
+            {
+              "t": "Alle Unterschiede im Überblick",
+              "u": "unterschiede.html"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kann ich direkt die höhere Fachprüfung Leiter/in HR machen?",
+          "a": "Mit einem Hochschulabschluss oder langjähriger Führungserfahrung gibt es eigene Zulassungswege. Massgebend ist die Prüfungsordnung von HRSE."
+        },
+        {
+          "q": "Wie lange dauern die Vorbereitungslehrgänge?",
+          "a": "Für den Fachausweis meist zwei bis drei Semester, für das Diplom ähnlich lange, jeweils berufsbegleitend."
+        },
+        {
+          "q": "Wer führt die Prüfungen durch?",
+          "a": "Beide Prüfungen führt HRSE (Human Resources Swiss Exams) durch."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 27 BBG",
+        "Art. 28 BBG",
+        "Art. 56a BBG"
+      ],
+      "match": {
+        "tags": [],
+        "words": []
+      }
     }
   ]
 }
