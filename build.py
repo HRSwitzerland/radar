@@ -927,6 +927,7 @@ def build_newsletter():
 <p class="lead">Jeden Dienstag die wichtigsten HR-News der Woche, nur aus den Rubriken, die Sie wählen. Und wenn etwas wirklich Wichtiges passiert, auf Wunsch sofort eine Eilmeldung.</p>
 <div class="nl-points"><div><b>Jeden Dienstag</b><span>am Morgen, kompakt, mit Link zu jedem Beitrag</span></div><div><b>Nur Ihre Themen</b><span>Sie wählen die Rubriken, der Rest bleibt draussen</span></div><div><b>Eilmeldungen</b><span>nur bei Entscheiden mit grosser Tragweite für HR</span></div></div>
 {notice}
+<div class="nl-gift" id="anmelden"><b>Dankeschön für neue Abonnentinnen und Abonnenten:</b> die <a href="thema/jahreswechsel-checkliste-2027.html">Jahreswechsel-Checkliste 2027</a> für HR und Legal als PDF.</div>
 <form class="nl" {action}>
   <div class="field"><label for="nl-email">E-Mail-Adresse</label><input type="email" id="nl-email" name="EMAIL" required autocomplete="email" placeholder="vorname.name@firma.ch"></div>
   <div class="field"><label for="nl-name">Vorname (optional)</label><input type="text" id="nl-name" name="VORNAME" autocomplete="given-name"></div>
@@ -942,15 +943,17 @@ def build_newsletter():
 {archive}
 </div>"""
     write("newsletter.html", layout("Newsletter", body, 0, active="newsletter", desc="Der HR Radar Newsletter: jeden Dienstag die wichtigsten News zu Arbeitsrecht, HR und Legal in der Schweiz, nur aus den Rubriken, die Sie wählen. Kostenlos, jederzeit abbestellbar."))
+    GIFT = """<div class="pdf-cta"><div><b>Ihr Dankeschön: Jahreswechsel-Checkliste 2027</b><p>Alles, was HR, Lohn und Legal zum Jahreswechsel erledigen müssen, zum Ausdrucken und Abhaken.</p></div><a class="btn red" href="assets/downloads/hr-radar-jahreswechsel-checkliste-2027.pdf" download>PDF herunterladen</a></div>"""
     for slug, title, lead, text in (
         ("newsletter-danke", "Fast geschafft: Bitte bestätigen Sie Ihre Anmeldung",
          "Wir haben Ihnen eine E-Mail mit einem Bestätigungslink geschickt.",
          "Klicken Sie auf den Link in dieser E-Mail, damit Ihre Anmeldung aktiv wird. Sie finden die E-Mail nicht? Schauen Sie im Spam- oder Werbeordner nach. Die E-Mail kommt von newsletter@hr-radar.ch."),
         ("newsletter-bestaetigt", "Willkommen beim HR Radar Newsletter",
          "Ihre Anmeldung ist bestätigt. Danke für Ihr Interesse!",
-         "Die nächste Ausgabe kommt an einem Montagmorgen in Ihr Postfach, mit den Themen, die Sie gewählt haben. Bis dahin finden Sie alle aktuellen Beiträge hier auf der Seite.")):
+         "Die nächste Ausgabe kommt am Dienstagmorgen in Ihr Postfach, mit den Themen, die Sie gewählt haben. Bis dahin finden Sie alle aktuellen Beiträge hier auf der Seite.")):
         page = f"""<div class="narrow page"><span class="eyebrow"><span class="pill">Newsletter</span></span>
 <h1>{e(title)}</h1><p class="lead">{e(lead)}</p><p>{e(text)}</p>
+{GIFT if slug == "newsletter-bestaetigt" else ""}
 <p><a class="btn" href="index.html">Zu den aktuellen Beiträgen</a> <a class="btn ghost" href="thema/index.html">Themen</a></p></div>"""
         write(f"{slug}.html", layout(title, page, 0, active="newsletter", noindex=True))
 
@@ -1035,6 +1038,21 @@ def build_themes():
         items = theme_articles(t)
         url = f"{SITE_URL}thema/{t['slug']}.html"
         secs = "".join(f"<h2>{e(x['h'])}</h2><p>{e(x['p'])}</p>" for x in t.get("sections", []))
+        art_ids = {a["id"] for a in articles()}
+        theme_slugs = {x["slug"] for x in THEMEN}
+        for grp in t.get("checklist", []):
+            lis = ""
+            for it in grp["items"]:
+                links = []
+                if it.get("a") in art_ids:
+                    links.append(f'<a href="{up}artikel/{it["a"]}.html">Zum Beitrag</a>')
+                if it.get("th") in theme_slugs:
+                    links.append(f'<a href="{it["th"]}.html">Zum Thema</a>')
+                more = f' <span class="cl-links">{" · ".join(links)}</span>' if links else ""
+                lis += f'<li><label><input type="checkbox"><span><b>{e(it["t"])}</b>{(" – " + e(it["d"])) if it.get("d") else ""}{more}</span></label></li>'
+            secs += f'<h2>{e(grp["h"])}</h2><ul class="checklist">{lis}</ul>'
+        if t.get("pdf"):
+            secs = f"""<div class="pdf-cta"><div><b>Die Checkliste als PDF</b><p>Zum Ausdrucken und Abhaken im Team. Sie erhalten das PDF als Dankeschön, wenn Sie den HR Radar Newsletter abonnieren – jeden Dienstag die wichtigsten News für HR und Legal.</p></div><a class="btn red" href="{up}newsletter.html#anmelden">Newsletter abonnieren und PDF erhalten</a></div>""" + secs
         faq = "".join(f'<details class="faq-item"><summary>{e(f["q"])}</summary><p>{e(f["a"])}</p></details>' for f in t.get("faq", []))
         tools_html = "".join(f'<a class="tool-card" href="{up}rechner/{c}.html" style="{cat_style(calc[c][3])}"><span class="mini-ico" aria-hidden="true">{ICONS[calc[c][3]]}</span><h3>{e(calc[c][1])}</h3><p>{e(calc[c][2])}</p><span class="more">Rechner öffnen</span></a>' for c in t.get("tools", []) if c in calc)
         refs = "".join(f'<span class="ref">{e(r)}</span>' for r in t.get("refs", []))
@@ -1115,7 +1133,7 @@ def build_sitemap():
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{rows}</urlset>\n')
     from urllib.parse import urlparse
     base = urlparse(SITE_URL).path or "/"
-    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: {base}vorschau/\n\nSitemap: {SITE_URL}sitemap.xml\n")
+    write("robots.txt", f"User-agent: *\nAllow: /\nDisallow: {base}vorschau/\nDisallow: {base}assets/downloads/\n\nSitemap: {SITE_URL}sitemap.xml\n")
 
 
 def check():

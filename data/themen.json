@@ -2,6 +2,196 @@
   "_hinweis": "Themenseiten (Landingpages) unter thema/<slug>.html. match.tags und match.words bestimmen, welche Beiträge automatisch verlinkt werden. Texte sind allgemeine Informationen, keine Rechtsberatung.",
   "themen": [
     {
+      "slug": "jahreswechsel-checkliste-2027",
+      "category": "praxis",
+      "short": "Checkliste Jahreswechsel 2027",
+      "title": "Jahreswechsel-Checkliste 2027 für HR und Legal",
+      "seo_title": "Jahreswechsel 2027: Checkliste für HR und Lohn",
+      "description": "Was HR, Lohnbuchhaltung und Legal zum Jahreswechsel 2026/2027 erledigen müssen: neue AHV- und BVG-Werte, Fristen für Lohnausweis und Lohndeklaration, Transparenzregister und weitere Neuerungen 2027.",
+      "intro": "Der Jahreswechsel ist für HR und Lohn die dichteste Zeit des Jahres: Neue Werte müssen ins Lohnsystem, Deklarationen haben feste Fristen, und 2027 bringt zusätzliche Pflichten für Unternehmen. Diese Checkliste fasst zusammen, was bis Ende Januar zu tun ist, mit Links zu den Beiträgen auf HR Radar.",
+      "sections": [],
+      "checklist": [
+        {
+          "h": "Lohnsystem auf 2027 umstellen",
+          "items": [
+            {
+              "t": "Neue BVG-Grenzbeträge hinterlegen",
+              "d": "Eintrittsschwelle CHF 23'040, Koordinationsabzug CHF 26'880, oberer Grenzbetrag CHF 92'160 (koordinierter Lohn höchstens CHF 65'280).",
+              "a": "bvg-grenzbetraege"
+            },
+            {
+              "t": "BVG-Mindestzins 2 % berücksichtigen",
+              "d": "Der Mindestzins auf BVG-Altersguthaben steigt per 1. Januar 2027 von 1,25 auf 2 Prozent.",
+              "a": "bvg-mindestzins"
+            },
+            {
+              "t": "AHV-Werte prüfen",
+              "d": "Die Renten steigen um rund 1,59 Prozent; der Beitragssatz für AHV/IV/EO bleibt bei 10,6 Prozent.",
+              "a": "ahv-renten-2027"
+            },
+            {
+              "t": "Säule-3a-Maxima kommunizieren",
+              "d": "Neu CHF 7'373 mit Pensionskasse und CHF 36'864 ohne Pensionskasse.",
+              "a": "bvg-grenzbetraege"
+            },
+            {
+              "t": "Kantonale Mindestlöhne abgleichen",
+              "d": "Mehrere Kantone passen ihre Mindestlöhne per 2027 an, zum Beispiel Basel-Stadt auf CHF 22.50 pro Stunde.",
+              "a": "mindestloehne-2027"
+            },
+            {
+              "t": "Lohnrunde umsetzen",
+              "d": "Neue Löhne schriftlich mitteilen, Arbeitsverträge und Lohnstammdaten anpassen, Pensionskasse über die neuen Jahreslöhne informieren."
+            }
+          ]
+        },
+        {
+          "h": "Jahresabschluss Lohn (bis Ende Januar)",
+          "items": [
+            {
+              "t": "Lohnausweise erstellen und zustellen",
+              "d": "Üblicherweise bis Ende Januar; eine genaue Frist legen die Kantone fest. Formular 11 und die aktuelle Wegleitung der Steuerverwaltung verwenden."
+            },
+            {
+              "t": "AHV-Lohndeklaration einreichen",
+              "d": "Die Jahreslohndeklaration (AHV/IV/EO, ALV, Familienzulagen) muss bis 30. Januar bei der Ausgleichskasse sein; sonst drohen Verzugszinsen."
+            },
+            {
+              "t": "UVG- und KTG-Lohndeklaration",
+              "d": "Bei der Suva bis 31. Januar; bei privaten Versicherern nach Vertrag, oft ebenfalls Ende Januar."
+            },
+            {
+              "t": "Quellensteuer abrechnen",
+              "d": "Jahresabrechnung und allfällige Korrekturen nach den Fristen des jeweiligen Kantons."
+            },
+            {
+              "t": "Grenzgänger aus Frankreich melden",
+              "d": "Neu werden Homeoffice-Tage und Lohndaten an die kantonalen Steuerämter gemeldet; im Kanton Waadt erstmals bis 28. Februar 2027.",
+              "a": "grenzgaenger-frankreich"
+            }
+          ]
+        },
+        {
+          "h": "Arbeitsrecht und Personal",
+          "items": [
+            {
+              "t": "Ferien- und Überstundensaldi prüfen",
+              "d": "Hohe Saldi abbauen oder eine Regelung treffen. Die Überzeit-Höchstgrenze (170 bzw. 140 Stunden) gilt pro Kalenderjahr.",
+              "th": "ueberstunden-ueberzeit"
+            },
+            {
+              "t": "Stellenmeldepflicht 2027 beachten",
+              "d": "Die Liste der meldepflichtigen Berufsarten wird erweitert, neu unter anderem Detailhandel und Sicherheitspersonal.",
+              "a": "stellenmeldepflicht-2027"
+            },
+            {
+              "t": "Kurzarbeit: Regeln ab 2027",
+              "d": "Die Gleitzeit-Toleranz fällt weg, die verlängerte Bezugsdauer läuft Ende Januar 2027 aus.",
+              "a": "kurzarbeit-2027"
+            },
+            {
+              "t": "Lohngleichheitsanalyse planen",
+              "d": "Arbeitgeber ab 100 Mitarbeitenden müssen die Analyse alle vier Jahre wiederholen, sofern die erste Analyse nicht ergeben hat, dass die Lohngleichheit eingehalten ist.",
+              "th": "lohngleichheit"
+            },
+            {
+              "t": "Reglemente aktualisieren",
+              "d": "Personal-, Spesen-, Homeoffice- und Geschäftsautoreglemente auf neue Werte und Prozesse prüfen.",
+              "th": "homeoffice"
+            }
+          ]
+        },
+        {
+          "h": "Legal und Compliance",
+          "items": [
+            {
+              "t": "Transparenzregister: Fristen einhalten",
+              "d": "Gestaffelte Meldefristen ab 1. Januar 2027 (AG mit ordentlicher Revision), danach 1. Februar, 1. März und 1. April 2027.",
+              "a": "transparenzregister-fristen-2027",
+              "th": "transparenzregister"
+            },
+            {
+              "t": "Neues Patentrecht",
+              "d": "Ab 1. Januar 2027 erhält jede Patentanmeldung eine Recherche.",
+              "a": "patentrecht-2027"
+            },
+            {
+              "t": "Verpackungsverordnung",
+              "d": "Neue Pflichten für Hersteller und Händler ab 2027, weitere gestaffelt bis 2032.",
+              "a": "verpackungsverordnung-2027"
+            },
+            {
+              "t": "EU-Maschinenverordnung",
+              "d": "Gilt ab 20. Januar 2027; ohne aktualisiertes Abkommen mit der EU können Zusatzzertifizierungen nötig werden.",
+              "a": "maschinenverordnung-mra-2027"
+            }
+          ]
+        },
+        {
+          "h": "Im Blick behalten 2027",
+          "items": [
+            {
+              "t": "Säule 3a: flexiblere Begünstigtenordnung",
+              "d": "Ab 1. Juni 2027.",
+              "a": "bvv-anpassungen"
+            },
+            {
+              "t": "EO-Leistungen für Eltern werden angeglichen",
+              "d": "Per 1. Juli 2027.",
+              "a": "eo-angleichung"
+            },
+            {
+              "t": "IV-Integrationsreform",
+              "d": "Vorgeschlagen sind 0,2 zusätzliche Lohnprozente; die Vernehmlassung läuft bis 4. Februar 2027.",
+              "a": "iv-integrationsreform-lohnbeitraege"
+            },
+            {
+              "t": "Abstimmung vom 29. November 2026",
+              "d": "Unter anderem zur Finanzierung der 13. AHV-Rente über die Mehrwertsteuer; das Ergebnis kann Lohn- und Preisplanung beeinflussen.",
+              "a": "abstimmung-ahv-mwst-29-november"
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Bis wann muss die AHV-Lohndeklaration eingereicht werden?",
+          "a": "Bis 30. Januar des Folgejahres bei der Ausgleichskasse. Danach können Verzugszinsen anfallen."
+        },
+        {
+          "q": "Bis wann müssen Lohnausweise zugestellt werden?",
+          "a": "Üblich ist Ende Januar. Eine einheitliche Frist im Bundesrecht gibt es nicht; massgebend sind die kantonalen Vorgaben."
+        },
+        {
+          "q": "Welche BVG-Werte gelten ab 2027?",
+          "a": "Eintrittsschwelle CHF 23'040, Koordinationsabzug CHF 26'880, oberer Grenzbetrag CHF 92'160 und Mindestzins 2 Prozent."
+        }
+      ],
+      "tools": [
+        "bvg",
+        "ferien"
+      ],
+      "refs": [
+        "Art. 7 BVG",
+        "Art. 8 BVG",
+        "Art. 36 AHVV"
+      ],
+      "match": {
+        "tags": [
+          "Jahreswechsel",
+          "2027",
+          "Lohnausweis",
+          "BVG",
+          "Neuerungen"
+        ],
+        "words": [
+          "2027",
+          "Jahreswechsel"
+        ]
+      },
+      "pdf": "assets/downloads/hr-radar-jahreswechsel-checkliste-2027.pdf"
+    },
+    {
       "slug": "kuendigung",
       "category": "arbeitsrecht",
       "title": "Kündigung im Arbeitsrecht: Fristen, Form und Schutz",
