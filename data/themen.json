@@ -1316,6 +1316,578 @@
           "Grenzgänger"
         ]
       }
+    },
+    {
+      "slug": "arbeitsvertrag",
+      "category": "arbeitsrecht",
+      "title": "Arbeitsvertrag: Form, Inhalt und Informationspflicht",
+      "seo_title": "Arbeitsvertrag Schweiz: Form, Inhalt, Pflichten",
+      "description": "Muss ein Arbeitsvertrag schriftlich sein? Welche Punkte das Gesetz vorschreibt, wann Schriftform nötig ist und was in einen guten Arbeitsvertrag gehört.",
+      "intro": "Ein Arbeitsvertrag entsteht in der Schweiz grundsätzlich formfrei, sogar mündlich oder durch blosses Arbeiten gegen Lohn. Trotzdem lohnt sich ein sauber schriftlicher Vertrag: Viele Abweichungen vom Gesetz gelten nur, wenn sie schriftlich vereinbart sind, und der Arbeitgeber hat eine gesetzliche Informationspflicht.",
+      "sections": [
+        {
+          "h": "Formfrei, aber nicht beliebig",
+          "p": "Nach Art. 320 OR bedarf der Einzelarbeitsvertrag keiner besonderen Form. Er gilt auch als abgeschlossen, wenn jemand Arbeit leistet, die nach den Umständen nur gegen Lohn zu erwarten ist. Für bestimmte Abreden verlangt das Gesetz aber Schriftlichkeit, zum Beispiel für ein Konkurrenzverbot (Art. 340 OR), eine von der Regel abweichende Probezeit (Art. 335b OR), abweichende Kündigungsfristen (Art. 335c OR) oder den Ausschluss der Überstundenentschädigung (Art. 321c OR). Fehlt die Form, gilt die gesetzliche Regel."
+        },
+        {
+          "h": "Die Informationspflicht nach Art. 330b OR",
+          "p": "Ist das Arbeitsverhältnis unbefristet oder auf mehr als einen Monat eingegangen, muss der Arbeitgeber spätestens einen Monat nach Beginn schriftlich informieren über: die Namen der Parteien, den Beginn des Arbeitsverhältnisses, die Funktion, den Lohn und allfällige Lohnzuschläge sowie die wöchentliche Arbeitszeit. Spätere Änderungen sind ebenfalls schriftlich mitzuteilen. Ein schriftlicher Arbeitsvertrag erfüllt diese Pflicht in der Regel gleich mit."
+        },
+        {
+          "h": "Was in einen guten Vertrag gehört",
+          "p": "Neben den Pflichtangaben gehören in die Praxis typischerweise: Pensum und Arbeitsort, Probezeit und Kündigungsfristen, Lohnbestandteile wie 13. Monatslohn, Bonus oder Gratifikation, Ferienanspruch, Regelung von Überstunden, Spesen und Homeoffice, Verweis auf Reglemente und Personalhandbuch sowie allenfalls ein Konkurrenzverbot. Reglemente gelten nur, wenn sie Vertragsbestandteil geworden sind; im Vertrag sollte daher klar auf sie verwiesen werden."
+        },
+        {
+          "h": "Befristet oder unbefristet",
+          "p": "Ein befristeter Vertrag endet ohne Kündigung mit Ablauf der vereinbarten Dauer (Art. 334 OR). Während der Laufzeit ist er ordentlich nur kündbar, wenn das vereinbart ist. Werden befristete Verträge ohne sachlichen Grund immer wieder aneinandergereiht, kann dies als Umgehung des Kündigungsschutzes gelten; dann wird das Verhältnis wie ein unbefristetes behandelt."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ist ein mündlicher Arbeitsvertrag gültig?",
+          "a": "Ja. Der Arbeitsvertrag ist grundsätzlich formfrei. Der Arbeitgeber muss die wichtigsten Punkte aber innert eines Monats schriftlich mitteilen (Art. 330b OR), und gewisse Abreden gelten nur schriftlich."
+        },
+        {
+          "q": "Was gilt, wenn im Vertrag nichts zur Probezeit steht?",
+          "a": "Dann gilt der erste Monat als Probezeit (Art. 335b OR). Eine längere Probezeit von bis zu drei Monaten muss schriftlich vereinbart werden."
+        },
+        {
+          "q": "Gilt das Personalreglement automatisch?",
+          "a": "Nein. Ein Reglement wird nur verbindlich, wenn es Vertragsbestandteil wurde, etwa durch einen klaren Verweis im Arbeitsvertrag und die Möglichkeit, es zur Kenntnis zu nehmen."
+        }
+      ],
+      "tools": [
+        "kuendigung",
+        "ferien"
+      ],
+      "refs": [
+        "Art. 319 OR",
+        "Art. 320 OR",
+        "Art. 330b OR",
+        "Art. 334 OR",
+        "Art. 335b OR"
+      ],
+      "match": {
+        "tags": [
+          "Arbeitsvertrag"
+        ],
+        "words": [
+          "Arbeitsvertrag"
+        ]
+      }
+    },
+    {
+      "slug": "arztzeugnis",
+      "category": "gesundheit",
+      "title": "Arztzeugnis: ab wann, Beweiswert und Vertrauensarzt",
+      "seo_title": "Arztzeugnis Schweiz: ab welchem Tag, Zweifel, Kosten",
+      "description": "Ab welchem Tag ein Arztzeugnis verlangt werden darf, was drinstehen muss, wann sein Beweiswert erschüttert ist und wie der Arbeitgeber einen Vertrauensarzt beizieht.",
+      "intro": "Das Arztzeugnis ist im Arbeitsalltag das wichtigste Beweismittel für eine krankheits- oder unfallbedingte Arbeitsunfähigkeit. Es ist aber kein absoluter Beweis. HR sollte wissen, was es enthalten muss, wann Zweifel berechtigt sind und welche Schritte dann zulässig sind.",
+      "sections": [
+        {
+          "h": "Ab welchem Tag?",
+          "p": "Das Gesetz legt keinen Tag fest. Wer Lohnfortzahlung verlangt, muss die Arbeitsverhinderung beweisen (Art. 324a OR). In der Praxis regeln Arbeitsvertrag oder Personalreglement, ab welchem Tag ein Zeugnis nötig ist, häufig ab dem dritten oder vierten Tag. Der Arbeitgeber darf ein Zeugnis aber auch ab dem ersten Tag verlangen, wenn dies vereinbart oder im Einzelfall angeordnet ist."
+        },
+        {
+          "h": "Was drinsteht und was nicht",
+          "p": "Ein Arztzeugnis nennt Beginn, voraussichtliche Dauer und Grad der Arbeitsunfähigkeit sowie in der Regel, ob Krankheit oder Unfall vorliegt. Eine Diagnose gehört wegen des Arztgeheimnisses nicht hinein. Sinnvoll ist ein Zeugnis, das auch festhält, ob die Person nur am bisherigen Arbeitsplatz oder generell arbeitsunfähig ist, und welche Tätigkeiten allenfalls noch möglich sind."
+        },
+        {
+          "h": "Wann Zweifel berechtigt sind",
+          "p": "Die Gerichte gestehen dem Arztzeugnis hohen, aber keinen absoluten Beweiswert zu. Er kann erschüttert sein, wenn das Zeugnis weit rückwirkend ausgestellt ist, nur auf Angaben der Patientin oder des Patienten beruht, im Widerspruch zum Verhalten steht (etwa Sport oder Nebenerwerb während der Krankheit) oder auffällig mit einer Kündigung oder abgelehnten Ferien zusammenfällt. Dann kann der Arbeitgeber eine vertrauensärztliche Untersuchung auf eigene Kosten verlangen. Verweigert die Person die Mitwirkung ohne Grund, kann der Lohnanspruch entfallen."
+        },
+        {
+          "h": "Arbeitsplatzbezogene Arbeitsunfähigkeit und Fälschungen",
+          "p": "Ist jemand nur am konkreten Arbeitsplatz arbeitsunfähig, etwa wegen eines Konflikts, aber sonst arbeitsfähig, kann das nach der Rechtsprechung Folgen für Lohnfortzahlung und Sperrfrist haben. Das ist im Einzelfall heikel und sollte abgeklärt werden. Ein gefälschtes oder verfälschtes Zeugnis ist dagegen klar: Es kann strafbar sein und rechtfertigt in der Regel eine fristlose Kündigung."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Darf der Arbeitgeber ab dem ersten Krankheitstag ein Arztzeugnis verlangen?",
+          "a": "Ja, wenn dies im Vertrag oder Reglement so geregelt ist oder im Einzelfall angeordnet wird. Das Gesetz kennt keine feste Karenz."
+        },
+        {
+          "q": "Muss die Diagnose auf dem Arztzeugnis stehen?",
+          "a": "Nein. Das Zeugnis nennt Dauer und Grad der Arbeitsunfähigkeit, aber keine Diagnose. Der Arbeitgeber hat darauf keinen Anspruch."
+        },
+        {
+          "q": "Wer bezahlt den Vertrauensarzt?",
+          "a": "Verlangt der Arbeitgeber eine vertrauensärztliche Untersuchung, trägt er die Kosten. Der Vertrauensarzt teilt ihm nur das Ergebnis zur Arbeitsfähigkeit mit, nicht die Diagnose."
+        }
+      ],
+      "tools": [
+        "lohnfortzahlung"
+      ],
+      "refs": [
+        "Art. 324a OR",
+        "Art. 328b OR",
+        "Art. 336c OR",
+        "Art. 321 StGB"
+      ],
+      "match": {
+        "tags": [
+          "Arztzeugnis"
+        ],
+        "words": [
+          "Arztzeugnis",
+          "Arbeitsunfähigkeit"
+        ]
+      }
+    },
+    {
+      "slug": "aenderungskuendigung",
+      "category": "arbeitsrecht",
+      "title": "Änderungskündigung: Vertrag ändern, wenn keine Einigung gelingt",
+      "seo_title": "Änderungskündigung Schweiz: Ablauf, Fristen, Risiken",
+      "description": "Wie eine Änderungskündigung funktioniert, welche Fristen gelten, wann sie missbräuchlich ist und warum sie bei der Massenentlassung mitzählen kann.",
+      "intro": "Will der Arbeitgeber Lohn, Pensum, Arbeitsort oder Funktion ändern und ist die betroffene Person nicht einverstanden, bleibt oft nur die Änderungskündigung. Rechtlich ist sie eine ordentliche Kündigung, verbunden mit dem Angebot, zu neuen Bedingungen weiterzuarbeiten.",
+      "sections": [
+        {
+          "h": "So funktioniert sie",
+          "p": "Der Arbeitgeber kündigt den bestehenden Vertrag unter Einhaltung der Kündigungsfrist und bietet gleichzeitig einen neuen Vertrag an. Nimmt die Person an, gelten die neuen Bedingungen nach Ablauf der Kündigungsfrist. Lehnt sie ab, endet das Arbeitsverhältnis. Die Verschlechterung darf nicht vor Ablauf der Frist wirksam werden; eine einseitige sofortige Lohnkürzung ist unzulässig."
+        },
+        {
+          "h": "Es gelten alle Regeln der Kündigung",
+          "p": "Weil es eine echte Kündigung ist, gelten Kündigungsfristen und Sperrfristen (Art. 336c OR). Eine Änderungskündigung während einer Sperrfrist ist nichtig. Sie kann zudem missbräuchlich sein, wenn mit ihr ohne betriebliche Gründe eine unbillige Verschlechterung durchgesetzt werden soll, die die Person ablehnen muss. Ein sachlicher Grund wie eine Reorganisation oder ein Standortwechsel sollte dokumentiert sein."
+        },
+        {
+          "h": "Massenentlassung beachten",
+          "p": "Werden viele Änderungskündigungen gleichzeitig ausgesprochen, etwa bei einem Standortwechsel, können sie bei der Berechnung der Schwellenwerte für eine Massenentlassung mitzählen. Dann sind das Konsultationsverfahren mit den Arbeitnehmenden und die Meldung an das kantonale Arbeitsamt vor den Kündigungen nötig (Art. 335d ff. OR)."
+        },
+        {
+          "h": "Zuerst die Einigung versuchen",
+          "p": "Eine einvernehmliche Vertragsänderung ist jederzeit möglich und meist der bessere Weg. Sie sollte schriftlich festgehalten werden. Vorsicht bei stillschweigender Zustimmung: Arbeitet jemand einfach weiter, bedeutet das bei einer Verschlechterung nicht ohne Weiteres eine Zustimmung."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ab wann gelten die neuen Bedingungen?",
+          "a": "Erst nach Ablauf der ordentlichen Kündigungsfrist. Bis dahin gilt der bisherige Vertrag unverändert."
+        },
+        {
+          "q": "Was passiert, wenn die Person das neue Angebot ablehnt?",
+          "a": "Dann endet das Arbeitsverhältnis mit Ablauf der Kündigungsfrist. Die Ablehnung allein macht sie nicht schadenersatzpflichtig."
+        },
+        {
+          "q": "Gilt die Sperrfrist auch bei einer Änderungskündigung?",
+          "a": "Ja. Die Änderungskündigung ist eine Kündigung; während einer Sperrfrist ausgesprochen ist sie nichtig."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 335 OR",
+        "Art. 335c OR",
+        "Art. 335d OR",
+        "Art. 336 OR",
+        "Art. 336c OR"
+      ],
+      "match": {
+        "tags": [
+          "Änderungskündigung"
+        ],
+        "words": [
+          "Änderungskündigung"
+        ]
+      }
+    },
+    {
+      "slug": "aufhebungsvertrag",
+      "category": "arbeitsrecht",
+      "title": "Aufhebungsvertrag: Arbeitsverhältnis einvernehmlich beenden",
+      "seo_title": "Aufhebungsvertrag Schweiz: Regeln, Risiken, ALV",
+      "description": "Wann eine Aufhebungsvereinbarung gültig ist, warum es gegenseitige Zugeständnisse braucht, was mit Sperrfristen passiert und welche Folgen bei der Arbeitslosenkasse drohen.",
+      "intro": "Mit einem Aufhebungsvertrag beenden Arbeitgeber und Arbeitnehmende das Arbeitsverhältnis einvernehmlich, ohne Kündigung. Das ist flexibel und oft im Interesse beider Seiten. Weil dabei Schutzvorschriften wegfallen, prüfen Gerichte solche Vereinbarungen aber genau.",
+      "sections": [
+        {
+          "h": "Jederzeit möglich, besser schriftlich",
+          "p": "Die Parteien können ein Arbeitsverhältnis jederzeit im gegenseitigen Einverständnis auflösen (Art. 115 OR). Eine besondere Form ist nicht vorgeschrieben. Aus Beweisgründen sollte die Vereinbarung aber schriftlich sein und das Enddatum, den Lohn bis dahin, Ferien und Überstunden, eine allfällige Freistellung, das Arbeitszeugnis und eine Abfindung klar regeln."
+        },
+        {
+          "h": "Keine Umgehung des Kündigungsschutzes",
+          "p": "Arbeitnehmende können auf zwingende Ansprüche während des Arbeitsverhältnisses und einen Monat danach nicht verzichten (Art. 341 OR). Ein Aufhebungsvertrag ist deshalb nur gültig, wenn beide Seiten etwas geben, also ein echter Vergleich vorliegt. Verzichtet die Person einseitig etwa auf den Schutz einer laufenden Sperrfrist, ohne dafür eine angemessene Gegenleistung zu erhalten, kann die Vereinbarung unwirksam sein."
+        },
+        {
+          "h": "Faire Bedingungen beim Abschluss",
+          "p": "Die Person sollte genügend Bedenkzeit erhalten und die Tragweite verstehen. Eine Vereinbarung, die in einem einzigen Gespräch unter Druck unterzeichnet wurde, ist angreifbar. In der Praxis bewährt sich, den Entwurf mitzugeben und einige Tage Zeit zur Prüfung einzuräumen."
+        },
+        {
+          "h": "Folgen bei der Arbeitslosenversicherung",
+          "p": "Wer einer Auflösung zustimmt, ohne dass ein Grund vorliegt, kann bei der Arbeitslosenkasse Einstelltage riskieren, weil die Arbeitslosigkeit als selbstverschuldet gelten kann (Art. 30 AVIG). Zudem darf die Kündigungsfrist nicht verkürzt werden, ohne dass dies bei der Arbeitslosenentschädigung berücksichtigt wird. Ein Hinweis im Gespräch und eine klare Formulierung, von wem die Initiative ausging, helfen den Arbeitnehmenden."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Gilt die Sperrfrist bei einem Aufhebungsvertrag?",
+          "a": "Nein, Sperrfristen schützen nur vor Kündigungen. Ein Aufhebungsvertrag darf den Schutz aber nicht einseitig aushebeln; es braucht angemessene Gegenleistungen."
+        },
+        {
+          "q": "Braucht es eine Abfindung?",
+          "a": "Nicht zwingend. Es braucht aber gegenseitige Zugeständnisse, etwa eine Abfindung, eine Freistellung, ein längeres Enddatum oder Unterstützung bei der Stellensuche."
+        },
+        {
+          "q": "Bekommt man nach einem Aufhebungsvertrag Arbeitslosengeld?",
+          "a": "Grundsätzlich ja, die Kasse kann aber Einstelltage verfügen, wenn die Person ohne triftigen Grund zugestimmt hat."
+        }
+      ],
+      "tools": [
+        "kuendigung"
+      ],
+      "refs": [
+        "Art. 115 OR",
+        "Art. 341 OR",
+        "Art. 336c OR",
+        "Art. 30 AVIG"
+      ],
+      "match": {
+        "tags": [
+          "Aufhebungsvertrag",
+          "Abgangsentschädigung"
+        ],
+        "words": [
+          "Aufhebungsvertrag",
+          "Aufhebungsvereinbarung"
+        ]
+      }
+    },
+    {
+      "slug": "kurzarbeit",
+      "category": "arbeitsmarkt",
+      "title": "Kurzarbeit: Voraussetzungen, Voranmeldung und Bezugsdauer",
+      "seo_title": "Kurzarbeit Schweiz: Voraussetzungen und Anmeldung",
+      "description": "Wann Betriebe Kurzarbeitsentschädigung erhalten, wie die Voranmeldung läuft, was Mitarbeitende zustimmen müssen und wie lange KAE derzeit bezogen werden kann.",
+      "intro": "Mit der Kurzarbeitsentschädigung (KAE) übernimmt die Arbeitslosenversicherung bei vorübergehenden Arbeitsausfällen einen Grossteil der Lohnkosten für die ausgefallenen Stunden. Ziel ist, Entlassungen zu vermeiden. Die Regeln sind formal streng, und die Höchstbezugsdauer wird vom Bundesrat laufend angepasst.",
+      "sections": [
+        {
+          "h": "Voraussetzungen",
+          "p": "Der Arbeitsausfall muss wirtschaftlich bedingt, vorübergehend und unvermeidbar sein und mindestens 10 Prozent der Arbeitsstunden des Betriebs oder einer Betriebsabteilung betragen. Anspruch besteht nur für Arbeitnehmende in ungekündigtem Arbeitsverhältnis. Jede betroffene Person muss der Kurzarbeit zustimmen; wer ablehnt, behält den vollen Lohnanspruch, kann aber gekündigt werden."
+        },
+        {
+          "h": "Voranmeldung und Abrechnung",
+          "p": "Kurzarbeit ist der kantonalen Amtsstelle in der Regel mindestens zehn Tage vor Beginn anzumelden, in Ausnahmefällen kürzer. Die Bewilligung gilt jeweils für höchstens sechs Monate. Der Arbeitgeber zahlt 80 Prozent des Verdienstausfalls mit dem Lohn aus und rechnet monatlich mit der Arbeitslosenkasse ab. Die Sozialversicherungsbeiträge sind weiterhin auf dem vollen Lohn geschuldet. Anträge und Abrechnungen laufen online über arbeit.swiss."
+        },
+        {
+          "h": "Bezugsdauer und Karenzzeit (Stand November 2026)",
+          "p": "Gesetzlich gilt eine Höchstbezugsdauer von 12 Monaten innerhalb von zwei Jahren. Wegen der Wirtschaftslage hat der Bundesrat sie befristet auf 24 Monate erhöht; diese Regel gilt bis zum 31. Januar 2027. Auch die Karenzzeit ist derzeit auf einen Tag reduziert. Der Bundesrat hat angekündigt, im Dezember 2026 über eine schrittweise Rückkehr zu den normalen Regeln zu entscheiden. Wer Kurzarbeit über den Jahreswechsel plant, sollte diesen Entscheid im Auge behalten. Ab 2027 entfällt zudem die Toleranz für positive Gleitzeitsalden: Guthaben müssen vor dem Bezug abgebaut werden."
+        },
+        {
+          "h": "Typische Fehler",
+          "p": "Häufige Probleme sind fehlende oder verspätete Voranmeldungen, ungenügende Arbeitszeitkontrolle der ausgefallenen Stunden, Kurzarbeit für gekündigte Personen oder für Kaderleute mit massgebendem Einfluss und Überstunden, die während der Kurzarbeit nicht abgebaut werden. Die Arbeitslosenkasse kann zu Unrecht bezogene Entschädigungen zurückfordern."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie viel zahlt die Kurzarbeitsentschädigung?",
+          "a": "80 Prozent des Verdienstausfalls für die ausgefallenen Stunden, bis zum versicherten Höchstverdienst der ALV. Der Arbeitgeber zahlt den Betrag mit dem Lohn aus."
+        },
+        {
+          "q": "Müssen Mitarbeitende der Kurzarbeit zustimmen?",
+          "a": "Ja. Wer nicht zustimmt, hat Anspruch auf den vollen Lohn, kann aber unter Einhaltung der Kündigungsfrist gekündigt werden."
+        },
+        {
+          "q": "Wie lange kann man derzeit Kurzarbeit beziehen?",
+          "a": "Bis zum 31. Januar 2027 gilt eine erhöhte Höchstbezugsdauer von 24 Monaten. Über die Zeit danach entscheidet der Bundesrat im Dezember 2026."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 31 ff. AVIG",
+        "Art. 35 AVIG",
+        "Art. 36 AVIG",
+        "AVIV"
+      ],
+      "match": {
+        "tags": [
+          "Kurzarbeit"
+        ],
+        "words": [
+          "Kurzarbeit"
+        ]
+      }
+    },
+    {
+      "slug": "scheinselbstaendigkeit",
+      "category": "legal",
+      "title": "Scheinselbständigkeit: Freelancer oder Arbeitnehmer?",
+      "seo_title": "Scheinselbständigkeit Schweiz: Kriterien und Folgen",
+      "description": "Wann Freelancer sozialversicherungsrechtlich als Angestellte gelten, nach welchen Kriterien die AHV entscheidet und welche Nachzahlungen Unternehmen drohen.",
+      "intro": "Freelancer, Beraterinnen und Plattform-Arbeit sind verbreitet. Ob jemand wirklich selbständig ist, entscheiden aber nicht der Vertragstitel oder eine eigene Firma, sondern die tatsächlichen Verhältnisse. Wird eine Zusammenarbeit falsch eingestuft, schuldet das Unternehmen Sozialversicherungsbeiträge rückwirkend.",
+      "sections": [
+        {
+          "h": "Die Kriterien",
+          "p": "Die AHV beurteilt das Gesamtbild. Für unselbständige Tätigkeit sprechen Weisungsgebundenheit, Eingliederung in die Organisation, feste Arbeitszeiten, Arbeit nur für einen Auftraggeber und fehlendes Unternehmerrisiko. Für Selbständigkeit sprechen eigene Investitionen und Infrastruktur, mehrere Auftraggeber, eigenes Personal, Auftritt am Markt und das Tragen von Verlustrisiken. Die Anmeldung bei der Ausgleichskasse als Selbständigerwerbende ist ein Indiz, bindet aber nicht für jedes einzelne Mandat."
+        },
+        {
+          "h": "Sozialversicherungsrecht und Arbeitsrecht",
+          "p": "Die Einstufung erfolgt für AHV, IV, EO und ALV sowie für Unfallversicherung und berufliche Vorsorge, und sie kann für jede Tätigkeit einzeln anders ausfallen. Arbeitsrechtlich kann eine Zusammenarbeit zudem als Arbeitsvertrag gelten, mit Ansprüchen auf Ferien, Lohnfortzahlung und Kündigungsschutz. Die Gerichte haben etwa Fahrerinnen und Fahrer von Fahrdienst-Plattformen als Arbeitnehmende eingestuft."
+        },
+        {
+          "h": "Was bei einer Fehleinstufung droht",
+          "p": "Stellt die Ausgleichskasse, typischerweise bei einer Arbeitgeberkontrolle, unselbständige Tätigkeit fest, fordert sie die Arbeitgeber- und Arbeitnehmerbeiträge nach. Beiträge können bis fünf Jahre rückwirkend verlangt werden (Art. 16 AHVG). Hinzu kommen Verzugszinsen und mögliche Nachforderungen in der beruflichen Vorsorge und der Unfallversicherung. Den Arbeitnehmeranteil kann der Arbeitgeber nachträglich oft kaum mehr zurückholen."
+        },
+        {
+          "h": "So reduzieren Unternehmen das Risiko",
+          "p": "Klare Werkvertrags- oder Auftragsverhältnisse mit definiertem Ergebnis, keine Eingliederung in Teams und Linien, Rechnungsstellung statt Lohnabrechnung und eine Bestätigung der Ausgleichskasse zur Selbständigkeit helfen. Bei Unsicherheit kann die Ausgleichskasse vorab um eine Beurteilung ersucht werden."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Reicht es, wenn der Freelancer bei der AHV als selbständig angemeldet ist?",
+          "a": "Nein. Die Anmeldung ist ein Indiz, massgebend sind aber die tatsächlichen Verhältnisse jedes einzelnen Auftrags."
+        },
+        {
+          "q": "Wie weit zurück können Beiträge nachgefordert werden?",
+          "a": "Bis fünf Jahre nach Ablauf des Kalenderjahres, für das sie geschuldet waren (Art. 16 AHVG), zuzüglich Verzugszinsen."
+        },
+        {
+          "q": "Ist ein Freelancer mit eigener GmbH automatisch selbständig?",
+          "a": "Bei einer eigenen Gesellschaft ist in der Regel die Gesellschaft Vertragspartnerin. Die Gesellschaft rechnet dann die Löhne ab. Wird die Konstruktion nur zur Umgehung genutzt, kann sie aber unbeachtlich sein."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 5 AHVG",
+        "Art. 9 AHVG",
+        "Art. 16 AHVG",
+        "Art. 319 OR"
+      ],
+      "match": {
+        "tags": [
+          "Scheinselbständigkeit",
+          "Freelancer",
+          "Plattformarbeit"
+        ],
+        "words": [
+          "scheinselbst",
+          "Freelancer"
+        ]
+      }
+    },
+    {
+      "slug": "quellensteuer",
+      "category": "lohn",
+      "title": "Quellensteuer: Pflichten des Arbeitgebers",
+      "seo_title": "Quellensteuer Schweiz: Pflichten für Arbeitgeber",
+      "description": "Wer quellensteuerpflichtig ist, was der Arbeitgeber abziehen und abrechnen muss und wann eine nachträgliche ordentliche Veranlagung nötig ist.",
+      "intro": "Bei vielen ausländischen Mitarbeitenden und bei Grenzgängern zieht der Arbeitgeber die Steuer direkt vom Lohn ab. Er wird damit zum Steuereinzieher und haftet für den korrekten Abzug. Fehler zeigen sich oft erst bei Revisionen.",
+      "sections": [
+        {
+          "h": "Wer ist quellensteuerpflichtig?",
+          "p": "Quellensteuerpflichtig sind ausländische Arbeitnehmende mit Wohnsitz in der Schweiz, die keine Niederlassungsbewilligung C haben und nicht mit einer Person mit Schweizer Bürgerrecht oder Bewilligung C verheiratet sind. Dazu kommen Personen ohne Wohnsitz in der Schweiz, die hier arbeiten, insbesondere Grenzgänger. Für Grenzgänger gelten je nach Doppelbesteuerungsabkommen besondere Regeln, für Deutschland etwa ein begrenzter Satz."
+        },
+        {
+          "h": "Pflichten des Arbeitgebers",
+          "p": "Der Arbeitgeber muss quellensteuerpflichtige Personen erkennen, den richtigen Tarif bestimmen (unter anderem nach Zivilstand, Kindern und Einkommen des Partners), die Steuer vom Bruttolohn abziehen und periodisch mit der zuständigen kantonalen Steuerverwaltung abrechnen. Er erhält dafür eine Bezugsprovision. Für zu wenig abgezogene Steuern haftet er (Art. 88 DBG). Änderungen wie Heirat, Geburt eines Kindes oder Wechsel der Bewilligung müssen laufend erfasst werden."
+        },
+        {
+          "h": "Nachträgliche ordentliche Veranlagung",
+          "p": "Übersteigt das Bruttoerwerbseinkommen einer in der Schweiz ansässigen quellensteuerpflichtigen Person CHF 120 000 im Jahr, wird sie obligatorisch nachträglich ordentlich veranlagt und muss bis 31. März des Folgejahres die Steuererklärung verlangen. Andere können bis 31. März freiwillig eine Veranlagung beantragen, etwa um Einzahlungen in die Säule 3a oder Kinderbetreuungskosten abzuziehen. Diese Frist ist nicht verlängerbar, und wer einmal ordentlich veranlagt wird, bleibt es bis zum Ende der Quellensteuerpflicht."
+        },
+        {
+          "h": "Praxis-Tipps für HR",
+          "p": "Bewährt haben sich eine Checkliste beim Eintritt (Bewilligung, Zivilstand, Kinder, Partnereinkommen), eine jährliche Bestätigung der Angaben durch die Mitarbeitenden und ein klarer Prozess für Mutationen. Bei Grenzgängern und Homeoffice im Ausland sollte die Steuerfrage vor Vertragsbeginn geklärt werden."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Haftet der Arbeitgeber für falsch abgezogene Quellensteuer?",
+          "a": "Ja. Der Arbeitgeber haftet für die korrekte Erhebung (Art. 88 DBG) und muss zu wenig abgezogene Beträge allenfalls selbst nachzahlen."
+        },
+        {
+          "q": "Bis wann kann eine nachträgliche ordentliche Veranlagung beantragt werden?",
+          "a": "Bis 31. März des Folgejahres. Die Frist kann nicht verlängert werden."
+        },
+        {
+          "q": "Ab welchem Einkommen ist die ordentliche Veranlagung Pflicht?",
+          "a": "Für in der Schweiz ansässige Quellensteuerpflichtige ab einem Bruttoerwerbseinkommen von CHF 120 000 pro Jahr."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 83 ff. DBG",
+        "Art. 88 DBG",
+        "Art. 89 DBG",
+        "Art. 32 ff. StHG",
+        "QStV"
+      ],
+      "match": {
+        "tags": [
+          "Quellensteuer"
+        ],
+        "words": [
+          "Quellensteuer"
+        ]
+      }
+    },
+    {
+      "slug": "spesen",
+      "category": "lohn",
+      "title": "Spesen: was der Arbeitgeber zahlen muss",
+      "seo_title": "Spesen Schweiz: Pflicht, Pauschalen, Reglement",
+      "description": "Welche Auslagen der Arbeitgeber ersetzen muss, wann Pauschalspesen zulässig sind, was ein genehmigtes Spesenreglement bringt und was für Geschäftsfahrzeuge gilt.",
+      "intro": "Der Arbeitgeber muss alle Auslagen ersetzen, die bei der Arbeit notwendigerweise entstehen. Das gilt zwingend. Wie die Spesen abgerechnet werden, effektiv oder pauschal, ist dagegen weitgehend gestaltbar und hat steuerliche und sozialversicherungsrechtliche Folgen.",
+      "sections": [
+        {
+          "h": "Der Grundsatz",
+          "p": "Nach Art. 327a OR ersetzt der Arbeitgeber alle durch die Ausführung der Arbeit notwendig entstehenden Auslagen, bei Arbeit auswärts auch die Kosten für Unterhalt. Eine Abrede, dass Arbeitnehmende notwendige Auslagen ganz oder teilweise selbst tragen, ist nichtig (Art. 327a Abs. 3 OR). Die Spesen sind zusammen mit dem Lohn abzurechnen, sofern nichts anderes vereinbart ist."
+        },
+        {
+          "h": "Effektiv oder pauschal",
+          "p": "Spesen können nach Beleg oder pauschal vergütet werden. Pauschalen sind zulässig, wenn sie schriftlich vereinbart sind und die tatsächlichen Auslagen decken (Art. 327a Abs. 2 OR). Pauschalen, die über die tatsächlichen Kosten hinausgehen, sind verdeckter Lohn und unterliegen AHV und Steuern. Zu tiefe Pauschalen verletzen den zwingenden Anspruch auf Auslagenersatz."
+        },
+        {
+          "h": "Das Spesenreglement",
+          "p": "Ein Spesenreglement regelt, was ersetzt wird, wie hoch Pauschalen sind und wie abgerechnet wird. Lässt der Arbeitgeber es von der kantonalen Steuerverwaltung genehmigen, sind die Pauschalspesen steuerlich anerkannt, was den Lohnausweis vereinfacht und das Risiko bei Revisionen senkt. Pauschalen für Kader und Aussendienst sollten regelmässig überprüft werden."
+        },
+        {
+          "h": "Fahrzeuge, Homeoffice und Mobiltelefon",
+          "p": "Benutzt jemand im Einverständnis des Arbeitgebers ein eigenes Fahrzeug für die Arbeit, sind die Betriebs- und Unterhaltskosten nach Massgabe des Gebrauchs zu ersetzen (Art. 327b OR). Beim Homeoffice besteht eine Spesenpflicht in der Regel nur, wenn der Arbeitgeber keinen Arbeitsplatz zur Verfügung stellt. Für private Mobiltelefone oder Laptops, die für die Arbeit nötig sind, empfiehlt sich eine klare Pauschale."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Darf vereinbart werden, dass Spesen im Lohn inbegriffen sind?",
+          "a": "Nur wenn der Anteil klar ausgewiesen ist und die tatsächlichen Auslagen deckt. Eine pauschale Abrede, dass Arbeitnehmende notwendige Spesen selbst tragen, ist nichtig."
+        },
+        {
+          "q": "Sind Pauschalspesen AHV-pflichtig?",
+          "a": "Nein, soweit sie die tatsächlichen Auslagen abdecken. Der Teil, der darüber hinausgeht, gilt als Lohn."
+        },
+        {
+          "q": "Muss der Arbeitgeber Homeoffice-Kosten zahlen?",
+          "a": "In der Regel nur, wenn kein Arbeitsplatz im Betrieb zur Verfügung steht und das Homeoffice damit notwendig ist. Mehr dazu auf der Themenseite Homeoffice."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 327a OR",
+        "Art. 327b OR",
+        "Art. 327c OR",
+        "Art. 362 OR"
+      ],
+      "match": {
+        "tags": [
+          "Spesen"
+        ],
+        "words": [
+          "Spesen"
+        ]
+      }
+    },
+    {
+      "slug": "stellenmeldepflicht",
+      "category": "gesetze",
+      "title": "Stellenmeldepflicht: welche Stellen ans RAV müssen",
+      "seo_title": "Stellenmeldepflicht Schweiz: Regeln, Ausnahmen, Bussen",
+      "description": "Welche Stellen dem RAV gemeldet werden müssen, wie lange der Informationsvorsprung dauert, welche Ausnahmen gelten und welche Bussen bei Verstössen drohen.",
+      "intro": "Offene Stellen in Berufsarten mit hoher Arbeitslosigkeit müssen zuerst dem Regionalen Arbeitsvermittlungszentrum (RAV) gemeldet werden. Erst nach einer Sperrfrist dürfen sie öffentlich ausgeschrieben werden. Weil die Arbeitslosigkeit gestiegen ist, sind 2026 und 2027 deutlich mehr Berufe betroffen als in den Vorjahren.",
+      "sections": [
+        {
+          "h": "Welche Berufe betroffen sind",
+          "p": "Meldepflichtig sind Berufsarten mit einer durchschnittlichen Arbeitslosenquote von mindestens 5 Prozent. Das WBF legt die Liste jeweils im vierten Quartal fest; sie gilt vom 1. Januar bis 31. Dezember des Folgejahres. 2026 arbeiten rund 10,8 Prozent der Erwerbstätigen in meldepflichtigen Berufen. Nach der provisorischen Liste für 2027 sind es rund 14,7 Prozent, neu unter anderem im Detailhandel und beim Sicherheitspersonal. Ob eine Stelle betroffen ist, lässt sich mit dem Check-Up-Tool auf arbeit.swiss prüfen."
+        },
+        {
+          "h": "Ablauf",
+          "p": "Die Stelle wird über das Portal Job-Room gemeldet. Danach gilt ein Informationsvorsprung von fünf Arbeitstagen: In dieser Zeit sehen nur beim RAV angemeldete Stellensuchende die Stelle, und der Arbeitgeber darf sie nicht anderweitig ausschreiben. Das RAV übermittelt innert drei Arbeitstagen passende Dossiers. Der Arbeitgeber lädt geeignete Personen ein und teilt dem RAV mit, wen er angestellt hat oder ob die Stelle noch offen ist."
+        },
+        {
+          "h": "Ausnahmen",
+          "p": "Keine Meldepflicht besteht unter anderem, wenn die Stelle intern mit Personen besetzt wird, die seit mindestens sechs Monaten im Unternehmen arbeiten, wenn das Arbeitsverhältnis höchstens 14 Kalendertage dauert, wenn nahe Angehörige der Zeichnungsberechtigten angestellt werden oder wenn eine beim RAV gemeldete stellensuchende Person eingestellt wird (Art. 53b AVV)."
+        },
+        {
+          "h": "Sanktionen",
+          "p": "Wer eine meldepflichtige Stelle vorsätzlich nicht meldet oder vor Ablauf der Sperrfrist ausschreibt, kann mit bis zu CHF 40 000 gebüsst werden, bei Fahrlässigkeit mit bis zu CHF 20 000 (Art. 117a AIG). Die Kantone kontrollieren aktiv, auch anhand von Stelleninseraten."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie lange darf eine gemeldete Stelle nicht ausgeschrieben werden?",
+          "a": "Fünf Arbeitstage ab der Publikation im Job-Room. Danach ist die Ausschreibung auf allen Kanälen erlaubt."
+        },
+        {
+          "q": "Gilt die Meldepflicht auch für Temporärstellen?",
+          "a": "Ja, auch Personalverleiher müssen meldepflichtige Stellen melden. Ausgenommen sind nur Einsätze bis 14 Kalendertage."
+        },
+        {
+          "q": "Wo finde ich die Liste der meldepflichtigen Berufe?",
+          "a": "Auf arbeit.swiss. Die Liste für das kommende Jahr legt das WBF jeweils Ende November oder Anfang Dezember definitiv fest."
+        }
+      ],
+      "tools": [],
+      "refs": [
+        "Art. 21a AIG",
+        "Art. 117a AIG",
+        "Art. 53a ff. AVV"
+      ],
+      "match": {
+        "tags": [
+          "Stellenmeldepflicht"
+        ],
+        "words": [
+          "Stellenmeldepflicht"
+        ]
+      }
+    },
+    {
+      "slug": "unfall-uvg",
+      "category": "gesundheit",
+      "title": "Unfall und UVG: Versicherung, Taggeld und Lohnfortzahlung",
+      "seo_title": "Unfall am Arbeitsplatz Schweiz: UVG und Lohn",
+      "description": "Wer gegen Unfall versichert ist, was Berufs- und Nichtberufsunfall unterscheidet, ab wann Taggeld fliesst und was der Arbeitgeber in den ersten Tagen zahlt.",
+      "intro": "Alle Arbeitnehmenden in der Schweiz sind obligatorisch gegen Unfall versichert. Für HR stellen sich bei jedem Unfall die gleichen Fragen: Ist es ein Berufs- oder Nichtberufsunfall, wer zahlt die ersten Tage, und was gilt nach dem Austritt?",
+      "sections": [
+        {
+          "h": "Wer versichert ist",
+          "p": "Alle in der Schweiz beschäftigten Arbeitnehmenden sind gegen Berufsunfälle und Berufskrankheiten versichert. Gegen Nichtberufsunfälle, also Unfälle in der Freizeit, sind sie versichert, wenn sie beim gleichen Arbeitgeber mindestens acht Stunden pro Woche arbeiten. Bei Teilzeitpensen darunter gelten Unfälle auf dem Arbeitsweg als Berufsunfälle. Die Prämien für Berufsunfälle trägt der Arbeitgeber, jene für Nichtberufsunfälle darf er den Arbeitnehmenden abziehen."
+        },
+        {
+          "h": "Taggeld und die ersten Tage",
+          "p": "Der Unfallversicherer zahlt ab dem dritten Tag nach dem Unfalltag ein Taggeld von 80 Prozent des versicherten Verdienstes, bis zum gesetzlichen Höchstbetrag. Für den Unfalltag und die zwei folgenden Tage muss der Arbeitgeber 80 Prozent des Lohnes zahlen (Art. 324b OR). Sieht der Arbeitsvertrag eine höhere Lohnfortzahlung vor, etwa 100 Prozent, zahlt der Arbeitgeber die Differenz."
+        },
+        {
+          "h": "Meldung und Mitwirkung",
+          "p": "Unfälle sind dem Unfallversicherer unverzüglich zu melden, meist elektronisch. Der Arbeitgeber erfasst den Unfall, die Arbeitsunfähigkeit und den Lohn. Verspätete Meldungen können zu Leistungskürzungen führen. Bei längeren Ausfällen lohnt sich frühzeitiger Kontakt mit dem Versicherer und, falls nötig, mit der IV für Früherfassung und Wiedereingliederung."
+        },
+        {
+          "h": "Nach dem Austritt",
+          "p": "Die Versicherung endet 31 Tage nach dem Tag, an dem der Anspruch auf mindestens den halben Lohn aufhört (Art. 3 UVG). Wer danach keine neue Stelle antritt, kann die Deckung mit einer Abredeversicherung um bis zu sechs Monate verlängern. HR sollte austretende Mitarbeitende, auch bei unbezahltem Urlaub, darauf hinweisen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wer zahlt nach einem Unfall die ersten zwei Tage?",
+          "a": "Der Arbeitgeber zahlt für den Unfalltag und die beiden folgenden Tage 80 Prozent des Lohnes. Ab dem dritten Tag nach dem Unfalltag zahlt der Unfallversicherer das Taggeld."
+        },
+        {
+          "q": "Ab welchem Pensum ist man in der Freizeit versichert?",
+          "a": "Ab mindestens acht Stunden pro Woche beim gleichen Arbeitgeber. Darunter sind nur Berufsunfälle und Unfälle auf dem Arbeitsweg gedeckt."
+        },
+        {
+          "q": "Was ist eine Abredeversicherung?",
+          "a": "Eine freiwillige Verlängerung der Nichtberufsunfallversicherung um bis zu sechs Monate nach Ende der Deckung, etwa bei Stellenwechsel mit Pause oder unbezahltem Urlaub."
+        }
+      ],
+      "tools": [
+        "lohnfortzahlung"
+      ],
+      "refs": [
+        "Art. 1a UVG",
+        "Art. 3 UVG",
+        "Art. 8 UVG",
+        "Art. 16 UVG",
+        "Art. 324b OR"
+      ],
+      "match": {
+        "tags": [
+          "Unfall",
+          "UVG"
+        ],
+        "words": [
+          "Unfall",
+          "UVG"
+        ]
+      }
     }
   ]
 }
