@@ -10,6 +10,72 @@
   "updated": "2026-11-27",
   "articles": [
     {
+      "id": "homeoffice-inserate-benefits-2026",
+      "published": "2026-11-27",
+      "date": "2026-11-26",
+      "category": "arbeitsmarkt",
+      "tags": [
+        "Homeoffice",
+        "Benefits",
+        "Rekrutierung",
+        "Lohntransparenz",
+        "Employer Branding"
+      ],
+      "title": "Weniger Homeoffice in Stelleninseraten, obwohl es Jobsuchenden rund 8 Prozent Lohn wert ist",
+      "teaser": "Laut Indeed bieten Schweizer Arbeitgeber seit dem Sommer deutlich seltener Homeoffice an. Eine Studie mit ETH-Beteiligung zeigt gleichzeitig, wie viel Jobsuchende dafür an Lohn aufgeben würden und welche Benefits kaum wirken.",
+      "summary": "Der Anteil der Stelleninserate mit Homeoffice-Option ist in der Schweiz laut der Jobplattform Indeed von 15,4 Prozent Ende Juli auf 13,1 Prozent Ende September gesunken; im Europavergleich fiel die Schweiz vom 6. auf den 8. Rang. Ein Feldexperiment mit 265'000 Jobsuchenden zeigt, dass Homeoffice im Durchschnitt rund 8 Prozent des Lohns wert ist, ein Geschäftsauto rund 10 Prozent. Viele andere Extras wie Teamevents beeinflussen das Bewerbungsverhalten dagegen kaum.",
+      "sections": [
+        {
+          "h": "Was die Inseratedaten zeigen",
+          "p": "Indeed wertet regelmässig aus, wie viele Stelleninserate Homeoffice oder hybrides Arbeiten erwähnen. Ende Juli erreichte der Anteil in der Schweiz mit 15,4 Prozent den Höchstwert des Jahres, Ende September lag er noch bei 13,1 Prozent und damit unter dem Niveau zu Jahresbeginn. Im Vergleich der europäischen Länder rutschte die Schweiz vom 6. auf den 8. Platz, hinter Deutschland (13,9 Prozent) und knapp vor Italien (13,4 Prozent); an der Spitze stehen Polen (24,5 Prozent), Spanien (21,8 Prozent) und Österreich (17,2 Prozent). Laut einer Indeed-Ökonomin gab es schon in früheren Jahren nach dem Sommer einen ähnlichen Rückgang, auffällig sei aber das Ausmass. Ob es sich um einen Trend oder eine saisonale Bewegung handelt, ist offen."
+        },
+        {
+          "h": "Grosse Unterschiede nach Berufsfeldern",
+          "p": "Am häufigsten wird Homeoffice weiterhin in der Softwareentwicklung (rund 35 Prozent der Inserate), im IT-Support (32,7 Prozent), im Banken- und Finanzbereich (31,9 Prozent) sowie bei Daten und Analytik (30,6 Prozent) angeboten. In Pflege (2,5 Prozent) und Gastgewerbe (1,7 Prozent) spielt es naturgemäss kaum eine Rolle. Bemerkenswert ist der Rückgang gerade in der IT: Gegenüber dem Vorjahr weist Indeed für IT-Systeme und -Lösungen ein Minus von 17 Prozent aus, für den IT-Support 10,5 und für die Softwareentwicklung 9,9 Prozent. Im Finanzbereich nahm der Anteil dagegen um gut 20 Prozent zu. Watson deutet die Entwicklung mit dem entspannteren Arbeitsmarkt: Wenn mehr Stellensuchende verfügbar sind, müssen Arbeitgeber weniger Zugeständnisse machen."
+        },
+        {
+          "h": "Was Benefits Jobsuchenden wert sind",
+          "p": "Wie stark Homeoffice und andere Leistungen bei der Stellensuche wirken, hat ein Forschungsteam um Ökonomen der KOF an der ETH Zürich untersucht; die Ergebnisse sind im Oktober 2026 als IZA-Diskussionspapier erschienen. In einem Feldexperiment wurden rund 265'000 Nutzerinnen und Nutzern eines Schweizer Netzwerks von Stellenplattformen zufällig Lohn- und Benefit-Angaben aus einer Arbeitgeber-Bewertungsplattform eingeblendet. Von zwölf getesteten Leistungen wirkten vier deutlich: das Geschäftsauto mit einem Wert von rund 10 Prozent des Lohns, Homeoffice mit rund 8 Prozent, vom Betrieb unterstützte Kinderbetreuung mit rund 6 Prozent und ein Parkplatz mit rund 4 Prozent. Extras wie Teamevents, Kantine oder Verpflegungsbeiträge beeinflussten das Verhalten kaum. Zudem zeigt die Studie, dass Lohnangaben die Klicks auf ein Inserat erhöhen, Jobsuchende aber Lohnunterschiede zwischen Firmen stark unterschätzen; laut KOF nennt nur rund 1 Prozent der Schweizer Inserate überhaupt einen Lohn."
+        },
+        {
+          "h": "Einordnung",
+          "p": "Die beiden Auswertungen messen Unterschiedliches: Indeed zählt Angebote in Inseraten, nicht die tatsächlich gelebte Homeoffice-Praxis in den Betrieben. Die Studie misst, wie Jobsuchende auf Informationen reagieren, und nicht, wie zufrieden Beschäftigte später sind. Zusammen ergeben sie aber ein klares Bild: Wer Homeoffice streicht oder nicht erwähnt, verzichtet auf ein Argument, das Bewerbende in Franken spürbar bewerten. Gerade in IT und Finanz, wo der Anteil hoch ist, kann das die Rekrutierung beeinflussen."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Wenn Homeoffice möglich ist, im Inserat konkret nennen (z.B. Anzahl Tage pro Woche). Ein fehlender Hinweis wird von Bewerbenden eher als «nicht möglich» gelesen.",
+        "Das heisst für HR: Benefits nach Wirkung prüfen. Laut Studie zählen Homeoffice, Kinderbetreuung, Mobilität und Parkplatz, während Teamevents oder Kantine bei der Stellenwahl kaum ins Gewicht fallen.",
+        "Das heisst für HR: Eine Lohnspanne im Inserat erhöht die Aufmerksamkeit und hilft im Hinblick auf Lohntransparenz-Vorgaben wie die EU-Richtlinie bei Standorten im EU-Raum.",
+        "Das heisst für HR: Wer Homeoffice einschränkt, sollte die Regeln klar und schriftlich fassen und bestehende Vereinbarungen prüfen; je nach Ausgestaltung braucht es eine Vertragsänderung, und bei Auslagen gilt Art. 327a OR."
+      ],
+      "refs": [
+        "Art. 327a OR",
+        "Art. 321d OR"
+      ],
+      "sources": [
+        {
+          "label": "Watson: Homeoffice-Ranking, Schweiz nur noch auf Rang 8, 27.11.2026",
+          "url": "https://www.watson.ch/schweiz/arbeitswelt/199008876-homeoffice-ranking-schweiz-im-europa-vergleich-nur-noch-auf-rang-8"
+        },
+        {
+          "label": "Cash / AWP: Schweizer Arbeitgeber sind beim Homeoffice zurückhaltender, 26.11.2026",
+          "url": "https://www.cash.ch/news/schweizer-arbeitgeber-sind-beim-homeoffice-zuruckhaltender-988321"
+        },
+        {
+          "label": "IZA Discussion Paper 18992 (Beerli, Fiorin, Gulyas, Kopp, Khoshnama, Siegenthaler), Oktober 2026",
+          "url": "https://www.iza.org/publications/dp/18992/job-seekers-beliefs-and-preferences-over-wages-and-benefits-experimental-evidence-from-online-job-boards"
+        },
+        {
+          "label": "SRF: Die Höhe des Lohnes ist wichtig, aber nicht allein entscheidend, 06.11.2026",
+          "url": "https://www.srf.ch/news/wirtschaft/arbeitsplatz-und-lohn-die-hoehe-des-lohnes-ist-wichtig-aber-nicht-allein-entscheidend"
+        },
+        {
+          "label": "Watson: Geschäftsauto ist bei Nebenleistungen beliebter als Homeoffice, 04.11.2026",
+          "url": "https://www.watson.ch/wissen/schweiz/467068184-geschaeftsauto-ist-bei-nebenleistungen-beliebter-als-homeoffice"
+        }
+      ]
+    },
+    {
       "id": "barometer-gute-arbeit-2026",
       "published": "2026-11-27",
       "date": "2026-11-27",
