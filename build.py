@@ -528,14 +528,36 @@ def chips(target, present):
 
 # ---------- Seiten ----------
 
+# Startseite: Legal-Beiträge zurückhaltend zeigen (Entscheid Herausgeber, 27.11.2026).
+# Legal ist nie Top-Thema; in den übrigen Blöcken gilt eine Obergrenze pro Block.
+HOME_DAMPED = "legal"
+HOME_MAX = {"side": 1, "latest": 2, "week": 0, "background": 1}
+
+
+def capped(seq, n, max_damped):
+    """Die ersten n Beiträge in Originalreihenfolge, davon höchstens max_damped aus HOME_DAMPED."""
+    out, k = [], 0
+    for a in seq:
+        if a["category"] == HOME_DAMPED:
+            if k >= max_damped:
+                continue
+            k += 1
+        out.append(a)
+        if len(out) == n:
+            break
+    return out
+
+
 def build_home():
     arts = articles()
     # Top-Thema: ein "featured"-Artikel nur, wenn er vom neuesten Erscheinungstag ist;
     # sonst der neueste Artikel. So bleibt kein älteres Top-Thema über neuen Beiträgen stehen.
-    lead = next((a for a in arts if a.get("featured") and a["published"] == arts[0]["published"]), arts[0])
+    # Legal-Beiträge werden nie Top-Thema.
+    cand = [a for a in arts if a["category"] != HOME_DAMPED] or arts
+    lead = next((a for a in cand if a.get("featured") and a["published"] == arts[0]["published"]), cand[0])
     rest = [a for a in arts if a is not lead]
-    side = rest[:4]
-    latest = rest[4:16]
+    side = capped(rest, 4, HOME_MAX["side"])
+    latest = capped([a for a in rest if a not in side], 12, HOME_MAX["latest"])
     newest_day = arts[0]["published"]
     today_count = sum(1 for a in arts if a["published"] == newest_day)
     sections = ""
@@ -791,8 +813,8 @@ def home_extras():
     wm = weeks_map()
     wid = max(wm)
     mon, sun = tools.week_range(wid)
-    top = week_top(wm[wid], 3)
-    lis = "".join(f'<li><a href="artikel/{a["id"]}.html">{e(a["title"])}</a></li>' for a in top)
+    top = capped(week_top(wm[wid], len(wm[wid])), 3, HOME_MAX["week"])
+    lis ="".join(f'<li><a href="artikel/{a["id"]}.html">{e(a["title"])}</a></li>' for a in top)
     calc = "".join(f'<a class="tool-chip" href="rechner/{k}.html" style="{cat_style(c)}">{ICONS[c]}{e(t)}</a>' for k, t, _, c in tools.RECHNER)
     y, w = wid.split("-")
     return f"""<section class="block"><div class="wrap"><div class="extras">
@@ -971,7 +993,7 @@ def background_articles():
 
 
 def home_background():
-    items = background_articles()[:3]
+    items = capped(background_articles(), 3, HOME_MAX["background"])
     if not items:
         return ""
     return f"""<section class="block"><div class="wrap"><div class="bg-box">

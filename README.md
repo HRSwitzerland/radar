@@ -30,6 +30,8 @@ Tägliche Newsplattform für HR-Profis in der Schweiz: Arbeitsrecht, Gesetze, Lo
 ```
 `featured: true` macht einen Artikel zum Top-Thema auf der Startseite, aber nur am Tag seiner Veröffentlichung (Erscheinungstag = neuester Tag). Sobald neuere Artikel erscheinen, rückt automatisch der neueste Artikel nach oben.
 
+Legal-Beiträge (`category: "legal"`) werden **nie Top-Thema**: `featured` bei Legal-Artikeln nicht setzen; build.py überspringt sie ohnehin. Auch sonst zeigt die Startseite Legal zurückhaltend (höchstens 1 Legal-Beitrag bei «Ebenfalls wichtig», 2 bei «Neueste Beiträge», keiner in der Wochenkarte, 1 im Hintergrund-Block; einstellbar in `HOME_MAX` in build.py). In der Rubrik Legal, im Archiv und im Newsletter erscheinen weiterhin alle Legal-Beiträge.
+
 Jeden Tag ergänzt eine geplante Aufgabe neue Artikel, führt `build.py` aus und pusht. GitHub Pages veröffentlicht automatisch.
 
 ## Rubrik Legal & Compliance
