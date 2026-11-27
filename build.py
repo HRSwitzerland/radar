@@ -626,7 +626,7 @@ def build_jobs():
 <div class="job-note"><h2>So funktioniert die Liste</h2>
 <p>Wir zeigen ausschliesslich Stellen, welche die Arbeitgeber selbst auf ihren Karriereseiten veröffentlichen, und verlinken direkt auf das Originalinserat. Die Bewerbung läuft beim Arbeitgeber; {e(SITE_NAME)} erhält keine Bewerbungsdaten. Ein Teil der Stellen stammt aus der Jobsuchmaschine Jooble, der Rest direkt aus den Bewerbungssystemen der Arbeitgeber. Angaben ohne Gewähr, massgebend ist das Inserat des Arbeitgebers.</p>
 <p>Sie möchten, dass Ihre HR-Stellen hier erscheinen? <a href="ueber.html">Melden Sie sich bei uns.</a></p>
-<p>Passend dazu: <a href="thema/arbeitsvertrag.html">Arbeitsvertrag</a> · <a href="thema/probezeit.html">Probezeit</a> · <a href="thema/kuendigung.html">Kündigungsfristen</a> · <a href="rechner/index.html">Rechner</a></p></div>
+<p>Passend dazu: <a href="thema/weiterbildung-hr.html">Weiterbildung im HR</a> · <a href="thema/arbeitsvertrag.html">Arbeitsvertrag</a> · <a href="thema/probezeit.html">Probezeit</a> · <a href="thema/kuendigung.html">Kündigungsfristen</a> · <a href="rechner/index.html">Rechner</a></p></div>
 </div>
 <script>
 (function () {{
@@ -1089,7 +1089,14 @@ def build_themes():
         k = t.get("category", "praxis")
         items = theme_articles(t)
         url = f"{SITE_URL}thema/{t['slug']}.html"
-        secs = "".join(f"<h2>{e(x['h'])}</h2><p>{e(x['p'])}</p>" for x in t.get("sections", []))
+        def _items(x):
+            if not x.get("items"):
+                return ""
+            li = "".join(
+                f'<li><b>{(f"<a href=\"{e(i[chr(117)])}\" target=\"_blank\" rel=\"noopener\">{e(i[chr(116)])}</a>") if i.get("u") else e(i["t"])}</b>{(" – " + e(i["d"])) if i.get("d") else ""}</li>'
+                for i in x["items"])
+            return f'<ul class="edu-list">{li}</ul>'
+        secs = "".join(f"<h2>{e(x['h'])}</h2>" + (f"<p>{e(x['p'])}</p>" if x.get("p") else "") + _items(x) + (f"<p>{e(x['p2'])}</p>" if x.get("p2") else "") for x in t.get("sections", []))
         art_ids = {a["id"] for a in articles()}
         theme_slugs = {x["slug"] for x in THEMEN}
         for grp in t.get("checklist", []):

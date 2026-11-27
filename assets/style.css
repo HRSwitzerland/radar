@@ -574,3 +574,6 @@ form.nl { position: relative; }
 }
 @media (max-width: 430px) { nav.main a.nav-home { display: none; } nav.main a { padding: 7px 6px; font-size: .8rem; } nav.main a.cta { padding: 7px 10px; } }
 @media (max-width: 370px) { nav.main a { padding: 6px 4px; font-size: .74rem; } nav.main a.cta { padding: 6px 8px; } }
+.edu-list { padding-left: 1.1em; margin: 0 0 1.2em; }
+.edu-list li { margin: 0 0 .55em; line-height: 1.5; }
+.edu-list b a { color: var(--ink); }
