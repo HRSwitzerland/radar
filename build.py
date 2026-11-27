@@ -389,7 +389,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
   <div class="wrap head-row">
     <a class="logo" href="{up}index.html">{LOGO}<span class="logo-text">{e(SITE_NAME)}<small>Was HR heute wissen muss</small></span></a>
     <nav class="main" aria-label="Hauptnavigation">
-      {nav("index.html", "Home", "home")}
+      {nav("index.html", "Home", "home", "nav-home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
       {nav("stellen.html", "Stellen", "stellen") if JOBS_ON else ""}
@@ -610,7 +610,7 @@ def build_jobs():
     jobs = data.get("jobs", [])
     firms = sorted({j["c"] for j in jobs})
     rows = "".join(
-        f'<li class="job" data-q="{e((j["t"] + " " + j["c"] + " " + j["o"]).lower())}"><a href="{e(j["u"])}" target="_blank" rel="noopener nofollow">'
+        f'<li class="job" data-q="{e((j["t"] + " " + j["c"] + " " + j["o"]).lower())}"><a href="{e(j["u"])}" target="_blank" rel="noopener nofollow{' sponsored' if j.get('s') == 'Jooble' else ''}">'
         f'<span class="job-t">{e(j["t"])}</span><span class="job-m"><b>{e(j["c"])}</b>{(" · " + e(j["o"])) if j["o"] else ""}{(" · " + d_short(j["d"])) if j.get("d") else ""}</span></a></li>'
         for j in jobs)
     empty = '<p class="job-empty">Im Moment sind keine passenden HR-Stellen erfasst. Die Liste wird täglich aktualisiert.</p>'
@@ -620,10 +620,11 @@ def build_jobs():
 <h1>HR-Stellen in der Schweiz</h1>
 <p class="lead">Offene Stellen im HR: HR Business Partner, HR-Leitung, Payroll, Recruiting, People &amp; Culture. Direkt von den Karriereseiten der Arbeitgeber, täglich aktualisiert.</p>
 <div class="search-box job-search">{SEARCH}<input type="search" id="job-q" placeholder="Filtern nach Titel, Firma oder Ort, z.B. Payroll, Basel" aria-label="Stellen filtern"></div>
+<div class="job-chips" aria-label="Schnellfilter">{"".join(f'<button type="button" class="topic job-chip" data-f="{e(x)}">{e(x)}</button>' for x in ("Zürich", "Basel", "Bern", "Luzern", "Zug", "St. Gallen", "Aargau", "Genf", "Lausanne", "HR Business Partner", "Leiter HR", "Payroll", "Recruit", "Generalist"))}</div>
 <p class="job-count" id="job-count">{len(jobs)} {"Stelle" if len(jobs) == 1 else "Stellen"} bei {len(firms)} {"Arbeitgeber" if len(firms) == 1 else "Arbeitgebern"}.{upd}</p>
 {f'<ul class="jobs" id="jobs">{rows}</ul>' if jobs else empty}
 <div class="job-note"><h2>So funktioniert die Liste</h2>
-<p>Wir zeigen ausschliesslich Stellen, welche die Arbeitgeber selbst auf ihren Karriereseiten veröffentlichen, und verlinken direkt auf das Originalinserat. Die Bewerbung läuft beim Arbeitgeber; {e(SITE_NAME)} erhält keine Bewerbungsdaten. Angaben ohne Gewähr, massgebend ist das Inserat des Arbeitgebers.</p>
+<p>Wir zeigen ausschliesslich Stellen, welche die Arbeitgeber selbst auf ihren Karriereseiten veröffentlichen, und verlinken direkt auf das Originalinserat. Die Bewerbung läuft beim Arbeitgeber; {e(SITE_NAME)} erhält keine Bewerbungsdaten. Ein Teil der Stellen stammt aus der Jobsuchmaschine Jooble, der Rest direkt aus den Bewerbungssystemen der Arbeitgeber. Angaben ohne Gewähr, massgebend ist das Inserat des Arbeitgebers.</p>
 <p>Sie möchten, dass Ihre HR-Stellen hier erscheinen? <a href="ueber.html">Melden Sie sich bei uns.</a></p>
 <p>Passend dazu: <a href="thema/arbeitsvertrag.html">Arbeitsvertrag</a> · <a href="thema/probezeit.html">Probezeit</a> · <a href="thema/kuendigung.html">Kündigungsfristen</a> · <a href="rechner/index.html">Rechner</a></p></div>
 </div>
@@ -632,6 +633,7 @@ def build_jobs():
   var q = document.getElementById('job-q'), list = document.getElementById('jobs'), cnt = document.getElementById('job-count');
   if (!q || !list) return;
   var items = list.querySelectorAll('.job'), base = cnt.textContent;
+  document.querySelectorAll('.job-chip').forEach(function (b) {{ b.addEventListener('click', function () {{ q.value = q.value.trim().toLowerCase() === b.dataset.f.toLowerCase() ? '' : b.dataset.f; q.dispatchEvent(new Event('input')); }}); }});
   q.addEventListener('input', function () {{
     var t = q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean), n = 0;
     items.forEach(function (li) {{ var ok = t.every(function (w) {{ return li.dataset.q.indexOf(w) > -1; }}); li.hidden = !ok; if (ok) n++; }});

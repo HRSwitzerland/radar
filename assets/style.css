@@ -564,3 +564,13 @@ form.nl { position: relative; }
 .job-empty { padding: 22px; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); }
 .job-note { border-top: 1px solid var(--line, rgba(0,0,0,.1)); padding-top: 8px; color: var(--muted); }
 .job-note h2 { color: var(--ink); }
+.job-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+.job-chip { cursor: pointer; font: inherit; border: 0; }
+@media (max-width: 430px) {
+  nav.main { overflow-x: auto; scrollbar-width: none; }
+  nav.main::-webkit-scrollbar { display: none; }
+  nav.main a { padding: 7px 5px; font-size: .78rem; }
+  nav.main a.cta { padding: 7px 9px; }
+}
+@media (max-width: 430px) { nav.main a.nav-home { display: none; } nav.main a { padding: 7px 6px; font-size: .8rem; } nav.main a.cta { padding: 7px 10px; } }
+@media (max-width: 370px) { nav.main a { padding: 6px 4px; font-size: .74rem; } nav.main a.cta { padding: 6px 8px; } }

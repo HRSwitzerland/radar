@@ -247,7 +247,13 @@ def main():
             jobs[j["u"]] = j
             hits += 1
         report.append(f"ok      jooble          {len(extra)} Stellen, davon {hits} HR")
-    out = sorted(jobs.values(), key=lambda j: (j["d"] or "0000", j["t"]), reverse=True)
+    out, seen_tc = [], set()
+    for j in sorted(jobs.values(), key=lambda j: (j["d"] or "0000", j["t"]), reverse=True):
+        k = (re.sub(r"\W+", " ", j["t"].lower()).strip(), j["c"].lower().strip())
+        if k[1] and k in seen_tc:
+            continue
+        seen_tc.add(k)
+        out.append(j)
     old = {}
     if os.path.exists(OUT):
         old = json.load(open(OUT, encoding="utf-8"))
