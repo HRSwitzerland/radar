@@ -10,6 +10,72 @@
   "updated": "2026-11-27",
   "articles": [
     {
+      "id": "barometer-gute-arbeit-2026",
+      "published": "2026-11-27",
+      "date": "2026-11-27",
+      "category": "gesundheit",
+      "tags": [
+        "Stress",
+        "Arbeitsplatzsicherheit",
+        "Künstliche Intelligenz",
+        "Erholung",
+        "Umfrage"
+      ],
+      "title": "Barometer Gute Arbeit: Mehr als die Hälfte der Angestellten sorgt sich um den Job",
+      "teaser": "Die Sorge um den eigenen Arbeitsplatz hat innert eines Jahres spürbar zugenommen, der Stress bleibt hoch. Die neue Erhebung von Travailsuisse und Berner Fachhochschule zeigt auch, wo KI im Alltag Druck erzeugt.",
+      "summary": "Im «Barometer Gute Arbeit 2026» von Travailsuisse und der Berner Fachhochschule geben rund 54 Prozent der 1419 befragten Arbeitnehmenden an, sich um ihren Arbeitsplatz zu sorgen; im Vorjahr waren es knapp 49 Prozent. 42 Prozent fühlen sich oft oder sehr oft gestresst, 28,6 Prozent arbeiten oft oder sehr oft in der Freizeit. Mehr als ein Drittel nutzt regelmässig KI bei der Arbeit, viele fühlen sich dabei zu wenig unterstützt.",
+      "sections": [
+        {
+          "h": "Jobsorgen nehmen deutlich zu",
+          "p": "Travailsuisse, der Dachverband der Arbeitnehmenden, hat am 27. November 2026 die zwölfte Ausgabe seines Barometers vorgestellt, das gemeinsam mit der Berner Fachhochschule (BFH) erstellt wird. Befragt wurden repräsentativ 1419 Arbeitnehmende zwischen 16 und 64 Jahren. Rund 54 Prozent machen sich Sorgen um ihren Arbeitsplatz, nach knapp 49 Prozent im Vorjahr. Die kurzfristige Arbeitsplatzsicherheit ist laut der Auswertung auf den tiefsten Stand seit sechs Jahren gesunken. Der Gesamtwert für die Qualität der Arbeit stieg dagegen leicht auf 67,7 von 100 Punkten (2025: 67,0)."
+        },
+        {
+          "h": "Stress und Erschöpfung bleiben hoch",
+          "p": "42 Prozent der Befragten fühlen sich oft oder sehr oft gestresst, praktisch gleich viele wie im Vorjahr (42,4 Prozent). Rund 41,5 Prozent geben an, nach der Arbeit emotional erschöpft zu sein. 28,6 Prozent haben oft oder sehr oft in ihrer Freizeit gearbeitet, um die Anforderungen im Job zu erfüllen. Die körperlichen Belastungen haben dagegen tendenziell abgenommen. Das Bild passt zu anderen Befunden der letzten Wochen, etwa zu den steigenden psychisch bedingten Ausfällen und den Geldsorgen vieler Beschäftigter."
+        },
+        {
+          "h": "KI im Arbeitsalltag: Nutzen mit Nebenwirkungen",
+          "p": "Mehr als ein Drittel der Arbeitnehmenden setzt regelmässig KI-Anwendungen bei der Arbeit ein. Rund ein Fünftel berichtet laut den Agenturberichten, dass damit höhere Erwartungen an die Produktivität verbunden sind. Knapp 60 Prozent haben in den letzten fünf Jahren grössere technologische Veränderungen erlebt, und fast die Hälfte findet, der Arbeitgeber unterstütze oder schule sie dabei zu wenig. 12 Prozent befürchten, ihre Stelle wegen digitaler Technologien zu verlieren."
+        },
+        {
+          "h": "Was Junge suchen und was der Verband fordert",
+          "p": "Erstmals wurden die 16- bis 29-Jährigen separat ausgewertet: Für sie sind interessante Aufgaben (72,7 Prozent) und die Vereinbarkeit von Beruf und Privatleben (66,7 Prozent) die wichtigsten Kriterien bei der Stellenwahl, Karriereperspektiven nennen 40,1 Prozent. Teilzeit ist für 39,3 Prozent der jungen Frauen und 17,2 Prozent der jungen Männer sehr wichtig. Travailsuisse verlangt mehr Engagement von Arbeitgebern und Politik und fordert insbesondere bezahlte Weiterbildungszeit, um den technologischen Wandel zu begleiten. Eine Stellungnahme der Arbeitgeberseite lag zum Zeitpunkt der Berichterstattung nicht vor; die Erhebung stammt von einer Sozialpartnerin und beruht auf Selbstauskünften."
+        }
+      ],
+      "takeaways": [
+        "Das heisst für HR: Steigende Jobsorgen wirken auf Engagement und Gesundheit. Bei Umstrukturierungen oder Sparprogrammen früh und klar kommunizieren, was feststeht und was nicht, statt Gerüchten Raum zu lassen.",
+        "Das heisst für HR: Arbeit in der Freizeit regelmässig sichtbar machen (Zeiterfassung, Überstundenauswertung) und mit Führungskräften besprechen; der Arbeitgeber trägt nach Art. 6 ArG und Art. 328 OR Verantwortung für den Gesundheitsschutz.",
+        "Das heisst für HR: KI-Einführungen mit Schulung und klaren Erwartungen begleiten. Wer Tools einführt, sollte festhalten, ob und wie sich Ziele und Arbeitsmengen verändern.",
+        "Das heisst für HR: Für die Rekrutierung Jüngerer zählen interessante Aufgaben und Vereinbarkeit mehr als Karrierestufen; Stelleninserate und Arbeitgeberauftritt entsprechend prüfen."
+      ],
+      "refs": [
+        "Art. 6 ArG",
+        "Art. 328 OR"
+      ],
+      "sources": [
+        {
+          "label": "Nau.ch / Keystone-SDA, 27.11.2026",
+          "url": "https://www.nau.ch/news/schweiz/arbeitsplatz-barometer-weist-mehr-sorgen-um-den-arbeitsplatz-aus-67207930"
+        },
+        {
+          "label": "Baublatt, 27.11.2026",
+          "url": "https://www.baublatt.ch/management/umfrage-jobangst-und-stress-belasten-angestellte-39953"
+        },
+        {
+          "label": "Moneycab / AWP, 27.11.2026",
+          "url": "https://www.moneycab.com/schweiz/arbeitsplatz-barometer-weist-mehr-sorgen-um-den-arbeitsplatz-aus/"
+        },
+        {
+          "label": "Travailsuisse: Barometer Gute Arbeit",
+          "url": "https://www.travailsuisse.ch/de/barometer"
+        },
+        {
+          "label": "Watson / SDA zum Barometer 2025, 20.11.2025",
+          "url": "https://www.watson.ch/schweiz/leben/399568662-barometer-gute-arbeit-schweizer-angestellte-sind-zunehmend-erschoepft"
+        }
+      ]
+    },
+    {
       "id": "transparenzregister-konzernstrukturen",
       "type": "hintergrund",
       "published": "2026-11-27",
