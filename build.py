@@ -1016,12 +1016,14 @@ def neuerungen_slug():
 def themes_for(a):
     tags = {x.lower() for x in a.get("tags", [])}
     title = a["title"].lower()
-    out = []
+    by_tag, by_word = [], []
     for t in THEMEN:
         m = t.get("match", {})
-        if tags & {x.lower() for x in m.get("tags", [])} or any(w.lower() in title for w in m.get("words", [])):
-            out.append(t)
-    return out[:3]
+        if tags & {x.lower() for x in m.get("tags", [])}:
+            by_tag.append(t)
+        elif any(w.lower() in title for w in m.get("words", [])):
+            by_word.append(t)
+    return (by_tag + by_word)[:3]
 
 
 def theme_articles(t):
