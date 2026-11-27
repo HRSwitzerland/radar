@@ -616,3 +616,8 @@ table.cmp td { min-width: 180px; }
   .cats-label { font-size: .66rem; padding-right: 10px; }
   .cats-band nav.cats { gap: 2px 18px; }
 }
+
+/* Lange deutsche Komposita (z.B. «Lohntransparenzrichtlinie») in Titeln auf schmalen Handys umbrechen statt seitlich überlaufen */
+main, footer { overflow-wrap: break-word; }
+h1, h2, h3 { -webkit-hyphens: auto; hyphens: auto; hyphenate-limit-chars: 10 4 4; }
+@media (max-width: 520px) { main p, main li, main td { -webkit-hyphens: auto; hyphens: auto; hyphenate-limit-chars: 12 5 5; } }

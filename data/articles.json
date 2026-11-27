@@ -136,7 +136,7 @@
       "sections": [
         {
           "h": "Was die Inseratedaten zeigen",
-          "p": "Indeed wertet regelmässig aus, wie viele Stelleninserate Homeoffice oder hybrides Arbeiten erwähnen. Ende Juli erreichte der Anteil in der Schweiz mit 15,4 Prozent den Höchstwert des Jahres, Ende September lag er noch bei 13,1 Prozent und damit unter dem Niveau zu Jahresbeginn. Im Vergleich der europäischen Länder rutschte die Schweiz vom 6. auf den 8. Platz, hinter Deutschland (13,9 Prozent) und knapp vor Italien (13,4 Prozent); an der Spitze stehen Polen (24,5 Prozent), Spanien (21,8 Prozent) und Österreich (17,2 Prozent). Laut einer Indeed-Ökonomin gab es schon in früheren Jahren nach dem Sommer einen ähnlichen Rückgang, auffällig sei aber das Ausmass. Ob es sich um einen Trend oder eine saisonale Bewegung handelt, ist offen."
+          "p": "Indeed wertet regelmässig aus, wie viele Stelleninserate Homeoffice oder hybrides Arbeiten erwähnen. Ende Juli erreichte der Anteil in der Schweiz mit 15,4 Prozent den Höchstwert des Jahres, Ende September lag er noch bei 13,1 Prozent und damit unter dem Niveau zu Jahresbeginn. Im Vergleich der europäischen Länder rutschte die Schweiz vom 6. auf den 8. Platz, unter anderem hinter Deutschland (13,9 Prozent); an der Spitze stehen Polen (24,5 Prozent), Spanien (21,8 Prozent) und Österreich (17,2 Prozent). Laut einer Indeed-Ökonomin gab es schon in früheren Jahren nach dem Sommer einen ähnlichen Rückgang, auffällig sei aber das Ausmass. Ob es sich um einen Trend oder eine saisonale Bewegung handelt, ist offen."
         },
         {
           "h": "Grosse Unterschiede nach Berufsfeldern",
@@ -2384,6 +2384,10 @@
       ],
       "sources": [
         {
+          "label": "BSV, Medienmitteilung 02.10.2026: AHV/IV-Minimalrente steigt um 20 Franken",
+          "url": "https://www.bsv.admin.ch/de/newnsb/BqB41FVYi5FB"
+        },
+        {
           "label": "AMW Treuhand, Sozialversicherungen 2027",
           "url": "https://amw-treuhand.ch/sozialversicherungen-2027-in-der-schweiz/"
         }
@@ -2422,7 +2426,7 @@
     {
       "id": "bvg-grenzbetraege",
       "published": "2026-11-22",
-      "date": "2026-10-05",
+      "date": "2026-10-02",
       "category": "lohn",
       "tags": [
         "BVG",
@@ -2442,8 +2446,12 @@
       ],
       "sources": [
         {
-          "label": "Rivora Sammelstiftung, 05.10.2026",
-          "url": "https://www.rivora.ch/de/news/rivora-sammelstiftung-gewinnt-award-best-residential-properties-2025-2-2-2"
+          "label": "BSV, Medienmitteilung 02.10.2026: AHV/IV-Minimalrente steigt um 20 Franken (inkl. Anpassungen BVG)",
+          "url": "https://www.bsv.admin.ch/de/newnsb/BqB41FVYi5FB"
+        },
+        {
+          "label": "Weka: AHV-Beiträge, diese Grenzbeträge gelten ab 2027, 02.10.2026",
+          "url": "https://www.weka.ch/themen/personal/sozialversicherungen/sozialversicherungsbeitraege/article/ahv-beitraege-diese-grenzbetraege-gelten-neu/"
         }
       ],
       "effective": "2027-01-01"

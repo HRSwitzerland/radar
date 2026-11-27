@@ -73,7 +73,9 @@ def iso(v):
 
 
 def job(title, company, loc, date, url, src):
-    return {"t": " ".join(str(title).split()), "c": company, "o": " ".join(str(loc or "").split()), "d": iso(date), "u": url, "s": src}
+    # Einzelnes «ß» zwischen Wörtern ist ein Kodierungsfehler mancher Feeds für «à» (z.B. «salariale ß la Direction»)
+    title = re.sub(r"(?<=\s)ß(?=\s)", "à", " ".join(str(title).split()))
+    return {"t": title, "c": company, "o": " ".join(str(loc or "").split()), "d": iso(date), "u": url, "s": src}
 
 
 # ---------- Anbieter ----------
