@@ -605,3 +605,14 @@ table.cmp td { min-width: 180px; }
 .career-step b { line-height: 1.3; }
 .career-step span:last-child { color: var(--muted); font-size: .92rem; }
 .career-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } @media (max-width: 520px) { .career-steps { grid-template-columns: 1fr; } }
+
+/* Rubrikenleiste als eigene, beschriftete Ebene (nicht als Untermenü des Hauptmenüs) */
+.cats-band { background: var(--paper); background: color-mix(in srgb, var(--lilac) 24%, var(--bg)); border-top: 1.5px solid var(--line); }
+.site-head .cats-band .wrap { min-height: 0; padding-top: 0; padding-bottom: 0; justify-content: flex-start; flex-wrap: nowrap; gap: 18px; }
+.cats-label { flex: none; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-right: 16px; border-right: 1.5px solid var(--line); line-height: 1.6; }
+.cats-band nav.cats { flex: 1 1 auto; min-width: 0; padding: 9px 0 7px; }
+@media (max-width: 520px) {
+  .site-head .cats-band .wrap { gap: 12px; padding-top: 0; padding-bottom: 0; }
+  .cats-label { font-size: .66rem; padding-right: 10px; }
+  .cats-band nav.cats { gap: 2px 18px; }
+}

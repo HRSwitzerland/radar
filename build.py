@@ -335,8 +335,15 @@ except Exception:
 JOBS_ON = JOBS_N >= JOBS_MIN
 
 
-def layout(title, body, depth=0, desc="", active="", article=False, noindex=False, ld=None, og_type="website", cat=None, extra_head=""):
+# Seiten (Hauptmenü-Bereiche), auf denen die Rubrikenleiste nicht erscheint,
+# damit sie nicht wie ein Untermenü dieser Bereiche wirkt.
+NO_CATS_BAR = {"aenderungen", "rechner", "karriere", "newsletter", "ueber"}
+
+
+def layout(title, body, depth=0, desc="", active="", article=False, noindex=False, ld=None, og_type="website", cat=None, extra_head="", show_cats=None):
     up = "../" * depth
+    if show_cats is None:
+        show_cats = active not in NO_CATS_BAR
     def nav(href, label, key, cls=""):
         cur = ' aria-current="page"' if key == active else ""
         c = f' class="{cls}"' if cls else ""
@@ -397,8 +404,8 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
   </div>
-  <div class="wrap"><nav class="cats" aria-label="Rubriken">{cats_nav}</nav></div>
-</header>
+{f'''  <div class="cats-band"><div class="wrap"><span class="cats-label" aria-hidden="true">Rubriken</span><nav class="cats" aria-label="Rubriken">{cats_nav}</nav></div></div>
+''' if show_cats else ""}</header>
 <main>
 {body}
 </main>
@@ -601,7 +608,7 @@ def build_support():
 <ul><li>Die Zahlung läuft über Buy Me a Coffee. Wir sehen keine Kartendaten.</li><li>Der Beitrag ist freiwillig und an keine Gegenleistung gebunden. Alle Inhalte bleiben für alle frei zugänglich.</li><li>{e(SITE_NAME)} ist keine gemeinnützige Organisation. Beiträge sind deshalb nicht steuerlich abziehbar.</li></ul>
 <p>Andere Wege, uns zu helfen: <a href="newsletter.html">Newsletter abonnieren</a> und {e(SITE_NAME)} Kolleginnen und Kollegen weiterempfehlen.</p>
 </div>"""
-    write("unterstuetzen.html", layout("Unterstützen", body, 0, desc=f"{SITE_NAME} ist kostenlos und werbefrei. Mit einem freiwilligen Beitrag unterstützen Sie die Arbeit an der Newsplattform für HR und Legal in der Schweiz."))
+    write("unterstuetzen.html", layout("Unterstützen", body, 0, show_cats=False, desc=f"{SITE_NAME} ist kostenlos und werbefrei. Mit einem freiwilligen Beitrag unterstützen Sie die Arbeit an der Newsplattform für HR und Legal in der Schweiz."))
 
 
 def build_jobs():
