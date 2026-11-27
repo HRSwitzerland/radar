@@ -1,0 +1,41 @@
+name: HR-Stellen aktualisieren
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stellen
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Stellen von den Karriereseiten holen
+        run: python scripts/stellen_feed.py
+      - name: Seite bauen und veröffentlichen
+        run: |
+          cp data/stellen.json /tmp/stellen.json
+          git config user.name "HR Radar Stellen"
+          git config user.email "HRSwitzerland@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp /tmp/stellen.json data/stellen.json
+            python build.py
+            if [ -z "$(git status --porcelain)" ]; then echo "Keine Änderungen"; exit 0; fi
+            git add -A
+            git commit -q -m "HR-Stellen aktualisiert"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 20
+          done
+          exit 1

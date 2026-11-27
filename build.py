@@ -384,6 +384,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       {nav("index.html", "Home", "home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
+      {nav("stellen.html", "Stellen", "stellen")}
       {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
@@ -398,7 +399,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
+      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}stellen.html">HR-Stellen</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
     </div>
     <div>
       <h2>Themen</h2>
@@ -593,6 +594,45 @@ def build_support():
 <p>Andere Wege, uns zu helfen: <a href="newsletter.html">Newsletter abonnieren</a> und {e(SITE_NAME)} Kolleginnen und Kollegen weiterempfehlen.</p>
 </div>"""
     write("unterstuetzen.html", layout("Unterstützen", body, 0, desc=f"{SITE_NAME} ist kostenlos und werbefrei. Mit einem freiwilligen Beitrag unterstützen Sie die Arbeit an der Newsplattform für HR und Legal in der Schweiz."))
+
+
+def build_jobs():
+    path = os.path.join(ROOT, "data", "stellen.json")
+    data = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"jobs": []}
+    jobs = data.get("jobs", [])
+    firms = sorted({j["c"] for j in jobs})
+    rows = "".join(
+        f'<li class="job" data-q="{e((j["t"] + " " + j["c"] + " " + j["o"]).lower())}"><a href="{e(j["u"])}" target="_blank" rel="noopener nofollow">'
+        f'<span class="job-t">{e(j["t"])}</span><span class="job-m"><b>{e(j["c"])}</b>{(" · " + e(j["o"])) if j["o"] else ""}{(" · " + d_short(j["d"])) if j.get("d") else ""}</span></a></li>'
+        for j in jobs)
+    empty = '<p class="job-empty">Im Moment sind keine passenden HR-Stellen erfasst. Die Liste wird täglich aktualisiert.</p>'
+    upd = f' Stand: {d_short(data["updated"])}.' if data.get("updated") else ""
+    body = f"""<div class="narrow page">
+<span class="eyebrow"><span class="pill">Stellen</span></span>
+<h1>HR-Stellen in der Schweiz</h1>
+<p class="lead">Offene Stellen im HR: HR Business Partner, HR-Leitung, Payroll, Recruiting, People &amp; Culture. Direkt von den Karriereseiten der Arbeitgeber, täglich aktualisiert.</p>
+<div class="search-box job-search">{SEARCH}<input type="search" id="job-q" placeholder="Filtern nach Titel, Firma oder Ort, z.B. Payroll, Basel" aria-label="Stellen filtern"></div>
+<p class="job-count" id="job-count">{len(jobs)} {"Stelle" if len(jobs) == 1 else "Stellen"} bei {len(firms)} {"Arbeitgeber" if len(firms) == 1 else "Arbeitgebern"}.{upd}</p>
+{f'<ul class="jobs" id="jobs">{rows}</ul>' if jobs else empty}
+<div class="job-note"><h2>So funktioniert die Liste</h2>
+<p>Wir zeigen ausschliesslich Stellen, welche die Arbeitgeber selbst auf ihren Karriereseiten veröffentlichen, und verlinken direkt auf das Originalinserat. Die Bewerbung läuft beim Arbeitgeber; {e(SITE_NAME)} erhält keine Bewerbungsdaten. Angaben ohne Gewähr, massgebend ist das Inserat des Arbeitgebers.</p>
+<p>Sie möchten, dass Ihre HR-Stellen hier erscheinen? <a href="ueber.html">Melden Sie sich bei uns.</a></p>
+<p>Passend dazu: <a href="thema/arbeitsvertrag.html">Arbeitsvertrag</a> · <a href="thema/probezeit.html">Probezeit</a> · <a href="thema/kuendigung.html">Kündigungsfristen</a> · <a href="rechner/index.html">Rechner</a></p></div>
+</div>
+<script>
+(function () {{
+  var q = document.getElementById('job-q'), list = document.getElementById('jobs'), cnt = document.getElementById('job-count');
+  if (!q || !list) return;
+  var items = list.querySelectorAll('.job'), base = cnt.textContent;
+  q.addEventListener('input', function () {{
+    var t = q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean), n = 0;
+    items.forEach(function (li) {{ var ok = t.every(function (w) {{ return li.dataset.q.indexOf(w) > -1; }}); li.hidden = !ok; if (ok) n++; }});
+    cnt.textContent = t.length ? n + ' von ' + items.length + ' Stellen' : base;
+  }});
+}})();
+</script>"""
+    write("stellen.html", layout("HR-Stellen Schweiz", body, 0, active="stellen",
+          desc="Aktuelle HR-Stellen in der Schweiz: HR Business Partner, HR-Leitung, Payroll, Recruiting und People & Culture, direkt von den Karriereseiten der Arbeitgeber."))
 
 
 def build_article(a, draft=False):
@@ -1170,6 +1210,7 @@ def main():
     nl.write_outbox(ROOT, DATA, articles(), CATS, PALETTE, ORDER, SITE_NAME, SITE_URL, upcoming_list())
     build_about()
     build_support()
+    build_jobs()
     build_feeds()
     build_themes()
     build_404()
