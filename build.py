@@ -392,7 +392,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       {nav("index.html", "Home", "home", "nav-home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
-      {nav("stellen.html", "Stellen", "stellen") if JOBS_ON else ""}
+      {nav("karriere.html", "Karriere", "karriere")}
       {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
@@ -407,7 +407,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · {f'<a href="{up}stellen.html">HR-Stellen</a> · ' if JOBS_ON else ""}<a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
+      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}karriere.html">Karriere im HR</a> · {f'<a href="{up}stellen.html">HR-Stellen</a> · ' if JOBS_ON else ""}<a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
     </div>
     <div>
       <h2>Themen</h2>
@@ -616,7 +616,7 @@ def build_jobs():
     empty = '<p class="job-empty">Im Moment sind keine passenden HR-Stellen erfasst. Die Liste wird täglich aktualisiert.</p>'
     upd = f' Stand: {d_short(data["updated"])}.' if data.get("updated") else ""
     body = f"""<div class="narrow page">
-<span class="eyebrow"><span class="pill">Stellen</span></span>
+<div class="crumbs"><a href="karriere.html">Karriere im HR</a> › Stellen</div>
 <h1>HR-Stellen in der Schweiz</h1>
 <p class="lead">Offene Stellen im HR: HR Business Partner, HR-Leitung, Payroll, Recruiting, People &amp; Culture. Direkt von den Karriereseiten der Arbeitgeber, täglich aktualisiert.</p>
 <div class="search-box job-search">{SEARCH}<input type="search" id="job-q" placeholder="Filtern nach Titel, Firma oder Ort, z.B. Payroll, Basel" aria-label="Stellen filtern"></div>
@@ -639,10 +639,64 @@ def build_jobs():
     items.forEach(function (li) {{ var ok = t.every(function (w) {{ return li.dataset.q.indexOf(w) > -1; }}); li.hidden = !ok; if (ok) n++; }});
     cnt.textContent = t.length ? n + ' von ' + items.length + ' Stellen' : base;
   }});
+  if (location.hash.length > 1) {{ q.value = decodeURIComponent(location.hash.slice(1)); q.dispatchEvent(new Event('input')); }}
 }})();
 </script>"""
-    write("stellen.html", layout("HR-Stellen Schweiz", body, 0, active="stellen", noindex=not JOBS_ON,
+    write("stellen.html", layout("HR-Stellen Schweiz", body, 0, active="karriere", noindex=not JOBS_ON,
           desc="Aktuelle HR-Stellen in der Schweiz: HR Business Partner, HR-Leitung, Payroll, Recruiting und People & Culture, direkt von den Karriereseiten der Arbeitgeber."))
+
+
+def build_career():
+    path = os.path.join(ROOT, "data", "stellen.json")
+    data = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"jobs": []}
+    jobs = data.get("jobs", [])
+    top = "".join(
+        f'<li class="job"><a href="{e(j["u"])}" target="_blank" rel="noopener nofollow{" sponsored" if j.get("s") == "Jooble" else ""}"><span class="job-t">{e(j["t"])}</span>'
+        f'<span class="job-m"><b>{e(j["c"])}</b>{(" · " + e(j["o"])) if j["o"] else ""}{(" · " + d_short(j["d"])) if j.get("d") else ""}</span></a></li>'
+        for j in jobs[:6])
+    chips = "".join(f'<a class="topic" href="stellen.html#{e(x)}">{e(x)}</a>' for x in ("Zürich", "Basel", "Bern", "Luzern", "Genf", "HR Business Partner", "Leiter HR", "Payroll", "Recruit", "Generalist"))
+    jobs_block = (f"""<p class="job-count">{len(jobs)} offene HR-Stellen in der ganzen Schweiz, täglich aktualisiert.</p>
+<div class="job-chips">{chips}</div>
+<ul class="jobs">{top}</ul>
+<p><a class="btn" href="stellen.html">Alle {len(jobs)} HR-Stellen ansehen</a></p>""" if JOBS_ON else
+        '<p>Die Stellenliste wird gerade aufgebaut und erscheint hier, sobald genügend Inserate vorliegen.</p>')
+    steps = [
+        ("1", "Einstieg", "HR-Assistent/in mit Zertifikat HRSE", "Grundlagen der Personaladministration, rund ein Semester. Zulassung zur Berufsprüfung."),
+        ("2", "Fachausweis", "HR-Fachfrau/HR-Fachmann mit eidg. Fachausweis", "Der zentrale Berufsabschluss im HR, drei Fachrichtungen, «Professional Bachelor»."),
+        ("3", "Diplom", "Leiter/in Human Resources mit eidg. Diplom", "Für HR-Leitung und Strategie, höhere Fachprüfung, «Professional Master»."),
+        ("+", "Hochschule", "CAS, DAS und MAS in HRM oder Arbeitsrecht", "Berufsbegleitend an ZHAW, FHNW, BFH und weiteren, vor allem mit Hochschulabschluss."),
+    ]
+    steps_html = "".join(f'<a class="career-step" href="thema/weiterbildung-hr.html"><span class="step-no">{n}</span><span class="step-k">{e(k)}</span><b>{e(h)}</b><span>{e(p)}</span></a>' for n, k, h, p in steps)
+    faqs = [("unterschied-hr-fachfrau-leiter-hr", "HR-Fachfrau oder Leiter HR: welcher Abschluss passt?"),
+            ("unterschied-arbeitszeugnis-arbeitsbestaetigung", "Arbeitszeugnis oder Arbeitsbestätigung?"),
+            ("unterschied-befristet-unbefristet", "Befristeter oder unbefristeter Vertrag?"),
+            ("unterschied-temporaer-festanstellung", "Temporärstelle oder Festanstellung?"),
+            ("probezeit", "Probezeit: Dauer, Verlängerung, Kündigung"),
+            ("arbeitsvertrag", "Arbeitsvertrag: was hineingehört"),
+            ("konkurrenzverbot", "Konkurrenzverbot beim Stellenwechsel"),
+            ("arbeitszeugnis", "Arbeitszeugnis richtig lesen und formulieren")]
+    slugs = {x["slug"] for x in THEMEN}
+    faq_html = "".join(f'<li><a href="thema/{s}.html">{e(lbl)}</a></li>' for s, lbl in faqs if s in slugs)
+    body = f"""<section class="cat-hero" style="{cat_style("praxis")}"><span class="blob b1"></span><div class="wrap">
+  <span class="cat-big" aria-hidden="true">{ICONS["praxis"]}</span>
+  <div><span class="hand">Karriere</span><h1>Karriere im HR: Stellen und Weiterbildung</h1><p class="lead">Offene HR-Stellen in der ganzen Schweiz und alle Wege, sich im HR weiterzubilden: vom HR-Assistenten über den eidgenössischen Fachausweis bis zur HR-Leitung und zum MAS.</p>
+  <p><a class="btn" href="#stellen">Zu den Stellen</a> <a class="btn ghost" href="#weiterbildung">Zur Weiterbildung</a></p></div>
+</div></section>
+<div class="narrow page career">
+<h2 id="stellen">Aktuelle HR-Stellen</h2>
+{jobs_block}
+<h2 id="weiterbildung">Weiterbildung: der Weg im HR</h2>
+<p>Die eidgenössischen HR-Abschlüsse bauen aufeinander auf. Daneben bieten Fachhochschulen berufsbegleitende CAS und MAS an.</p>
+<div class="career-steps">{steps_html}</div>
+<div class="pdf-cta"><div><b>Der Bund zahlt mit</b><p>Für Kurse, die auf eine eidgenössische Prüfung vorbereiten, übernimmt der Bund 50 Prozent der Kursgebühren, höchstens CHF 9'500 beim Fachausweis und CHF 10'500 beim Diplom. Voraussetzung: Sie legen die Prüfung ab.</p></div><a class="btn red" href="thema/weiterbildung-hr.html">Alle Abschlüsse, Schulen und Kosten</a></div>
+<h2>Häufige Fragen rund um Stelle und Karriere</h2>
+<ul class="edu-list">{faq_html}</ul>
+<h2>Auf dem Laufenden bleiben</h2>
+<p>Jeden Dienstag das Wichtigste aus Arbeitsrecht, Lohn und HR im Newsletter, kostenlos.</p>
+<p><a class="btn red" href="newsletter.html#anmelden">Newsletter abonnieren</a></p>
+</div>"""
+    write("karriere.html", layout("Karriere im HR: Stellen und Weiterbildung", body, 0, active="karriere",
+          desc="Karriere im HR in der Schweiz: aktuelle HR-Stellen, Weiterbildungen vom HR-Assistenten bis zum eidg. Diplom und MAS, Bundesbeiträge und häufige Fragen."))
 
 
 def build_article(a, draft=False):
@@ -1233,6 +1287,7 @@ def main():
     build_about()
     build_support()
     build_jobs()
+    build_career()
     build_feeds()
     build_themes()
     build_404()

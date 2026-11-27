@@ -1903,6 +1903,11 @@
           "p": "Die eidgenössischen Abschlüsse sind gestuft: Das HRSE-Zertifikat HR-Assistent/in ist der Einstieg und Zulassungsvoraussetzung für die Berufsprüfung HR-Fachfrau/HR-Fachmann mit eidg. Fachausweis. Darauf baut die höhere Fachprüfung Leiter/in Human Resources mit eidg. Diplom auf. Prüfungsträgerschaft für diese drei Stufen ist HRSE (Human Resources Swiss Exams). Wer eine Berufsprüfung oder höhere Fachprüfung bestanden hat, darf seit dem 1. Oktober 2026 zusätzlich die Titelzusätze «Professional Bachelor» bzw. «Professional Master» führen, auch für früher erworbene Abschlüsse. Parallel dazu bieten Fachhochschulen und Universitäten berufsbegleitende CAS, DAS und MAS an; sie eignen sich besonders für Personen mit Hochschulabschluss oder für Spezialisierungen.",
           "items": [
             {
+              "t": "Karriere im HR: Stellen und Weiterbildung",
+              "d": "aktuelle HR-Stellen in der ganzen Schweiz und der Weg vom Einstieg bis zur HR-Leitung auf einen Blick",
+              "u": "../karriere.html"
+            },
+            {
               "t": "HRSE – Human Resources Swiss Exams",
               "d": "Prüfungsträgerschaft für HR-Assistent/in, HR-Fachleute und Leiter/in HR; Prüfungsordnungen, Termine und Gebühren",
               "u": "https://www.hrse.ch"
