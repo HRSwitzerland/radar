@@ -177,6 +177,30 @@ def ashby(s):
     return out
 
 
+def jooble():
+    """Offizielle Jooble-REST-API (Partnerschlüssel als Secret JOOBLE_KEY)."""
+    key = os.environ.get("JOOBLE_KEY", "").strip()
+    if not key:
+        return None
+    host = os.environ.get("JOOBLE_HOST", "ch.jooble.org").strip()
+    out, seen = [], set()
+    for q in ("HR Business Partner", "HR Generalist", "HR-Fachfrau", "Personalfachfrau", "Personalleiter", "HR Manager", "Leiter HR",
+              "Payroll", "Lohnbuchhalter", "Recruiter", "Talent Acquisition", "People & Culture", "HR Assistent", "Ressources humaines", "Gestionnaire RH"):
+        for page in (1, 2):
+            try:
+                res = jget(f"https://{host}/api/{key}", {"keywords": q, "location": "Schweiz", "page": str(page)})
+            except Exception:
+                break
+            for j in res.get("jobs", []):
+                u = j.get("link")
+                if not u or u in seen:
+                    continue
+                seen.add(u)
+                out.append(job(j.get("title", ""), j.get("company") or "", j.get("location", "") + " (Schweiz)", j.get("updated"), u, "Jooble"))
+            time.sleep(PAUSE)
+    return out
+
+
 FETCH = {"workday": workday, "greenhouse": greenhouse, "smartrecruiters": smartrecruiters, "lever": lever,
          "recruitee": recruitee, "personio": personio, "teamtailor": teamtailor, "ashby": ashby}
 
@@ -206,6 +230,23 @@ def main():
             hits += 1
         report.append(f"ok      {s['typ']:<15} {s['name']}: {len(raw)} Stellen, davon {hits} HR in CH")
         time.sleep(PAUSE)
+    try:
+        extra = jooble()
+    except Exception as ex:
+        extra = None
+        report.append(f"FEHLER  jooble: {type(ex).__name__} {str(ex)[:80]}")
+    if extra is not None:
+        hits = 0
+        known = {(j["t"].lower(), j["c"].lower()) for j in jobs.values()}
+        for j in extra:
+            core = re.sub(r"\([^)]*\)|\[[^]]*\]", " ", j["t"])
+            if not j["t"] or not HR.search(core) or NOT_HR.search(core) or (j["d"] and j["d"] < cutoff):
+                continue
+            if (j["t"].lower(), j["c"].lower()) in known:
+                continue
+            jobs[j["u"]] = j
+            hits += 1
+        report.append(f"ok      jooble          {len(extra)} Stellen, davon {hits} HR")
     out = sorted(jobs.values(), key=lambda j: (j["d"] or "0000", j["t"]), reverse=True)
     old = {}
     if os.path.exists(OUT):

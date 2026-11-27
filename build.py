@@ -327,6 +327,14 @@ PUBLISHER_LD = {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL,
                 "logo": {"@type": "ImageObject", "url": SITE_URL + "assets/og/logo.png"}}
 
 
+JOBS_MIN = 15
+try:
+    JOBS_N = len(json.load(open(os.path.join(ROOT, "data", "stellen.json"), encoding="utf-8")).get("jobs", []))
+except Exception:
+    JOBS_N = 0
+JOBS_ON = JOBS_N >= JOBS_MIN
+
+
 def layout(title, body, depth=0, desc="", active="", article=False, noindex=False, ld=None, og_type="website", cat=None, extra_head=""):
     up = "../" * depth
     def nav(href, label, key, cls=""):
@@ -384,7 +392,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
       {nav("index.html", "Home", "home")}
       {nav("aenderungen.html", "Das ändert sich", "aenderungen")}
       {nav("rechner/index.html", "Rechner", "rechner")}
-      {nav("stellen.html", "Stellen", "stellen")}
+      {nav("stellen.html", "Stellen", "stellen") if JOBS_ON else ""}
       {nav("newsletter.html", "Newsletter", "newsletter", "cta")}
       <a href="{up}suche.html" class="icon-link{' is-active' if active == 'suche' else ''}" aria-label="Suche">{SEARCH}</a>
     </nav>
@@ -399,7 +407,7 @@ def layout(title, body, depth=0, desc="", active="", article=False, noindex=Fals
     <div>
       <h2>{e(SITE_NAME)}</h2>
       <p>Das Wichtigste für HR- und Legal-Verantwortliche in der Schweiz. Verständlich zusammengefasst, eingeordnet und immer mit Quellen.</p>
-      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · <a href="{up}stellen.html">HR-Stellen</a> · <a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
+      <p><a href="{up}thema/index.html">Themen</a> · <a href="{up}hintergrund.html">Hintergrund</a> · <a href="{up}woche/index.html">Wochenrückblick</a> · <a href="{up}archiv.html">Archiv</a> · {f'<a href="{up}stellen.html">HR-Stellen</a> · ' if JOBS_ON else ""}<a href="{up}suche.html">Suche</a> · <a href="{up}feed.xml">RSS-Feed</a> · <a href="{up}ueber.html">Über</a>{f' · <a href="{up}unterstuetzen.html">Unterstützen</a>' if SUPPORT_URL else ""}</p>
     </div>
     <div>
       <h2>Themen</h2>
@@ -631,7 +639,7 @@ def build_jobs():
   }});
 }})();
 </script>"""
-    write("stellen.html", layout("HR-Stellen Schweiz", body, 0, active="stellen",
+    write("stellen.html", layout("HR-Stellen Schweiz", body, 0, active="stellen", noindex=not JOBS_ON,
           desc="Aktuelle HR-Stellen in der Schweiz: HR Business Partner, HR-Leitung, Payroll, Recruiting und People & Culture, direkt von den Karriereseiten der Arbeitgeber."))
 
 

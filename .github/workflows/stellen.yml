@@ -21,6 +21,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Stellen von den Karriereseiten holen
+        env:
+          JOOBLE_KEY: ${{ secrets.JOOBLE_KEY }}
         run: python scripts/stellen_feed.py
       - name: Seite bauen und veröffentlichen
         run: |
