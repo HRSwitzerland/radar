@@ -10,6 +10,113 @@
   "updated": "2026-11-27",
   "articles": [
     {
+      "id": "krankheit-kuendigung-sperrfristen",
+      "type": "hintergrund",
+      "published": "2026-11-27",
+      "category": "arbeitsrecht",
+      "tags": [
+        "Sperrfrist",
+        "Kündigung",
+        "Krankheit",
+        "Arztzeugnis",
+        "Lohnfortzahlung"
+      ],
+      "title": "Krank und gekündigt: Wie HR Sperrfristen, Arztzeugnisse und Retorsionsrisiken sicher handhabt",
+      "teaser": "Kaum eine Kündigungssituation ist so fehleranfällig wie jene mit einem krankgeschriebenen Mitarbeitenden. Ein Überblick über Sperrfristen, die neuere Bundesgerichtspraxis und ein Vorgehen, das vor nichtigen oder missbräuchlichen Kündigungen schützt.",
+      "summary": "Nach der Probezeit schützt Art. 336c OR Arbeitnehmende bei Krankheit oder Unfall je nach Dienstjahr 30, 90 oder 180 Tage vor einer ordentlichen Kündigung. Eine Kündigung während der Sperrfrist ist nichtig, eine vorher ausgesprochene läuft verzögert weiter. Das Bundesgericht hat 2024 bestätigt, dass eine rein arbeitsplatzbezogene Arbeitsunfähigkeit keine Sperrfrist auslöst, und 2025, dass jede neue, unabhängige Krankheit eine neue Sperrfrist eröffnet. Wer kurz nach einer Krankmeldung kündigt, muss zudem mit dem Vorwurf der Retorsion rechnen.",
+      "sections": [
+        {
+          "h": "Ausgangslage: Absenzen steigen, Kündigungen werden heikler",
+          "p": "Krankheitsbedingte Ausfälle beschäftigen HR-Abteilungen stärker als noch vor wenigen Jahren. Gemäss der KMU-Arbeitsmarktstudie 2026 der AXA ist mehr als ein Drittel der KMU mittel oder stark von psychisch bedingten Fehlzeiten betroffen (HR Radar berichtete). Lange Absenzen enden nicht selten in einer Trennung. Genau hier passieren in der Praxis die teuersten Fehler: Kündigungen, die nichtig sind und nie Wirkung entfalten, Kündigungsfristen, die falsch berechnet werden, oder Entlassungen, die das Gericht als Reaktion auf die Krankmeldung wertet. Ein aktueller Bundesgerichtsentscheid zu einer fristlosen Entlassung am ersten Arbeitstag nach Eingang eines Arztzeugnisses (4A_223/2026) zeigt, wie genau Gerichte auf die Chronologie schauen."
+        },
+        {
+          "h": "Die Rechtslage: Was Art. 336c OR regelt",
+          "p": "Die Sperrfristen gelten erst nach Ablauf der Probezeit. Ist eine Person ohne eigenes Verschulden ganz oder teilweise wegen Krankheit oder Unfall an der Arbeit verhindert, darf der Arbeitgeber im ersten Dienstjahr während 30 Tagen, vom zweiten bis und mit fünften Dienstjahr während 90 Tagen und ab dem sechsten Dienstjahr während 180 Tagen nicht ordentlich kündigen. Weitere Sperrfristen betreffen Militär-, Schutz- und Zivildienst, Schwangerschaft und die 16 Wochen nach der Niederkunft, den verlängerten Mutterschaftsurlaub, den Betreuungsurlaub für schwer kranke Kinder sowie seit 2024 die Urlaube des überlebenden Elternteils, wenn Mutter oder Vater kurz nach der Geburt stirbt. Die Rechtsfolgen sind in Abs. 2 und 3 geregelt: Eine während der Sperrfrist ausgesprochene Kündigung ist nichtig, sie muss nach Ablauf wiederholt werden. Wurde vor Beginn der Sperrfrist gekündigt, steht die Kündigungsfrist still und läuft nach deren Ende weiter. Fällt das neue Ende nicht auf einen Endtermin wie das Monatsende, verschiebt es sich auf den nächsten Endtermin. Für Krankheit in der Probezeit gilt eine eigene Regel: Die Probezeit verlängert sich entsprechend (Art. 335b Abs. 3 OR). Wichtig: Die Sperrfristen betreffen nur die ordentliche Kündigung des Arbeitgebers. Eine fristlose Kündigung aus wichtigem Grund bleibt möglich, ebenso eine Kündigung durch die Arbeitnehmerin oder einen Aufhebungsvertrag."
+        },
+        {
+          "h": "Rechtsprechung: Drei Entscheide, die man kennen muss",
+          "p": "Erstens die arbeitsplatzbezogene Arbeitsunfähigkeit: Im Urteil 1C_595/2023 vom 26. März 2024 (Bundespersonalrecht, das auf Art. 336c OR verweist) hielt das Bundesgericht fest, dass der Kündigungsschutz nicht greift, wenn die Beeinträchtigung so beschränkt ist, dass sie eine Stelle bei einem anderen Arbeitgeber nicht verhindert. Wirkt sich eine durch Konflikte am Arbeitsplatz ausgelöste Erkrankung hingegen auf das ganze Leben aus, etwa bei einem Burnout, ist sie nicht mehr rein arbeitsplatzbezogen. Den Nachweis muss nach überwiegender Auffassung der Arbeitgeber erbringen, in der Regel über einen Vertrauensarzt. Der Lohnfortzahlungsanspruch nach Art. 324a OR bleibt davon unberührt. Zweitens mehrere Krankheiten: Im Urteil 4A_549/2024 vom 4. August 2025 bestätigte das Bundesgericht, dass jede neue Krankheit oder jeder neue Unfall ohne Zusammenhang mit einer früheren Erkrankung eine neue Sperrfrist auslöst; Rückfälle und Verschlimmerungen nicht. Im konkreten Fall wertete es eine Depression nicht als eigenständige Erkrankung neben einem Herzinfarkt. Drittens die zeitliche Nähe zur Krankmeldung: Im Entscheid 4A_223/2026 hatte eine Kanzlei eine Assistentin fristlos entlassen, nachdem sie einen früheren Fehler nur verwarnt und nach dem zweiten zu lange zugewartet hatte. Die Kündigung folgte unmittelbar auf ein Arztzeugnis; die Vorinstanzen sahen darin eine Retorsion, das Bundesgericht wies die Beschwerde ab."
+        },
+        {
+          "h": "Das Arztzeugnis: starkes Indiz, aber kein absoluter Beweis",
+          "p": "Die Arbeitsunfähigkeit muss grundsätzlich die Arbeitnehmerin beweisen, meist mit einem Arztzeugnis. Dieses gilt vor Gericht als Parteibehauptung mit erheblichem Gewicht, aber nicht als unumstösslicher Beweis. Begründete Zweifel können sich etwa ergeben, wenn ein Zeugnis weit zurückdatiert ist, erst nach der Kündigung ausgestellt wurde, ausschliesslich auf den Schilderungen der Patientin beruht oder wenn die Person während der Krankschreibung Tätigkeiten nachgeht, die mit der attestierten Einschränkung nicht vereinbar sind. Bei solchen Zweifeln kann der Arbeitgeber eine Untersuchung bei einem Vertrauensarzt anordnen und trägt dafür die Kosten. Die Arbeitnehmerin muss aufgrund ihrer Treuepflicht mitwirken; verweigert sie dies trotz Hinweis auf die Folgen, riskiert sie den Lohnanspruch. Die Diagnose selbst darf HR nicht verlangen. Nach Art. 328b OR dürfen nur Daten bearbeitet werden, die für das Arbeitsverhältnis nötig sind, also Dauer, Grad und allenfalls die Frage, ob die Einschränkung nur den bisherigen Arbeitsplatz betrifft."
+        },
+        {
+          "h": "Praxisbeispiel: So verschiebt sich das Vertragsende",
+          "p": "Eine Mitarbeiterin im dritten Dienstjahr erhält am 15. Mai die Kündigung mit zwei Monaten Frist auf Ende Juli. Vom 1. bis 20. Juli ist sie krankgeschrieben. Bis Ende Juni sind 46 Tage der Frist abgelaufen, 31 Tage fehlen noch. Die Sperrfrist von höchstens 90 Tagen dauert hier nur so lange wie die Krankheit, also 20 Tage. Ab dem 21. Juli läuft die Restfrist weiter und endet am 20. August; weil Monatsende als Endtermin gilt, endet das Arbeitsverhältnis am 31. August. Anders liegt der Fall, wenn die Kündigung erst nach Beginn der Krankheit zugestellt wird: Dann ist sie nichtig, und HR muss sie nach Ablauf der Sperrfrist neu aussprechen. Massgebend ist dabei der Zugang der Kündigung, nicht das Datum auf dem Brief. Wer kurz vor einem Monatsende kündigt, sollte deshalb den Zugang beweisbar sichern und den Gesundheitszustand der Person an diesem Tag kennen."
+        },
+        {
+          "h": "Typische Fehler in der Praxis",
+          "p": "Häufig wird übersehen, dass die Sperrfrist mit dem Dienstjahr wächst; fällt ein Dienstjubiläum in die Zeit der Krankheit, ist zu prüfen, ob die längere Frist gilt, was in der Lehre nicht einheitlich beurteilt wird. Ebenso verbreitet ist die Annahme, eine Teilarbeitsunfähigkeit löse keinen Schutz aus; auch eine teilweise Verhinderung genügt. Ein weiterer Fehler ist die vorschnelle Berufung auf eine arbeitsplatzbezogene Arbeitsunfähigkeit, ohne dass ein Vertrauensarzt dies klar bestätigt hat. Riskant ist schliesslich jede Kündigung, die zeitlich auffällig nahe an einer Krankmeldung liegt, ohne dass der eigentliche Kündigungsgrund vorher sauber dokumentiert wurde. Selbst wenn keine Sperrfrist mehr läuft, kann eine solche Kündigung missbräuchlich sein, besonders wenn die Erkrankung mit einer Verletzung der Fürsorgepflicht des Arbeitgebers zusammenhängt, zum Beispiel bei ungelösten Konflikten oder Überlastung."
+        },
+        {
+          "h": "Vorgehen in sieben Schritten",
+          "p": "1. Vor jeder Kündigung den aktuellen Gesundheitsstatus und allfällige Absenzen der letzten Monate prüfen. 2. Dienstjahr, Probezeit und vertragliche Kündigungsfrist bestimmen und die anwendbare Sperrfrist ausrechnen. 3. Bei laufender Krankheit nicht ordentlich kündigen, sondern das Ende der Sperrfrist abwarten oder eine einvernehmliche Lösung suchen. 4. Bei Zweifeln an Zeugnis oder Arbeitsplatzbezogenheit eine vertrauensärztliche Untersuchung mit konkreten Fragen anordnen, allenfalls über die Krankentaggeldversicherung. 5. Den Kündigungsgrund unabhängig von der Krankheit dokumentieren: Gespräche, Zielvereinbarungen, Verwarnungen mit Datum. 6. Wird trotz behaupteter Arbeitsplatzbezogenheit gekündigt, vorsorglich nach Ablauf der hypothetischen Sperrfrist ein zweites Mal kündigen. 7. Lohnfortzahlung und Krankentaggeld parallel klären, denn die Leistungspflicht der Versicherung kann über das Vertragsende hinaus weiterlaufen, und Mitarbeitende sind über ein allfälliges Übertrittsrecht in die Einzelversicherung zu informieren."
+        }
+      ],
+      "takeaways": [
+        "Sperrfristen ab Krankheitsbeginn rechnen: 30, 90 oder 180 Tage je nach Dienstjahr; eine Kündigung in dieser Zeit ist nichtig und muss wiederholt werden.",
+        "Bei bereits ausgesprochener Kündigung das neue Vertragsende neu berechnen und der Person schriftlich bestätigen, inklusive Verschiebung auf den nächsten Endtermin.",
+        "Auf eine arbeitsplatzbezogene Arbeitsunfähigkeit nur abstellen, wenn ein Vertrauensarzt sie klar bestätigt, und vorsorglich nach der hypothetischen Sperrfrist erneut kündigen.",
+        "Jede neue, unabhängige Erkrankung kann eine neue Sperrfrist auslösen; Rückfälle derselben Krankheit hingegen nicht. Arztzeugnisse auf Dauer und Art der Einschränkung prüfen, die Diagnose nicht erfragen.",
+        "Kündigungsgründe vor einer Krankmeldung dokumentieren und bei zeitlicher Nähe zur Krankmeldung besonders sorgfältig abwägen, um den Vorwurf der Retorsion zu vermeiden.",
+        "Absenzen- und Case-Management früh einsetzen: Ein strukturierter Austausch mit Krankentaggeldversicherung und allenfalls IV-Früherfassung ist oft wirksamer als eine Kündigung."
+      ],
+      "refs": [
+        "Art. 336c OR",
+        "Art. 335b Abs. 3 OR",
+        "Art. 324a OR",
+        "Art. 328b OR",
+        "Art. 337 OR",
+        "BGer 1C_595/2023 vom 26.03.2024",
+        "BGer 4A_549/2024 vom 04.08.2025",
+        "BGer 4A_223/2026",
+        "BGE 120 II 124"
+      ],
+      "sources": [
+        {
+          "label": "Fedlex: Obligationenrecht (SR 220), Art. 335b, 336c, 324a, 328b",
+          "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+        },
+        {
+          "label": "lawbrary: Art. 336c OR, Fassung 2024 mit Änderungshinweisen",
+          "url": "https://lawbrary.ch/law/art/OR-v2024.01-en-art-336c"
+        },
+        {
+          "label": "Walder Wyss, Employment News Nr. 73: Neue Rechtsprechung zur arbeitsplatzbezogenen Arbeitsunfähigkeit, Juni 2024",
+          "url": "https://walderwyss.com/assets/content/publications/240627_EmploymentNews-73_Neue-Rechtsprechung-des-Bundesgerichts-zur-arbeitsplatzbezogenen-Arbeitsunfaehigkeit_final.pdf"
+        },
+        {
+          "label": "Swissmem: Keine Sperrfrist bei arbeitsplatzbezogener Arbeitsunfähigkeit, 06.09.2024",
+          "url": "https://www.swissmem.ch/de/wissen/personalwesen/arbeitsrecht/keine-sperrfrist-bei-arbeitsplatzbezogener-arbeitsunfaehigkeit.html"
+        },
+        {
+          "label": "Mondaq: BGer 1C_595/2023 of March 26, 2024, 09.07.2024",
+          "url": "https://www.mondaq.com/employment-and-hr/1489500/bger-1c5952023-of-march-26-2024-no-protection-against-dismissal-in-the-event-of-workplace-related-incapacity-to-work"
+        },
+        {
+          "label": "Arbeitsrecht-Aktuell: Mehrere Krankheiten, mehrere Sperrfristen (4A_549/2024), 25.10.2025",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2025/10/25/mehrere-krankheiten-mehrere-sperrfristen/"
+        },
+        {
+          "label": "Arbeitsrecht-Aktuell: Arztzeugnisse und Vertrauensarzt, 21.04.2023",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2023/04/21/arztzeugnisse-und-vertrauensarzt/"
+        },
+        {
+          "label": "law.ch: Arztzeugnis – Beweislast und Beweiskraft",
+          "url": "https://law.ch/lawinfo/arztzeugnis/beweislast-beweiskraft/"
+        },
+        {
+          "label": "Arbeitsrecht-Aktuell: 5 neue Entscheide im Netz (u.a. 4A_223/2026), 20.11.2026",
+          "url": "https://www.arbeitsrecht-aktuell.ch/de/2026/11/20/5-neue-entscheide-im-netz-aenderungskuendigung-fristlose-entlassung-krankentaggeld-zustaendigkeit-und-arbeitszeugnis/"
+        },
+        {
+          "label": "AXA: KMU-Arbeitsmarktstudie 2026, 20.08.2026",
+          "url": "https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2026/20260820-kmu-arbeitsmarktstudie-2026-personalausfaelle.html"
+        }
+      ]
+    },
+    {
       "id": "verpackungsverordnung-2027",
       "published": "2026-11-27",
       "date": "2026-06-24",
